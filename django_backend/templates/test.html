@@ -1,0 +1,176 @@
+
+
+<!DOCTYPE html>
+<html>
+   <head>
+      {{ graph | safe | json_script:"graph_var" }}
+      <title>Covid19: QAS</title>
+      <!-- Add Bootstrap and Bootstrap-Vue CSS to the <head> section -->
+      <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
+      <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css"/>
+      <style>.tab-button {
+          padding: 6px 10px;
+          border-top-left-radius: 3px;
+          border-top-right-radius: 3px;
+          border: 1px solid #ccc;
+          cursor: pointer;
+          background: #f0f0f0;margin-bottom: -1px;margin-right: -1px;}.tab-button:hover {background: #e0e0e0;}.tab-button.active {background: #e0e0e0;}.tab {padding: 10px;}</style>
+   </head>
+   <body>
+      <div id="qas-ui" class="demo">
+         <div>
+            <b-navbar toggleable="lg" type="dark" variant="info">
+               <b-navbar-brand href="#">Covid19 - QAS</b-navbar-brand>
+               <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+               <b-collapse id="nav-collapse" is-nav>
+                  <b-navbar-nav>
+                     <b-nav-item href="#" active>Rookie Mode</b-nav-item>
+                     <b-nav-item href="#">Advanced Mode</b-nav-item>
+                  </b-navbar-nav>
+                  <!-- Right aligned nav items -->
+                  <b-navbar-nav class="ml-auto"></b-navbar-nav>
+               </b-collapse>
+            </b-navbar>
+         </div>
+         <b-container fluid>
+            <b-row align-h="center" class="mt-3">
+               <b-col cols="6">
+                  <h2>Rookie Mode</h2>
+               </b-col>
+            </b-row>
+            <b-row align-h="center" class="mt-3">
+               <b-col cols="6">
+                  <h3>Question</h3>
+                  <b-form-group id="input-group-3" label="" label-for="input-3">
+                     <b-form-select id="input-3" v-model="selected_question" v-bind:options="questions"></b-form-select>
+                  </b-form-group>
+               </b-col>
+            </b-row>
+            <b-row align-h="center" class="mt-3" v-show="selected_question != null">
+               <b-col cols="6">
+                  <h3>Answer</h3>
+               </b-col>
+            </b-row>
+            <b-row align-h="center" v-show="selected_question != null">
+               <b-col cols="6">
+                  <b-card>
+                     <b-card-text>[[dump_abstract]]</b-card-text>
+                  </b-card>
+               </b-col>
+            </b-row>
+            <b-row align-h="center" class="mt-3">
+               <b-col cols="6">
+                  <h3>Results</h3>
+               </b-col>
+            </b-row>
+            <b-row align-h="center" class="mt-3">
+               <b-col cols="6">
+                  <b-tabs align="center">
+                      <b-tab v-for="tab in tabs"v-bind:key="tab"v-bind:title="tab"v-on:click="currentTab = tab"></b-tab>
+                  </b-tabs>
+                  <div v-if="currentTabComponent === 'tab-list'" class="tab">
+                     <b-list-group>
+                        <b-list-group-item v-for="(paper, index) in papers">
+                           <b-card v-bind:title="paper.title" v-bind:sub-title="'Score: ' + paper.score + '%'">
+                              <b-card-text>[[paper.abstract]]</b-card-text>
+                              <a class="card-link" v-on:click="show_paper_detail([[index]])" v-show="index != selected_paper">
+                                  + details
+                              </a>
+                              <div v-show="index == selected_paper">
+                                  <h5 class="mt-1">Topic-fit</h5>
+                                  <canvas v-bind:id="'chart-' + index.toString()" width="400" height="200" v-show="index == selected_paper"></canvas>
+                                  <h5 class="mt-1">Related paper</h5>
+
+                              </div>
+                           </b-card>
+                        </b-list-group-item>
+                     </b-list-group>
+                  </div>
+                  <div v-show="currentTabComponent === 'tab-graph'" class="tab">
+                     <!--canvas id="chart" width="400" height="400" v-show="currentTabComponent === 'tab-graph'"></canvas-->
+                  </div>
+               </b-col>
+            </b-row>
+         </b-container>
+      </div>
+      <!-- Add Vue and BootstrapVue scripts just before the closing </body> tag -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+      <script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.min.js"></script>
+      <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+      <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+      <script>
+          Vue.use(BootstrapVue);
+          let graph_var = JSON.parse(document.getElementById('graph_var').textContent);
+          let abstract = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.';
+          let chart_data_var = {
+              type: 'horizontalBar',
+              data: {
+                  labels: ['Topic 1', 'Topic 2', 'Topic 3', 'Topic 4', 'Topic 5'],
+                  datasets: [
+                      {
+                          label: 'Topic-fit',
+                          data: [4.5, 2.1, 1, 0.9, 0.9, 0.8],
+                          backgroundColor: ['rgba(255, 99, 132, 0.2)','rgba(54, 162, 235, 0.2)','rgba(255, 206, 86, 0.2)','rgba(75, 192, 192, 0.2)','rgba(153, 102, 255, 0.2)'],
+                          borderColor: ['rgba(255, 99, 132, 1)','rgba(54, 162, 235, 1)','rgba(255, 206, 86, 1)','rgba(75, 192, 192, 1)','rgba(153, 102, 255, 1)'],
+                          borderWidth: 1}]},
+              options: {
+                  scales:
+                      {
+                          yAxes: [
+                              {
+                              ticks: {
+                                  beginAtZero: true
+                              }
+                              }
+                          ]
+                      }
+              }
+          };
+          let vm = new Vue({
+              delimiters: ["[[", "]]"],
+              el: "#qas-ui",
+              data: {
+                  dump_abstract : abstract,
+                  currentTab: "List",tabs: ["List", "Graph"],
+                  graph: graph_var,
+                  selected_paper:null,
+                  papers: [
+                      { title: 'Paper Title 1' ,abstract: abstract, full: '', score: 0.99},
+                      { title: 'Paper Title 2' , abstract: abstract, full: '', score: 0.98},
+                      { title: 'Paper Title 3' , abstract: abstract, full: '', score: 0.97},
+                      { title: 'Paper Title 4' , abstract: abstract, full: '', score: 0.96},
+                      { title: 'Paper Title 5' , abstract: abstract, full: '', score: 0.95}
+                      ],
+                  selected_question:null,
+                  questions: [
+                      {value: null, text: 'Please select a question'},
+                      {value: 1, text: 'Q1 - What is the difference between...?'},
+                      {value: 2, text: 'Q2 - Why is the Virus...?'},
+                      {value: 3, text: 'Q3 - What are symptoms of...?'}],
+                  chartoptions: {
+                      responsive: true,maintainAspectRatio: false}},
+              computed: {
+                  currentTabComponent: function() {
+                  return "tab-" + this.currentTab.toLowerCase();
+                }
+              },
+              methods: {
+                show_paper_detail: function(index) {
+                    if(vm.selected_paper == index){
+                        vm.selected_paper = null;
+                    }else{
+                        vm.selected_paper = index;
+                        render_paper_chart(index);
+                    }
+                }
+            }
+          });
+
+          function render_paper_chart(index) {
+              let chart_element = document.getElementById('chart-' + index.toString()).getContext('2d');
+              let chart = new Chart(chart_element,chart_data_var);
+          }
+      </script>
+   </body>
+</html>
+
