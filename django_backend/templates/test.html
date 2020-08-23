@@ -114,6 +114,7 @@
          </b-container>
       </div>
       <!-- Add Vue and BootstrapVue scripts just before the closing </body> tag -->
+      <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
       <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
       <script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.min.js"></script>
@@ -121,6 +122,8 @@
       <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
       <script>
           Vue.use(BootstrapVue);
+          axios.defaults.xsrfCookieName = 'csrftoken'
+          axios.defaults.xsrfHeaderName = "X-CSRFTOKEN"
           let graph_var = JSON.parse(document.getElementById('graph_var').textContent);
           let abstract = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.';
           let chart_data_var = {
@@ -162,12 +165,13 @@
                       { title: 'Paper Title 4' , abstract: abstract, full: '', score: 0.96},
                       { title: 'Paper Title 5' , abstract: abstract, full: '', score: 0.95}
                       ],
-                  selected_question:null,
+                  selected_question: null,
                   questions: [
-                      {value: null, text: 'Please select a question'},
-                      {value: 1, text: 'Q1 - What is the difference between...?'},
-                      {value: 2, text: 'Q2 - Why is the Virus...?'},
-                      {value: 3, text: 'Q3 - What are symptoms of...?'}],
+                      {
+                          value: null,
+                          text: 'Please select a question'
+                      }
+                      ],
                   chartoptions: {
                       responsive: true,maintainAspectRatio: false}},
               computed: {
@@ -176,21 +180,49 @@
                 }
               },
               methods: {
-                show_paper_detail: function(index) {
-                    if(vm.selected_paper == index){
-                        vm.selected_paper = null;
-                    }else{
-                        vm.selected_paper = index;
-                        render_paper_chart(index);
-                    }
-                }
-            }
+                  show_paper_detail: function(index) {
+                      if(vm.selected_paper == index){
+                          vm.selected_paper = null;
+                      }else{
+                          vm.selected_paper = index;
+                          render_paper_chart(index);
+                      }
+                  }
+
+            },
+              mounted(){
+                  load_question_selection();
+              },
+                watch: {
+                  selected_question: function (val) {
+                      ask_question(val);
+                  }
+    },
           });
 
           function render_paper_chart(index) {
               let chart_element = document.getElementById('chart-' + index.toString()).getContext('2d');
               let chart = new Chart(chart_element,chart_data_var);
           }
+          function load_question_selection() {
+              axios.get('http://127.0.0.1:8000/question_selection/')
+                  .then(response => (
+                      vm.questions = response.data
+                  )
+                  )
+          }
+
+          function ask_question(question){
+              axios.post('http://127.0.0.1:8000/qas/',
+                  {
+                      question: question
+                  }).then((response) => {
+                      console.log(response);
+                      }, (error) => {
+                      console.log(error);
+                  });
+          }
+
       </script>
    </body>
 </html>

@@ -1,9 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.http import JsonResponse
+from backend_app.controller.question_selection_controller import get_question_selection
 from backend_app.forms import NameForm
 import plotly.offline as opy
 import plotly.graph_objs as go
 import plotly.express as px
+import json
 
 def index(request):
 	# if this is a POST request we need to process the form data
@@ -19,16 +22,21 @@ def index(request):
 
     # if a GET (or any other method) we'll create a blank form
     else:
-        form = NameForm()
+        context = {
+        }
+        return render(request, 'test.html', context)
 
-    df = px.data.iris()
-    figure = px.scatter(df, x="sepal_width", y="sepal_length", color="species",
-                     size='petal_length', hover_data=['petal_width'])
-    graph = figure.to_html(full_html=False, default_height=500, default_width=700)
+def question_selection(request):
+    if request.method == 'POST':
+        return HttpResponseRedirect('/index/')
+    else:
+        json_question_selection = get_question_selection()
+        return JsonResponse(json_question_selection, safe=False)
 
-    context = {
-        'form': form,
-        'graph': graph
-    }
+def qas(request):
+    if request.method == 'GET':
+        return HttpResponseRedirect('/index/')
+    else:
+        question = json.loads(request.body)['question']
+        return HttpResponseRedirect('/index/')
 
-    return render(request, 'test.html', context)

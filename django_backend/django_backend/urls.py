@@ -20,5 +20,7 @@ from backend_app import views
 urlpatterns = [
     # path('backend_app/', include('urls')),
     path('admin/', admin.site.urls),
-    path('', views.index, name='index')
+    path('', views.index, name='index'),
+    path('question_selection/', views.question_selection, name='question_selection'),
+    path('qas/', views.qas, name='qas')
 ]
