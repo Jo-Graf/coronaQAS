@@ -23,7 +23,7 @@ class QASPipeline:
         QASPipeline.document_store = ElasticsearchDocumentStore(host="localhost", username="", password="", index="document")
         QASPipeline.data_loader = GOTDataLoader()
 
-        if QASPipeline.data_loader.data_is_loaded():
+        if not QASPipeline.data_loader.data_is_loaded():
             dicts = QASPipeline.data_loader.load_data()
             QASPipeline.document_store.write_documents(dicts)
 

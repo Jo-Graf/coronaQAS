@@ -45,70 +45,67 @@
                   </b-form-group>
                </b-col>
             </b-row>
-            <b-row align-h="center" class="mt-3" v-show="selected_question != null">
-               <b-col cols="6">
-                  <h3>Answer</h3>
+            <b-row align-h="center" class="mt-3">
+               <b-col cols="1" v-for="n in 3">
+                   <b-spinner type="grow" label="Spinning" v-show="answer_is_loading"></b-spinner>
                </b-col>
             </b-row>
-            <b-row align-h="center" v-show="selected_question != null">
-               <b-col cols="6">
-                  <b-card>
-                     <b-card-text>[[dump_abstract]]</b-card-text>
-                  </b-card>
+
+            <b-row align-h="center" v-show="show_answer_and_results">
+               <b-col cols="6" v-if="best_answer != null">
+                   <h3>Answer</h3>
+                   <b-card>
+                       <b-card-text>[[best_answer.answer]]</b-card-text>
+                   </b-card>
                </b-col>
             </b-row>
-            <b-row align-h="center" class="mt-3" v-show="selected_question != null">
+
+            <b-row align-h="center" class="mt-3" v-show="show_answer_and_results">
                <b-col cols="6">
-                  <h3>Results</h3>
-               </b-col>
-            </b-row>
-            <b-row align-h="center" class="mt-3" v-show="selected_question != null">
-               <b-col cols="6">
-                  <div>
-                     <b-list-group>
-                        <b-list-group-item
+                   <h3>Results</h3>
+                   <div>
+                       <b-list-group>
+                           <b-list-group-item
                                 v-for="(paper, index) in papers"
                                 style="border: none;">
-                           <b-card v-bind:title="paper.title" v-bind:sub-title="'Score: ' + paper.score + '%'">
-                              <b-card-text>[[paper.abstract]]</b-card-text>
-                              <a class="card-link" v-on:click="show_paper_detail([[index]])" v-show="index != selected_paper">
+                               <b-card v-bind:title="paper.meta.name" v-bind:sub-title="'Score: ' + Math.round(paper.probability*100) + '%'">
+                                   <b-card-text>[[paper.context]]</b-card-text>
+                                   <a class="card-link" v-on:click="show_paper_detail([[index]])" v-show="index != selected_paper">
                                   + details
-                              </a>
-                              <div v-show="index == selected_paper">
-                                  <h5 class="mt-1">Topic-fit</h5>
-                                  <canvas v-bind:id="'chart-' + index.toString()" width="400" height="200" v-show="index == selected_paper"></canvas>
-                                  <h5 class="mt-1">Related paper</h5>
-                                  <b-carousel
-                                          id="carousel"
-                                          controls
-                                          indicators
-                                          width="400"
-                                          height="200"
-                                          img-width="400"
-                                          img-height="200"
-                                  >
-                                      <b-carousel-slide
-                                              v-for="(paper, index) in papers"
-                                              caption=""
-                                              img-blank
-                                              img-alt="Blank image">
-                                          <b-list-group-item
-                                                  style="border: none;">
-                                              <b-card
-                                                      v-bind:title="paper.title"
-                                                      v-bind:sub-title="'Score: ' + paper.score + '%'"
-                                                      style="color: #000;"
-                                              >
-                                                  <b-card-text>[[paper.abstract]]</b-card-text>
-                                              </b-card>
-                                          </b-list-group-item>
-                                      </b-carousel-slide>
-                                  </b-carousel>
-                              </div>
-                           </b-card>
-                        </b-list-group-item>
-                     </b-list-group>
-                  </div>
+                                   </a>
+                                   <div v-show="index == selected_paper">
+                                       <h5 class="mt-1">Topic-fit</h5>
+                                       <canvas v-bind:id="'chart-' + index.toString()" width="400" height="200" v-show="index == selected_paper"></canvas>
+                                       <h5 class="mt-1">Related paper</h5>
+                                       <b-carousel
+                                               id="carousel"
+                                               controls
+                                               indicators
+                                               width="400"
+                                               height="200"
+                                               img-width="400"
+                                               img-height="200">
+                                           <b-carousel-slide
+                                                   v-for="(paper, index) in papers"
+                                                   caption=""
+                                                   img-blank
+                                                   img-alt="Blank image">
+                                               <b-list-group-item
+                                                       style="border: none;">
+                                                   <b-card
+                                                           v-bind:title="paper.title"
+                                                           v-bind:sub-title="'Score: ' + paper.score + '%'"
+                                                           style="color: #000;">
+                                                       <b-card-text>[[paper.abstract]]</b-card-text>
+                                                   </b-card>
+                                               </b-list-group-item>
+                                           </b-carousel-slide>
+                                       </b-carousel>
+                                   </div>
+                               </b-card>
+                           </b-list-group-item>
+                       </b-list-group>
+                   </div>
                </b-col>
             </b-row>
          </b-container>
@@ -158,14 +155,10 @@
                   currentTab: "List",tabs: ["List", "Graph"],
                   graph: graph_var,
                   selected_paper:null,
-                  papers: [
-                      { title: 'Paper Title 1' ,abstract: abstract, full: '', score: 0.99},
-                      { title: 'Paper Title 2' , abstract: abstract, full: '', score: 0.98},
-                      { title: 'Paper Title 3' , abstract: abstract, full: '', score: 0.97},
-                      { title: 'Paper Title 4' , abstract: abstract, full: '', score: 0.96},
-                      { title: 'Paper Title 5' , abstract: abstract, full: '', score: 0.95}
-                      ],
+                  // { title: 'Paper Title 1' ,abstract: abstract, full: '', score: 0.99},
+                  papers: null,
                   selected_question: null,
+                  best_answer: null,
                   questions: [
                       {
                           value: null,
@@ -173,11 +166,15 @@
                       }
                       ],
                   chartoptions: {
-                      responsive: true,maintainAspectRatio: false}},
+                      responsive: true,
+                      maintainAspectRatio: false
+                  },
+                  answer_is_loading: false
+              },
               computed: {
-                  currentTabComponent: function() {
-                  return "tab-" + this.currentTab.toLowerCase();
-                }
+                  show_answer_and_results: function(){
+                      return this.selected_question != null && !this.answer_is_loading;
+                  }
               },
               methods: {
                   show_paper_detail: function(index) {
@@ -188,7 +185,6 @@
                           render_paper_chart(index);
                       }
                   }
-
             },
               mounted(){
                   load_question_selection();
@@ -208,18 +204,24 @@
               axios.get('http://127.0.0.1:8000/question_selection/')
                   .then(response => (
                       vm.questions = response.data
-                  )
-                  )
+                      )
+                  );
           }
 
           function ask_question(question){
+              vm.answer_is_loading = true;
               axios.post('http://127.0.0.1:8000/qas/',
                   {
                       question: question
                   }).then((response) => {
-                      console.log(response);
-                      }, (error) => {
-                      console.log(error);
+                  vm.answer_is_loading = false;
+                  vm.papers = response.data['answers']
+                  vm.best_answer = response.data['answers'][0]
+
+                  console.log(response);
+                  }, (error) => {
+                  vm.answer_is_loading = false;
+                  console.log(error);
                   });
           }
 

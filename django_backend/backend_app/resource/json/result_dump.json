@@ -1,0 +1,146 @@
+{
+  "question": "Who is the red witch?",
+  "no_ans_gap": -9.534895420074463,
+  "answers": [
+    {
+      "answer": "Melisandre",
+      "score": 0.795346736907959,
+      "probability": 0.5248341338350121,
+      "context": "er Jon Snow would remain dead or return to life. Fans speculated that Melisandre would be the one to bring back Snow to life, after and before the tit",
+      "offset_start": 70,
+      "offset_end": 80,
+      "offset_start_in_doc": 1053,
+      "offset_end_in_doc": 1063,
+      "document_id": "-ixA4nMBreXvbNGuGruj",
+      "meta": {
+        "name": "69_The_Red_Woman.txt"
+      }
+    },
+    {
+      "answer": "Melisandre",
+      "score": 0.795346736907959,
+      "probability": 0.5248341338350121,
+      "context": "er Jon Snow would remain dead or return to life. Fans speculated that Melisandre would be the one to bring back Snow to life, after and before the tit",
+      "offset_start": 70,
+      "offset_end": 80,
+      "offset_start_in_doc": 1053,
+      "offset_end_in_doc": 1063,
+      "document_id": "9Sxw4nMBreXvbNGulcZY",
+      "meta": {
+        "name": "69_The_Red_Woman.txt"
+      }
+    },
+    {
+      "answer": "Melisandre",
+      "score": 0.795346736907959,
+      "probability": 0.5248341338350121,
+      "context": "er Jon Snow would remain dead or return to life. Fans speculated that Melisandre would be the one to bring back Snow to life, after and before the tit",
+      "offset_start": 70,
+      "offset_end": 80,
+      "offset_start_in_doc": 1053,
+      "offset_end_in_doc": 1063,
+      "document_id": "EywL4nMBreXvbNGu6YWD",
+      "meta": {
+        "name": "69_The_Red_Woman.txt"
+      }
+    },
+    {
+      "answer": "Melisandre",
+      "score": 0.795346736907959,
+      "probability": 0.5248341338350121,
+      "context": "er Jon Snow would remain dead or return to life. Fans speculated that Melisandre would be the one to bring back Snow to life, after and before the tit",
+      "offset_start": 70,
+      "offset_end": 80,
+      "offset_start_in_doc": 1053,
+      "offset_end_in_doc": 1063,
+      "document_id": "Diwb4nMBreXvbNGu85DF",
+      "meta": {
+        "name": "69_The_Red_Woman.txt"
+      }
+    },
+    {
+      "answer": "Melisandre",
+      "score": 0.795346736907959,
+      "probability": 0.5248341338350121,
+      "context": "er Jon Snow would remain dead or return to life. Fans speculated that Melisandre would be the one to bring back Snow to life, after and before the tit",
+      "offset_start": 70,
+      "offset_end": 80,
+      "offset_start_in_doc": 1053,
+      "offset_end_in_doc": 1063,
+      "document_id": "8Cx54nMBreXvbNGuw9Es",
+      "meta": {
+        "name": "69_The_Red_Woman.txt"
+      }
+    },
+    {
+      "answer": "Melisandre",
+      "score": 0.795346736907959,
+      "probability": 0.5248341338350121,
+      "context": "er Jon Snow would remain dead or return to life. Fans speculated that Melisandre would be the one to bring back Snow to life, after and before the tit",
+      "offset_start": 70,
+      "offset_end": 80,
+      "offset_start_in_doc": 1053,
+      "offset_end_in_doc": 1063,
+      "document_id": "_yw_4nMBreXvbNGuNrAN",
+      "meta": {
+        "name": "69_The_Red_Woman.txt"
+      }
+    },
+    {
+      "answer": "Melisandre",
+      "score": 0.795346736907959,
+      "probability": 0.5248341338350121,
+      "context": "er Jon Snow would remain dead or return to life. Fans speculated that Melisandre would be the one to bring back Snow to life, after and before the tit",
+      "offset_start": 70,
+      "offset_end": 80,
+      "offset_start_in_doc": 1053,
+      "offset_end_in_doc": 1063,
+      "document_id": "BCw04nMBreXvbNGuCaZQ",
+      "meta": {
+        "name": "69_The_Red_Woman.txt"
+      }
+    },
+    {
+      "answer": "Melisandre",
+      "score": 0.795346736907959,
+      "probability": 0.5248341338350121,
+      "context": "er Jon Snow would remain dead or return to life. Fans speculated that Melisandre would be the one to bring back Snow to life, after and before the tit",
+      "offset_start": 70,
+      "offset_end": 80,
+      "offset_start_in_doc": 1053,
+      "offset_end_in_doc": 1063,
+      "document_id": "CSww4nMBreXvbNGuhJsa",
+      "meta": {
+        "name": "69_The_Red_Woman.txt"
+      }
+    },
+    {
+      "answer": "Melisandre",
+      "score": 0.795346736907959,
+      "probability": 0.5248341338350121,
+      "context": "er Jon Snow would remain dead or return to life. Fans speculated that Melisandre would be the one to bring back Snow to life, after and before the tit",
+      "offset_start": 70,
+      "offset_end": 80,
+      "offset_start_in_doc": 1053,
+      "offset_end_in_doc": 1063,
+      "document_id": "9GIOG3QB7VlRhbqQXQDW",
+      "meta": {
+        "name": "69_The_Red_Woman.txt"
+      }
+    },
+    {
+      "answer": "Melisandre",
+      "score": 0.795346736907959,
+      "probability": 0.5248341338350121,
+      "context": "er Jon Snow would remain dead or return to life. Fans speculated that Melisandre would be the one to bring back Snow to life, after and before the tit",
+      "offset_start": 70,
+      "offset_end": 80,
+      "offset_start_in_doc": 1053,
+      "offset_end_in_doc": 1063,
+      "document_id": "6ywy53MBreXvbNGuwtyZ",
+      "meta": {
+        "name": "69_The_Red_Woman.txt"
+      }
+    }
+  ]
+}

@@ -13,8 +13,7 @@ class GOTDataLoader(DataLoader):
     def data_is_loaded(self):
         return GOTDataLoader.data_is_loaded
 
-    @staticmethod
-    def load_data():
+    def load_data(self):
         # Let's first get some documents that we want to query
         # Here: 517 Wikipedia articles for Game of Thrones
         doc_dir = "../data/article_txt_got"
