@@ -53,7 +53,7 @@
 
             <b-row align-h="center" v-show="show_answer_and_results">
                <b-col cols="6" v-if="best_answer != null">
-                   <h3>Answer</h3>
+                   <h3>Most likely answer</h3>
                    <b-card>
                        <b-card-text>[[best_answer.answer]]</b-card-text>
                    </b-card>
@@ -69,6 +69,9 @@
                                 v-for="(paper, index) in papers"
                                 style="border: none;">
                                <b-card v-bind:title="paper.meta.name" v-bind:sub-title="'Score: ' + Math.round(paper.probability*100) + '%'">
+                                   <h5 class="mt-1">Answer</h5>
+                                   <b-card-text>[[paper.answer]]</b-card-text>
+                                   <h5 class="mt-1">Context</h5>
                                    <b-card-text>[[paper.context]]</b-card-text>
                                    <a class="card-link" v-on:click="show_paper_detail([[index]])" v-show="index != selected_paper">
                                   + details
@@ -93,8 +96,8 @@
                                                <b-list-group-item
                                                        style="border: none;">
                                                    <b-card
-                                                           v-bind:title="paper.title"
-                                                           v-bind:sub-title="'Score: ' + paper.score + '%'"
+                                                           v-bind:title="paper.meta.name"
+                                                           v-bind:sub-title="'Score: ' + Math.round(paper.probability*100) + '%'"
                                                            style="color: #000;">
                                                        <b-card-text>[[paper.abstract]]</b-card-text>
                                                    </b-card>
@@ -191,6 +194,7 @@
               },
                 watch: {
                   selected_question: function (val) {
+                      vm.selected_paper = null;
                       ask_question(val);
                   }
     },
