@@ -1,6 +1,7 @@
 from backend_app.qas_core.data_loader import DataLoader
 from haystack.indexing.cleaning import clean_wiki_text
 from haystack.indexing.utils import convert_files_to_dicts, fetch_archive_from_http
+import sys
 
 
 class GOTDataLoader(DataLoader):
@@ -14,6 +15,8 @@ class GOTDataLoader(DataLoader):
         return GOTDataLoader.data_is_loaded
 
     def load_data(self):
+        print(sys.version)
+        print(sys.version_info)
         # Let's first get some documents that we want to query
         # Here: 517 Wikipedia articles for Game of Thrones
         doc_dir = "../data/article_txt_got"

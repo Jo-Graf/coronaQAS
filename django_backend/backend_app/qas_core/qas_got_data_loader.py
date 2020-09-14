@@ -1,4 +1,5 @@
 from typing import Optional, List
+from uuid import uuid4
 
 from haystack.indexing.cleaning import clean_wiki_text
 from haystack.indexing.utils import convert_files_to_dicts, fetch_archive_from_http
