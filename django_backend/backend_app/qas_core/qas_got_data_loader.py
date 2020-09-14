@@ -25,4 +25,8 @@ class QASGOTDataLoaderVariant(QASDataLoaderVariant):
 
         documents = []
 
-        return True, dicts
+        for dic in dicts:
+            new_doc = QASDocument(text=dic['text'], meta=dic['meta'])
+            documents.append(new_doc)
+
+        return True, documents
