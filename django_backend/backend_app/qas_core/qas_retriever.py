@@ -1,5 +1,6 @@
 from typing import Optional, Dict, Any, List
 
+from backend_app.qas_core.qas_database import QASDatabase
 from backend_app.qas_core.qas_retriever_variant import QASRetrieverVariant
 
 
@@ -13,5 +14,5 @@ class QASRetriever:
     def initialize(self):
         pass
 
-    def retrieve(self):
-        self.__variant.retrieve()
+    def retrieve(self, query: str, database: QASDatabase):
+        self.__variant.retrieve(database)

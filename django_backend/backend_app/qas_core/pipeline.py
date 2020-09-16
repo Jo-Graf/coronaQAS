@@ -9,6 +9,7 @@ from haystack.reader.farm import FARMReader
 from haystack.reader.transformers import TransformersReader
 from haystack.utils import print_answers
 
+
 class QASPipeline:
     observers = []
     document_store = None

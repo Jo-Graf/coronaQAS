@@ -5,13 +5,17 @@ from backend_app.qas_core.qas_document import QASDocument
 
 
 class QASDatabase:
+
     def __init__(self, variant: Optional[QASDatabaseVariant] = None, loader: Optional[QASDataLoader] = None):
         self.__variant = variant
-        self.__data = None
+        self.__data = []
         self.__loader = loader
 
     def set_variant(self, variant: QASDatabaseVariant):
         self.__variant = variant
+
+    def get_variant(self) -> Optional[QASDatabaseVariant]:
+        return self.__variant
 
     def set_loader(self, loader: QASDataLoader):
         self.__loader = loader

@@ -1,7 +1,9 @@
-from backend_app.qas_core.got_data_loader import GOTDataLoader
+from haystack.database.elasticsearch import ElasticsearchDocumentStore
+from backend_app.qas_core.qas_database import QASDatabase
 from backend_app.qas_core.qas_got_data_loader import QASGOTDataLoaderVariant
+from backend_app.qas_core.qas_haystack_database_adapter import QASHaystackDatabaseAdapter
 
-print('### qas data loader test start ###')
+print('### qas database test start ###')
 
 dir_path = "/Users/Gino/Belegarbeit/django_backend/backend_app/data/article_txt_got"
 url = "https://s3.eu-central-1.amazonaws.com/deepset.ai-farm-qa/datasets/documents/wiki_gameofthrones_txt.zip"
@@ -9,10 +11,19 @@ url = "https://s3.eu-central-1.amazonaws.com/deepset.ai-farm-qa/datasets/documen
 loader = QASGOTDataLoaderVariant(url, dir_path)
 loaded, data = loader.load_data()
 
-# TODO: add test for data count (2811)
+document_store = ElasticsearchDocumentStore(host="localhost", username="", password="", index="document")
+database_variant = QASHaystackDatabaseAdapter(document_store=document_store)
+database = QASDatabase(variant=database_variant)
+database.add_data(data)
+data = database.get_data()
+
+print(type(data))
 print(len(data))
+first_data = data[0]
+print(type(first_data))
+print(first_data.id)
+print(first_data.text)
+print(first_data.meta)
+print(first_data)
 
-# TODO: add test for meta name field (145_Elio_M._García_Jr._and_Linda_Antonsson.txt)
-print(data[0].meta)
-
-print('### qas data loader test end ###')
+print('### qas database test end ###')
