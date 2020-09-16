@@ -24,7 +24,7 @@ class QASDatabase:
         return self.__variant.get_data()
 
     def load_data(self):
-        new_data = self.__loader.load_data()
+        loaded, new_data = self.__loader.load_data()
         self.add_data(new_data)
 
     def add_data(self, data: List[QASDocument]):

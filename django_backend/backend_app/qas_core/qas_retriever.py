@@ -15,4 +15,4 @@ class QASRetriever:
         pass
 
     def retrieve(self, query: str, database: QASDatabase):
-        self.__variant.retrieve(database)
+        return self.__variant.retrieve(query, database)

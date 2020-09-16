@@ -20,8 +20,16 @@ class QASHaystackRetrieverAdapter(QASRetrieverVariant):
         if not isinstance(database_variant, QASHaystackDatabaseAdapter):
             raise AttributeError('QASHaystackRetrieverAdapter needs to be coupled with a QASHaystackDatabaseAdapter')
 
-        database_variant = QASHaystackDatabaseAdapter(database_variant)
+        doc_store = database_variant.get_document_store()
 
-        document_store = database_variant.get_document_store()
+        self.__retriever.document_store = doc_store
 
-        pass
+        docs = self.__retriever.retrieve(query)
+
+        qas_docs = []
+
+        for doc in docs:
+            qas_doc = QASDocument.doc_to_qas_doc(doc)
+            qas_docs.append(qas_doc)
+
+        return qas_docs
