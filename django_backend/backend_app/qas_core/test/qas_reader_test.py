@@ -1,4 +1,4 @@
-from haystack.database.elasticsearch import ElasticsearchDocumentStore
+from haystack.document_store.elasticsearch import ElasticsearchDocumentStore
 from haystack.reader.farm import FARMReader
 from haystack.retriever.sparse import ElasticsearchRetriever
 
@@ -38,5 +38,7 @@ haystack_reader = FARMReader(model_name_or_path=model_name, use_gpu=False)
 reader_variant = QASHaystackReaderAdapter(reader=haystack_reader)
 reader = QASReader(variant=reader_variant)
 answers = reader.read(question, retrieved_docs)
+
+print(answers)
 
 print('### qas retriever test end ###')

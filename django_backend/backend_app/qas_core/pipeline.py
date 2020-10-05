@@ -1,13 +1,11 @@
 # Connect to Elasticsearch
-from haystack.database.elasticsearch import ElasticsearchDocumentStore
+from haystack.document_store.elasticsearch import ElasticsearchDocumentStore
+from haystack.finder import Finder
 from backend_app.qas_core.got_data_loader import GOTDataLoader
 from haystack.retriever.sparse import ElasticsearchRetriever
-from haystack import Finder
-from haystack.indexing.cleaning import clean_wiki_text
-from haystack.indexing.utils import convert_files_to_dicts, fetch_archive_from_http
 from haystack.reader.farm import FARMReader
 from haystack.reader.transformers import TransformersReader
-from haystack.utils import print_answers
+# from haystack.utils import print_answers
 
 
 class QASPipeline:

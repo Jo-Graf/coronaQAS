@@ -2,7 +2,7 @@ from typing import Optional, Dict, Any
 from uuid import uuid4
 
 import numpy as np
-from haystack.database.base import Document
+from haystack import Document
 
 
 class QASDocument(Document):
@@ -21,7 +21,7 @@ class QASDocument(Document):
 
         super().__init__(text=str(text),
                          id=identifier,
-                         query_score=query_score,
+                         score=query_score,
                          question=question,
                          meta=meta,
                          embedding=embedding)
@@ -30,7 +30,7 @@ class QASDocument(Document):
     def doc_to_qas_doc(document: Document):
         return QASDocument(text=document.text,
                            id=document.id,
-                           query_score=document.query_score,
+                           query_score=document.score,
                            question=document.question,
                            meta=document.meta)
 

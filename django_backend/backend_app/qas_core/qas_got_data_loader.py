@@ -1,8 +1,7 @@
 from typing import Optional, List
 from uuid import uuid4
-
-from haystack.indexing.cleaning import clean_wiki_text
-from haystack.indexing.utils import convert_files_to_dicts, fetch_archive_from_http
+from haystack.preprocessor.cleaning import clean_wiki_text
+from haystack.preprocessor.utils import fetch_archive_from_http, convert_files_to_dicts
 
 from backend_app.qas_core.qas_data_loader_variant import QASDataLoaderVariant
 from backend_app.qas_core.qas_document import QASDocument

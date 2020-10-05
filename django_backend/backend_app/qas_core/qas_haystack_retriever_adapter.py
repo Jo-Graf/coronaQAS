@@ -1,7 +1,5 @@
 from typing import List
-from haystack.database.base import BaseDocumentStore
 from haystack.retriever.base import BaseRetriever
-
 from backend_app.qas_core.qas_database import QASDatabase
 from backend_app.qas_core.qas_document import QASDocument
 from backend_app.qas_core.qas_haystack_database_adapter import QASHaystackDatabaseAdapter
