@@ -10,6 +10,8 @@ class QASAnswer(QASDocument):
                  answer: str,
                  offset_start_in_doc: Optional[int] = None,
                  offset_end_in_doc: Optional[int] = None,
+                 offset_start: Optional[int] = None,
+                 offset_end: Optional[int] = None,
                  probability: Optional[float] = None,
                  text: Optional[str] = '',
                  answer_id: Optional[str] = None,
@@ -34,13 +36,15 @@ class QASAnswer(QASDocument):
 
             identifier = self._generate_id(**unique_key_components)
 
-        self._answer = answer
-        self._offset_start_in_doc = offset_start_in_doc
-        self._offset_end_in_doc = offset_end_in_doc
-        self._probability = probability
-        self._context = context
-        self._answer_id = identifier
-        self._no_ans_gap = no_ans_gap
+        self.answer = answer
+        self.offset_start_in_doc = offset_start_in_doc
+        self.offset_end_in_doc = offset_end_in_doc
+        self.offset_start = offset_start
+        self.offset_end = offset_end
+        self.probability = probability
+        self.context = context
+        self.answer_id = identifier
+        self.no_ans_gap = no_ans_gap
 
         super().__init__(text=text,
                          id=id,
@@ -49,9 +53,15 @@ class QASAnswer(QASDocument):
                          meta=meta,
                          embedding=embedding)
 
+    # TODO: add to uml
     @staticmethod
     def _generate_id(**kwargs) -> str:
-        unique_key_components = ['answer', 'offset_start_in_doc', 'offset_end_in_doc', 'context', 'probability','score']
+        unique_key_components = ['answer', 'offset_start_in_doc', 'offset_end_in_doc', 'context', 'probability', 'query_score']
         unique_key = ''.join([str(kwargs[x]) for x in unique_key_components]).encode('utf-8')
         unique_hashed_key = hashlib.md5(unique_key).hexdigest()
         return unique_hashed_key
+
+
+    # TODO: add to uml
+    def serialized(self):
+        return self.__dict__
