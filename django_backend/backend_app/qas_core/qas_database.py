@@ -1,4 +1,4 @@
-from typing import Optional, Dict, Any, List
+from typing import Optional, Dict, Any, List, Union
 from backend_app.qas_core.qas_data_loader import QASDataLoader
 from backend_app.qas_core.qas_database_variant import QASDatabaseVariant
 from backend_app.qas_core.qas_document import QASDocument
@@ -20,8 +20,9 @@ class QASDatabase:
     def set_loader(self, loader: QASDataLoader):
         self.__loader = loader
 
-    def get_data(self) -> List[QASDocument]:
-        return self.__variant.get_data()
+    # TODO: add params to uml
+    def get_data(self, identifiers: Optional[Union[str, List[str]]] = None) -> List[QASDocument]:
+        return self.__variant.get_data(identifiers)
 
     def load_data(self):
         loaded, new_data = self.__loader.load_data()

@@ -1,12 +1,23 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.http import JsonResponse
+from haystack.document_store.elasticsearch import ElasticsearchDocumentStore
+from haystack.reader.farm import FARMReader
+from haystack.retriever.sparse import ElasticsearchRetriever
+
 from backend_app.controller.question_selection_controller import get_question_selection
 from backend_app.forms import NameForm
 import json
 import hashlib
 
 from backend_app.qas_core.pipeline import QASPipeline
+from backend_app.qas_core.qas_database import QASDatabase
+from backend_app.qas_core.qas_got_data_loader import QASGOTDataLoaderVariant
+from backend_app.qas_core.qas_haystack_database_adapter import QASHaystackDatabaseAdapter
+from backend_app.qas_core.qas_haystack_reader_adapter import QASHaystackReaderAdapter
+from backend_app.qas_core.qas_haystack_retriever_adapter import QASHaystackRetrieverAdapter
+from backend_app.qas_core.qas_reader import QASReader
+from backend_app.qas_core.qas_retriever import QASRetriever
 
 
 def index(request):
@@ -40,19 +51,36 @@ def qas(request):
         return HttpResponseRedirect('/index/')
     else:
         question = json.loads(request.body)['question']
-        # path_string = '/Users/Gino/Belegarbeit/django_backend/backend_app/resource/json/result_dump.json'
-        # file = open(path_string, 'r')
-        # response = json.load(file)
-        response = QASPipeline.ask_question(question)
 
-        unique_key_components = ['answer', 'offset_start_in_doc', 'offset_end_in_doc', 'context', 'probability', 'score']
+        dir_path = "/Users/Gino/Belegarbeit/django_backend/backend_app/data/article_txt_got"
+        url = "https://s3.eu-central-1.amazonaws.com/deepset.ai-farm-qa/datasets/documents/wiki_gameofthrones_txt.zip"
+        model_name = 'deepset/roberta-base-squad2'
+
+        # loader
+        loader = QASGOTDataLoaderVariant(url, dir_path)
+
+        # database
+        document_store = ElasticsearchDocumentStore(host='localhost', username='', password='', index='document')
+        database_variant = QASHaystackDatabaseAdapter(document_store=document_store)
+        database = QASDatabase(variant=database_variant, loader=loader)
+        database.load_data()
+
+        # retriever
+        haystack_retriever = ElasticsearchRetriever(None)
+        retriever_variant = QASHaystackRetrieverAdapter(retriever=haystack_retriever)
+        retriever = QASRetriever(variant=retriever_variant)
+        retrieved_docs = retriever.retrieve(question, database)
+
+        # reader
+        haystack_reader = FARMReader(model_name_or_path=model_name, use_gpu=False)
+        reader_variant = QASHaystackReaderAdapter(reader=haystack_reader)
+        reader = QASReader(variant=reader_variant)
+        answers = reader.read(question, retrieved_docs)
+
+        # return unique answers
         unique_answers = {}
+        for answer in answers:
+            unique_answers[answer.answer_id] = answer.serialize()
 
-        for answer in response['answers']:
-            unique_key = ''.join([str(answer[x]) for x in unique_key_components]).encode('utf-8')
-            unique_hashed_key = hashlib.md5(unique_key).hexdigest()
-            unique_answers[unique_hashed_key] = answer
-
-        response['answers'] = list(unique_answers.values())
-        return JsonResponse(response, safe=False)
+        return JsonResponse(list(unique_answers.values()), safe=False)
 

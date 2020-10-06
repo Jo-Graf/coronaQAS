@@ -16,6 +16,7 @@ class QASHaystackRetrieverAdapter(QASRetrieverVariant):
         database_variant = database.get_variant()
 
         if not isinstance(database_variant, QASHaystackDatabaseAdapter):
+            # print(type(database_variant))
             raise AttributeError('QASHaystackRetrieverAdapter needs to be coupled with a QASHaystackDatabaseAdapter')
 
         doc_store = database_variant.get_document_store()

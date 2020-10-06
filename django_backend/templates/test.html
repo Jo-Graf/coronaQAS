@@ -220,8 +220,10 @@
                       question: question
                   }).then((response) => {
                   vm.answer_is_loading = false;
-                  vm.papers = response.data['answers']
-                  vm.best_answer = response.data['answers'][0]
+                  // vm.papers = response.data['answers']
+                  // vm.best_answer = response.data['answers'][0]
+                  vm.papers = response.data
+                  vm.best_answer = response.data[0]
 
                   console.log(response);
                   }, (error) => {

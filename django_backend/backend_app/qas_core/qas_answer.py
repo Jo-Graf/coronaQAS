@@ -6,6 +6,8 @@ from backend_app.qas_core.qas_document import QASDocument
 
 
 class QASAnswer(QASDocument):
+
+    # TODO: add attributes to uml
     def __init__(self,
                  answer: str,
                  offset_start_in_doc: Optional[int] = None,
@@ -63,5 +65,5 @@ class QASAnswer(QASDocument):
 
 
     # TODO: add to uml
-    def serialized(self):
+    def serialize(self):
         return self.__dict__
