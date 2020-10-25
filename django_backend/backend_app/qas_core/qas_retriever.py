@@ -1,6 +1,8 @@
 from typing import Optional, Dict, Any, List
 
 from backend_app.qas_core.qas_database import QASDatabase
+from backend_app.qas_core.qas_doc_type_enum import QASDocType
+from backend_app.qas_core.qas_document import QASDocument
 from backend_app.qas_core.qas_retriever_variant import QASRetrieverVariant
 
 
@@ -14,5 +16,6 @@ class QASRetriever:
     def initialize(self):
         pass
 
-    def retrieve(self, query: str, database: QASDatabase):
-        return self.__variant.retrieve(query, database)
+    # TODO: add param and return type to uml
+    def retrieve(self, query: str, database: QASDatabase, doc_type: Optional[QASDocType] = None) -> List[QASDocument]:
+        return self.__variant.retrieve(query, database, doc_type)

@@ -11,7 +11,9 @@ import json
 import hashlib
 
 from backend_app.qas_core.pipeline import QASPipeline
+from backend_app.qas_core.qas_cord19_data_loader_variant import QASCORD19DataLoaderVariant
 from backend_app.qas_core.qas_database import QASDatabase
+from backend_app.qas_core.qas_doc_type_enum import QASDocType
 from backend_app.qas_core.qas_got_data_loader import QASGOTDataLoaderVariant
 from backend_app.qas_core.qas_haystack_database_adapter import QASHaystackDatabaseAdapter
 from backend_app.qas_core.qas_haystack_reader_adapter import QASHaystackReaderAdapter
@@ -52,24 +54,26 @@ def qas(request):
     else:
         question = json.loads(request.body)['question']
 
-        dir_path = "/Users/Gino/Belegarbeit/django_backend/backend_app/data/article_txt_got"
-        url = "https://s3.eu-central-1.amazonaws.com/deepset.ai-farm-qa/datasets/documents/wiki_gameofthrones_txt.zip"
-        model_name = 'deepset/roberta-base-squad2'
+        # dir_path = "/Users/Gino/Belegarbeit/django_backend/backend_app/data/article_txt_got"
+        # url = "https://s3.eu-central-1.amazonaws.com/deepset.ai-farm-qa/datasets/documents/wiki_gameofthrones_txt.zip"
+        dir_path = '/Volumes/glpstorage/Users/Gino/Belegarbeit/archive/document_parses/pdf_json_test/'
+        model_name = 'NeuML/bert-small-cord19-squad2'
 
         # loader
-        loader = QASGOTDataLoaderVariant(url, dir_path)
+        # loader = QASGOTDataLoaderVariant(url, dir_path)
+        loader = QASCORD19DataLoaderVariant(dir_path)
 
         # database
-        document_store = ElasticsearchDocumentStore(host='localhost', username='', password='', index='document')
+        document_store = ElasticsearchDocumentStore(host='localhost', username='', password='', index='med_docs')
         database_variant = QASHaystackDatabaseAdapter(document_store=document_store)
         database = QASDatabase(variant=database_variant, loader=loader)
-        database.load_data()
+        # database.load_data()
 
         # retriever
         haystack_retriever = ElasticsearchRetriever(None)
         retriever_variant = QASHaystackRetrieverAdapter(retriever=haystack_retriever)
         retriever = QASRetriever(variant=retriever_variant)
-        retrieved_docs = retriever.retrieve(question, database)
+        retrieved_docs = retriever.retrieve(question, database, QASDocType.TEXT)
 
         # reader
         haystack_reader = FARMReader(model_name_or_path=model_name, use_gpu=False)
@@ -82,5 +86,6 @@ def qas(request):
         for answer in answers:
             unique_answers[answer.answer_id] = answer.serialize()
 
+        print(unique_answers)
         return JsonResponse(list(unique_answers.values()), safe=False)
 

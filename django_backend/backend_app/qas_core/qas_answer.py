@@ -43,7 +43,7 @@ class QASAnswer(QASDocument):
         self.offset_end_in_doc = offset_end_in_doc
         self.offset_start = offset_start
         self.offset_end = offset_end
-        self.probability = probability
+        # self.probability = probability
         self.context = context
         self.answer_id = identifier
         self.no_ans_gap = no_ans_gap
@@ -53,7 +53,8 @@ class QASAnswer(QASDocument):
                          query_score=query_score,
                          question=question,
                          meta=meta,
-                         embedding=embedding)
+                         embedding=embedding,
+                         probability=probability)
 
     # TODO: add to uml
     @staticmethod
@@ -62,7 +63,6 @@ class QASAnswer(QASDocument):
         unique_key = ''.join([str(kwargs[x]) for x in unique_key_components]).encode('utf-8')
         unique_hashed_key = hashlib.md5(unique_key).hexdigest()
         return unique_hashed_key
-
 
     # TODO: add to uml
     def serialize(self):

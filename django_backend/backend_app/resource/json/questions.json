@@ -1,9 +1,8 @@
 [
   {"value": null, "text":"Please select a question"},
-  {"value": "Who is the father of Arya Stark?", "text":"Who is the father of Arya Stark?"},
-  {"value": "Who is the mother of Sansa Stark?", "text":"Who is the mother of Sansa Stark?"},
-  {"value": "Who is the mother of dragons?", "text":"Who is the mother of dragons?"},
-  {"value": "Who is the red witch?", "text":"Who is the red witch?"},
-  {"value": "Who is the queen of king's landing?", "text":"Who is the queen of king's landing?"},
-  {"value": "Who is the faceless man?", "text":"Who is the faceless man?"}
+  {"value": "What is Corona?", "text":"What is corona?"},
+  {"value": "What are symptoms of Corona?", "text":"What are symptoms of corona?"},
+  {"value": "Who is within the high risk group?", "text":"Who is within the high risk group?"},
+  {"value": "What caused the virus?", "text":"What caused the virus?"},
+  {"value": "Vaccination against Corona?", "text":"Vaccination against Corona?"}
 ]

@@ -30,6 +30,8 @@ class QASHaystackDatabaseAdapter(QASDatabaseVariant):
             for identifier in identifiers:
                 doc = self.__document_store.get_document_by_id(identifier)
                 docs.append(doc)
+
+            # TODO: checkout docs = self.__document_store.get_documents_by_id(identifiers)
         else:
             docs = self.__document_store.get_all_documents()
 
