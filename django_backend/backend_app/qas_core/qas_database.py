@@ -21,8 +21,11 @@ class QASDatabase:
         self.__loader = loader
 
     # TODO: add params to uml
-    def get_data(self, identifiers: Optional[Union[str, List[str]]] = None) -> List[QASDocument]:
-        return self.__variant.get_data(identifiers)
+    def get_data(self,
+                 identifiers: Optional[Union[str, List[str]]] = None,
+                 query: Optional[Union[str, Dict]] = None
+                 ) -> List[QASDocument]:
+        return self.__variant.get_data(identifiers, query)
 
     def load_data(self):
         loaded, new_data = self.__loader.load_data()

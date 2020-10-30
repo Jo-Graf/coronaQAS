@@ -1,4 +1,4 @@
-from typing import List, Optional, Union
+from typing import List, Optional, Union, Dict
 from haystack.document_store.base import BaseDocumentStore
 from backend_app.qas_core.qas_database_variant import QASDatabaseVariant
 from backend_app.qas_core.qas_document import QASDocument
@@ -20,18 +20,30 @@ class QASHaystackDatabaseAdapter(QASDatabaseVariant):
         self.__document_store.write_documents(dict_list)
 
     # TODO: add params to uml
-    def get_data(self, identifiers: Optional[Union[str, List[str]]] = None) -> List[QASDocument]:
+    def get_data(self,
+                 identifiers: Optional[Union[str, List[str]]] = None,
+                 query: Optional[Union[str, Dict]] = None
+                 ) -> List[QASDocument]:
+
+        if query is not None and identifiers is not None:
+            raise AttributeError('Either identifiers or query can be used as params but not both')
+
         docs = []
-        if identifiers is not None:
+
+        if query is not None:
+            docs = self.__document_store.query(query=str(query))
+
+        elif identifiers is not None:
 
             if type(identifiers) is not list:
                 identifiers = list(identifiers)
 
-            for identifier in identifiers:
-                doc = self.__document_store.get_document_by_id(identifier)
-                docs.append(doc)
+            docs = self.__document_store.get_documents_by_id(identifiers)
 
-            # TODO: checkout docs = self.__document_store.get_documents_by_id(identifiers)
+            # TODO: checkout this version
+            # for identifier in identifiers:
+                # doc = self.__document_store.get_document_by_id(identifier)
+                # docs.append(doc)
         else:
             docs = self.__document_store.get_all_documents()
 

@@ -11,6 +11,9 @@ from backend_app.qas_core.qas_retriever_variant import QASRetrieverVariant
 
 class QASHaystackRetrieverAdapter(QASRetrieverVariant):
 
+    # TODO: add to uml
+    top_k_value = 50
+
     def __init__(self, retriever:  BaseRetriever = None):
         self.__retriever = retriever
 
@@ -26,7 +29,7 @@ class QASHaystackRetrieverAdapter(QASRetrieverVariant):
 
         self.__retriever.document_store = doc_store
 
-        docs = self.__retriever.retrieve(query, top_k=25)
+        docs = self.__retriever.retrieve(query, top_k=QASHaystackRetrieverAdapter.top_k_value)
 
         qas_docs = []
 

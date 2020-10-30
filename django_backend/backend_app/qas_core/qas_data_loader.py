@@ -5,6 +5,7 @@ from backend_app.qas_core.qas_document import QASDocument
 
 
 class QASDataLoader:
+    # TODO: remove source_path and output_path params
     def __init__(self, source_path: str = '', output_path: str = '', variant: Optional[QASDataLoaderVariant] = None):
         self.__variant = variant
         self.__data = None
@@ -21,3 +22,6 @@ class QASDataLoader:
     def load_data(self) -> List[QASDocument]:
         self.data_is_loaded, self.__data = self.__variant.load_data()
         return self.__data
+
+    def get_doc_base_key(self, doc: Optional[QASDocument] = None, key: Optional[str] = None) -> str:
+        return self.__variant.get_doc_base_key(doc, key)

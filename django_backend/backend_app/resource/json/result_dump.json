@@ -1,146 +1,1115 @@
-{
-  "question": "Who is the red witch?",
-  "no_ans_gap": -9.534895420074463,
-  "answers": [
-    {
-      "answer": "Melisandre",
-      "score": 0.795346736907959,
-      "probability": 0.5248341338350121,
-      "context": "er Jon Snow would remain dead or return to life. Fans speculated that Melisandre would be the one to bring back Snow to life, after and before the tit",
-      "offset_start": 70,
-      "offset_end": 80,
-      "offset_start_in_doc": 1053,
-      "offset_end_in_doc": 1063,
-      "document_id": "-ixA4nMBreXvbNGuGruj",
-      "meta": {
-        "name": "69_The_Red_Woman.txt"
-      }
+[
+  {
+    "answer": "moral tension of social distancing",
+    "offset_start_in_doc": 157,
+    "offset_end_in_doc": 191,
+    "offset_start": 58,
+    "offset_end": 92,
+    "context": "spersal from campus. What has instead gnawed at us is the moral tension of social distancing, of living life on Zoom while our instructors work nights",
+    "answer_id": "8b1db84b0b05437d8eee5efa93a292e8",
+    "doc_id": "1e378291bd8f7ebde06b05bc9e2018662196a54a-$-$-4",
+    "no_ans_gap": 4.181997776031494,
+    "text": "",
+    "id": "36c54cca-3edf-4341-8a55-95348b3f9cea",
+    "score": 10.4948148727417,
+    "probability": 0.7878228739206758,
+    "question": "What is the social impact of the virus?",
+    "meta": {
+      "section_count": 2,
+      "title": "Medical Students in the Time of COVID-19",
+      "subtitle": "",
+      "cite_spans": [],
+      "is_doc_meta": false,
+      "is_doc_abstract": false
     },
-    {
-      "answer": "Melisandre",
-      "score": 0.795346736907959,
-      "probability": 0.5248341338350121,
-      "context": "er Jon Snow would remain dead or return to life. Fans speculated that Melisandre would be the one to bring back Snow to life, after and before the tit",
-      "offset_start": 70,
-      "offset_end": 80,
-      "offset_start_in_doc": 1053,
-      "offset_end_in_doc": 1063,
-      "document_id": "9Sxw4nMBreXvbNGulcZY",
-      "meta": {
-        "name": "69_The_Red_Woman.txt"
-      }
+    "embedding": null
+  },
+  {
+    "answer": "Content evaluation",
+    "offset_start_in_doc": 802,
+    "offset_end_in_doc": 820,
+    "offset_start": 66,
+    "offset_end": 84,
+    "context": "assessment of the setting the event has taken or is taking place. Content evaluation includes social, technological, scientific, economic, ethical, an",
+    "answer_id": "27d5b04ba2cdbf1456619687ef0102cc",
+    "doc_id": "1aeeedde5e853bba544852bd1c838a66991ab15b-$-$-9",
+    "no_ans_gap": 4.181997776031494,
+    "text": "",
+    "id": "064fa5e5-c491-4404-bba3-12e52fcb0863",
+    "score": 9.237127304077148,
+    "probability": 0.760357577453647,
+    "question": "What is the social impact of the virus?",
+    "meta": {
+      "section_count": 8,
+      "title": "Turkish Journal of Medical Sciences Global surveillance, travel, and trade during a pandemic",
+      "subtitle": "Risk assessments",
+      "cite_spans": [],
+      "is_doc_meta": false,
+      "is_doc_abstract": false
     },
-    {
-      "answer": "Melisandre",
-      "score": 0.795346736907959,
-      "probability": 0.5248341338350121,
-      "context": "er Jon Snow would remain dead or return to life. Fans speculated that Melisandre would be the one to bring back Snow to life, after and before the tit",
-      "offset_start": 70,
-      "offset_end": 80,
-      "offset_start_in_doc": 1053,
-      "offset_end_in_doc": 1063,
-      "document_id": "EywL4nMBreXvbNGu6YWD",
-      "meta": {
-        "name": "69_The_Red_Woman.txt"
-      }
+    "embedding": null
+  },
+  {
+    "answer": "stress and mental health",
+    "offset_start_in_doc": 628,
+    "offset_end_in_doc": 652,
+    "offset_start": 63,
+    "offset_end": 87,
+    "context": "l-level effects of job loss on physical and mental health, the stress and mental health consequences of social distancing and of the disease itself, i",
+    "answer_id": "2cf30d4867d0ec6e8ad5e9299fc01843",
+    "doc_id": "1ddb8773ccd957c721c6891b563b70d555c1e450-$-$-16",
+    "no_ans_gap": 4.181997776031494,
+    "text": "",
+    "id": "15dc622d-b99f-4790-83a6-88bc36cb7019",
+    "score": 5.594775676727295,
+    "probability": 0.6680429688035892,
+    "question": "What is the social impact of the virus?",
+    "meta": {
+      "section_count": 14,
+      "title": "Population Health in the Time of COVID-19: Confirmations and Revelations",
+      "subtitle": "Unprecedented Collective Action to Protect Health Is Possible",
+      "cite_spans": [
+        {
+          "start": 1027,
+          "end": 1029,
+          "text": "11",
+          "ref_id": "BIBREF10"
+        },
+        {
+          "start": 1058,
+          "end": 1060,
+          "text": "12",
+          "ref_id": "BIBREF11"
+        },
+        {
+          "start": 1254,
+          "end": 1257,
+          "text": "13,",
+          "ref_id": "BIBREF12"
+        },
+        {
+          "start": 1258,
+          "end": 1260,
+          "text": "14",
+          "ref_id": "BIBREF13"
+        }
+      ],
+      "is_doc_meta": false,
+      "is_doc_abstract": false
     },
-    {
-      "answer": "Melisandre",
-      "score": 0.795346736907959,
-      "probability": 0.5248341338350121,
-      "context": "er Jon Snow would remain dead or return to life. Fans speculated that Melisandre would be the one to bring back Snow to life, after and before the tit",
-      "offset_start": 70,
-      "offset_end": 80,
-      "offset_start_in_doc": 1053,
-      "offset_end_in_doc": 1063,
-      "document_id": "Diwb4nMBreXvbNGu85DF",
-      "meta": {
-        "name": "69_The_Red_Woman.txt"
-      }
+    "embedding": null
+  },
+  {
+    "answer": "rapid control of social distance",
+    "offset_start_in_doc": 469,
+    "offset_end_in_doc": 501,
+    "offset_start": 117,
+    "offset_end": 149,
+    "context": "e spread of COVID-19 and Shim, Tariq, Choi, Lee, and Chowell (2020) measuring the outbreak situation by implementing rapid control of social distance.",
+    "answer_id": "c15f5f7e213d2944ec25dffd85b469ba",
+    "doc_id": "1deab8df3df3828b9ce3edfe92d8e01a80101953-$-$-5",
+    "no_ans_gap": 4.181997776031494,
+    "text": "",
+    "id": "03b1fd7b-efda-4f99-875c-f821c5e52577",
+    "score": 4.437817096710205,
+    "probability": 0.6352316259340876,
+    "question": "What is the social impact of the virus?",
+    "meta": {
+      "section_count": 3,
+      "title": "A Methodological Approach for Predicting COVID-19 Epidemic Using EEMD-ANN Hybrid Model A Methodological Approach for Predicting COVID-19 Epidemic Using EEMD-ANN Hybrid Model",
+      "subtitle": "Introduction",
+      "cite_spans": [
+        {
+          "start": 168,
+          "end": 213,
+          "text": "Singh, Singh, Shaikh, Singh, and Misra (2020)",
+          "ref_id": "BIBREF15"
+        },
+        {
+          "start": 286,
+          "end": 306,
+          "text": "Tosepu et al. (2020)",
+          "ref_id": "BIBREF17"
+        },
+        {
+          "start": 364,
+          "end": 419,
+          "text": "COVID-19 and Shim, Tariq, Choi, Lee, and Chowell (2020)",
+          "ref_id": null
+        }
+      ],
+      "is_doc_meta": false,
+      "is_doc_abstract": false
     },
-    {
-      "answer": "Melisandre",
-      "score": 0.795346736907959,
-      "probability": 0.5248341338350121,
-      "context": "er Jon Snow would remain dead or return to life. Fans speculated that Melisandre would be the one to bring back Snow to life, after and before the tit",
-      "offset_start": 70,
-      "offset_end": 80,
-      "offset_start_in_doc": 1053,
-      "offset_end_in_doc": 1063,
-      "document_id": "8Cx54nMBreXvbNGuw9Es",
-      "meta": {
-        "name": "69_The_Red_Woman.txt"
-      }
+    "embedding": null
+  },
+  {
+    "answer": "negative impact on people's health, economic development, and social stability",
+    "offset_start_in_doc": 361,
+    "offset_end_in_doc": 439,
+    "offset_start": 36,
+    "offset_end": 114,
+    "context": "l types of people, which has a huge negative impact on people's health, economic development, and social stability [2] . However, there is still a lac",
+    "answer_id": "c55f771054f3c064ec5659c60f9a60cc",
+    "doc_id": "1a5cecce6d9501303364d68ca549c263e9d08c9c-$-$-4",
+    "no_ans_gap": 4.181997776031494,
+    "text": "",
+    "id": "14b29337-35a9-49b9-a6fb-1b6da80bf646",
+    "score": 4.35208797454834,
+    "probability": 0.632744983525445,
+    "question": "What is the social impact of the virus?",
+    "meta": {
+      "section_count": 0,
+      "title": "Journal Pre-proof Protection against COVID-19 injury by Qingfei Paidu decoction via anti-viral, anti-inflammatory activity and metabolic programming Protection against COVID-19 injury by Qingfei Paidu decoction via anti-viral, anti-inflammatory activity and metabolic programming",
+      "subtitle": "Introduction",
+      "cite_spans": [
+        {
+          "start": 223,
+          "end": 226,
+          "text": "[1]",
+          "ref_id": "BIBREF0"
+        },
+        {
+          "start": 440,
+          "end": 443,
+          "text": "[2]",
+          "ref_id": "BIBREF1"
+        }
+      ],
+      "is_doc_meta": false,
+      "is_doc_abstract": false
     },
-    {
-      "answer": "Melisandre",
-      "score": 0.795346736907959,
-      "probability": 0.5248341338350121,
-      "context": "er Jon Snow would remain dead or return to life. Fans speculated that Melisandre would be the one to bring back Snow to life, after and before the tit",
-      "offset_start": 70,
-      "offset_end": 80,
-      "offset_start_in_doc": 1053,
-      "offset_end_in_doc": 1063,
-      "document_id": "_yw_4nMBreXvbNGuNrAN",
-      "meta": {
-        "name": "69_The_Red_Woman.txt"
-      }
+    "embedding": null
+  },
+  {
+    "answer": "the impact of the network of online social media friendships on the spread of fake news",
+    "offset_start_in_doc": 530,
+    "offset_end_in_doc": 617,
+    "offset_start": 32,
+    "offset_end": 119,
+    "context": "ics of a process? For instance, the impact of the network of online social media friendships on the spread of fake news. On the other hand, network re",
+    "answer_id": "30265b4fa462ab6fc8bcd9ab93083560",
+    "doc_id": "1a5da80edc94f307c03dd0593af105b51c9c2c1e-$-$-2",
+    "no_ans_gap": 4.181997776031494,
+    "text": "",
+    "id": "da785263-e759-4344-bd50-23cd720b1e29",
+    "score": 3.2884202003479004,
+    "probability": 0.6013402277366245,
+    "question": "What is the social impact of the virus?",
+    "meta": {
+      "section_count": 0,
+      "title": "Predicting Dynamics on Networks Hardly Depends on the Topology",
+      "subtitle": "Introduction",
+      "cite_spans": [
+        {
+          "start": 154,
+          "end": 157,
+          "text": "[1]",
+          "ref_id": "BIBREF0"
+        },
+        {
+          "start": 210,
+          "end": 213,
+          "text": "[2]",
+          "ref_id": "BIBREF1"
+        },
+        {
+          "start": 251,
+          "end": 254,
+          "text": "[3]",
+          "ref_id": "BIBREF2"
+        },
+        {
+          "start": 406,
+          "end": 409,
+          "text": "[4,",
+          "ref_id": "BIBREF3"
+        },
+        {
+          "start": 410,
+          "end": 412,
+          "text": "5,",
+          "ref_id": "BIBREF4"
+        },
+        {
+          "start": 413,
+          "end": 415,
+          "text": "6]",
+          "ref_id": "BIBREF5"
+        },
+        {
+          "start": 669,
+          "end": 672,
+          "text": "[7,",
+          "ref_id": "BIBREF6"
+        },
+        {
+          "start": 673,
+          "end": 675,
+          "text": "8,",
+          "ref_id": "BIBREF7"
+        },
+        {
+          "start": 676,
+          "end": 678,
+          "text": "9,",
+          "ref_id": "BIBREF8"
+        },
+        {
+          "start": 679,
+          "end": 682,
+          "text": "10]",
+          "ref_id": "BIBREF9"
+        }
+      ],
+      "is_doc_meta": false,
+      "is_doc_abstract": false
     },
-    {
-      "answer": "Melisandre",
-      "score": 0.795346736907959,
-      "probability": 0.5248341338350121,
-      "context": "er Jon Snow would remain dead or return to life. Fans speculated that Melisandre would be the one to bring back Snow to life, after and before the tit",
-      "offset_start": 70,
-      "offset_end": 80,
-      "offset_start_in_doc": 1053,
-      "offset_end_in_doc": 1063,
-      "document_id": "BCw04nMBreXvbNGuCaZQ",
-      "meta": {
-        "name": "69_The_Red_Woman.txt"
-      }
+    "embedding": null
+  },
+  {
+    "answer": "How does social pressure affect decisions",
+    "offset_start_in_doc": 347,
+    "offset_end_in_doc": 388,
+    "offset_start": 60,
+    "offset_end": 101,
+    "context": "uring an epidemic. What are laypersons\u00d5 decisions based on? How does social pressure affect decisions? What motivates active searching of information?",
+    "answer_id": "82ec8fb327744a164d94db643b808bdf",
+    "doc_id": "1f26a27ef199662ad4b8648b40442f0d951b81ec-$-$-29",
+    "no_ans_gap": 4.181997776031494,
+    "text": "",
+    "id": "85216b4b-318a-4a5e-b3d0-72ff81c0af56",
+    "score": 3.0064752101898193,
+    "probability": 0.5928619851984057,
+    "question": "What is the social impact of the virus?",
+    "meta": {
+      "section_count": 27,
+      "title": "A framework for capturing the interactions between laypersons\u00d5 understanding of disease, information gathering behaviors, and actions taken during an epidemic",
+      "subtitle": "Informational, lay understanding, social, and emotional influences on actions",
+      "cite_spans": [],
+      "is_doc_meta": false,
+      "is_doc_abstract": false
     },
-    {
-      "answer": "Melisandre",
-      "score": 0.795346736907959,
-      "probability": 0.5248341338350121,
-      "context": "er Jon Snow would remain dead or return to life. Fans speculated that Melisandre would be the one to bring back Snow to life, after and before the tit",
-      "offset_start": 70,
-      "offset_end": 80,
-      "offset_start_in_doc": 1053,
-      "offset_end_in_doc": 1063,
-      "document_id": "CSww4nMBreXvbNGuhJsa",
-      "meta": {
-        "name": "69_The_Red_Woman.txt"
-      }
+    "embedding": null
+  },
+  {
+    "answer": "What types of tests are available and what types of tests are coming? (3) How will the availability of these tests impact probabilities of serious risk",
+    "offset_start_in_doc": 67,
+    "offset_end_in_doc": 218,
+    "offset_start": 1,
+    "offset_end": 152,
+    "context": " What types of tests are available and what types of tests are coming? (3) How will the availability of these tests impact probabilities of serious risk",
+    "answer_id": "5b8a9ef446a7e11349d1575d82e82b7e",
+    "doc_id": "1f9a1e98b42ca167e9f0b8d7f4ea40df0770bc55-$-$-4",
+    "no_ans_gap": 4.181997776031494,
+    "text": "",
+    "id": "e6b1186d-dfad-42fb-ab8c-d5d53b88e10d",
+    "score": 2.4774177074432373,
+    "probability": 0.5768064706371973,
+    "question": "What is the social impact of the virus?",
+    "meta": {
+      "section_count": 3,
+      "title": "",
+      "subtitle": "",
+      "cite_spans": [],
+      "is_doc_meta": false,
+      "is_doc_abstract": false
     },
-    {
-      "answer": "Melisandre",
-      "score": 0.795346736907959,
-      "probability": 0.5248341338350121,
-      "context": "er Jon Snow would remain dead or return to life. Fans speculated that Melisandre would be the one to bring back Snow to life, after and before the tit",
-      "offset_start": 70,
-      "offset_end": 80,
-      "offset_start_in_doc": 1053,
-      "offset_end_in_doc": 1063,
-      "document_id": "9GIOG3QB7VlRhbqQXQDW",
-      "meta": {
-        "name": "69_The_Red_Woman.txt"
-      }
+    "embedding": null
+  },
+  {
+    "answer": "Social distancing and stay-at-home orders have had a significant impact on the pandemic, reducing the number of cases and deaths",
+    "offset_start_in_doc": 0,
+    "offset_end_in_doc": 128,
+    "offset_start": 0,
+    "offset_end": 128,
+    "context": "Social distancing and stay-at-home orders have had a significant impact on the pandemic, reducing the number of cases and deaths. But there are undoub",
+    "answer_id": "08448d073831a28e5b087780022a3f77",
+    "doc_id": "1ddb8773ccd957c721c6891b563b70d555c1e450-$-$-16",
+    "no_ans_gap": 4.181997776031494,
+    "text": "",
+    "id": "dfdcd016-fbf6-44f2-9cbf-9051aa2cba2a",
+    "score": 2.444993495941162,
+    "probability": 0.5758168170557703,
+    "question": "What is the social impact of the virus?",
+    "meta": {
+      "section_count": 14,
+      "title": "Population Health in the Time of COVID-19: Confirmations and Revelations",
+      "subtitle": "Unprecedented Collective Action to Protect Health Is Possible",
+      "cite_spans": [
+        {
+          "start": 1027,
+          "end": 1029,
+          "text": "11",
+          "ref_id": "BIBREF10"
+        },
+        {
+          "start": 1058,
+          "end": 1060,
+          "text": "12",
+          "ref_id": "BIBREF11"
+        },
+        {
+          "start": 1254,
+          "end": 1257,
+          "text": "13,",
+          "ref_id": "BIBREF12"
+        },
+        {
+          "start": 1258,
+          "end": 1260,
+          "text": "14",
+          "ref_id": "BIBREF13"
+        }
+      ],
+      "is_doc_meta": false,
+      "is_doc_abstract": false
     },
-    {
-      "answer": "Melisandre",
-      "score": 0.795346736907959,
-      "probability": 0.5248341338350121,
-      "context": "er Jon Snow would remain dead or return to life. Fans speculated that Melisandre would be the one to bring back Snow to life, after and before the tit",
-      "offset_start": 70,
-      "offset_end": 80,
-      "offset_start_in_doc": 1053,
-      "offset_end_in_doc": 1063,
-      "document_id": "6ywy53MBreXvbNGuwtyZ",
-      "meta": {
-        "name": "69_The_Red_Woman.txt"
-      }
-    }
-  ]
-}
+    "embedding": null
+  },
+  {
+    "answer": "infectious diseases are not only medical but also social events, it is reasonable to involve social factors when making forecasts",
+    "offset_start_in_doc": 228,
+    "offset_end_in_doc": 357,
+    "offset_start": 11,
+    "offset_end": 140,
+    "context": "ore, since infectious diseases are not only medical but also social events, it is reasonable to involve social factors when making forecasts. Recently",
+    "answer_id": "69becee0ba36bb10159f275545907425",
+    "doc_id": "1a9aeddd90df93ce9f49bb2facb0729da8a890b1-$-$-3",
+    "no_ans_gap": 4.181997776031494,
+    "text": "",
+    "id": "9cf24409-025a-4444-a3af-d55899c11f0f",
+    "score": 2.1679141521453857,
+    "probability": 0.5673357529288271,
+    "question": "What is the social impact of the virus?",
+    "meta": {
+      "abstract_count": 2,
+      "title": "Multivariate time series analysis on the dynamic relationship between Class B notifiable diseases and gross domestic product (GDP) in China",
+      "subtitle": "Abstract",
+      "cite_spans": [],
+      "is_doc_meta": false,
+      "is_doc_abstract": true
+    },
+    "embedding": null
+  },
+  {
+    "answer": "public psychological tolerance, natural environment",
+    "offset_start_in_doc": 901,
+    "offset_end_in_doc": 952,
+    "offset_start": 88,
+    "offset_end": 139,
+    "context": "lity, population distribution, knowledge on diseases, research capacity, social impact, public psychological tolerance, natural environment, etc [3] .",
+    "answer_id": "99b5c91a683ea0c746c7ab9fe0e0adc3",
+    "doc_id": "01d99e8f6fdd7ee7dd7dd25533f2bcd7e7c77a6f-$-$-2",
+    "no_ans_gap": 4.181997776031494,
+    "text": "",
+    "id": "d5949911-5551-419f-8cc2-b6545bbf2a94",
+    "score": 1.3718841075897217,
+    "probability": 0.5427666255107059,
+    "question": "What is the social impact of the virus?",
+    "meta": {
+      "section_count": 0,
+      "title": "International Journal of Antimicrobial Agents Complex emergencies of COVID-19: management and experience in Zhuhai, China",
+      "subtitle": "COVID-19 emergency in China",
+      "cite_spans": [
+        {
+          "start": 85,
+          "end": 88,
+          "text": "[1]",
+          "ref_id": "BIBREF0"
+        },
+        {
+          "start": 521,
+          "end": 524,
+          "text": "[2]",
+          "ref_id": null
+        },
+        {
+          "start": 958,
+          "end": 961,
+          "text": "[3]",
+          "ref_id": "BIBREF2"
+        }
+      ],
+      "is_doc_meta": false,
+      "is_doc_abstract": false
+    },
+    "embedding": null
+  },
+  {
+    "answer": "Do schools have capacity and a willingness to dramatically increase space available for testing",
+    "offset_start_in_doc": 525,
+    "offset_end_in_doc": 620,
+    "offset_start": 28,
+    "offset_end": 123,
+    "context": "ncing on available seats? \u2022 Do schools have capacity and a willingness to dramatically increase space available for testing? \u2022 Can sufficient numbers ",
+    "answer_id": "a344b6aa2e2ee69cd265bf5c799f1702",
+    "doc_id": "1d1ae7930c69f897d0a80f5e073c3e7a0eafd3ee-$-$-30",
+    "no_ans_gap": 4.181997776031494,
+    "text": "",
+    "id": "a664c468-1817-4154-86a8-73a93726b126",
+    "score": 0.9973411560058594,
+    "probability": 0.5311266073637626,
+    "question": "What is the social impact of the virus?",
+    "meta": {
+      "section_count": 28,
+      "title": "Never Let a Crisis Go to Waste: Large-Scale Assessment and the Response to COVID-19",
+      "subtitle": "ACT and SAT",
+      "cite_spans": [],
+      "is_doc_meta": false,
+      "is_doc_abstract": false
+    },
+    "embedding": null
+  },
+  {
+    "answer": "propor tion of infected individuals have mild symptoms",
+    "offset_start_in_doc": 96,
+    "offset_end_in_doc": 150,
+    "offset_start": 48,
+    "offset_end": 102,
+    "context": "e impact of social distancing measures are what propor tion of infected individuals have mild symptoms and whether these individuals will selfisolate ",
+    "answer_id": "86d15fc02bb63dc158758d5004505866",
+    "doc_id": "1f7a4b8bbccbd085b8f7f45509f049523db6feb5-$-$-11",
+    "no_ans_gap": 4.181997776031494,
+    "text": "",
+    "id": "24c4ddc8-cae3-4d24-8643-3ff14b538fce",
+    "score": 0.7312509417533875,
+    "probability": 0.5228356945549874,
+    "question": "What is the social impact of the virus?",
+    "meta": {
+      "section_count": 10,
+      "title": "",
+      "subtitle": "How will country-based mitigation measures influence the course of the COVID-19 epidemic?",
+      "cite_spans": [],
+      "is_doc_meta": false,
+      "is_doc_abstract": false
+    },
+    "embedding": null
+  },
+  {
+    "answer": "loneliness needs to be connected in some way to the (social) environment and not just to a subjective evaluation (satisfaction) or perception of the social network and/or social interaction",
+    "offset_start_in_doc": 953,
+    "offset_end_in_doc": 1142,
+    "offset_start": 1,
+    "offset_end": 190,
+    "context": " loneliness needs to be connected in some way to the (social) environment and not just to a subjective evaluation (satisfaction) or perception of the social network and/or social interaction",
+    "answer_id": "fe8eaffbd441abb6b10a1dfadb446a05",
+    "doc_id": "1dde71bf2e9c9f0d94ef65ec5fd4ff993a8dc602-$-$-4",
+    "no_ans_gap": 4.181997776031494,
+    "text": "",
+    "id": "6031156e-4c5b-4b8d-a064-151ff599619b",
+    "score": 0.5006154179573059,
+    "probability": 0.5156391287422405,
+    "question": "What is the social impact of the virus?",
+    "meta": {
+      "section_count": 2,
+      "title": "Compliance with Ethical Standards",
+      "subtitle": "Introduction",
+      "cite_spans": [
+        {
+          "start": 38,
+          "end": 59,
+          "text": "(Cacioppo et al. 2006",
+          "ref_id": "BIBREF10"
+        },
+        {
+          "start": 60,
+          "end": 83,
+          "text": "(Cacioppo et al. , 2014",
+          "ref_id": "BIBREF11"
+        },
+        {
+          "start": 419,
+          "end": 440,
+          "text": "(Hawkley et al. 2008;",
+          "ref_id": "BIBREF26"
+        },
+        {
+          "start": 441,
+          "end": 467,
+          "text": "Hawkley and Cacioppo 2010)",
+          "ref_id": "BIBREF25"
+        }
+      ],
+      "is_doc_meta": false,
+      "is_doc_abstract": false
+    },
+    "embedding": null
+  },
+  {
+    "answer": "microaggressions",
+    "offset_start_in_doc": 208,
+    "offset_end_in_doc": 224,
+    "offset_start": 67,
+    "offset_end": 83,
+    "context": "d, rejected, excluded, ostracized, discriminated and to experience microaggressions (Lui & Quezada, 2019; Major et al., 2018; Major & O'Brien, 2005; R",
+    "answer_id": "330462affb8be0e628229a1d6f7c6c32",
+    "doc_id": "1c650e0c6d4b9366fbd819a15728c1e9ee9b0a72-$-$-61",
+    "no_ans_gap": 4.181997776031494,
+    "text": "",
+    "id": "ea78ea80-e7d0-42fe-b3ff-fb21d65aaae9",
+    "score": 0.1367233395576477,
+    "probability": 0.5042725003681805,
+    "question": "What is the social impact of the virus?",
+    "meta": {
+      "section_count": 59,
+      "title": "ASSOCIATION FOR The Negative Implications of Being Tolerated: Tolerance From the Target's Perspective",
+      "subtitle": "Conclusion",
+      "cite_spans": [
+        {
+          "start": 225,
+          "end": 246,
+          "text": "(Lui & Quezada, 2019;",
+          "ref_id": "BIBREF61"
+        },
+        {
+          "start": 247,
+          "end": 266,
+          "text": "Major et al., 2018;",
+          "ref_id": "BIBREF64"
+        },
+        {
+          "start": 267,
+          "end": 289,
+          "text": "Major & O'Brien, 2005;",
+          "ref_id": "BIBREF68"
+        },
+        {
+          "start": 290,
+          "end": 312,
+          "text": "Richman & Leary, 2009)",
+          "ref_id": "BIBREF95"
+        },
+        {
+          "start": 380,
+          "end": 400,
+          "text": "(Bagci et al., 2020;",
+          "ref_id": "BIBREF3"
+        },
+        {
+          "start": 401,
+          "end": 453,
+          "text": "Cvetkovska, Verkuyten, Adelman, & Yogeeswaran, 2020)",
+          "ref_id": "BIBREF19"
+        }
+      ],
+      "is_doc_meta": false,
+      "is_doc_abstract": false
+    },
+    "embedding": null
+  },
+  {
+    "answer": "Identifying disease is only one component of this social practice, and may not be required in many cases. The act of diagnosis always has its social purposes and implications",
+    "offset_start_in_doc": 1802,
+    "offset_end_in_doc": 1976,
+    "offset_start": 0,
+    "offset_end": 174,
+    "context": "Identifying disease is only one component of this social practice, and may not be required in many cases. The act of diagnosis always has its social purposes and implications",
+    "answer_id": "15cb3c7b9fc83ed52f23499b41e7e98f",
+    "doc_id": "1eb35b941f7e07060926dbac6e49c295e1fbfa88-$-$-46",
+    "no_ans_gap": 4.181997776031494,
+    "text": "",
+    "id": "7c4e2af3-a39d-42f2-9f95-55fd3187a92b",
+    "score": 0.004645869135856628,
+    "probability": 0.5001451834064152,
+    "question": "What is the social impact of the virus?",
+    "meta": {
+      "section_count": 44,
+      "title": "Retrospective diagnosis of a famous historical figure: ontological, epistemic, and ethical considerations",
+      "subtitle": "Ethical justification",
+      "cite_spans": [
+        {
+          "start": 169,
+          "end": 173,
+          "text": "[19]",
+          "ref_id": "BIBREF18"
+        },
+        {
+          "start": 187,
+          "end": 191,
+          "text": "[20]",
+          "ref_id": "BIBREF19"
+        },
+        {
+          "start": 211,
+          "end": 215,
+          "text": "[43]",
+          "ref_id": "BIBREF42"
+        },
+        {
+          "start": 484,
+          "end": 488,
+          "text": "[44]",
+          "ref_id": "BIBREF43"
+        },
+        {
+          "start": 2306,
+          "end": 2310,
+          "text": "[20]",
+          "ref_id": "BIBREF19"
+        }
+      ],
+      "is_doc_meta": false,
+      "is_doc_abstract": false
+    },
+    "embedding": null
+  },
+  {
+    "answer": "the uncertainty and the novel nature of COVID19 means that what may appear as 'rumour",
+    "offset_start_in_doc": 186,
+    "offset_end_in_doc": 271,
+    "offset_start": 33,
+    "offset_end": 118,
+    "context": " virus itself. At the same time, the uncertainty and the novel nature of COVID19 means that what may appear as 'rumour' -a yet unverified piece of inf",
+    "answer_id": "13b35d72077107a17546f895e286fe1a",
+    "doc_id": "1d47a126e59fc3104e38f4cddee225a1ec6c9ecd-$-$-3",
+    "no_ans_gap": 4.181997776031494,
+    "text": "",
+    "id": "34afab10-6afe-4628-99a4-8db22cb1882d",
+    "score": -0.014884024858474731,
+    "probability": 0.49953487435734095,
+    "question": "What is the social impact of the virus?",
+    "meta": {
+      "section_count": 1,
+      "title": "COMMent Nature reviews | Immunology",
+      "subtitle": "",
+      "cite_spans": [],
+      "is_doc_meta": false,
+      "is_doc_abstract": false
+    },
+    "embedding": null
+  },
+  {
+    "answer": "influences from their social environment",
+    "offset_start_in_doc": 1479,
+    "offset_end_in_doc": 1519,
+    "offset_start": 55,
+    "offset_end": 95,
+    "context": " are acting in the midst of their society with all the influences from their social environment, including religion, culture, science, and technologie",
+    "answer_id": "aac577cc3714ea76fcb3f3796a1f6a41",
+    "doc_id": "1eb35b941f7e07060926dbac6e49c295e1fbfa88-$-$-46",
+    "no_ans_gap": 4.181997776031494,
+    "text": "",
+    "id": "ad34cb62-f14d-4778-a72e-3cac4fea2cef",
+    "score": -0.3920102119445801,
+    "probability": 0.4877521315007001,
+    "question": "What is the social impact of the virus?",
+    "meta": {
+      "section_count": 44,
+      "title": "Retrospective diagnosis of a famous historical figure: ontological, epistemic, and ethical considerations",
+      "subtitle": "Ethical justification",
+      "cite_spans": [
+        {
+          "start": 169,
+          "end": 173,
+          "text": "[19]",
+          "ref_id": "BIBREF18"
+        },
+        {
+          "start": 187,
+          "end": 191,
+          "text": "[20]",
+          "ref_id": "BIBREF19"
+        },
+        {
+          "start": 211,
+          "end": 215,
+          "text": "[43]",
+          "ref_id": "BIBREF42"
+        },
+        {
+          "start": 484,
+          "end": 488,
+          "text": "[44]",
+          "ref_id": "BIBREF43"
+        },
+        {
+          "start": 2306,
+          "end": 2310,
+          "text": "[20]",
+          "ref_id": "BIBREF19"
+        }
+      ],
+      "is_doc_meta": false,
+      "is_doc_abstract": false
+    },
+    "embedding": null
+  },
+  {
+    "answer": "quarantine, social distancing, and isolation of infected populations",
+    "offset_start_in_doc": 38,
+    "offset_end_in_doc": 106,
+    "offset_start": 38,
+    "offset_end": 106,
+    "context": "What has happened in China shows that quarantine, social distancing, and isolation of infected populations can contain the epidemic. 1 This impact of ",
+    "answer_id": "e0088be6877393ca2e0a73e737a9ae6f",
+    "doc_id": "1f7a4b8bbccbd085b8f7f45509f049523db6feb5-$-$-2",
+    "no_ans_gap": 4.181997776031494,
+    "text": "",
+    "id": "a2b4813c-0961-4877-958d-60ba9909c545",
+    "score": -0.538386344909668,
+    "probability": 0.4831817738058024,
+    "question": "What is the social impact of the virus?",
+    "meta": {
+      "section_count": 1,
+      "title": "",
+      "subtitle": "How will country-based mitigation measures influence the course of the COVID-19 epidemic?",
+      "cite_spans": [
+        {
+          "start": 133,
+          "end": 134,
+          "text": "1",
+          "ref_id": "BIBREF0"
+        }
+      ],
+      "is_doc_meta": false,
+      "is_doc_abstract": false
+    },
+    "embedding": null
+  },
+  {
+    "answer": "positively both, the economic and environmental performances",
+    "offset_start_in_doc": 45,
+    "offset_end_in_doc": 105,
+    "offset_start": 45,
+    "offset_end": 105,
+    "context": "Brazilian executives agreed that RLC affects positively both, the economic and environmental performances of organizations. What reveals an optimism f",
+    "answer_id": "ac95ae3161296f8fab9237fb6ddbb07b",
+    "doc_id": "1b7a0ed8e9271b6b25b12d56c58fe6b711f98fcb-$-$-66",
+    "no_ans_gap": 4.181997776031494,
+    "text": "",
+    "id": "7b19d04f-70c8-4667-80c1-2fd59196e6c6",
+    "score": -0.699664831161499,
+    "probability": 0.47814940004178835,
+    "question": "What is the social impact of the virus?",
+    "meta": {
+      "section_count": 64,
+      "title": "The effect of collaboration and IT competency on reverse logistics competency -Evidence from Brazilian supply chain executives",
+      "subtitle": "Discussion",
+      "cite_spans": [],
+      "is_doc_meta": false,
+      "is_doc_abstract": false
+    },
+    "embedding": null
+  },
+  {
+    "answer": "loneliness arises with relationship quality decay and motivates us to invest time and effort to restore social bonds",
+    "offset_start_in_doc": 202,
+    "offset_end_in_doc": 318,
+    "offset_start": 17,
+    "offset_end": 133,
+    "context": "ationale is that loneliness arises with relationship quality decay and motivates us to invest time and effort to restore social bonds. Although relati",
+    "answer_id": "777c05312846f0c1e188c7ca19e40dcc",
+    "doc_id": "1dde71bf2e9c9f0d94ef65ec5fd4ff993a8dc602-$-$-4",
+    "no_ans_gap": 4.181997776031494,
+    "text": "",
+    "id": "ae512b5b-ec65-4c3e-9e62-a898c01e5882",
+    "score": -1.2603272199630737,
+    "probability": 0.46069603164771206,
+    "question": "What is the social impact of the virus?",
+    "meta": {
+      "section_count": 2,
+      "title": "Compliance with Ethical Standards",
+      "subtitle": "Introduction",
+      "cite_spans": [
+        {
+          "start": 38,
+          "end": 59,
+          "text": "(Cacioppo et al. 2006",
+          "ref_id": "BIBREF10"
+        },
+        {
+          "start": 60,
+          "end": 83,
+          "text": "(Cacioppo et al. , 2014",
+          "ref_id": "BIBREF11"
+        },
+        {
+          "start": 419,
+          "end": 440,
+          "text": "(Hawkley et al. 2008;",
+          "ref_id": "BIBREF26"
+        },
+        {
+          "start": 441,
+          "end": 467,
+          "text": "Hawkley and Cacioppo 2010)",
+          "ref_id": "BIBREF25"
+        }
+      ],
+      "is_doc_meta": false,
+      "is_doc_abstract": false
+    },
+    "embedding": null
+  },
+  {
+    "answer": "assess impact of lockdown on the musculoskeletal system",
+    "offset_start_in_doc": 409,
+    "offset_end_in_doc": 464,
+    "offset_start": 48,
+    "offset_end": 103,
+    "context": "ential loss of adherence. Moreover, we aimed to assess impact of lockdown on the musculoskeletal system, and to collect psychosocial aspects of the st",
+    "answer_id": "d43b15efa04fe51b8d2120363dcbbd15",
+    "doc_id": "1d954dc5ba8ce48fd5538649be97ea1d99aa8452-$-$-13",
+    "no_ans_gap": 4.181997776031494,
+    "text": "",
+    "id": "bd8c2396-9987-4637-aeaf-cbc934612c92",
+    "score": -1.8428720235824585,
+    "probability": 0.4426635730522082,
+    "question": "What is the social impact of the virus?",
+    "meta": {
+      "section_count": 4,
+      "title": "",
+      "subtitle": "Introduction",
+      "cite_spans": [],
+      "is_doc_meta": false,
+      "is_doc_abstract": false
+    },
+    "embedding": null
+  },
+  {
+    "answer": "strengthen or weaken",
+    "offset_start_in_doc": 316,
+    "offset_end_in_doc": 336,
+    "offset_start": 65,
+    "offset_end": 85,
+    "context": "ted as well as individual differences and social conditions that strengthen or weaken this impact. The experience of being tolerated will not be the s",
+    "answer_id": "423e1d531123e9f88b9e9e2dfa2c04a8",
+    "doc_id": "1c650e0c6d4b9366fbd819a15728c1e9ee9b0a72-$-$-58",
+    "no_ans_gap": 4.181997776031494,
+    "text": "",
+    "id": "e7c407aa-3090-4c56-b942-c4c8c5206fde",
+    "score": -2.119802713394165,
+    "probability": 0.4341410553372308,
+    "question": "What is the social impact of the virus?",
+    "meta": {
+      "section_count": 56,
+      "title": "ASSOCIATION FOR The Negative Implications of Being Tolerated: Tolerance From the Target's Perspective",
+      "subtitle": "Discussion",
+      "cite_spans": [],
+      "is_doc_meta": false,
+      "is_doc_abstract": false
+    },
+    "embedding": null
+  },
+  {
+    "answer": "social distancing 18 is likely to be higher than the excess deaths generated by the economic slowdown",
+    "offset_start_in_doc": 418,
+    "offset_end_in_doc": 519,
+    "offset_start": 25,
+    "offset_end": 126,
+    "context": "prevented as a result of social distancing 18 is likely to be higher than the excess deaths generated by the economic slowdown. We will have much to a",
+    "answer_id": "e1124fb24a50b7b21aad38cac3d6c201",
+    "doc_id": "1ddb8773ccd957c721c6891b563b70d555c1e450-$-$-17",
+    "no_ans_gap": 4.181997776031494,
+    "text": "",
+    "id": "4540d74f-03a3-4917-a0fd-e21baf1ce8e8",
+    "score": -2.1311888694763184,
+    "probability": 0.43379144407951836,
+    "question": "What is the social impact of the virus?",
+    "meta": {
+      "section_count": 15,
+      "title": "Population Health in the Time of COVID-19: Confirmations and Revelations",
+      "subtitle": "Unprecedented Collective Action to Protect Health Is Possible",
+      "cite_spans": [
+        {
+          "start": 327,
+          "end": 329,
+          "text": "17",
+          "ref_id": "BIBREF16"
+        }
+      ],
+      "is_doc_meta": false,
+      "is_doc_abstract": false
+    },
+    "embedding": null
+  },
+  {
+    "answer": "dual practice",
+    "offset_start_in_doc": 65,
+    "offset_end_in_doc": 78,
+    "offset_start": 65,
+    "offset_end": 78,
+    "context": "Finally, there is a gap of research that establish the impact of dual practice at the policy level-what is its impact on participation rates, overall ",
+    "answer_id": "43de97719bf6d3cfce12629fcce31107",
+    "doc_id": "1de438fe6e455f606c21b859df1769e2807c3546-$-$-44",
+    "no_ans_gap": 4.181997776031494,
+    "text": "",
+    "id": "f848d0ac-5310-44b8-9ca0-eeadda7f867d",
+    "score": -2.301109552383423,
+    "probability": 0.42858205188691906,
+    "question": "What is the social impact of the virus?",
+    "meta": {
+      "section_count": 42,
+      "title": "Understanding nurses' dual practice: a scoping review of what we know and what we still need to ask on nurses holding multiple jobs",
+      "subtitle": "Discussion",
+      "cite_spans": [],
+      "is_doc_meta": false,
+      "is_doc_abstract": false
+    },
+    "embedding": null
+  },
+  {
+    "answer": "moderate the impact of being tolerated for minority outcomes",
+    "offset_start_in_doc": 698,
+    "offset_end_in_doc": 758,
+    "offset_start": 45,
+    "offset_end": 105,
+    "context": "ergroup levels and consider factors that may moderate the impact of being tolerated for minority outcomes. Taken together, this work provides the firs",
+    "answer_id": "85b3b6c90bd9fa3b9bcfd9025c909136",
+    "doc_id": "1c650e0c6d4b9366fbd819a15728c1e9ee9b0a72-$-$-1",
+    "no_ans_gap": 4.181997776031494,
+    "text": "",
+    "id": "93b3a683-9514-48d7-b493-1cd820b1714f",
+    "score": -2.930997848510742,
+    "probability": 0.4094173039354477,
+    "question": "What is the social impact of the virus?",
+    "meta": {
+      "abstract_count": 0,
+      "title": "ASSOCIATION FOR The Negative Implications of Being Tolerated: Tolerance From the Target's Perspective",
+      "subtitle": "Abstract",
+      "cite_spans": [],
+      "is_doc_meta": false,
+      "is_doc_abstract": true
+    },
+    "embedding": null
+  },
+  {
+    "answer": "medical diagnoses are fundamentally a social construction, and a disease or a disease concept does not exist independently from the act of diagnosing in a particular historical time and place. In this sense, I respectfully disagree with Mitchell [44] , who contrasts between historical diagnosis as \"social diagnosis\" on one hand, and contemporary diagnosis as \"biological diagnosis\" on the other. With Cunningham, and against Mitchell, I would submit that every diagnosis, whether historical or contemporary, including those diagnoses using modern bioscientific technologies, which Mitchell is ready to classify as \"biological diagnosis\", is still a social construction",
+    "offset_start_in_doc": 238,
+    "offset_end_in_doc": 908,
+    "offset_start": 0,
+    "offset_end": 670,
+    "context": "medical diagnoses are fundamentally a social construction, and a disease or a disease concept does not exist independently from the act of diagnosing in a particular historical time and place. In this sense, I respectfully disagree with Mitchell [44] , who contrasts between historical diagnosis as \"social diagnosis\" on one hand, and contemporary diagnosis as \"biological diagnosis\" on the other. With Cunningham, and against Mitchell, I would submit that every diagnosis, whether historical or contemporary, including those diagnoses using modern bioscientific technologies, which Mitchell is ready to classify as \"biological diagnosis\", is still a social construction",
+    "answer_id": "46bf3412c66953abd6a6806b482593de",
+    "doc_id": "1eb35b941f7e07060926dbac6e49c295e1fbfa88-$-$-46",
+    "no_ans_gap": 4.181997776031494,
+    "text": "",
+    "id": "fa329a2e-25d3-409e-a67a-4936956c2e69",
+    "score": -2.9580483436584473,
+    "probability": 0.408599971504507,
+    "question": "What is the social impact of the virus?",
+    "meta": {
+      "section_count": 44,
+      "title": "Retrospective diagnosis of a famous historical figure: ontological, epistemic, and ethical considerations",
+      "subtitle": "Ethical justification",
+      "cite_spans": [
+        {
+          "start": 169,
+          "end": 173,
+          "text": "[19]",
+          "ref_id": "BIBREF18"
+        },
+        {
+          "start": 187,
+          "end": 191,
+          "text": "[20]",
+          "ref_id": "BIBREF19"
+        },
+        {
+          "start": 211,
+          "end": 215,
+          "text": "[43]",
+          "ref_id": "BIBREF42"
+        },
+        {
+          "start": 484,
+          "end": 488,
+          "text": "[44]",
+          "ref_id": "BIBREF43"
+        },
+        {
+          "start": 2306,
+          "end": 2310,
+          "text": "[20]",
+          "ref_id": "BIBREF19"
+        }
+      ],
+      "is_doc_meta": false,
+      "is_doc_abstract": false
+    },
+    "embedding": null
+  },
+  {
+    "answer": "modified impact inventory to list a set of key health and social consequences to consider when evaluating the cost effectiveness of policy responses",
+    "offset_start_in_doc": 1005,
+    "offset_end_in_doc": 1153,
+    "offset_start": 1,
+    "offset_end": 149,
+    "context": " modified impact inventory to list a set of key health and social consequences to consider when evaluating the cost effectiveness of policy responses ",
+    "answer_id": "e2472ef50152958edf5761543d509c20",
+    "doc_id": "0fffe93c6beff3e0f5a47b14b81debc94898845e-$-$-32",
+    "no_ans_gap": 4.181997776031494,
+    "text": "",
+    "id": "9018004d-6e10-4339-a816-3a63235e296f",
+    "score": -5.480228900909424,
+    "probability": 0.3351398940685983,
+    "question": "What is the social impact of the virus?",
+    "meta": {
+      "section_count": 29,
+      "title": "Perspective and Costing in Cost-Effectiveness Analysis, 1974-2018",
+      "subtitle": "Discussion",
+      "cite_spans": [
+        {
+          "start": 392,
+          "end": 396,
+          "text": "[14]",
+          "ref_id": "BIBREF13"
+        },
+        {
+          "start": 702,
+          "end": 706,
+          "text": "[45]",
+          "ref_id": "BIBREF43"
+        },
+        {
+          "start": 1194,
+          "end": 1198,
+          "text": "[46]",
+          "ref_id": "BIBREF44"
+        }
+      ],
+      "is_doc_meta": false,
+      "is_doc_abstract": false
+    },
+    "embedding": null
+  },
+  {
+    "answer": "Data Science",
+    "offset_start_in_doc": 329,
+    "offset_end_in_doc": 341,
+    "offset_start": 69,
+    "offset_end": 81,
+    "context": "s licence for data, and MIT License for Code, with copyright for the Data Science for Social Impact research group at the University of Pretoria, Sout",
+    "answer_id": "a92328f16e4eafab19d6a7141310e5cf",
+    "doc_id": "1a102c54ce239b21b2b2ced7fb340c6c2d6c4917-$-$-8",
+    "no_ans_gap": 4.181997776031494,
+    "text": "",
+    "id": "9a70b3ac-3e76-44ea-b524-546f3fb845a6",
+    "score": -6.742997169494629,
+    "probability": 0.30092969591513596,
+    "question": "What is the social impact of the virus?",
+    "meta": {
+      "section_count": 6,
+      "title": "Use of Available Data To Inform The COVID-19 Outbreak in South Africa: A Case Study",
+      "subtitle": "Aims and Methodology",
+      "cite_spans": [
+        {
+          "start": 419,
+          "end": 422,
+          "text": "[5]",
+          "ref_id": null
+        },
+        {
+          "start": 548,
+          "end": 551,
+          "text": "[6]",
+          "ref_id": "BIBREF5"
+        }
+      ],
+      "is_doc_meta": false,
+      "is_doc_abstract": false
+    },
+    "embedding": null
+  }
+]

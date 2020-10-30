@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-from typing import List
+from typing import List, Optional
 
 from haystack import Document
 
@@ -18,7 +18,7 @@ class QASCORD19DataLoaderVariant(QASDataLoaderVariant):
 
         clean_func = None
 
-        file_paths = [p for p in Path(self._source_path).glob("**/*")][:2500]
+        file_paths = [p for p in Path(self._source_path).glob("**/*")][:10000]
 
         documents = []
 
@@ -124,21 +124,20 @@ class QASCORD19DataLoaderVariant(QASDataLoaderVariant):
     @staticmethod
     def _cut_bib_ref(bib_entries: list):
 
-        if bib_entries is not list:
+        if not isinstance(bib_entries, dict):
             return bib_entries
 
-        for entry in bib_entries:
-            bib_entries.pop('authors', None)
-            bib_entries.pop('venue', None)
-            bib_entries.pop('volume', None)
-            bib_entries.pop('issn', None)
-            bib_entries.pop('other_ids', None)
+        for key in bib_entries.keys():
+            bib_entries[key].pop('authors', None)
+            bib_entries[key].pop('venue', None)
+            bib_entries[key].pop('volume', None)
+            bib_entries[key].pop('issn', None)
+            bib_entries[key].pop('other_ids', None)
 
         return bib_entries
 
     @staticmethod
     def _cut_cite_span_texts(cite_spans: list):
-
         if cite_spans is not list:
             return cite_spans
 
@@ -148,9 +147,16 @@ class QASCORD19DataLoaderVariant(QASDataLoaderVariant):
         return cite_spans
 
     # TODO: add to uml
-    @staticmethod
-    def get_doc_base_key(doc: QASDocument):
+    def get_doc_base_key(self, doc: Optional[QASDocument] = None, key: Optional[str] = None) -> str:
 
-        id_array = doc.id.split(QASCORD19DataLoaderVariant.doc_separator)
+        if key is not None and doc is not None:
+            raise AttributeError('Either key or doc has to None')
+
+        id_array = None
+
+        if doc is not None:
+            id_array = doc.id.split(QASCORD19DataLoaderVariant.doc_separator)
+        elif key is not None:
+            id_array = key.split(QASCORD19DataLoaderVariant.doc_separator)
 
         return id_array[0]

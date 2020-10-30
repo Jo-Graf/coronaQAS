@@ -14,3 +14,8 @@ class QASDataLoaderVariant(ABC):
     @abstractmethod
     def load_data(self) -> (bool, List[QASDocument]):
         pass
+
+    # TODO: add to uml
+    @abstractmethod
+    def get_doc_base_key(self, doc: Optional[QASDocument] = None, key: Optional[str] = None) -> str:
+        pass

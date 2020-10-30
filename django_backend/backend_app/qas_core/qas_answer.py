@@ -17,6 +17,7 @@ class QASAnswer(QASDocument):
                  probability: Optional[float] = None,
                  text: Optional[str] = '',
                  answer_id: Optional[str] = None,
+                 doc_id: Optional[str] = None,
                  id: Optional[str] = None,
                  query_score: Optional[float] = None,
                  question: Optional[str] = None,
@@ -43,9 +44,9 @@ class QASAnswer(QASDocument):
         self.offset_end_in_doc = offset_end_in_doc
         self.offset_start = offset_start
         self.offset_end = offset_end
-        # self.probability = probability
         self.context = context
         self.answer_id = identifier
+        self.doc_id = doc_id
         self.no_ans_gap = no_ans_gap
 
         super().__init__(text=text,

@@ -13,6 +13,14 @@
           .carousel-control-prev {
               filter: invert(100%);
           }
+          .topic-tag-group > .row {
+              display: block;
+              overflow-x: auto;
+              white-space: nowrap;
+          }
+          .topic-tag-group > .row > .mr-1{
+              display: inline-block;
+          }
       </style>
    </head>
    <body>
@@ -78,8 +86,21 @@
                                   + details
                                    </a>
                                    <div v-show="index == selected_paper">
-                                       <h5 class="mt-1">Topic-fit</h5>
-                                       <canvas v-bind:id="'chart-' + index.toString()" width="400" height="200" v-show="index == selected_paper"></canvas>
+                                       <h5 class="mt-1">Top [[lda_results.length]] Topics:</h5>
+                                       <!--canvas v-bind:id="'chart-' + index.toString()" width="400" height="200" v-show="index == selected_paper"></canvas-->
+                                       <div class="container topic-tag-group" v-for="(topic, topic_index) in lda_results">
+                                           <div class="mt-1"> Topic [[topic_index]]:</div>
+                                           <div class="row text-center">
+                                               <b-form-tag
+                                                       v-for="tag in topic"
+                                                       tagRemoveLabel=" "
+                                                       :key="tag"
+                                                       :title="tag"
+                                                       class="mr-1">
+                                                   [[tag]]
+                                               </b-form-tag>
+                                           </div>
+                                       </div>
                                        <h5 class="mt-1">Related paper</h5>
                                        <b-carousel
                                                id="carousel"
@@ -162,6 +183,7 @@
                   selected_paper:null,
                   // { title: 'Paper Title 1' ,abstract: abstract, full: '', score: 0.99},
                   papers: null,
+                  lda_results: [],
                   selected_question: null,
                   best_answer: null,
                   questions: [
@@ -183,11 +205,16 @@
               },
               methods: {
                   show_paper_detail: function(index) {
+                      let paper = vm.papers[index]
+
                       if(vm.selected_paper == index){
                           vm.selected_paper = null;
+                          vm.lda_results = null;
                       }else{
                           vm.selected_paper = index;
-                          render_paper_chart(index);
+                          // render_paper_chart(index);
+                          render_lda(paper, index);
+
                       }
                   }
             },
@@ -206,6 +233,16 @@
               let chart_element = document.getElementById('chart-' + index.toString()).getContext('2d');
               let chart = new Chart(chart_element,chart_data_var);
           }
+
+          function render_lda(paper, index) {
+              axios.post('http://127.0.0.1:8000/lda/',
+                  {
+                      doc_id: paper.doc_id
+                  }).then((response) => {
+                      vm.lda_results = response.data
+                  });
+          }
+
           function load_question_selection() {
               axios.get('http://127.0.0.1:8000/question_selection/')
                   .then(response => (

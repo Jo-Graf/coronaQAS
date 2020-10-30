@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import List, Union, Optional
+from typing import List, Union, Optional, Dict
 
 from backend_app.qas_core.qas_document import QASDocument
 
@@ -8,9 +8,12 @@ class QASDatabaseVariant(ABC):
     def __init__(self):
         pass
 
-    # TODO: add input to uml
+    # TODO: add params to uml
     @abstractmethod
-    def get_data(self, identifiers: Optional[Union[str, List[str]]] = None) -> List[QASDocument]:
+    def get_data(self,
+                 identifiers: Optional[Union[str, List[str]]] = None,
+                 query: Optional[Union[str, Dict]] = None
+                 ) -> List[QASDocument]:
         pass
 
     @abstractmethod

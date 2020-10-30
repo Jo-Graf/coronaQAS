@@ -30,7 +30,8 @@ class QASHaystackReaderAdapter(QASReaderVariant):
                 offset_end=raw_answer['offset_end'],
                 offset_start_in_doc=raw_answer['offset_start_in_doc'],
                 offset_end_in_doc=raw_answer['offset_end_in_doc'],
-                no_ans_gap=docs['no_ans_gap']
+                no_ans_gap=docs['no_ans_gap'],
+                doc_id=raw_answer['document_id']
             )
 
             doc_list = list(filter(lambda x: x.id == raw_answer['document_id'], data))
@@ -38,6 +39,7 @@ class QASHaystackReaderAdapter(QASReaderVariant):
             if len(doc_list) > 0:
                 doc = doc_list[0]
                 meta_dict = doc.meta
+                meta_dict
                 answer.meta = meta_dict
 
             qas_docs.append(answer)
