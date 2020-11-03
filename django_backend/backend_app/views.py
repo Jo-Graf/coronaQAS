@@ -103,9 +103,12 @@ def lda(request):
     if request.method == 'GET':
         return HttpResponseRedirect('/index/')
     else:
-        '''
-        doc_id = json.loads(request.body)['doc_id']
 
+        doc_id = json.loads(request.body)['doc_id']
+        doc_ids = json.loads(request.body)['doc_ids']
+        print(doc_ids)
+
+        '''
         # loader
         loader_variant = QASCORD19DataLoaderVariant(None)
         loader = QASDataLoader(variant=loader_variant)

@@ -31,8 +31,12 @@ class QASHaystackDatabaseAdapter(QASDatabaseVariant):
         docs = []
 
         if query is not None:
-            docs = self.__document_store.query(query=str(query))
+            # TODO: check out built-in function
+            # docs = self.__document_store.query(query=query)
 
+            index = self.__document_store.index
+            results = self.__document_store.client.search(index=index, body=query)['hits']['hits']
+            docs = [self.__document_store._convert_es_hit_to_document(hit) for hit in results]
         elif identifiers is not None:
 
             if type(identifiers) is not list:

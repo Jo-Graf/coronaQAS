@@ -1,65 +1,169 @@
 import hashlib
+import re
 from typing import Optional, List
-
-from sklearn.feature_extraction.text import CountVectorizer
+import pandas as pd
 
 from backend_app.qas_core.qas_data_loader import QASDataLoader
 from backend_app.qas_core.qas_database import QASDatabase
 from backend_app.qas_core.qas_document import QASDocument
+
 from sklearn.decomposition import LatentDirichletAllocation
+from sklearn.pipeline import Pipeline
+from sklearn.neighbors import NearestNeighbors
+from sklearn.preprocessing import FunctionTransformer
+from sklearn.feature_extraction.text import CountVectorizer
+
+from spacy.lang.en import English
+
+import numpy as np
+
 
 
 # TODO: add to uml
 class QASLDA:
 
+    DF_COLUMNS = ['id', 'title', 'full_text']
+
     def __init__(self,
                  database: Optional[QASDatabase] = None,
-                 query: Optional[str] = None,
-                 num_topics: Optional[int] = 5,
+                 doc_query: Optional[str] = None,
+                 docs_queries: Optional[str] = None,
+                 num_topics: Optional[int] = 6,
+                 doc_topic_prior: Optional[float] = 0.20473924934073703,
+                 topic_word_prior: Optional[float] = 2.175756258808697,
                  num_words: Optional[int] = 20,
                  max_df: Optional[float] = 2,
                  min_df: Optional[float] = 0.95,
                  stop_words: Optional[str] = 'english'):
         self.database = database
-        self.query = query
-        self.doc_parts = []
-        self.doc_string = None
+        self.doc_query = doc_query
+        self.docs_queries = docs_queries
+        # self.doc_parts = []
+        self.doc = None
         self.num_topics = num_topics
         self.num_words = num_words
         self.max_df = max_df
         self.min_df = min_df
         self.stop_words = stop_words
+        self.docs = pd.DataFrame(columns=QASLDA.DF_COLUMNS)
+        self.nlp = English()
+        self.tokenizer = self.nlp.Defaults.create_tokenizer(self.nlp)
+        self.doc_topic_prior = doc_topic_prior
+        self.topic_word_prior = topic_word_prior
 
-    def _docs_to_string(self, docs: List[QASDocument]) -> str:
+    def _docs_to_string(self, docs: List[QASDocument]) -> pd.DataFrame:
         title = docs[0].meta['title']
         full_text = title
-
+        doc_id = None
         for doc in docs:
             if doc.meta['is_doc_meta'] is not True:
                 full_text += '\n' + doc.meta['subtitle']
                 full_text += '\n' + doc.text
+            else:
+                doc_id = doc.id
 
-        return full_text
+        return pd.DataFrame(columns=QASLDA.DF_COLUMNS, data=[doc_id, title, full_text])
 
     def load(self) -> List[List[str]]:
-        self.doc_parts = self.database.get_data(query=self.query)
-        self.doc_string = self._docs_to_string(self.doc_parts)
+
+        doc_parts = self.database.get_data(query=self.doc_query)
+        self.doc = self._docs_to_string(doc_parts)
+
+        for query in self.docs_queries:
+            curr_doc_part = self.database.get_data(query=query)
+            self.docs.append(self._docs_to_string(curr_doc_part))
+
+        all_docs = self.doc.append(self.docs)
+
+        all_docs_text = all_docs.full_text.values
+
+        spacy_estimators = [('tokenizer', self.pipelinize(self.spacy_tokenizer)),
+                            ('preprocessor', self.pipelinize(self.punctation_removal)),
+                            ('string_converter', self.pipelinize(self.string_converter))]
+        spacy_pipe = Pipeline(spacy_estimators)
+
+        preprocessed_train_docs = [spacy_pipe.transform([x])[0] for x in all_docs_text]
 
         # TODO: check min_df, max_df
         # cv = CountVectorizer(max_df=self.max_df, min_df=self.min_df, stop_words=self.stop_words)
-        cv = CountVectorizer(stop_words=self.stop_words)
-        df = cv.fit_transform([self.doc_string])
+        cv = CountVectorizer(strip_accents='unicode', token_pattern=r'\b[a-zA-Z]{3,}\b')
+        train_input = cv.fit_transform(preprocessed_train_docs[1:]) # omit target doc
 
-        lda = LatentDirichletAllocation(n_components=self.num_topics, random_state=42)
-        lda.fit(df)
+        model = LatentDirichletAllocation(n_components=self.num_topics,
+                                          doc_topic_prior=self.doc_topic_prior,
+                                          topic_word_prior=self.topic_word_prior,
+                                          random_state=42)
+        model.fit(train_input)
 
-        topics = {}
+        topics = []
         words = cv.get_feature_names()
+        topic_word_probabilities = model.components_ / model.components_.sum(axis=1)[:, np.newaxis]
 
-        for index, topic in enumerate(lda.components_):
+        for topic in enumerate(topic_word_probabilities):
             words_in_topic = [words[i] for i in topic.argsort()[-self.num_words:]]
-            unique_key = ''.join(words_in_topic).encode('utf-8')
-            unique_hashed_key = hashlib.md5(unique_key).hexdigest()
-            topics[unique_hashed_key] = words_in_topic
+            word_probabilities = [topic[i] for i in topic.argsort()[-self.num_words:]]
+            topics.append({
+                'words': words_in_topic,
+                'probabilities': word_probabilities
+            })
+
+        input = cv.fit_transform(preprocessed_train_docs)
+        doc_topic_probabilities = model.transform(input)
+
+        relevant_probabilities = doc_topic_probabilities[0]/doc_topic_probabilities[0].sum()
+
+        nbrs = NearestNeighbors(n_neighbors=3, algorithm='auto').fit(doc_topic_probabilities)
+        distances, indices = nbrs.kneighbors(doc_topic_probabilities)
+
+        nearest_indices = indices[0][1:]
+        nearest_docs = [all_docs.doc_id.values[x] for x in nearest_indices]
+
 
         return list(topics.values())
+
+    # TODO: add to uml diagram
+    def pipelinize(self, function, active=True):
+        def list_comprehend_a_function(list_or_series, active=True):
+            if active:
+                return [function(i) for i in list_or_series]
+            else:  # if it's not active, just pass it right back
+                return list_or_series
+
+        return FunctionTransformer(list_comprehend_a_function, validate=False, kw_args={'active': active})
+
+    def punctation_removal(self, text):
+        if isinstance((text), (str)):
+            # text = re.sub('<[^>]*>', '', text)
+            text = re.sub('[\W]+', '', text.lower())
+            return text
+        if isinstance((text), (list)):
+            return_list = []
+            for i in range(len(text)):
+                # temp_text = re.sub('<[^>]*>', '', text[i])
+                temp_text = text[i]
+                temp_text = re.sub('[\W]+', '', temp_text.lower())
+                if temp_text is not '':
+                    return_list.append(temp_text)
+            return return_list
+        else:
+            pass
+
+    def spacy_tokenizer(self, text):
+        tokens = self.tokenizer(text)
+
+        lemma_list = []
+        for token in tokens:
+            if token.is_stop is False:
+                lemma_list.append(token.lemma_)
+
+        return lemma_list
+
+    def string_converter(self, list_or_str, delimiter=' '):
+        if isinstance(list_or_str, str):
+            return list_or_str
+        elif isinstance(list_or_str, list):
+            print('List is flattend to one dimension')
+            list_input = np.array(list_or_str).reshape(-1)
+            return delimiter.join(list_input)
+        else:
+            raise AttributeError('list_or_str parameter has wrong type')

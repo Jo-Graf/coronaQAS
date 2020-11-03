@@ -7,9 +7,9 @@ from haystack import Document
 from backend_app.qas_core.qas_data_loader_variant import QASDataLoaderVariant
 from backend_app.qas_core.qas_document import QASDocument
 
+
 # TODO: add class to uml
-
-
+# TODO: implement language detector
 class QASCORD19DataLoaderVariant(QASDataLoaderVariant):
 
     doc_separator = "-$-$-"

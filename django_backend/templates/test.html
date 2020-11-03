@@ -235,9 +235,16 @@
           }
 
           function render_lda(paper, index) {
+              vm.answer_is_loading = true;
+              let ids = []
+              for (let i = 0; i < vm.papers.length; i++) {
+                  ids.push(vm.papers[i].doc_id);
+              }
+
               axios.post('http://127.0.0.1:8000/lda/',
                   {
-                      doc_id: paper.doc_id
+                      doc_id: paper.doc_id,
+                      doc_ids: ids
                   }).then((response) => {
                       vm.lda_results = response.data
                   });
@@ -252,7 +259,7 @@
           }
 
           function ask_question(question){
-              vm.answer_is_loading = true;
+
               axios.post('http://127.0.0.1:8000/qas/',
                   {
                       question: question
