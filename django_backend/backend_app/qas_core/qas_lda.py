@@ -62,7 +62,7 @@ class QASLDA:
             else:
                 doc_id = doc.id
 
-        return pd.DataFrame(columns=QASLDA.DF_COLUMNS, data=[doc_id, title, full_text])
+        return pd.DataFrame(columns=QASLDA.DF_COLUMNS, data=[[doc_id, title, full_text]])
 
     def load(self) -> List[List[str]]:
 
@@ -70,8 +70,8 @@ class QASLDA:
         self.doc = self._docs_to_string(doc_parts)
 
         for query in self.docs_queries:
-            curr_doc_part = self.database.get_data(query=query)
-            self.docs.append(self._docs_to_string(curr_doc_part))
+            curr_doc_parts = self.database.get_data(query=query)
+            self.docs = self.docs.append(self._docs_to_string(curr_doc_parts))
 
         all_docs = self.doc.append(self.docs)
 
@@ -80,6 +80,7 @@ class QASLDA:
         spacy_estimators = [('tokenizer', self.pipelinize(self.spacy_tokenizer)),
                             ('preprocessor', self.pipelinize(self.punctation_removal)),
                             ('string_converter', self.pipelinize(self.string_converter))]
+
         spacy_pipe = Pipeline(spacy_estimators)
 
         preprocessed_train_docs = [spacy_pipe.transform([x])[0] for x in all_docs_text]
@@ -99,27 +100,38 @@ class QASLDA:
         words = cv.get_feature_names()
         topic_word_probabilities = model.components_ / model.components_.sum(axis=1)[:, np.newaxis]
 
-        for topic in enumerate(topic_word_probabilities):
+        for index, topic in enumerate(model.components_):
             words_in_topic = [words[i] for i in topic.argsort()[-self.num_words:]]
-            word_probabilities = [topic[i] for i in topic.argsort()[-self.num_words:]]
+            word_probabilities = [(topic_word_probabilities[index][i]/topic_word_probabilities[index].sum())
+                                  for i in topic.argsort()[-self.num_words:]]
+            words_in_topic.reverse()
+            word_probabilities.reverse()
+
             topics.append({
                 'words': words_in_topic,
                 'probabilities': word_probabilities
             })
 
-        input = cv.fit_transform(preprocessed_train_docs)
-        doc_topic_probabilities = model.transform(input)
+        doc_topic_probabilities_input = cv.transform(preprocessed_train_docs)
+        doc_topic_probabilities = model.transform(doc_topic_probabilities_input)
 
         relevant_probabilities = doc_topic_probabilities[0]/doc_topic_probabilities[0].sum()
 
-        nbrs = NearestNeighbors(n_neighbors=3, algorithm='auto').fit(doc_topic_probabilities)
+        # TODO: exchangeable algorithm / define number of neighbours
+        nbrs = NearestNeighbors(n_neighbors=4, algorithm='auto').fit(doc_topic_probabilities)
         distances, indices = nbrs.kneighbors(doc_topic_probabilities)
 
         nearest_indices = indices[0][1:]
-        nearest_docs = [all_docs.doc_id.values[x] for x in nearest_indices]
+        nearest_docs = [all_docs.id.values[x] for x in nearest_indices]
 
+        result = {
+            'id': self.doc.id.values[0],
+            'topics': topics,
+            'topic_probabilities': list(relevant_probabilities),
+            'nearest_neighbours': nearest_docs
+        }
 
-        return list(topics.values())
+        return result
 
     # TODO: add to uml diagram
     def pipelinize(self, function, active=True):
@@ -162,7 +174,7 @@ class QASLDA:
         if isinstance(list_or_str, str):
             return list_or_str
         elif isinstance(list_or_str, list):
-            print('List is flattend to one dimension')
+            # print('List is flattend to one dimension')
             list_input = np.array(list_or_str).reshape(-1)
             return delimiter.join(list_input)
         else:

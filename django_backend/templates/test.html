@@ -18,7 +18,7 @@
               overflow-x: auto;
               white-space: nowrap;
           }
-          .topic-tag-group > .row > .mr-1{
+          .topic-tag-group > .row > .mt-1{
               display: inline-block;
           }
       </style>
@@ -88,20 +88,25 @@
                                    <div v-show="index == selected_paper">
                                        <h5 class="mt-1">Top [[lda_results.length]] Topics:</h5>
                                        <!--canvas v-bind:id="'chart-' + index.toString()" width="400" height="200" v-show="index == selected_paper"></canvas-->
-                                       <div class="container topic-tag-group" v-for="(topic, topic_index) in lda_results">
-                                           <div class="mt-1"> Topic [[topic_index]]:</div>
+                                       <div class="container topic-tag-group" v-for="(topic, topic_index) in lda_results.topics">
+                                           <div class="mt-3"> Topic [[topic_index]]:</div>
+                                               <b-progress max=100 height="2rem" class="mt-2" variant="info">
+                                                   <b-progress-bar :value="lda_results.topic_probabilities[topic_index]*100">
+                                                       <span><strong>[[(lda_results.topic_probabilities[topic_index]*100).toFixed(2)]]%</strong></span>
+                                                   </b-progress-bar>
+                                               </b-progress>
                                            <div class="row text-center">
                                                <b-form-tag
-                                                       v-for="tag in topic"
+                                                       v-for="tag in topic.words"
                                                        tagRemoveLabel=" "
                                                        :key="tag"
                                                        :title="tag"
-                                                       class="mr-1">
+                                                       class="mt-1">
                                                    [[tag]]
                                                </b-form-tag>
                                            </div>
                                        </div>
-                                       <h5 class="mt-1">Related paper</h5>
+                                       <h5 class="mt-5">Related paper</h5>
                                        <b-carousel
                                                id="carousel"
                                                controls
@@ -111,7 +116,7 @@
                                                img-width="400"
                                                img-height="200">
                                            <b-carousel-slide
-                                                   v-for="(paper, index) in papers"
+                                                   v-for="(paper, index) in related_papers"
                                                    caption=""
                                                    img-blank
                                                    img-alt="Blank image">
@@ -119,7 +124,7 @@
                                                        style="border: none;">
                                                    <b-card
                                                            v-bind:title="paper.meta.title"
-                                                           v-bind:sub-title="'Score: ' + Math.round(paper.probability*100) + '%'"
+                                                           v-bind:sub-title="paper.meta.subtitle"
                                                            style="color: #000;">
                                                        <b-card-text>[[paper.abstract]]</b-card-text>
                                                    </b-card>
@@ -180,10 +185,11 @@
                   dump_abstract : abstract,
                   currentTab: "List",tabs: ["List", "Graph"],
                   graph: graph_var,
-                  selected_paper:null,
+                  selected_paper: null,
                   // { title: 'Paper Title 1' ,abstract: abstract, full: '', score: 0.99},
                   papers: null,
                   lda_results: [],
+                  related_papers: [],
                   selected_question: null,
                   best_answer: null,
                   questions: [
@@ -210,6 +216,7 @@
                       if(vm.selected_paper == index){
                           vm.selected_paper = null;
                           vm.lda_results = null;
+                          vm.related_papers = null;
                       }else{
                           vm.selected_paper = index;
                           // render_paper_chart(index);
@@ -231,11 +238,10 @@
 
           function render_paper_chart(index) {
               let chart_element = document.getElementById('chart-' + index.toString()).getContext('2d');
-              let chart = new Chart(chart_element,chart_data_var);
+              // let chart = new Chart(chart_element,chart_data_var);
           }
 
           function render_lda(paper, index) {
-              vm.answer_is_loading = true;
               let ids = []
               for (let i = 0; i < vm.papers.length; i++) {
                   ids.push(vm.papers[i].doc_id);
@@ -246,7 +252,16 @@
                       doc_id: paper.doc_id,
                       doc_ids: ids
                   }).then((response) => {
-                      vm.lda_results = response.data
+                    vm.lda_results = response.data;
+                    let nearest_neighbours = response.data["nearest_neighbours"];
+
+                    for (let i = 0; i < vm.papers.length; i++) {
+                      let curr_id = vm.papers[i].doc_id;
+                      if (new RegExp(nearest_neighbours.join("|")).test(curr_id)){
+                          console.log(vm.papers[i].doc_id)
+                          vm.related_papers.push(vm.papers[i]);
+                      }
+                    }
                   });
           }
 
@@ -260,6 +275,8 @@
 
           function ask_question(question){
 
+              vm.answer_is_loading = true;
+
               axios.post('http://127.0.0.1:8000/qas/',
                   {
                       question: question
@@ -270,7 +287,6 @@
                   vm.papers = response.data
                   vm.best_answer = response.data[0]
 
-                  console.log(response);
                   }, (error) => {
                   vm.answer_is_loading = false;
                   console.log(error);
