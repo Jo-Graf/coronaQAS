@@ -23,5 +23,8 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('question_selection/', views.question_selection, name='question_selection'),
     path('qas/', views.qas, name='qas'),
-    path('lda/', views.lda, name='lda')
+    path('lda/', views.lda, name='lda'),
+    path('login/', views.login, name='login'),
+    path('logout/', views.logout, name='logout'),
+    path('user_specific_doc_meta/', views.user_specific_doc_meta, name='user_specific_doc_meta')
 ]

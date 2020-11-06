@@ -12,7 +12,7 @@ from backend_app.qas_core.qas_retriever_variant import QASRetrieverVariant
 class QASHaystackRetrieverAdapter(QASRetrieverVariant):
 
     # TODO: add to uml
-    top_k_value = 50
+    top_k_value = 25
 
     def __init__(self, retriever:  BaseRetriever = None):
         self.__retriever = retriever

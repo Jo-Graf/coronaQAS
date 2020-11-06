@@ -1,19 +1,23 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.http import JsonResponse
+from django.contrib.auth import authenticate, login
 from haystack.document_store.elasticsearch import ElasticsearchDocumentStore
 from haystack.reader.farm import FARMReader
 from haystack.retriever.sparse import ElasticsearchRetriever
+import django.contrib
 
 from backend_app.controller.question_selection_controller import get_question_selection
 from backend_app.forms import NameForm
 import json
 import hashlib
 
+from backend_app.models import Doc
 from backend_app.qas_core.pipeline import QASPipeline
 from backend_app.qas_core.qas_cord19_data_loader_variant import QASCORD19DataLoaderVariant
 from backend_app.qas_core.qas_data_loader import QASDataLoader
 from backend_app.qas_core.qas_database import QASDatabase
+from backend_app.qas_core.qas_doc_key_gen import QASDocKeyGen
 from backend_app.qas_core.qas_doc_type_enum import QASDocType
 from backend_app.qas_core.qas_got_data_loader import QASGOTDataLoaderVariant
 from backend_app.qas_core.qas_haystack_database_adapter import QASHaystackDatabaseAdapter
@@ -22,6 +26,7 @@ from backend_app.qas_core.qas_haystack_retriever_adapter import QASHaystackRetri
 from backend_app.qas_core.qas_lda import QASLDA
 from backend_app.qas_core.qas_reader import QASReader
 from backend_app.qas_core.qas_retriever import QASRetriever
+from django.contrib.auth.decorators import permission_required
 
 
 def index(request):
@@ -50,13 +55,70 @@ def question_selection(request):
         return JsonResponse(json_question_selection, safe=False)
 
 
+def login(request):
+    # TODO: Model -> (doc_id, notes, book_marked, last_view)
+    if request.method == 'GET':
+        return HttpResponseRedirect('/index/')
+    else:
+        username = json.loads(request.body)['username']
+        password = json.loads(request.body)['password']
+
+        user = authenticate(request, username=username, password=password)
+
+        response_dict = None
+
+        if user is not None:
+            django.contrib.auth.login(request, user)
+            response_dict = {
+                'success': True,
+                'message': 'You\'ve been logged in'
+            }
+        else:
+            response_dict = {
+                'success': False,
+                'message': 'Login didn\'t work please check username and password'
+            }
+
+        return JsonResponse(response_dict, safe=False)
+
+
+def logout(request):
+    django.contrib.auth.logout(request)
+    response_dict = {
+        'success': True,
+        'message': 'You\'ve been logged out'
+    }
+    return JsonResponse(response_dict, safe=False)
+
+
+def user_specific_doc_meta(request):
+    if request.method == 'GET':
+        return HttpResponseRedirect('/index/')
+    else:
+        doc_id = json.loads(request.body)['question']
+        user_id = request.user.id
+        base_doc_id = QASDocKeyGen.get_doc_base_key(key=doc_id)
+
+        objects = None
+
+        if doc_id is None:
+            objects = Doc.objects.filter(user_id=user_id)
+        else:
+            objects = Doc.objects.filter(user_id=user_id).filter(doc_id=base_doc_id)
+
+        return JsonResponse(objects, safe=False)
+
+
+
 def qas(request):
+    # TODO: include notes and bookmarking
+
     if request.method == 'GET':
         return HttpResponseRedirect('/index/')
     else:
 
         question = json.loads(request.body)['question']
-        '''
+
         # dir_path = "/Users/Gino/Belegarbeit/django_backend/backend_app/data/article_txt_got"
         # url = "https://s3.eu-central-1.amazonaws.com/deepset.ai-farm-qa/datasets/documents/wiki_gameofthrones_txt.zip"
         dir_path = '/Volumes/glpstorage/Users/Gino/Belegarbeit/archive/document_parses/pdf_json_test/'
@@ -89,7 +151,7 @@ def qas(request):
         for answer in answers:
             unique_answers[answer.answer_id] = answer.serialize()
 
-        print(json.dumps(list(unique_answers.values())))
+        # print(json.dumps(list(unique_answers.values())))
         return JsonResponse(list(unique_answers.values()), safe=False)
 
         '''
@@ -99,7 +161,7 @@ def qas(request):
             json_dump = json.load(json_file)
 
         return JsonResponse(json_dump, safe=False)
-
+        '''
 
 def lda(request):
     if request.method == 'GET':
@@ -109,7 +171,6 @@ def lda(request):
         doc_id = json.loads(request.body)['doc_id']
         doc_ids = json.loads(request.body)['doc_ids']
 
-        '''
         # loader
         loader_variant = QASCORD19DataLoaderVariant(None)
         loader = QASDataLoader(variant=loader_variant)
@@ -123,26 +184,16 @@ def lda(request):
         base_key = loader.get_doc_base_key(key=doc_id)
 
         # query
-        query = {
-            "query": {
-                "script": {
-                    "script": "doc['_id'][0].indexOf('" + base_key + "') > -1"
-                }
-            }
-        }
+        query = {"query": {"script": {"script": "doc['_id'][0].indexOf('" + base_key + "') > -1"}}}
+        queries = [{"query": {"script": {"script": "doc['_id'][0].indexOf('" + x + "') > -1"}}}
+                   for x in doc_ids]
 
         # lda
-        lda_instance = QASLDA(database=database, query=query)
+        lda_instance = QASLDA(database=database, doc_query=query, docs_queries=queries)
         topics = lda_instance.load()
-        
-        topics = 
-        [
-            ['word 1', 'word 2', 'word 3', 'word 4', 'word 5','word 1', 'word 2', 'word 3', 'word 4', 'word 5', 'word 1', 'word 2', 'word 3', 'word 4', 'word 5','word 1', 'word 2', 'word 3', 'word 4', 'word 5'],
-            ['word 1', 'word 2', 'word 3', 'word 4', 'word 5'],
-            ['word 1', 'word 2', 'word 3', 'word 4', 'word 5'],
-            ['word 1', 'word 2', 'word 3', 'word 4', 'word 5'],
-            ['word 1', 'word 2', 'word 3', 'word 4', 'word 5']
-        ]'''
+        return JsonResponse(topics, safe=False)
+
+        '''
         topics = {'id': '137a291fa34f85bf39cd25c1321a8cbbd9ccb30d',
          'topics': [{'words': ['disease',
                                'cardiometabolic',
@@ -389,3 +440,4 @@ def lda(request):
                                 '16f8d236817a757231007037bbf173f58d3cc42c',
                                 '1f9a1e98b42ca167e9f0b8d7f4ea40df0770bc55']}
         return JsonResponse(topics, safe=False)
+        '''

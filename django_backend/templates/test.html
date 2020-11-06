@@ -35,7 +35,47 @@
                      <b-nav-item href="#">Advanced Mode</b-nav-item>
                   </b-navbar-nav>
                   <!-- Right aligned nav items -->
-                  <b-navbar-nav class="ml-auto"></b-navbar-nav>
+                  <b-navbar-nav class="ml-auto">
+                      <b-nav-item-dropdown
+                              class="ml-2"
+                              right>
+                          <!-- Using 'button-content' slot -->
+                          <template #button-content>
+                              <em>[[display_username]]</em>
+                          </template>
+                          <b-dropdown-item
+                                  v-if="logged_in"
+                                  v-on:click="logout()">Sign Out</b-dropdown-item>
+                          <div class="m-2">
+                              <b-form-input
+                                      v-if="!logged_in"
+                                      v-model="username"
+                                      placeholder="Username"
+                                      class="mt-2"
+                                      :state="username_field_state"
+                                      aria-describedby="username-input-live-feedback"
+                                      trim></b-form-input>
+                              <b-form-invalid-feedback id="username-input-live-feedback">
+                                  Enter at least 5 letters
+                              </b-form-invalid-feedback>
+                              <b-form-input
+                                      v-if="!logged_in"
+                                      v-model="password"
+                                      type="password"
+                                      placeholder="Password"
+                                      class="mt-2"
+                                      :state="password_field_state"
+                                      aria-describedby="password-input-live-feedback"
+                                      trim ></b-form-input>
+                              <b-form-invalid-feedback id="password-input-live-feedback">
+                                      Enter at least 8 letters
+                              </b-form-invalid-feedback>
+                              <b-dropdown-item
+                                      v-if="!logged_in"
+                                      v-on:click="login()">Sign In</b-dropdown-item>
+                          </div>
+                      </b-nav-item-dropdown>
+                  </b-navbar-nav>
                </b-collapse>
             </b-navbar>
          </div>
@@ -83,7 +123,16 @@
                                    <h5 class="mt-1">Context</h5>
                                    <b-card-text>[[paper.context]]</b-card-text>
                                    <a class="card-link" v-on:click="show_paper_detail([[index]])" v-show="index != selected_paper">
-                                  + details
+                                       + details
+                                   </a>
+                                   <a class="card-link" v-on:click="change_paper_note(papers[index])" v-show="index != selected_paper">
+                                       add note
+                                   </a>
+                                   <a class="card-link" v-on:click="show_paper_detail([index])" v-show="index != selected_paper">
+                                       add to history
+                                   </a>
+                                   <a class="card-link" v-on:click="show_paper_detail([index])" v-show="index != selected_paper">
+                                       add bookmark
                                    </a>
                                    <div v-show="index == selected_paper">
                                        <h5 class="mt-1">Top [[lda_results.length]] Topics:</h5>
@@ -186,6 +235,9 @@
                   currentTab: "List",tabs: ["List", "Graph"],
                   graph: graph_var,
                   selected_paper: null,
+                  logged_in: true,
+                  username: "",
+                  password: "",
                   // { title: 'Paper Title 1' ,abstract: abstract, full: '', score: 0.99},
                   papers: null,
                   lda_results: [],
@@ -207,6 +259,15 @@
               computed: {
                   show_answer_and_results: function(){
                       return this.selected_question != null && !this.answer_is_loading;
+                  },
+                  username_field_state() {
+                      return this.username.length > 4 ? true : false
+                  },
+                  password_field_state() {
+                      return this.password.length > 7 ? true : false
+                  },
+                  display_username() {
+                      return this.logged_in? this.username : "User"
                   }
               },
               methods: {
@@ -223,6 +284,51 @@
                           render_lda(paper, index);
 
                       }
+                  },
+                  login: function(){
+                      axios.post('http://127.0.0.1:8000/login/',
+                          {
+                              username: vm.username,
+                              password: vm.password
+                          }).then((response) => {
+                              vm.password = "";
+                              vm.logged_in = response.data['success'];
+
+                              let variant = vm.logged_in? 'success' : 'danger';
+
+                              this.$bvToast.toast(response.data['message'], {
+                                  title: 'Login information',
+                                  autoHideDelay: 5000,
+                                  appendToast: true,
+                                  variant: variant
+                              });
+                          }
+                      );
+
+                  },
+                  logout: function(){
+                      axios.get('http://127.0.0.1:8000/logout/')
+                          .then((response) => {
+                              vm.password = "";
+
+                              vm.logged_in = !response.data['success'];
+
+                              let variant = !vm.logged_in? 'success' : 'danger';
+
+                              this.$bvToast.toast(response.data['message'], {
+                                  title: 'Login information',
+                                  autoHideDelay: 5000,
+                                  appendToast: true,
+                                  variant: variant
+                              });
+                          }
+                      );
+                  },
+                  change_paper_bookmark: function(paper, bookmark){
+                      paper['book']
+                  },
+                  change_paper_note: function(paper, note){
+                      paper['notes'] = note
                   }
             },
               mounted(){
@@ -232,9 +338,23 @@
                   selected_question: function (val) {
                       vm.selected_paper = null;
                       ask_question(val);
+                  },
+                  logged_in: function (val) {
+                      vm.password = ""
+                      if(!val){
+                          vm.username = ""
+                      }
                   }
     },
           });
+
+          function load_all_user_specific_doc_meta(){
+              axios.post('http://127.0.0.1:8000/user_specific_doc_meta/',{
+
+              }).then((response) => {
+                  console.log(response.data)
+              });
+          }
 
           function render_paper_chart(index) {
               let chart_element = document.getElementById('chart-' + index.toString()).getContext('2d');

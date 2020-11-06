@@ -6,5 +6,10 @@
   {"value": "What caused the virus?", "text":"What caused the virus?"},
   {"value": "Vaccination against Corona?", "text":"Vaccination against Corona?"},
   {"value": "What are risk factors?", "text":"What are risk factors?"},
-  {"value": "What is the social impact of the virus?", "text":"What is the social impact of the virus?"}
+  {"value": "What is the social impact of the virus?", "text":"What is the social impact of the virus?"},
+  {"value": "What is is the incubation period?", "text":"What is is the incubation period?"},
+  {"value": "What is is the incubation range?", "text":"What is is the incubation range?"},
+  {"value": "Why is the reproduction rate important?", "text":"Why is the reproduction rate important?"},
+  {"value": "Why is social distancing necessary?", "text":"Why is social distancing necessary?"},
+  {"value": "What is the definition of incubation period?", "text":"What is the definition of incubation period?"}
 ]

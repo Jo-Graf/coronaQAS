@@ -5,6 +5,7 @@ from typing import List, Optional
 from haystack import Document
 
 from backend_app.qas_core.qas_data_loader_variant import QASDataLoaderVariant
+from backend_app.qas_core.qas_doc_key_gen import QASDocKeyGen
 from backend_app.qas_core.qas_document import QASDocument
 
 
@@ -86,7 +87,7 @@ class QASCORD19DataLoaderVariant(QASDataLoaderVariant):
             }
 
             abstract_doc = Document(
-                id=doc_id + QASCORD19DataLoaderVariant.doc_separator + str(doc_count),
+                id= QASDocKeyGen.generate_base_key(doc_id, doc_count), #doc_id + QASCORD19DataLoaderVariant.doc_separator + str(doc_count),
                 text=(clean_func(abstract['text']) if clean_func else abstract['text']),
                 meta=abstract_doc_dict
             )
@@ -110,7 +111,7 @@ class QASCORD19DataLoaderVariant(QASDataLoaderVariant):
             }
 
             section_doc = Document(
-                id=doc_id + QASCORD19DataLoaderVariant.doc_separator + str(doc_count),
+                id=QASDocKeyGen.generate_base_key(doc_id, doc_count), # doc_id + QASCORD19DataLoaderVariant.doc_separator + str(doc_count),
                 text=(clean_func(section['text']) if clean_func else section['text']),
                 meta=section_doc_dict
             )
@@ -149,14 +150,4 @@ class QASCORD19DataLoaderVariant(QASDataLoaderVariant):
     # TODO: add to uml
     def get_doc_base_key(self, doc: Optional[QASDocument] = None, key: Optional[str] = None) -> str:
 
-        if key is not None and doc is not None:
-            raise AttributeError('Either key or doc has to None')
-
-        id_array = None
-
-        if doc is not None:
-            id_array = doc.id.split(QASCORD19DataLoaderVariant.doc_separator)
-        elif key is not None:
-            id_array = key.split(QASCORD19DataLoaderVariant.doc_separator)
-
-        return id_array[0]
+        return QASDocKeyGen.get_doc_base_key(doc=doc, key=key)
