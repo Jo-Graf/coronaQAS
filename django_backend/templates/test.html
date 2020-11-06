@@ -341,7 +341,9 @@
                   },
                   logged_in: function (val) {
                       vm.password = ""
-                      if(!val){
+                      if(val){
+                          load_all_user_specific_doc_meta();
+                      }else{
                           vm.username = ""
                       }
                   }
@@ -350,7 +352,6 @@
 
           function load_all_user_specific_doc_meta(){
               axios.post('http://127.0.0.1:8000/user_specific_doc_meta/',{
-
               }).then((response) => {
                   console.log(response.data)
               });

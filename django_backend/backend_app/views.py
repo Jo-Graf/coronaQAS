@@ -1,3 +1,4 @@
+from django.core import serializers
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.http import JsonResponse
@@ -91,13 +92,42 @@ def logout(request):
     return JsonResponse(response_dict, safe=False)
 
 
+# TODO: add permission decorator
+def user_specific_doc_meta_change(request):
+    if request.method == 'GET':
+        return HttpResponseRedirect('/index/')
+    else:
+        user_id = request.user.id
+        note = json.loads(request.body)['doc_note']
+        bookmark = json.loads(request.body)['doc_bookmark']
+
+        if 'doc_id' in json.loads(request.body).keys():
+            doc_id = json.loads(request.body)['doc_id']
+            base_doc_id = QASDocKeyGen.get_doc_base_key(key=doc_id)
+
+        objects = Doc.objects.filter(user_id=user_id).filter(doc_id=base_doc_id)
+        doc_object = objects[0]
+
+        if note is not None:
+            doc_object.note = note
+
+        if bookmark is not None:
+            doc_object.bookmark = bookmark
+
+        doc_object.save()
+
+
+
+# TODO: add permission decorator
 def user_specific_doc_meta(request):
     if request.method == 'GET':
         return HttpResponseRedirect('/index/')
     else:
-        doc_id = json.loads(request.body)['question']
+        doc_id = None
         user_id = request.user.id
-        base_doc_id = QASDocKeyGen.get_doc_base_key(key=doc_id)
+        if 'doc_id' in json.loads(request.body).keys():
+            doc_id = json.loads(request.body)['doc_id']
+            base_doc_id = QASDocKeyGen.get_doc_base_key(key=doc_id)
 
         objects = None
 
@@ -106,8 +136,11 @@ def user_specific_doc_meta(request):
         else:
             objects = Doc.objects.filter(user_id=user_id).filter(doc_id=base_doc_id)
 
-        return JsonResponse(objects, safe=False)
 
+
+        json_objects = serializers.serialize('json', objects)
+
+        return HttpResponse(json_objects, content_type="application/json")
 
 
 def qas(request):
@@ -116,7 +149,6 @@ def qas(request):
     if request.method == 'GET':
         return HttpResponseRedirect('/index/')
     else:
-
         question = json.loads(request.body)['question']
 
         # dir_path = "/Users/Gino/Belegarbeit/django_backend/backend_app/data/article_txt_got"
@@ -162,6 +194,7 @@ def qas(request):
 
         return JsonResponse(json_dump, safe=False)
         '''
+
 
 def lda(request):
     if request.method == 'GET':
