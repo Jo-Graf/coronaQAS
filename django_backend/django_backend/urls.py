@@ -27,5 +27,5 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('logout/', views.logout, name='logout'),
     path('user_specific_doc_meta/', views.user_specific_doc_meta, name='user_specific_doc_meta'),
-    path('user_specific_doc_meta_change/', views.user_specific_doc_meta_change, name='user_specific_doc_meta_change')
+    path('update_user_specific_doc_meta/', views.update_user_specific_doc_meta, name='update_user_specific_doc_meta')
 ]

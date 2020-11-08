@@ -93,7 +93,7 @@ def logout(request):
 
 
 # TODO: add permission decorator
-def user_specific_doc_meta_change(request):
+def update_user_specific_doc_meta(request):
     if request.method == 'GET':
         return HttpResponseRedirect('/index/')
     else:
@@ -117,7 +117,6 @@ def user_specific_doc_meta_change(request):
         doc_object.save()
 
 
-
 # TODO: add permission decorator
 def user_specific_doc_meta(request):
     if request.method == 'GET':
@@ -136,11 +135,31 @@ def user_specific_doc_meta(request):
         else:
             objects = Doc.objects.filter(user_id=user_id).filter(doc_id=base_doc_id)
 
+        ids = [x.doc_id for x in objects]
 
+        # loader
+        loader_variant = QASCORD19DataLoaderVariant(None)
+        loader = QASDataLoader(variant=loader_variant)
 
-        json_objects = serializers.serialize('json', objects)
+        # database
+        document_store = ElasticsearchDocumentStore(host='localhost', username='', password='', index='med_docs')
+        database_variant = QASHaystackDatabaseAdapter(document_store=document_store)
+        database = QASDatabase(variant=database_variant, loader=loader)
 
-        return HttpResponse(json_objects, content_type="application/json")
+        docs = database.get_data(identifiers=ids)
+
+        json_str = serializers.serialize('json', objects)
+        json_obj = json.loads(json_str)
+
+        for obj in json_obj:
+            doc_list = list(filter(lambda x: x.id == obj['fields']['doc_id'],
+                                   docs))
+            if doc_list and len(doc_list) > 0:
+                doc = doc_list[0]
+                obj['fields']['meta'] = doc.meta
+
+        json_str = json.dumps(json_obj)
+        return HttpResponse(json_str, content_type="application/json")
 
 
 def qas(request):
@@ -170,7 +189,7 @@ def qas(request):
         haystack_retriever = ElasticsearchRetriever(None)
         retriever_variant = QASHaystackRetrieverAdapter(retriever=haystack_retriever)
         retriever = QASRetriever(variant=retriever_variant)
-        retrieved_docs = retriever.retrieve(question, database, QASDocType.TEXT)
+        retrieved_docs = retriever.retrieve(question, database, QASDocType.TEXT, load_doc_meta=True)
 
         # reader
         haystack_reader = FARMReader(model_name_or_path=model_name, use_gpu=False)
@@ -183,7 +202,6 @@ def qas(request):
         for answer in answers:
             unique_answers[answer.answer_id] = answer.serialize()
 
-        # print(json.dumps(list(unique_answers.values())))
         return JsonResponse(list(unique_answers.values()), safe=False)
 
         '''

@@ -57,8 +57,8 @@ class QASCORD19DataLoaderVariant(QASDataLoaderVariant):
 
         # add meta
         meta_doc_dict = json_data['metadata']
-        # meta_doc_dict['authors'] = None
         # TODO: decide if authors are useful
+        # meta_doc_dict['authors'] = None
         meta_doc_dict['bib_entries'] = QASCORD19DataLoaderVariant._cut_bib_ref(json_data['bib_entries'])
         # TODO: decide if ref entries are useful
         # meta_doc_dict['ref_entries'] = json_data['ref_entries']

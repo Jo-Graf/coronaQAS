@@ -17,5 +17,9 @@ class QASRetriever:
         pass
 
     # TODO: add param and return type to uml
-    def retrieve(self, query: str, database: QASDatabase, doc_type: Optional[QASDocType] = None) -> List[QASDocument]:
-        return self.__variant.retrieve(query, database, doc_type)
+    def retrieve(self,
+                 query: str,
+                 database: QASDatabase,
+                 doc_type: Optional[QASDocType] = None,
+                 load_doc_meta: Optional[bool] = False) -> List[QASDocument]:
+        return self.__variant.retrieve(query, database, doc_type, load_doc_meta)

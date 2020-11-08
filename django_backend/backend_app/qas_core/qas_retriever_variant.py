@@ -11,5 +11,9 @@ class QASRetrieverVariant(ABC):
 
     # TODO: add param to uml
     @abstractmethod
-    def retrieve(self, query: str, database: QASDatabase, doc_type: Optional[QASDocType] = None) -> List[QASDocument]:
+    def retrieve(self,
+                 query: str,
+                 database: QASDatabase,
+                 doc_type: Optional[QASDocType] = None,
+                 load_doc_meta: Optional[bool] = False) -> List[QASDocument]:
         pass

@@ -3,6 +3,7 @@ from typing import List, Optional
 from haystack import Document
 from haystack.retriever.base import BaseRetriever
 from backend_app.qas_core.qas_database import QASDatabase
+from backend_app.qas_core.qas_doc_key_gen import QASDocKeyGen
 from backend_app.qas_core.qas_doc_type_enum import QASDocType
 from backend_app.qas_core.qas_document import QASDocument
 from backend_app.qas_core.qas_haystack_database_adapter import QASHaystackDatabaseAdapter
@@ -18,7 +19,11 @@ class QASHaystackRetrieverAdapter(QASRetrieverVariant):
         self.__retriever = retriever
 
     # TODO: add param to uml
-    def retrieve(self, query: str, database: QASDatabase, doc_type: Optional[QASDocType] = None) -> List[QASDocument]:
+    def retrieve(self,
+                 query: str,
+                 database: QASDatabase,
+                 doc_type: Optional[QASDocType] = None,
+                 load_doc_meta: Optional[bool] = False) -> List[QASDocument]:
 
         database_variant = database.get_variant()
 
@@ -37,6 +42,11 @@ class QASHaystackRetrieverAdapter(QASRetrieverVariant):
             if self._check_doc_type(doc, doc_type):
                 qas_doc = QASDocument.doc_to_qas_doc(doc)
                 qas_docs.append(qas_doc)
+
+        if load_doc_meta:
+            meta_ids = set([QASDocKeyGen.get_doc_base_key(key=x.id) for x in docs])
+            meta_docs = database.get_data(identifiers=meta_ids)
+            qas_docs.extend(meta_docs)
 
         return qas_docs
 
