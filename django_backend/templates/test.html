@@ -47,7 +47,7 @@
                           <div class="m-2">
                               <b-form-input
                                       v-if="!logged_in"
-                                      v-model="username_field"
+                                      v-model="username"
                                       placeholder="Username"
                                       class="mt-2"
                                       :state="username_field_state"
@@ -124,15 +124,6 @@
                                    <b-card-text>[[paper.context]]</b-card-text>
                                    <a class="card-link" v-on:click="show_paper_detail([[index]])" v-show="index != selected_paper">
                                        + details
-                                   </a>
-                                   <a class="card-link" v-on:click="change_paper_note(papers[index])" v-show="index != selected_paper">
-                                       add note
-                                   </a>
-                                   <a class="card-link" v-on:click="show_paper_detail([index])" v-show="index != selected_paper">
-                                       add to history
-                                   </a>
-                                   <a class="card-link" v-on:click="show_paper_detail([index])" v-show="index != selected_paper">
-                                       add bookmark
                                    </a>
                                    <div v-show="index == selected_paper">
                                        <div v-if="(index == selected_paper) && (logged_in)">
@@ -249,10 +240,8 @@
                   graph: graph_var,
                   selected_paper: null,
                   logged_in: true,
-                  username_field: "",
                   username: "",
                   password: "",
-                  // { title: 'Paper Title 1' ,abstract: abstract, full: '', score: 0.99},
                   papers: null,
                   lda_results: [],
                   related_papers: [],
@@ -277,15 +266,13 @@
                       return this.selected_question != null && !this.answer_is_loading;
                   },
                   username_field_state() {
-                      return this.username_field.length > 4 ? true : false
+                      return this.username.length > 4 ? true : false
                   },
                   password_field_state() {
                       return this.password.length > 7 ? true : false
                   },
                   display_username() {
-                      console.log(vm.logged_in)
-                      console.log(vm.username)
-                      return (this.logged_in && this.username.length > 0)? this.username : "User"
+                      return (vm.logged_in && vm.username.length > 0)? vm.username : "User"
                   }
               },
               methods: {
@@ -298,14 +285,12 @@
                       }else{
                           let paper = vm.papers[index]
                           vm.selected_paper = index;
-                          vm.selected_user_specific_doc_meta = user_specific_doc_meta(paper.id);
+                          vm.selected_user_specific_doc_meta = user_specific_doc_meta(paper.doc_id);
                           // render_lda(paper, index);
 
                       }
                   },
                   login: function(){
-                      vm.username = vm.username_field
-
                       axios.post('http://127.0.0.1:8000/login/',
                           {
                               username: vm.username,
@@ -345,19 +330,18 @@
                       );
                   },
                   update_user_specific_doc_meta: function(){
-                      let doc_id = vm.selected_paper.doc_id;
-                      let meta = vm.selected_paper.meta;
+                      let paper = vm.papers[vm.selected_paper]
+                      let doc_id = paper.doc_id;
+                      let meta = paper.meta;
                       let bookmarked = vm.selected_user_specific_doc_meta.fields.bookmarked;
                       let note = vm.selected_user_specific_doc_meta.fields.note;
-
-                      console.log(bookmarked)
-                      console.log(note)
 
                       update_user_specific_doc_meta(doc_id, note, bookmarked, meta)
                   }
             },
               mounted(){
                   load_question_selection();
+                  check_login();
               },
                 watch: {
                   selected_question: function (val) {
@@ -367,10 +351,9 @@
                   logged_in: function (val) {
                       vm.password = ""
                       if(val === true){
-                          load_all_user_specific_doc_meta();
+                          load_user_specific_doc_meta();
                       }else{
                           vm.username = ""
-                          vm.username_field = ""
                       }
                   }
     },
@@ -383,6 +366,7 @@
                       bookmarked: false
                   }
               }
+
               if(!doc_id ||!vm.user_specific_doc_meta||vm.user_specific_doc_meta.length<1){
                   return empty_doc_meta;
               }
@@ -399,7 +383,8 @@
           }
 
           function update_user_specific_doc_meta(doc_id, note, bookmarked, doc_meta){
-              let change_dic = {'doc_id': doc_id}
+              let change_dic = {'doc_id': doc_id};
+
               if(note != null)
                   change_dic['doc_note'] = note
               if(bookmarked != null)
@@ -426,7 +411,7 @@
                   }
 
                   let variant = success? 'success' : 'danger';
-                  this.$bvToast.toast(message, {
+                  vm.$bvToast.toast(message, {
                       title: 'Update information',
                       autoHideDelay: 5000,
                       appendToast: true,
@@ -435,7 +420,14 @@
               });
           }
 
-          function load_all_user_specific_doc_meta(){
+          function check_login(){
+              axios.get('http://127.0.0.1:8000/login/').then((response) => {
+                  vm.logged_in = response.data['logged_in'];
+                  vm.username = response.data['username'];
+              });
+          }
+
+          function load_user_specific_doc_meta(){
               axios.post('http://127.0.0.1:8000/user_specific_doc_meta/',{
               }).then((response) => {
                   vm.user_specific_doc_meta = response.data
@@ -465,7 +457,6 @@
                     for (let i = 0; i < vm.papers.length; i++) {
                       let curr_id = vm.papers[i].doc_id;
                       if (new RegExp(nearest_neighbours.join("|")).test(curr_id)){
-                          console.log(vm.papers[i].doc_id)
                           vm.related_papers.push(vm.papers[i]);
                       }
                     }

@@ -59,7 +59,12 @@ def question_selection(request):
 def login(request):
     # TODO: Model -> (doc_id, notes, book_marked, last_view)
     if request.method == 'GET':
-        return HttpResponseRedirect('/index/')
+        response = {
+            'logged_in': request.user.is_authenticated,
+            'username': request.user.username
+        }
+
+        return JsonResponse(response, safe=False)
     else:
         username = json.loads(request.body)['username']
         password = json.loads(request.body)['password']
@@ -97,6 +102,7 @@ def update_user_specific_doc_meta(request):
     if request.method == 'GET':
         return HttpResponseRedirect('/index/')
     else:
+        print(json.loads(request.body))
         user_id = request.user.id
         note = json.loads(request.body)['doc_note']
         bookmarked = json.loads(request.body)['doc_bookmarked']
@@ -105,7 +111,7 @@ def update_user_specific_doc_meta(request):
         base_doc_id = QASDocKeyGen.get_doc_base_key(key=doc_id)
 
         objects = Doc.objects.filter(user_id=user_id).filter(doc_id=base_doc_id)
-        doc_object = objects[0] if len(objects) > 0 else Doc(doc_id=doc_id)
+        doc_object = objects[0] if len(objects) > 0 else Doc(doc_id=base_doc_id, user_id=user_id)
 
         if note is not None:
             doc_object.note = note
@@ -115,9 +121,15 @@ def update_user_specific_doc_meta(request):
 
         doc_object.save()
 
-        json_str = serializers.serialize('json', [doc_object])
+        json_obj = json.loads(serializers.serialize('json', [doc_object]))[0]
 
-        return HttpResponse(json_str, content_type="application/json")
+        response = {
+            'success': True,
+            'message': 'Saving was successful',
+            'user_specific_doc_meta': json_obj
+        }
+
+        return JsonResponse(response, safe=False)
 
 
 # TODO: add permission decorator
@@ -162,6 +174,7 @@ def user_specific_doc_meta(request):
                 obj['fields']['meta'] = doc.meta
 
         json_str = json.dumps(json_obj)
+
         return HttpResponse(json_str, content_type="application/json")
 
 
