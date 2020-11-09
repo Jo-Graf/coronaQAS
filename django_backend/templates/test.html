@@ -286,7 +286,6 @@
                           let paper = vm.papers[index]
                           vm.selected_paper = index;
                           vm.selected_user_specific_doc_meta = user_specific_doc_meta(paper.doc_id);
-                          // render_lda(paper, index);
 
                       }
                   },
@@ -296,11 +295,8 @@
                               username: vm.username,
                               password: vm.password
                           }).then((response) => {
-                              vm.password = "";
                               vm.logged_in = response.data['success'];
-
                               let variant = vm.logged_in? 'success' : 'danger';
-
                               this.$bvToast.toast(response.data['message'], {
                                   title: 'Login information',
                                   autoHideDelay: 5000,
@@ -314,12 +310,8 @@
                   logout: function(){
                       axios.get('http://127.0.0.1:8000/logout/')
                           .then((response) => {
-                              vm.password = "";
-
                               vm.logged_in = !response.data['success'];
-
                               let variant = !vm.logged_in? 'success' : 'danger';
-
                               this.$bvToast.toast(response.data['message'], {
                                   title: 'Login information',
                                   autoHideDelay: 5000,
@@ -339,25 +331,31 @@
                       update_user_specific_doc_meta(doc_id, note, bookmarked, meta)
                   }
             },
-              mounted(){
-                  load_question_selection();
-                  check_login();
-              },
-                watch: {
+            watch: {
                   selected_question: function (val) {
                       vm.selected_paper = null;
                       ask_question(val);
                   },
                   logged_in: function (val) {
-                      vm.password = ""
-                      if(val === true){
-                          load_user_specific_doc_meta();
-                      }else{
-                          vm.username = ""
-                      }
+                    update_logged_in(val);
                   }
-    },
+            },
+            mounted(){
+                  load_question_selection();
+                  check_login();
+            },
           });
+
+          function update_logged_in(logged_in){
+              vm.password = ""
+              if(logged_in === true){
+                  load_user_specific_doc_meta();
+              }else{
+                  vm.username = ""
+                  vm.user_specific_doc_meta = [];
+                  vm.selected_user_specific_doc_meta = null;
+              }
+          }
 
           function user_specific_doc_meta(doc_id){
               let empty_doc_meta = {
@@ -424,12 +422,14 @@
               axios.get('http://127.0.0.1:8000/login/').then((response) => {
                   vm.logged_in = response.data['logged_in'];
                   vm.username = response.data['username'];
+                  update_logged_in(vm.logged_in);
               });
           }
 
           function load_user_specific_doc_meta(){
               axios.post('http://127.0.0.1:8000/user_specific_doc_meta/',{
               }).then((response) => {
+                  console.log("load_user_specific_doc_meta")
                   vm.user_specific_doc_meta = response.data
               });
           }
