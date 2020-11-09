@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
    <head>
@@ -49,7 +47,7 @@
                           <div class="m-2">
                               <b-form-input
                                       v-if="!logged_in"
-                                      v-model="username"
+                                      v-model="username_field"
                                       placeholder="Username"
                                       class="mt-2"
                                       :state="username_field_state"
@@ -58,6 +56,7 @@
                               <b-form-invalid-feedback id="username-input-live-feedback">
                                   Enter at least 5 letters
                               </b-form-invalid-feedback>
+
                               <b-form-input
                                       v-if="!logged_in"
                                       v-model="password"
@@ -70,6 +69,7 @@
                               <b-form-invalid-feedback id="password-input-live-feedback">
                                       Enter at least 8 letters
                               </b-form-invalid-feedback>
+
                               <b-dropdown-item
                                       v-if="!logged_in"
                                       v-on:click="login()">Sign In</b-dropdown-item>
@@ -135,6 +135,19 @@
                                        add bookmark
                                    </a>
                                    <div v-show="index == selected_paper">
+                                       <div v-if="(index == selected_paper) && (logged_in)">
+                                       <b-form-textarea
+                                               v-model="selected_user_specific_doc_meta.fields.note"
+                                               placeholder="Enter something..."
+                                               rows="3"
+                                               max-rows="6"></b-form-textarea>
+                                           <b-form-checkbox v-model="selected_user_specific_doc_meta.fields.bookmarked" switch>
+                                               Bookmarked
+                                           </b-form-checkbox>
+                                           <a class="card-link" v-on:click="update_user_specific_doc_meta()">
+                                               save
+                                           </a>
+                                       </div>
                                        <h5 class="mt-1">Top [[lda_results.length]] Topics:</h5>
                                        <!--canvas v-bind:id="'chart-' + index.toString()" width="400" height="200" v-show="index == selected_paper"></canvas-->
                                        <div class="container topic-tag-group" v-for="(topic, topic_index) in lda_results.topics">
@@ -236,6 +249,7 @@
                   graph: graph_var,
                   selected_paper: null,
                   logged_in: true,
+                  username_field: "",
                   username: "",
                   password: "",
                   // { title: 'Paper Title 1' ,abstract: abstract, full: '', score: 0.99},
@@ -243,6 +257,7 @@
                   lda_results: [],
                   related_papers: [],
                   user_specific_doc_meta: [],
+                  selected_user_specific_doc_meta: null,
                   selected_question: null,
                   best_answer: null,
                   questions: [
@@ -262,31 +277,35 @@
                       return this.selected_question != null && !this.answer_is_loading;
                   },
                   username_field_state() {
-                      return this.username.length > 4 ? true : false
+                      return this.username_field.length > 4 ? true : false
                   },
                   password_field_state() {
                       return this.password.length > 7 ? true : false
                   },
                   display_username() {
-                      return (this.logged_in || this.username.length === 0)? this.username : "User"
+                      console.log(vm.logged_in)
+                      console.log(vm.username)
+                      return (this.logged_in && this.username.length > 0)? this.username : "User"
                   }
               },
               methods: {
                   show_paper_detail: function(index) {
-                      let paper = vm.papers[index]
-
                       if(vm.selected_paper == index){
                           vm.selected_paper = null;
                           vm.lda_results = null;
                           vm.related_papers = null;
+
                       }else{
+                          let paper = vm.papers[index]
                           vm.selected_paper = index;
-                          // render_paper_chart(index);
-                          render_lda(paper, index);
+                          vm.selected_user_specific_doc_meta = user_specific_doc_meta(paper.id);
+                          // render_lda(paper, index);
 
                       }
                   },
                   login: function(){
+                      vm.username = vm.username_field
+
                       axios.post('http://127.0.0.1:8000/login/',
                           {
                               username: vm.username,
@@ -325,11 +344,16 @@
                           }
                       );
                   },
-                  change_paper_bookmark: function(paper, bookmark){
-                      paper['book']
-                  },
-                  change_paper_note: function(paper, note){
-                      paper['notes'] = note
+                  update_user_specific_doc_meta: function(){
+                      let doc_id = vm.selected_paper.doc_id;
+                      let meta = vm.selected_paper.meta;
+                      let bookmarked = vm.selected_user_specific_doc_meta.fields.bookmarked;
+                      let note = vm.selected_user_specific_doc_meta.fields.note;
+
+                      console.log(bookmarked)
+                      console.log(note)
+
+                      update_user_specific_doc_meta(doc_id, note, bookmarked, meta)
                   }
             },
               mounted(){
@@ -342,21 +366,44 @@
                   },
                   logged_in: function (val) {
                       vm.password = ""
-                      if(val){
+                      if(val === true){
                           load_all_user_specific_doc_meta();
                       }else{
                           vm.username = ""
+                          vm.username_field = ""
                       }
                   }
     },
           });
 
-          function change_user_specific_doc_meta(doc_id, note, bookmark, doc_meta){
-              let change_dic = {doc_id: doc_id}
+          function user_specific_doc_meta(doc_id){
+              let empty_doc_meta = {
+                  fields: {
+                      note: "",
+                      bookmarked: false
+                  }
+              }
+              if(!doc_id ||!vm.user_specific_doc_meta||vm.user_specific_doc_meta.length<1){
+                  return empty_doc_meta;
+              }
+
+              for (let i = 0; i < vm.user_specific_doc_meta.length; i++) {
+                  let doc = vm.user_specific_doc_meta[i];
+
+                  if(doc_id.includes(doc.fields.doc_id)){
+                      return doc;
+                  }
+              }
+
+              return empty_doc_meta;
+          }
+
+          function update_user_specific_doc_meta(doc_id, note, bookmarked, doc_meta){
+              let change_dic = {'doc_id': doc_id}
               if(note != null)
-                  change_dic['note'] = note
-              if(bookmark != null)
-                  change_dic['bookmark'] = bookmark
+                  change_dic['doc_note'] = note
+              if(bookmarked != null)
+                  change_dic['doc_bookmarked'] = bookmarked
 
               axios.post('http://127.0.0.1:8000/update_user_specific_doc_meta/',change_dic).then((response) => {
 
@@ -365,6 +412,16 @@
                   let user_specific_doc_meta = response.data['user_specific_doc_meta']
 
                   if(success){
+                      user_specific_doc_meta.fields.meta = doc_meta
+
+                      let removeIndex = vm.user_specific_doc_meta.map(function(item){
+                          return item.fields.doc_id;
+                      }).indexOf(user_specific_doc_meta.fields.id);
+
+                      if(removeIndex>=0) {
+                          vm.user_specific_doc_meta.splice(removeIndex, 1);
+                      }
+
                       vm.user_specific_doc_meta.push(user_specific_doc_meta)
                   }
 
@@ -392,6 +449,7 @@
 
           function render_lda(paper, index) {
               let ids = []
+
               for (let i = 0; i < vm.papers.length; i++) {
                   ids.push(vm.papers[i].doc_id);
               }

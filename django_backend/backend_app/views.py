@@ -99,22 +99,25 @@ def update_user_specific_doc_meta(request):
     else:
         user_id = request.user.id
         note = json.loads(request.body)['doc_note']
-        bookmark = json.loads(request.body)['doc_bookmark']
+        bookmarked = json.loads(request.body)['doc_bookmarked']
+        doc_id = json.loads(request.body)['doc_id']
 
-        if 'doc_id' in json.loads(request.body).keys():
-            doc_id = json.loads(request.body)['doc_id']
-            base_doc_id = QASDocKeyGen.get_doc_base_key(key=doc_id)
+        base_doc_id = QASDocKeyGen.get_doc_base_key(key=doc_id)
 
         objects = Doc.objects.filter(user_id=user_id).filter(doc_id=base_doc_id)
-        doc_object = objects[0]
+        doc_object = objects[0] if len(objects) > 0 else Doc(doc_id=doc_id)
 
         if note is not None:
             doc_object.note = note
 
-        if bookmark is not None:
-            doc_object.bookmark = bookmark
+        if bookmarked is not None:
+            doc_object.bookmark = bookmarked
 
         doc_object.save()
+
+        json_str = serializers.serialize('json', [doc_object])
+
+        return HttpResponse(json_str, content_type="application/json")
 
 
 # TODO: add permission decorator
@@ -169,7 +172,7 @@ def qas(request):
         return HttpResponseRedirect('/index/')
     else:
         question = json.loads(request.body)['question']
-
+        '''
         # dir_path = "/Users/Gino/Belegarbeit/django_backend/backend_app/data/article_txt_got"
         # url = "https://s3.eu-central-1.amazonaws.com/deepset.ai-farm-qa/datasets/documents/wiki_gameofthrones_txt.zip"
         dir_path = '/Volumes/glpstorage/Users/Gino/Belegarbeit/archive/document_parses/pdf_json_test/'
@@ -211,7 +214,7 @@ def qas(request):
             json_dump = json.load(json_file)
 
         return JsonResponse(json_dump, safe=False)
-        '''
+
 
 
 def lda(request):
