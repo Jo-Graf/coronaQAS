@@ -22,7 +22,7 @@
       </style>
    </head>
    <body>
-      <div id="qas-ui" class="demo">
+      <div id="qas-ui">
          <div>
             <b-navbar toggleable="lg" type="dark" variant="info">
                <b-navbar-brand href="#">Covid19 - QAS</b-navbar-brand>
@@ -37,7 +37,6 @@
                       <b-nav-item-dropdown
                               class="ml-2"
                               right>
-                          <!-- Using 'button-content' slot -->
                           <template #button-content>
                               <em>[[display_username]]</em>
                           </template>
@@ -117,74 +116,95 @@
                                 v-for="(paper, index) in papers"
                                 style="border: none;">
                                <b-card v-bind:title="paper.meta.title" v-bind:sub-title="paper.meta.subtitle">
-                                   <h5 class="mt-1">Score: [[Math.round(paper.probability*100)]]%</h5>
-                                   <h5 class="mt-1">Answer</h5>
-                                   <b-card-text>[[paper.answer]]</b-card-text>
-                                   <h5 class="mt-1">Context</h5>
-                                   <b-card-text>[[paper.context]]</b-card-text>
-                                   <a class="card-link" v-on:click="show_paper_detail([[index]])" v-show="index != selected_paper">
-                                       + details
+                                   <h5 class="mt-4">Score: [[Math.round(paper.probability*100)]]%</h5>
+                                   <h5 class="mt-4">Answer</h5>
+                                   <b-card-text class="mt-2">[[paper.answer]]</b-card-text>
+                                   <h5 class="mt-4">Context</h5>
+                                   <b-card-text class="mt-2">[[paper.context]]</b-card-text>
+
+                                   <a class="card-link" v-on:click="show_paper_detail([[index]])">
+                                       <b>[[more_less_display_title(index)]]</b>
                                    </a>
-                                   <div v-show="index == selected_paper">
-                                       <div v-if="(index == selected_paper) && (logged_in)">
-                                       <b-form-textarea
-                                               v-model="selected_user_specific_doc_meta.fields.note"
-                                               placeholder="Enter something..."
-                                               rows="3"
-                                               max-rows="6"></b-form-textarea>
-                                           <b-form-checkbox v-model="selected_user_specific_doc_meta.fields.bookmarked" switch>
-                                               Bookmarked
-                                           </b-form-checkbox>
-                                           <a class="card-link" v-on:click="update_user_specific_doc_meta()">
-                                               save
-                                           </a>
-                                       </div>
-                                       <h5 class="mt-1">Top [[lda_results.length]] Topics:</h5>
-                                       <!--canvas v-bind:id="'chart-' + index.toString()" width="400" height="200" v-show="index == selected_paper"></canvas-->
-                                       <div class="container topic-tag-group" v-for="(topic, topic_index) in lda_results.topics">
-                                           <div class="mt-3"> Topic [[topic_index]]:</div>
-                                               <b-progress max=100 height="2rem" class="mt-2" variant="info">
-                                                   <b-progress-bar :value="lda_results.topic_probabilities[topic_index]*100">
-                                                       <span><strong>[[(lda_results.topic_probabilities[topic_index]*100).toFixed(2)]]%</strong></span>
-                                                   </b-progress-bar>
-                                               </b-progress>
-                                           <div class="row text-center">
-                                               <b-form-tag
-                                                       v-for="tag in topic.words"
-                                                       tagRemoveLabel=" "
-                                                       :key="tag"
-                                                       :title="tag"
-                                                       class="mt-1">
-                                                   [[tag]]
-                                               </b-form-tag>
+
+                                   <b-tabs
+                                           v-show="index == selected_paper"
+                                           class="mt-4">
+                                       <b-tab
+                                               active
+                                               title="Details"
+                                       >
+                                           <h5 class="mt-4">Top [[lda_results.length]] Topics:</h5>
+                                           <!--canvas v-bind:id="'chart-' + index.toString()" width="400" height="200" v-show="index == selected_paper"></canvas-->
+                                           <div class="container topic-tag-group" v-for="(topic, topic_index) in lda_results.topics">
+                                               <div class="mt-3"> Topic [[topic_index]]:</div>
+                                                   <b-progress max=100 height="2rem" class="mt-2" variant="info">
+                                                       <b-progress-bar :value="lda_results.topic_probabilities[topic_index]*100">
+                                                           <span><strong>[[(lda_results.topic_probabilities[topic_index]*100).toFixed(2)]]%</strong></span>
+                                                       </b-progress-bar>
+                                                   </b-progress>
+                                               <div class="row text-center">
+                                                   <b-form-tag
+                                                           v-for="tag in topic.words"
+                                                           tagRemoveLabel=" "
+                                                           :key="tag"
+                                                           :title="tag"
+                                                           class="mt-1">
+                                                       [[tag]]
+                                                   </b-form-tag>
+                                               </div>
                                            </div>
-                                       </div>
-                                       <h5 class="mt-5">Related paper</h5>
-                                       <b-carousel
-                                               id="carousel"
-                                               controls
-                                               indicators
-                                               width="400"
-                                               height="200"
-                                               img-width="400"
-                                               img-height="200">
-                                           <b-carousel-slide
-                                                   v-for="(paper, index) in related_papers"
-                                                   caption=""
-                                                   img-blank
-                                                   img-alt="Blank image">
-                                               <b-list-group-item
-                                                       style="border: none;">
-                                                   <b-card
-                                                           v-bind:title="paper.meta.title"
-                                                           v-bind:sub-title="paper.meta.subtitle"
-                                                           style="color: #000;">
-                                                       <b-card-text>[[paper.abstract]]</b-card-text>
-                                                   </b-card>
-                                               </b-list-group-item>
-                                           </b-carousel-slide>
-                                       </b-carousel>
-                                   </div>
+                                           <h5 class="mt-4">Related paper</h5>
+                                           <b-carousel
+                                                   id="carousel"
+                                                   controls
+                                                   indicators
+                                                   width="400"
+                                                   height="200"
+                                                   img-width="400"
+                                                   img-height="200">
+                                               <b-carousel-slide
+                                                       v-for="(paper, index) in related_papers"
+                                                       caption=""
+                                                       img-blank
+                                                       img-alt="Blank image">
+                                                   <b-list-group-item
+                                                           style="border: none;">
+                                                       <b-card
+                                                               v-bind:title="paper.meta.title"
+                                                               v-bind:sub-title="paper.meta.subtitle"
+                                                               style="color: #000;">
+                                                           <b-card-text>[[paper.abstract]]</b-card-text>
+                                                       </b-card>
+                                                   </b-list-group-item>
+                                               </b-carousel-slide>
+                                           </b-carousel>
+                                       </b-tab>
+
+                                       <b-tab v-if="(index == selected_paper) && (logged_in)"
+                                              title="Remarks">
+                                           <h5 class="mt-4">Notes</h5>
+                                           <b-form-textarea v-model="selected_user_specific_doc_meta.fields.note"
+                                                            placeholder="Enter something..."
+                                                            rows="3"
+                                                            class="mt-2"
+                                           ></b-form-textarea>
+                                           <b-form-checkbox v-model="selected_user_specific_doc_meta.fields.bookmarked"
+                                                            switch
+                                                            size="lg"
+                                                            class="mt-4">
+                                               <h5>Bookmarked</h5>
+                                           </b-form-checkbox>
+
+                                           <b-button variant="primary"
+                                                     class="mt-4"
+                                                     v-on:click="update_user_specific_doc_meta()"
+                                                     pill>
+                                                   save
+                                           </b-button>
+                                       </b-tab>
+
+                                   </b-tabs>
+
                                </b-card>
                            </b-list-group-item>
                        </b-list-group>
@@ -193,7 +213,7 @@
             </b-row>
          </b-container>
       </div>
-      <!-- Add Vue and BootstrapVue scripts just before the closing </body> tag -->
+      <!-- class="demo" Add Vue and BootstrapVue scripts just before the closing </body> tag -->
       <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
       <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -277,10 +297,10 @@
               },
               methods: {
                   show_paper_detail: function(index) {
-                      if(vm.selected_paper == index){
+                      if(parseInt(vm.selected_paper,10) === parseInt(index,10)){
                           vm.selected_paper = null;
-                          vm.lda_results = null;
-                          vm.related_papers = null;
+                          vm.lda_results = [];
+                          vm.related_papers = [];
 
                       }else{
                           let paper = vm.papers[index]
@@ -329,6 +349,9 @@
                       let note = vm.selected_user_specific_doc_meta.fields.note;
 
                       update_user_specific_doc_meta(doc_id, note, bookmarked, meta)
+                  },
+                  more_less_display_title: function(index){
+                      return (parseInt(vm.selected_paper,10) === parseInt(index,10)) ? "- less" : "+ more";
                   }
             },
             watch: {
@@ -429,7 +452,6 @@
           function load_user_specific_doc_meta(){
               axios.post('http://127.0.0.1:8000/user_specific_doc_meta/',{
               }).then((response) => {
-                  console.log("load_user_specific_doc_meta")
                   vm.user_specific_doc_meta = response.data
               });
           }
