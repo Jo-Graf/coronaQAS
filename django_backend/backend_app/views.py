@@ -174,7 +174,7 @@ def user_specific_doc_meta(request):
                 obj['fields']['meta'] = doc.meta
 
         json_str = json.dumps(json_obj)
-
+        print(json_str)
         return HttpResponse(json_str, content_type="application/json")
 
 

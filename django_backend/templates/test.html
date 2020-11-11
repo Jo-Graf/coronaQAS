@@ -31,19 +31,23 @@
       </style>
    </head>
    <body>
-      <div id="qas-ui">
-         <div>
-            <b-navbar toggleable="lg" type="dark" variant="info">
+   <div id="qas-ui">
+       <div>
+           <b-navbar toggleable="lg" type="dark" variant="info">
                <b-navbar-brand href="#">Covid19 - QAS</b-navbar-brand>
                <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
                <b-collapse id="nav-collapse" is-nav>
-                  <b-navbar-nav>
-                     <b-nav-item href="#" active>Search</b-nav-item>
-                     <b-nav-item href="#">Bookmarked</b-nav-item>
-                      <b-nav-item href="#">History</b-nav-item>
-                  </b-navbar-nav>
-                  <!-- Right aligned nav items -->
-                  <b-navbar-nav class="ml-auto">
+                   <b-navbar-nav>
+                       <b-nav-item :active="selected_page==0"
+                                   v-on:click="select_page(0)">Search</b-nav-item>
+                       <b-nav-item v-if="logged_in"
+                                   :active="selected_page==1"
+                                   v-on:click="select_page(1)">Bookmarked</b-nav-item>
+                       <b-nav-item v-if="logged_in"
+                                   :active="selected_page==2"
+                                   v-on:click="select_page(2)">History</b-nav-item>
+                   </b-navbar-nav>
+                   <b-navbar-nav class="ml-auto">
                       <b-nav-item-dropdown
                               class="ml-2"
                               right>
@@ -86,18 +90,19 @@
                       </b-nav-item-dropdown>
                   </b-navbar-nav>
                </b-collapse>
-            </b-navbar>
-         </div>
-         <b-container fluid>
+           </b-navbar>
+       </div>
+       <b-container fluid
+                    v-if="selected_page===0">
 
              <b-row align-h="center" class="mt-3">
-               <b-col cols="6">
+               <b-col :cols="search_page_width">
                   <h2>Search</h2>
                </b-col>
             </b-row>
 
              <b-row align-h="center" class="mt-3">
-               <b-col cols="6">
+               <b-col :cols="search_page_width">
                   <h3>Question</h3>
                   <b-row align-h="center" class="mt-3">
                       <b-col cols="10">
@@ -120,12 +125,12 @@
 
             <b-row align-h="center" class="mt-3">
                <b-col cols="1" v-for="n in 3">
-                   <b-spinner type="grow" label="Spinning" v-show="answer_is_loading"></b-spinner>
+                   <b-spinner type="grow" label="Spinning" v-if="answer_is_loading" :style="'color:' + hex_primary_color"></b-spinner>
                </b-col>
             </b-row>
 
-            <b-row align-h="center" v-show="show_answer_and_results">
-               <b-col cols="6" v-if="best_answer != null">
+            <b-row align-h="center" v-if="show_answer_and_results">
+               <b-col :cols="search_page_width" v-if="best_answer != null">
                    <h3>Most likely answer</h3>
                    <b-card>
                        <b-card-text>[[best_answer.answer]]</b-card-text>
@@ -133,8 +138,8 @@
                </b-col>
             </b-row>
 
-            <b-row align-h="center" class="mt-3" v-show="show_answer_and_results">
-               <b-col cols="6">
+            <b-row align-h="center" class="mt-3" v-if="show_answer_and_results">
+               <b-col :cols="search_page_width">
                    <h3>Results</h3>
                    <div>
                        <b-list-group>
@@ -225,12 +230,11 @@
                                            <h5 class="mt-4">Notes</h5>
                                            <b-form-textarea v-model="selected_user_specific_doc_meta.fields.note"
                                                             placeholder="Enter something..."
-                                                            rows="3"
+                                                            rows="4"
                                                             class="mt-2"
                                            ></b-form-textarea>
 
                                            <b-form-checkbox v-model="selected_user_specific_doc_meta.fields.bookmarked"
-
                                                                 size="lg"
                                                                 class="mt-4">
                                                <h5>Bookmarked</h5>
@@ -253,6 +257,34 @@
                </b-col>
             </b-row>
          </b-container>
+       <b-container fluid
+                    v-if="(selected_page===1) && logged_in">
+           <b-row align-h="center" class="mt-3">
+               <b-col :cols="bookmarked_page_width">
+                  <h2>Bookmarked</h2>
+               </b-col>
+           </b-row>
+           <b-row align-h="center" class="mt-3">
+               <b-col :cols="bookmarked_page_width">
+                   <b-list-group>
+                       <b-list-group-item
+                               v-for="(paper, index) in bookmarked_user_specific_doc_meta"
+                               style="border: none;">
+                           <b-card v-bind:title="paper.fields.meta.title" v-bind:sub-title="'Last update: ' + paper.fields.last_updated">
+                           </b-card>
+                       </b-list-group-item>
+                   </b-list-group>
+               </b-col>
+           </b-row>
+       </b-container>
+       <b-container fluid
+                    v-if="(selected_page===2) && logged_in">
+           <b-row align-h="center" class="mt-3">
+               <b-col cols="6">
+                   <h2>History</h2>
+               </b-col>
+           </b-row>
+       </b-container>
       </div>
       <!-- class="demo" Add Vue and BootstrapVue scripts just before the closing </body> tag -->
       <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
@@ -273,6 +305,9 @@
               delimiters: ["[[", "]]"],
               el: "#qas-ui",
               data: {
+                  search_page_width: 8,
+                  bookmarked_page_width: 8,
+                  selected_page: 0,
                   hex_primary_color: "#17a2b8",
                   currentTab: "List",tabs: ["List", "Graph"],
                   selected_paper: null,
@@ -312,6 +347,9 @@
                   },
                   display_username() {
                       return (vm.logged_in && vm.username.length > 0)? vm.username : "User"
+                  },
+                  bookmarked_user_specific_doc_meta(){
+                      return vm.user_specific_doc_meta.filter(word => word.fields.bookmarked === true);
                   }
               },
               methods: {
@@ -378,6 +416,9 @@
                   ask_question: function(){
                       vm.selected_paper = null;
                       ask_question(vm.selected_question)
+                  },
+                  select_page: function(index){
+                      vm.selected_page = index
                   }
             },
             watch: {
