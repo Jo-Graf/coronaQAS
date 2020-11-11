@@ -31,9 +31,10 @@
       </style>
    </head>
    <body>
+
    <div id="qas-ui">
        <div>
-           <b-navbar toggleable="lg" type="dark" variant="info">
+           <b-navbar toggleable="lg" type="dark" variant="info" fixed="top">
                <b-navbar-brand href="#">Covid19 - QAS</b-navbar-brand>
                <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
                <b-collapse id="nav-collapse" is-nav>
@@ -92,200 +93,264 @@
                </b-collapse>
            </b-navbar>
        </div>
-       <b-container fluid
-                    v-if="selected_page===0">
+       <div>
+           <b-container fluid
+                        v-if="selected_page===0">
+               <b-row align-h="center" class="mt-3">
+                   <b-col :cols="search_page_width">
+                      <h2>Search</h2>
+                   </b-col>
+                </b-row>
 
-             <b-row align-h="center" class="mt-3">
-               <b-col :cols="search_page_width">
-                  <h2>Search</h2>
-               </b-col>
-            </b-row>
+               <b-row align-h="center" class="mt-3">
+                   <b-col :cols="search_page_width">
+                      <h3>Question</h3>
+                      <b-row align-h="center" class="mt-3">
+                          <b-col cols="10">
+                              <b-form-input placeholder="Enter your COVID-19 related question"
+                                            v-model="selected_question"></b-form-input>
+                          </b-col>
+                          <b-col cols="2">
+                              <b-button block
+                                        variant="info"
+                                        v-on:click="ask_question()">Search</b-button>
+                          </b-col>
+                      </b-row>
+                      <!--b-form-group id="input-group-3" label="" label-for="input-3">
+                         <b-form-select id="input-3" v-model="selected_question" v-bind:options="questions"></b-form-select>
+                      </--b-form-group-->
+                       <h3 class="mt-3">Suggested Questions</h3>
+                       <b-form-select v-model="selected_question" :options="questions" :select-size="3"></b-form-select>
+                   </b-col>
+                </b-row>
 
-             <b-row align-h="center" class="mt-3">
-               <b-col :cols="search_page_width">
-                  <h3>Question</h3>
-                  <b-row align-h="center" class="mt-3">
-                      <b-col cols="10">
-                          <b-form-input placeholder="Enter your COVID-19 related question"
-                                        v-model="selected_question"></b-form-input>
-                      </b-col>
-                      <b-col cols="2">
-                          <b-button block
-                                    variant="info"
-                                    v-on:click="ask_question()">Search</b-button>
-                      </b-col>
-                  </b-row>
-                  <!--b-form-group id="input-group-3" label="" label-for="input-3">
-                     <b-form-select id="input-3" v-model="selected_question" v-bind:options="questions"></b-form-select>
-                  </--b-form-group-->
-                   <h3 class="mt-3">Suggested Questions</h3>
-                   <b-form-select v-model="selected_question" :options="questions" :select-size="3"></b-form-select>
-               </b-col>
-            </b-row>
+               <b-row align-h="center" class="mt-3">
+                   <b-col cols="1" v-for="n in 3">
+                       <b-spinner type="grow" label="Spinning" v-if="answer_is_loading" :style="'color:' + hex_primary_color"></b-spinner>
+                   </b-col>
+                </b-row>
 
-            <b-row align-h="center" class="mt-3">
-               <b-col cols="1" v-for="n in 3">
-                   <b-spinner type="grow" label="Spinning" v-if="answer_is_loading" :style="'color:' + hex_primary_color"></b-spinner>
-               </b-col>
-            </b-row>
+               <b-row align-h="center" v-if="show_answer_and_results">
+                   <b-col :cols="search_page_width" v-if="best_answer != null">
+                       <h3>Most likely answer</h3>
+                       <b-card>
+                           <b-card-text>[[best_answer.answer]]</b-card-text>
+                       </b-card>
+                   </b-col>
+                </b-row>
 
-            <b-row align-h="center" v-if="show_answer_and_results">
-               <b-col :cols="search_page_width" v-if="best_answer != null">
-                   <h3>Most likely answer</h3>
-                   <b-card>
-                       <b-card-text>[[best_answer.answer]]</b-card-text>
-                   </b-card>
-               </b-col>
-            </b-row>
+               <b-row align-h="center" class="mt-3" v-if="show_answer_and_results">
+                   <b-col :cols="search_page_width">
+                       <h3>Results</h3>
+                       <div>
+                           <b-list-group>
+                               <b-list-group-item
+                                    v-for="(paper, index) in papers"
+                                    style="border: none;">
+                                   <b-card v-bind:title="paper.meta.title" v-bind:sub-title="paper.meta.subtitle">
+                                       <h5 class="mt-4">Score: [[Math.round(paper.probability*100)]]%</h5>
+                                       <h5 class="mt-4">Answer</h5>
+                                       <b-card-text class="mt-2">[[paper.answer]]</b-card-text>
+                                       <h5 class="mt-4">Context</h5>
+                                       <b-card-text class="mt-2">[[paper.context]]</b-card-text>
 
-            <b-row align-h="center" class="mt-3" v-if="show_answer_and_results">
-               <b-col :cols="search_page_width">
-                   <h3>Results</h3>
-                   <div>
+                                       <a class="card-link"
+                                          v-on:click="search_page_show_paper_detail([[index]])">
+                                           <b :style="'color:' + hex_primary_color">[[more_less_display_title(index)]]</b>
+                                       </a>
+
+                                       <b-tabs
+                                               v-show="index == selected_paper"
+                                               class="mt-4"
+                                               variant="info">
+                                           <b-tab active
+                                                  title="Details">
+                                               <div v-if="!lda_is_loading">
+                                                   <h5 class="mt-4">Top [[lda_results.length]] Topics:</h5>
+                                                   <div class="container topic-tag-group" v-for="(topic, topic_index) in lda_results.topics">
+                                                       <div class="mt-3"> Topic [[topic_index]]:</div>
+                                                           <b-progress max=100 height="2rem" class="mt-2" variant="info">
+                                                               <b-progress-bar :value="lda_results.topic_probabilities[topic_index]*100">
+                                                                   <span>
+                                                                       <strong>[[(lda_results.topic_probabilities[topic_index]*100).toFixed(2)]]%</strong>
+                                                                   </span>
+                                                               </b-progress-bar>
+                                                           </b-progress>
+                                                       <div class="row text-center">
+                                                           <b-form-tag
+                                                                   v-for="tag in topic.words"
+                                                                   tagRemoveLabel=" "
+                                                                   :key="tag"
+                                                                   :title="tag"
+                                                                   class="mt-1">
+                                                               [[tag]]
+                                                           </b-form-tag>
+                                                       </div>
+                                                   </div>
+                                                   <h5 class="mt-4">Related Papers</h5>
+                                                   <b-carousel
+                                                           id="carousel"
+                                                           controls
+                                                           indicators
+                                                           width="400"
+                                                           height="200"
+                                                           img-width="400"
+                                                           img-height="200">
+                                                       <b-carousel-slide
+                                                               v-for="(paper, index) in related_papers"
+                                                               caption=""
+                                                               img-blank
+                                                               img-alt="Blank image">
+                                                           <b-list-group-item
+                                                                   style="border: none;">
+                                                               <b-card
+                                                                       v-bind:title="paper.meta.title"
+                                                                       v-bind:sub-title="paper.meta.subtitle"
+                                                                       style="color: #000;">
+                                                                   <b-card-text>[[paper.abstract]]</b-card-text>
+                                                               </b-card>
+                                                           </b-list-group-item>
+                                                       </b-carousel-slide>
+                                                   </b-carousel>
+                                               </div>
+                                               <div v-if="lda_is_loading">
+                                                       <b-row align-h="center" class="mt-3">
+                                                           <b-col cols="1" v-for="n in 3">
+                                                               <b-spinner small type="grow" label="Spinning" :style="'color:' + hex_primary_color"></b-spinner>
+                                                           </b-col>
+                                                       </b-row>
+                                                   <b-skeleton animation width="85%"
+                                                               class="mt-3"></b-skeleton>
+                                                   <b-skeleton animation width="55%"></b-skeleton>
+                                                   <b-skeleton animation width="70%"></b-skeleton>
+                                               </div>
+                                           </b-tab>
+
+                                           <b-tab v-if="(index == selected_paper) && (logged_in)"
+                                                  title="Remarks">
+                                               <h5 class="mt-4">Notes</h5>
+                                               <b-form-textarea
+                                                                placeholder="Enter something..."
+                                                                rows="4"
+                                                                class="mt-2"
+                                                                autocomplete="off"
+                                                                autocorrect="off"
+                                                                autocapitalize="off"
+                                                                spellcheck="false"
+                                                                v-model="selected_user_specific_doc_meta.fields.note"
+                                                                lazy
+                                               ></b-form-textarea>
+                                                <!--v-model="selected_user_specific_doc_meta.fields.note"-->
+                                               <b-form-checkbox v-model="selected_user_specific_doc_meta.fields.bookmarked"
+                                                                    size="lg"
+                                                                    class="mt-4">
+                                                   <h5>Bookmarked</h5>
+                                               </b-form-checkbox>
+
+                                               <b-button variant="info"
+                                                         class="mt-4"
+                                                         v-on:click="search_page_update_user_specific_doc_meta()"
+                                                         >
+                                                       save
+                                               </b-button>
+                                           </b-tab>
+
+                                       </b-tabs>
+
+                                   </b-card>
+                               </b-list-group-item>
+                           </b-list-group>
+                       </div>
+                   </b-col>
+                </b-row>
+             </b-container>
+           <b-container fluid
+                        v-if="(selected_page===1) && logged_in">
+               <b-row align-h="center" class="mt-3">
+                   <b-col :cols="bookmarked_page_width">
+                      <h2>Bookmarked</h2>
+                   </b-col>
+               </b-row>
+               <b-row align-h="center" class="mt-3">
+                   <b-col :cols="bookmarked_page_width">
                        <b-list-group>
                            <b-list-group-item
-                                v-for="(paper, index) in papers"
-                                style="border: none;">
-                               <b-card v-bind:title="paper.meta.title" v-bind:sub-title="paper.meta.subtitle">
-                                   <h5 class="mt-4">Score: [[Math.round(paper.probability*100)]]%</h5>
-                                   <h5 class="mt-4">Answer</h5>
-                                   <b-card-text class="mt-2">[[paper.answer]]</b-card-text>
-                                   <h5 class="mt-4">Context</h5>
-                                   <b-card-text class="mt-2">[[paper.context]]</b-card-text>
-
+                                   v-for="(paper, index) in bookmarked_user_specific_doc_meta"
+                                   style="border: none;">
+                               <b-card v-bind:title="paper.fields.meta.title" v-bind:sub-title="'Last update: ' + paper.fields.last_updated">
                                    <a class="card-link"
-                                      v-on:click="show_paper_detail([[index]])">
+                                      v-on:click="bookmarked_page_show_paper_detail(index, paper)">
                                        <b :style="'color:' + hex_primary_color">[[more_less_display_title(index)]]</b>
                                    </a>
-
-                                   <b-tabs
-                                           v-show="index == selected_paper"
-                                           class="mt-4"
-                                           variant="info">
-                                       <b-tab active
-                                              title="Details">
-                                           <div v-if="!lda_is_loading">
-                                               <h5 class="mt-4">Top [[lda_results.length]] Topics:</h5>
-                                               <div class="container topic-tag-group" v-for="(topic, topic_index) in lda_results.topics">
-                                                   <div class="mt-3"> Topic [[topic_index]]:</div>
-                                                       <b-progress max=100 height="2rem" class="mt-2" variant="info">
-                                                           <b-progress-bar :value="lda_results.topic_probabilities[topic_index]*100">
-                                                               <span>
-                                                                   <strong>[[(lda_results.topic_probabilities[topic_index]*100).toFixed(2)]]%</strong>
-                                                               </span>
-                                                           </b-progress-bar>
-                                                       </b-progress>
-                                                   <div class="row text-center">
-                                                       <b-form-tag
-                                                               v-for="tag in topic.words"
-                                                               tagRemoveLabel=" "
-                                                               :key="tag"
-                                                               :title="tag"
-                                                               class="mt-1">
-                                                           [[tag]]
-                                                       </b-form-tag>
-                                                   </div>
-                                               </div>
-                                               <h5 class="mt-4">Related Papers</h5>
-                                               <b-carousel
-                                                       id="carousel"
-                                                       controls
-                                                       indicators
-                                                       width="400"
-                                                       height="200"
-                                                       img-width="400"
-                                                       img-height="200">
-                                                   <b-carousel-slide
-                                                           v-for="(paper, index) in related_papers"
-                                                           caption=""
-                                                           img-blank
-                                                           img-alt="Blank image">
-                                                       <b-list-group-item
-                                                               style="border: none;">
-                                                           <b-card
-                                                                   v-bind:title="paper.meta.title"
-                                                                   v-bind:sub-title="paper.meta.subtitle"
-                                                                   style="color: #000;">
-                                                               <b-card-text>[[paper.abstract]]</b-card-text>
-                                                           </b-card>
-                                                       </b-list-group-item>
-                                                   </b-carousel-slide>
-                                               </b-carousel>
-                                           </div>
-                                           <div v-if="lda_is_loading">
-                                                   <b-row align-h="center" class="mt-3">
-                                                       <b-col cols="1" v-for="n in 3">
-                                                           <b-spinner small type="grow" label="Spinning" :style="'color:' + hex_primary_color"></b-spinner>
-                                                       </b-col>
-                                                   </b-row>
-                                               <b-skeleton animation width="85%"
-                                                           class="mt-3"></b-skeleton>
-                                               <b-skeleton animation width="55%"></b-skeleton>
-                                               <b-skeleton animation width="70%"></b-skeleton>
-                                           </div>
-                                       </b-tab>
-
-                                       <b-tab v-if="(index == selected_paper) && (logged_in)"
-                                              title="Remarks">
-                                           <h5 class="mt-4">Notes</h5>
-                                           <b-form-textarea v-model="selected_user_specific_doc_meta.fields.note"
-                                                            placeholder="Enter something..."
-                                                            rows="4"
-                                                            class="mt-2"
-                                           ></b-form-textarea>
-
-                                           <b-form-checkbox v-model="selected_user_specific_doc_meta.fields.bookmarked"
-                                                                size="lg"
-                                                                class="mt-4">
-                                               <h5>Bookmarked</h5>
-                                           </b-form-checkbox>
-
-                                           <b-button variant="info"
-                                                     class="mt-4"
-                                                     v-on:click="update_user_specific_doc_meta()"
-                                                     >
-                                                   save
-                                           </b-button>
-                                       </b-tab>
-
-                                   </b-tabs>
-
+                                   <div v-if="selected_paper === index">
+                                       <h5 class="mt-4">Notes</h5>
+                                       <b-form-textarea v-model="selected_user_specific_doc_meta.fields.note"
+                                                        placeholder="Enter something..."
+                                                        rows="4"
+                                                        class="mt-2">
+                                       </b-form-textarea>
+                                       <b-form-checkbox v-model="selected_user_specific_doc_meta.fields.bookmarked"
+                                                        size="lg"
+                                                        class="mt-4">
+                                           <h5>Bookmarked</h5>
+                                       </b-form-checkbox>
+                                       <b-button variant="info"
+                                                 class="mt-4"
+                                                 v-on:click="bookmarked_page_update_user_specific_doc_meta(selected_user_specific_doc_meta)">
+                                           save
+                                       </b-button>
+                                   </div>
                                </b-card>
                            </b-list-group-item>
                        </b-list-group>
-                   </div>
-               </b-col>
-            </b-row>
-         </b-container>
-       <b-container fluid
-                    v-if="(selected_page===1) && logged_in">
-           <b-row align-h="center" class="mt-3">
-               <b-col :cols="bookmarked_page_width">
-                  <h2>Bookmarked</h2>
-               </b-col>
-           </b-row>
-           <b-row align-h="center" class="mt-3">
-               <b-col :cols="bookmarked_page_width">
-                   <b-list-group>
-                       <b-list-group-item
-                               v-for="(paper, index) in bookmarked_user_specific_doc_meta"
-                               style="border: none;">
-                           <b-card v-bind:title="paper.fields.meta.title" v-bind:sub-title="'Last update: ' + paper.fields.last_updated">
-                           </b-card>
-                       </b-list-group-item>
-                   </b-list-group>
-               </b-col>
-           </b-row>
-       </b-container>
-       <b-container fluid
-                    v-if="(selected_page===2) && logged_in">
-           <b-row align-h="center" class="mt-3">
-               <b-col cols="6">
-                   <h2>History</h2>
-               </b-col>
-           </b-row>
-       </b-container>
-      </div>
+                   </b-col>
+               </b-row>
+           </b-container>
+           <b-container fluid
+                        v-if="(selected_page===2) && logged_in">
+               <b-row align-h="center" class="mt-3">
+                   <b-col cols="6">
+                       <h2>History</h2>
+                   </b-col>
+               </b-row>
+               <b-row align-h="center" class="mt-3">
+                   <b-col :cols="bookmarked_page_width">
+                       <b-list-group>
+                           <b-list-group-item
+                                   v-for="(paper, index) in user_specific_doc_meta"
+                                   style="border: none;">
+                               <b-card v-bind:title="paper.fields.meta.title" v-bind:sub-title="'Last update: ' + paper.fields.last_updated">
+                                   <a class="card-link"
+                                      v-on:click="history_page_show_paper_detail(index, paper)">
+                                       <b :style="'color:' + hex_primary_color">[[more_less_display_title(index)]]</b>
+                                   </a>
+                                   <div v-if="selected_paper === index">
+                                       <h5 class="mt-4">Notes</h5>
+                                       <b-form-textarea v-model="selected_user_specific_doc_meta.fields.note"
+                                                        placeholder="Enter something..."
+                                                        rows="4"
+                                                        class="mt-2">
+                                       </b-form-textarea>
+                                       <b-form-checkbox v-model="selected_user_specific_doc_meta.fields.bookmarked"
+                                                        size="lg"
+                                                        class="mt-4">
+                                           <h5>Bookmarked</h5>
+                                       </b-form-checkbox>
+                                       <b-button variant="info"
+                                                 class="mt-4"
+                                                 v-on:click="history_page_update_user_specific_doc_meta(selected_user_specific_doc_meta)">
+                                           save
+                                       </b-button>
+                                   </div>
+                               </b-card>
+                           </b-list-group-item>
+                       </b-list-group>
+                   </b-col>
+               </b-row>
+           </b-container>
+       </div>
+   </div>
+
       <!-- class="demo" Add Vue and BootstrapVue scripts just before the closing </body> tag -->
       <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
@@ -296,6 +361,7 @@
 
       <script>
           Vue.use(BootstrapVue);
+
           axios.defaults.xsrfCookieName = 'csrftoken'
           axios.defaults.xsrfHeaderName = "X-CSRFTOKEN"
 
@@ -309,7 +375,6 @@
                   bookmarked_page_width: 8,
                   selected_page: 0,
                   hex_primary_color: "#17a2b8",
-                  currentTab: "List",tabs: ["List", "Graph"],
                   selected_paper: null,
                   logged_in: true,
                   username: "",
@@ -326,17 +391,13 @@
                           value: null,
                           text: 'Please select a question'
                       }
-                      ],
-                  chartoptions: {
-                      responsive: true,
-                      maintainAspectRatio: false
-                  },
+                  ],
                   search_started: false,
                   answer_is_loading: false,
                   lda_is_loading: false
               },
               computed: {
-                  show_answer_and_results: function(){
+                  show_answer_and_results: function() {
                       return this.selected_question != null && !this.answer_is_loading && this.search_started;
                   },
                   username_field_state() {
@@ -348,12 +409,18 @@
                   display_username() {
                       return (vm.logged_in && vm.username.length > 0)? vm.username : "User"
                   },
-                  bookmarked_user_specific_doc_meta(){
+                  bookmarked_user_specific_doc_meta() {
                       return vm.user_specific_doc_meta.filter(word => word.fields.bookmarked === true);
                   }
               },
               methods: {
-                  show_paper_detail: function(index) {
+                  bookmarked_page_show_paper_detail: function(index, paper) {
+                      bookmark_history_page_show_paper_detail(index, paper);
+                  },
+                 history_page_show_paper_detail: function(index, paper) {
+                      bookmark_history_page_show_paper_detail(index, paper);
+                  },
+                  search_page_show_paper_detail: function(index) {
 
                       if(parseInt(vm.selected_paper,10) === parseInt(index,10)) {
                           vm.selected_paper = null;
@@ -401,7 +468,7 @@
                           }
                       );
                   },
-                  update_user_specific_doc_meta: function(){
+                  search_page_update_user_specific_doc_meta: function(){
                       let paper = vm.papers[vm.selected_paper]
                       let doc_id = paper.doc_id;
                       let meta = paper.meta;
@@ -409,6 +476,32 @@
                       let note = vm.selected_user_specific_doc_meta.fields.note;
 
                       update_user_specific_doc_meta(doc_id, note, bookmarked, meta)
+                  },
+                  bookmarked_page_update_user_specific_doc_meta: function(paper){
+                      let doc_id = paper.fields.doc_id;
+                      let meta = paper.fields.meta;
+                      let bookmarked = paper.fields.bookmarked;
+                      let note = paper.fields.note;
+
+                      update_user_specific_doc_meta(doc_id, note, bookmarked, meta);
+                      vm.selected_paper = null;
+
+                      if(bookmarked){
+                          vm.selected_paper = 0;
+                      }
+
+                      scroll_to_top();
+                  },
+                  history_page_update_user_specific_doc_meta: function(paper){
+                      let doc_id = paper.fields.doc_id;
+                      let meta = paper.fields.meta;
+                      let bookmarked = paper.fields.bookmarked;
+                      let note = paper.fields.note;
+
+                      update_user_specific_doc_meta(doc_id, note, bookmarked, meta);
+                      vm.selected_paper = null;
+                      vm.selected_paper = 0;
+                      scroll_to_top();
                   },
                   more_less_display_title: function(index){
                       return (parseInt(vm.selected_paper,10) === parseInt(index,10)) ? "- less" : "+ more";
@@ -418,6 +511,7 @@
                       ask_question(vm.selected_question)
                   },
                   select_page: function(index){
+                      page_changing(vm.selected_page, index)
                       vm.selected_page = index
                   }
             },
@@ -435,6 +529,27 @@
                   check_login();
             },
           });
+
+          function bookmark_history_page_show_paper_detail(index, paper){
+              if(parseInt(vm.selected_paper,10) === parseInt(index,10)) {
+                  vm.selected_paper = null;
+                  vm.selected_user_specific_doc_meta= null;
+              }else{
+                  vm.selected_paper = index;
+                  vm.selected_user_specific_doc_meta = JSON.parse(JSON.stringify(paper)); // deep copy
+              }
+          }
+
+          function page_changing(old_page, new_page){
+              vm.selected_paper = null;
+              scroll_to_top();
+              for(let i = 0; i<vm.user_specific_doc_meta.length; i++){
+                  let elm = vm.user_specific_doc_meta[i];
+                  console.log(i);
+                  console.log(elm);
+                  console.log(elm.fields.meta);
+              }
+          }
 
           function update_logged_in(logged_in){
               vm.password = ""
@@ -478,7 +593,9 @@
               if(bookmarked != null)
                   change_dic['doc_bookmarked'] = bookmarked
 
-              axios.post('http://127.0.0.1:8000/update_user_specific_doc_meta/',change_dic).then((response) => {
+
+
+              axios.post('http://127.0.0.1:8000/update_user_specific_doc_meta/', change_dic).then((response) => {
 
                   let success = response.data['success'];
                   let message = response.data['message'];
@@ -489,16 +606,18 @@
 
                       let removeIndex = vm.user_specific_doc_meta.map(function(item){
                           return item.fields.doc_id;
-                      }).indexOf(user_specific_doc_meta.fields.id);
+                      }).indexOf(user_specific_doc_meta.fields.doc_id);
 
-                      if(removeIndex>=0) {
+                      if(removeIndex >= 0) {
                           vm.user_specific_doc_meta.splice(removeIndex, 1);
                       }
 
-                      vm.user_specific_doc_meta.push(user_specific_doc_meta)
+                      vm.user_specific_doc_meta.splice(0, 0, user_specific_doc_meta);
                   }
 
+
                   let variant = success? 'success' : 'danger';
+
                   vm.$bvToast.toast(message, {
                       title: 'Update information',
                       autoHideDelay: 5000,
@@ -519,7 +638,7 @@
           function load_user_specific_doc_meta(){
               axios.post('http://127.0.0.1:8000/user_specific_doc_meta/',{
               }).then((response) => {
-                  vm.user_specific_doc_meta = response.data
+                  vm.user_specific_doc_meta = response.data.reverse()
               });
           }
 
@@ -580,6 +699,7 @@
                       console.log(error);
                   });
           }
+
           function un_decorate_sort(arr1, arr2){
               return arr1
                   .map((item, index) => [arr2[index], item])
@@ -599,6 +719,11 @@
               results.topic_probabilities = sorted_probabilities;
 
               return results;
+          }
+
+          function scroll_to_top() {
+              document.body.scrollTop = 0; // For Safari
+              document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
           }
       </script>
    </body>

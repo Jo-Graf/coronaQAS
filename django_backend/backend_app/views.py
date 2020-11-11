@@ -102,11 +102,13 @@ def update_user_specific_doc_meta(request):
     if request.method == 'GET':
         return HttpResponseRedirect('/index/')
     else:
-        print(json.loads(request.body))
         user_id = request.user.id
         note = json.loads(request.body)['doc_note']
         bookmarked = json.loads(request.body)['doc_bookmarked']
         doc_id = json.loads(request.body)['doc_id']
+
+        print('bookmarked:')
+        print(bookmarked)
 
         base_doc_id = QASDocKeyGen.get_doc_base_key(key=doc_id)
 
@@ -117,7 +119,7 @@ def update_user_specific_doc_meta(request):
             doc_object.note = note
 
         if bookmarked is not None:
-            doc_object.bookmark = bookmarked
+            doc_object.bookmarked = bookmarked
 
         doc_object.save()
 
@@ -128,6 +130,8 @@ def update_user_specific_doc_meta(request):
             'message': 'Saving was successful',
             'user_specific_doc_meta': json_obj
         }
+
+        print(response)
 
         return JsonResponse(response, safe=False)
 
@@ -174,7 +178,6 @@ def user_specific_doc_meta(request):
                 obj['fields']['meta'] = doc.meta
 
         json_str = json.dumps(json_obj)
-        print(json_str)
         return HttpResponse(json_str, content_type="application/json")
 
 
@@ -227,7 +230,6 @@ def qas(request):
             json_dump = json.load(json_file)
 
         return JsonResponse(json_dump, safe=False)
-
 
 
 def lda(request):
