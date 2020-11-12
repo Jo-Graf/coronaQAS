@@ -28,7 +28,7 @@ class QASLDA:
                  database: Optional[QASDatabase] = None,
                  doc_query: Optional[str] = None,
                  docs_queries: Optional[str] = None,
-                 num_topics: Optional[int] = 6,
+                 num_topics: Optional[int] = 100,#6,
                  doc_topic_prior: Optional[float] = 0.20473924934073703,
                  topic_word_prior: Optional[float] = 2.175756258808697,
                  num_words: Optional[int] = 20,
@@ -93,7 +93,8 @@ class QASLDA:
         model = LatentDirichletAllocation(n_components=self.num_topics,
                                           doc_topic_prior=self.doc_topic_prior,
                                           topic_word_prior=self.topic_word_prior,
-                                          random_state=42)
+                                          random_state=42,
+                                          learning_method='online')
         model.fit(train_input)
 
         topics = []

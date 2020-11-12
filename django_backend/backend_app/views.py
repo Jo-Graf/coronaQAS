@@ -29,7 +29,8 @@ from backend_app.qas_core.qas_reader import QASReader
 from backend_app.qas_core.qas_retriever import QASRetriever
 from django.contrib.auth.decorators import permission_required
 
-
+# TODO: https://medium.com/better-programming/6-ways-to-speed-up-your-vue-js-application-2673a6f1cde4
+# TODO: speed up application
 def index(request):
 	# if this is a POST request we need to process the form data
     if request.method == 'POST':
@@ -107,9 +108,6 @@ def update_user_specific_doc_meta(request):
         bookmarked = json.loads(request.body)['doc_bookmarked']
         doc_id = json.loads(request.body)['doc_id']
 
-        print('bookmarked:')
-        print(bookmarked)
-
         base_doc_id = QASDocKeyGen.get_doc_base_key(key=doc_id)
 
         objects = Doc.objects.filter(user_id=user_id).filter(doc_id=base_doc_id)
@@ -130,8 +128,6 @@ def update_user_specific_doc_meta(request):
             'message': 'Saving was successful',
             'user_specific_doc_meta': json_obj
         }
-
-        print(response)
 
         return JsonResponse(response, safe=False)
 
@@ -188,7 +184,7 @@ def qas(request):
         return HttpResponseRedirect('/index/')
     else:
         question = json.loads(request.body)['question']
-        '''
+
         # dir_path = "/Users/Gino/Belegarbeit/django_backend/backend_app/data/article_txt_got"
         # url = "https://s3.eu-central-1.amazonaws.com/deepset.ai-farm-qa/datasets/documents/wiki_gameofthrones_txt.zip"
         dir_path = '/Volumes/glpstorage/Users/Gino/Belegarbeit/archive/document_parses/pdf_json_test/'
@@ -228,9 +224,10 @@ def qas(request):
         json_dump = None
         with open(dump_path, 'r') as json_file:
             json_dump = json.load(json_file)
-
+            
         return JsonResponse(json_dump, safe=False)
 
+        '''
 
 def lda(request):
     if request.method == 'GET':
