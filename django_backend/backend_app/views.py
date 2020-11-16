@@ -107,7 +107,6 @@ def update_user_specific_doc_meta(request):
         note = json.loads(request.body)['doc_note']
         bookmarked = json.loads(request.body)['doc_bookmarked']
         doc_id = json.loads(request.body)['doc_id']
-
         base_doc_id = QASDocKeyGen.get_doc_base_key(key=doc_id)
 
         objects = Doc.objects.filter(user_id=user_id).filter(doc_id=base_doc_id)
@@ -128,6 +127,8 @@ def update_user_specific_doc_meta(request):
             'message': 'Saving was successful',
             'user_specific_doc_meta': json_obj
         }
+
+        print(response)
 
         return JsonResponse(response, safe=False)
 
@@ -161,7 +162,11 @@ def user_specific_doc_meta(request):
         database_variant = QASHaystackDatabaseAdapter(document_store=document_store)
         database = QASDatabase(variant=database_variant, loader=loader)
 
+        print(ids)
         docs = database.get_data(identifiers=ids)
+
+        for doc in docs:
+            print(doc.meta['title'])
 
         json_str = serializers.serialize('json', objects)
         json_obj = json.loads(json_str)
@@ -172,6 +177,8 @@ def user_specific_doc_meta(request):
             if doc_list and len(doc_list) > 0:
                 doc = doc_list[0]
                 obj['fields']['meta'] = doc.meta
+            else:
+                print('no doc found for: ' + obj['fields']['doc_id'])
 
         json_str = json.dumps(json_obj)
         return HttpResponse(json_str, content_type="application/json")
@@ -188,7 +195,9 @@ def qas(request):
         # dir_path = "/Users/Gino/Belegarbeit/django_backend/backend_app/data/article_txt_got"
         # url = "https://s3.eu-central-1.amazonaws.com/deepset.ai-farm-qa/datasets/documents/wiki_gameofthrones_txt.zip"
         dir_path = '/Volumes/glpstorage/Users/Gino/Belegarbeit/archive/document_parses/pdf_json_test/'
-        model_name = 'NeuML/bert-small-cord19-squad2'
+        # model_name = 'NeuML/bert-small-cord19-squad2'
+        # deepset/roberta-base-squad2-covid
+        model_name = 'NeuML/bert-small-cord19qa'
 
         # loader
         # loader = QASGOTDataLoaderVariant(url, dir_path)

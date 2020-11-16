@@ -2,6 +2,7 @@
 <html>
    <head>
       {{ graph | safe | json_script:"graph_var" }}
+       {% csrf_token %}
 
       <title>Covid19: QAS</title>
       <!-- Add Bootstrap and Bootstrap-Vue CSS to the <head> section -->
@@ -121,7 +122,7 @@
                       </b-row>
                        <b-form-checkbox v-model="search_page_show_detailed_results"
                                             size="lg">
-                           Show detailed Results
+                           Expert Mode (Show detailed Results)
                        </b-form-checkbox>
 
                       <!--b-form-group id="input-group-3" label="" label-for="input-3">
@@ -227,15 +228,15 @@
                                                                :key="paper.answer_id + 'search_page_related_papers'"
                                                                caption=""
                                                                img-blank>
-                                                           <b-list-group-item
-                                                                   style="border: none;">
+                                                           <!--b-list-group-item style="border: none;">
+                                                               </b-list-group-item-->
                                                                <b-card
                                                                        v-bind:title="paper.meta.title"
                                                                        v-bind:sub-title="paper.meta.subtitle"
                                                                        style="top: 50%; color: #000; transform: translate(0%, -50%);">
                                                                    <b-card-text>[[paper.abstract]]</b-card-text>
                                                                </b-card>
-                                                           </b-list-group-item>
+
                                                        </b-carousel-slide>
                                                    </b-carousel>
                                                </div>
@@ -394,10 +395,12 @@
       <script>
           Vue.use(BootstrapVue);
 
+          let graph_var = JSON.parse(document.getElementById('graph_var').textContent);
+
           axios.defaults.xsrfCookieName = 'csrftoken'
           axios.defaults.xsrfHeaderName = "X-CSRFTOKEN"
 
-          let graph_var = JSON.parse(document.getElementById('graph_var').textContent);
+          let host_url = 'http://192.168.2.104:8000/'
 
           let vm = new Vue({
               delimiters: ["[[", "]]"],
@@ -474,7 +477,7 @@
                       }
                   },
                   login: function(){
-                      axios.post('http://127.0.0.1:8000/login/',
+                      axios.post(host_url + 'login/',
                           {
                               username: vm.username,
                               password: vm.password
@@ -492,7 +495,7 @@
 
                   },
                   logout: function(){
-                      axios.get('http://127.0.0.1:8000/logout/')
+                      axios.get(host_url + 'logout/')
                           .then((response) => {
                               vm.logged_in = !response.data['success'];
                               let variant = !vm.logged_in? 'success' : 'danger';
@@ -567,6 +570,19 @@
             },
           });
 
+          function download_text(text, file_name){
+              let data = new Blob([text], {type: 'text/plain'});
+              let url = window.URL.createObjectURL(data);
+              let a = document.createElement('a');
+              a.download = file_name;
+              a.href = url;
+              a.dataset.downloadurl = ['text/plain', a.download, a.href].join(':');
+              a.style.display = "none";
+              document.body.appendChild(a);
+              a.click();
+              document.body.removeChild(a);
+          }
+
           function bookmark_history_page_show_paper_detail(index, paper){
               if(parseInt(vm.selected_paper,10) === parseInt(index,10)) {
                   vm.selected_paper = null;
@@ -580,6 +596,7 @@
           function page_changing(old_page, new_page){
               vm.selected_paper = null;
               scroll_to_top();
+
               /*
               for(let i = 0; i<vm.user_specific_doc_meta.length; i++){
                   let elm = vm.user_specific_doc_meta[i];
@@ -632,9 +649,7 @@
               if(bookmarked != null)
                   change_dic['doc_bookmarked'] = bookmarked
 
-
-
-              axios.post('http://127.0.0.1:8000/update_user_specific_doc_meta/', change_dic).then((response) => {
+              axios.post(host_url + 'update_user_specific_doc_meta/', change_dic).then((response) => {
 
                   let success = response.data['success'];
                   let message = response.data['message'];
@@ -667,7 +682,7 @@
           }
 
           function check_login(){
-              axios.get('http://127.0.0.1:8000/login/').then((response) => {
+              axios.get(host_url + 'login/').then((response) => {
                   vm.logged_in = response.data['logged_in'];
                   vm.username = response.data['username'];
                   update_logged_in(vm.logged_in);
@@ -675,7 +690,7 @@
           }
 
           function load_user_specific_doc_meta(){
-              axios.post('http://127.0.0.1:8000/user_specific_doc_meta/',{
+              axios.post(host_url + 'user_specific_doc_meta/',{
               }).then((response) => {
                   vm.user_specific_doc_meta = response.data.reverse()
               });
@@ -690,7 +705,7 @@
                   ids.push(vm.papers[i].doc_id);
               }
 
-              axios.post('http://127.0.0.1:8000/lda/',
+              axios.post(host_url + 'lda/',
                   {
                       doc_id: paper.doc_id,
                       doc_ids: ids
@@ -711,7 +726,7 @@
           }
 
           function load_question_selection() {
-              axios.get('http://127.0.0.1:8000/question_selection/')
+              axios.get(host_url + 'question_selection/')
                   .then(response => (
                       vm.questions = response.data
                       )
@@ -723,7 +738,7 @@
               vm.answer_is_loading = true;
               vm.search_started = true;
 
-              axios.post('http://127.0.0.1:8000/qas/',
+              axios.post(host_url + 'qas/',
                   {
                       question: question
                   }).then((response) => {
