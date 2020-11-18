@@ -584,6 +584,8 @@
           }
 
           function bookmark_history_page_show_paper_detail(index, paper){
+              console.log(paper.fields.meta)
+
               if(parseInt(vm.selected_paper,10) === parseInt(index,10)) {
                   vm.selected_paper = null;
                   vm.selected_user_specific_doc_meta= null;
