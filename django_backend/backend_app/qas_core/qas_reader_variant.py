@@ -12,3 +12,5 @@ class QASReaderVariant(ABC):
     @abstractmethod
     def read(self, query: str, data: List[QASDocument]) -> List[QASAnswer]:
         pass
+
+

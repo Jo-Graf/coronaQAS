@@ -400,12 +400,14 @@
           axios.defaults.xsrfCookieName = 'csrftoken'
           axios.defaults.xsrfHeaderName = "X-CSRFTOKEN"
 
-          let host_url = 'http://192.168.2.104:8000/'
+          let host_url = 'http://127.0.0.1:8000/'
 
           let vm = new Vue({
               delimiters: ["[[", "]]"],
               el: "#qas-ui",
               data: {
+                  logged_in: false,
+                  username: "",
                   textarea_debounce:500,
                   login_field_debounce: 500,
                   search_page_show_detailed_results: true,
@@ -416,8 +418,6 @@
                   selected_page: 0,
                   hex_primary_color: "#17a2b8",
                   selected_paper: null,
-                  logged_in: true,
-                  username: "",
                   password: "",
                   papers: null,
                   lda_results: [],
@@ -446,9 +446,11 @@
                   password_field_state() {
                       return this.password.length > 7 ? true : false
                   },
+
                   display_username() {
                       return (vm.logged_in && vm.username.length > 0)? vm.username : "User"
                   },
+
                   bookmarked_user_specific_doc_meta() {
                       return vm.user_specific_doc_meta.filter(word => word.fields.bookmarked === true);
                   }

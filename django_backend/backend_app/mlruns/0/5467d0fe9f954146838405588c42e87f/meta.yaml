@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/Gino/Belegarbeit/django_backend/backend_app/mlruns/0/5467d0fe9f954146838405588c42e87f/artifacts
+end_time: 1597228684677
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+name: ''
+run_id: 5467d0fe9f954146838405588c42e87f
+run_uuid: 5467d0fe9f954146838405588c42e87f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1597228671019
+status: 3
+tags: []
+user_id: Gino

@@ -46,7 +46,7 @@ def index(request):
     # if a GET (or any other method) we'll create a blank form
     else:
         context = {}
-        return render(request, 'test.html', context)
+        return render(request, 'ui.html', context)
 
 
 def question_selection(request):
@@ -192,7 +192,6 @@ def qas(request):
     else:
         question = json.loads(request.body)['question']
 
-        # dir_path = "/Users/Gino/Belegarbeit/django_backend/backend_app/data/article_txt_got"
         # url = "https://s3.eu-central-1.amazonaws.com/deepset.ai-farm-qa/datasets/documents/wiki_gameofthrones_txt.zip"
         dir_path = '/Volumes/glpstorage/Users/Gino/Belegarbeit/archive/document_parses/pdf_json_test/'
         # model_name = 'NeuML/bert-small-cord19-squad2'

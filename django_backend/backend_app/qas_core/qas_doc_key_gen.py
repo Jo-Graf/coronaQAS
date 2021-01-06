@@ -15,7 +15,7 @@ class QASDocKeyGen:
     @staticmethod
     def get_doc_base_key(doc: Optional[QASDocument] = None, key: Optional[str] = None) -> str:
         if key is not None and doc is not None:
-            raise AttributeError('Either key or doc has to None')
+            raise AttributeError('Either key or doc has to be None')
 
         id_array = None
 

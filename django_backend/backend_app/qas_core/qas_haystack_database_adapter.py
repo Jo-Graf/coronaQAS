@@ -30,6 +30,7 @@ class QASHaystackDatabaseAdapter(QASDatabaseVariant):
 
         docs = []
 
+        # load data
         if query is not None:
             # TODO: check out built-in function
             # docs = self.__document_store.query(query=query)
@@ -58,3 +59,4 @@ class QASHaystackDatabaseAdapter(QASDatabaseVariant):
             qas_docs.append(qas_doc)
 
         return qas_docs
+

@@ -34,3 +34,5 @@ class QASDatabase:
     def add_data(self, data: List[QASDocument]):
         self.__variant.add_data(data)
         self.__data.append(data)
+
+

@@ -19,3 +19,5 @@ class QASDatabaseVariant(ABC):
     @abstractmethod
     def add_data(self, data: List[QASDocument]):
         pass
+
+

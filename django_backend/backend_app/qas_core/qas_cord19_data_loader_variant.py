@@ -87,7 +87,7 @@ class QASCORD19DataLoaderVariant(QASDataLoaderVariant):
             }
 
             abstract_doc = Document(
-                id= QASDocKeyGen.generate_base_key(doc_id, doc_count), #doc_id + QASCORD19DataLoaderVariant.doc_separator + str(doc_count),
+                id=QASDocKeyGen.generate_key(QASDocKeyGen.get_doc_base_key(key=doc_id), doc_count), #doc_id + QASCORD19DataLoaderVariant.doc_separator + str(doc_count),
                 text=(clean_func(abstract['text']) if clean_func else abstract['text']),
                 meta=abstract_doc_dict
             )
@@ -111,7 +111,7 @@ class QASCORD19DataLoaderVariant(QASDataLoaderVariant):
             }
 
             section_doc = Document(
-                id=QASDocKeyGen.generate_base_key(doc_id, doc_count), # doc_id + QASCORD19DataLoaderVariant.doc_separator + str(doc_count),
+                id=QASDocKeyGen.generate_key(QASDocKeyGen.get_doc_base_key(key=doc_id), doc_count), # doc_id + QASCORD19DataLoaderVariant.doc_separator + str(doc_count),
                 text=(clean_func(section['text']) if clean_func else section['text']),
                 meta=section_doc_dict
             )

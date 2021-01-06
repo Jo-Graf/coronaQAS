@@ -20,9 +20,9 @@ class QASHaystackReaderAdapter(QASReaderVariant):
         meta_data = [x for x in data if x.meta['is_doc_meta'] is True]
 
         docs = self.__reader.predict(query, content_data)
-        print(docs)
         qas_docs = []
 
+        # Further answer processing
         for raw_answer in docs['answers']:
             answer = QASAnswer(
                 answer=raw_answer['answer'],
@@ -54,3 +54,5 @@ class QASHaystackReaderAdapter(QASReaderVariant):
             qas_docs.append(answer)
 
         return qas_docs
+
+
