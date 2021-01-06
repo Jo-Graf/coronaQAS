@@ -6,6 +6,7 @@ from backend_app.qas_core.qas_document import QASDocument
 
 
 class QASReaderVariant(ABC):
+
     def __init__(self):
         pass
 

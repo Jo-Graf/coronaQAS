@@ -166,7 +166,9 @@
                                        <h5 class="mt-4">Answer</h5>
                                        <b-card-text class="mt-2">[[paper.answer]]</b-card-text>
                                        <h5 class="mt-4">Context</h5>
-                                       <b-card-text class="mt-2">[[paper.context]]</b-card-text>
+                                       <b-card-text class="mt-2">
+                                           <span v-html="highlight(paper.context,paper.answer)"></span>
+                                       </b-card-text>
 
                                        <a class="card-link"
                                           v-on:click="search_page_show_paper_detail([[index]])">
@@ -391,9 +393,19 @@
       <!--script src="https://unpkg.com/vue/dist/vue.min.js"></script-->
       <script src="https://unpkg.com/vue/dist/vue.js"></script>
       <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
-
+      <script src="https://unpkg.com/vue-text-highlight@2.0.10/dist/vue-text-highlight.umd.js"></script>
       <script>
+          // Vue.component('text-highlight', VueTextHighlight);
           Vue.use(BootstrapVue);
+          // Vue.use(VueTextHighlight);
+          // Vue.component('text-highlight', TextHighlight);
+
+          Vue.filter('highlight', function(word, query){
+              var check = new RegExp(query, "ig");
+              return word.toString().replace(check, function(matchedText,a,b){
+                  return ('<strong>' + matchedText + '</strong>');
+              });
+          });
 
           let graph_var = JSON.parse(document.getElementById('graph_var').textContent);
 
@@ -405,6 +417,8 @@
           let vm = new Vue({
               delimiters: ["[[", "]]"],
               el: "#qas-ui",
+              components: {
+              },
               data: {
                   logged_in: false,
                   username: "",
@@ -555,6 +569,9 @@
                   select_page: function(index){
                       page_changing(vm.selected_page, index)
                       vm.selected_page = index
+                  },
+                  highlight: function(text, query){
+                      return text.replace(query, '<strong>' + query + '</strong>')
                   }
             },
             watch: {
