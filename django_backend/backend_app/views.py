@@ -14,7 +14,7 @@ import json
 import hashlib
 
 from backend_app.models import Doc
-from backend_app.qas_core.pipeline import QASPipeline
+from backend_app.qas_core.qas_pipeline import QASPipeline, QASPipelineConfiguration
 from backend_app.qas_core.qas_cord19_data_loader_variant import QASCORD19DataLoaderVariant
 from backend_app.qas_core.qas_data_loader import QASDataLoader
 from backend_app.qas_core.qas_database import QASDatabase
@@ -191,41 +191,38 @@ def qas(request):
         return HttpResponseRedirect('/index/')
     else:
         question = json.loads(request.body)['question']
-
-        # url = "https://s3.eu-central-1.amazonaws.com/deepset.ai-farm-qa/datasets/documents/wiki_gameofthrones_txt.zip"
         dir_path = '/Volumes/glpstorage/Users/Gino/Belegarbeit/archive/document_parses/pdf_json_test/'
-        # model_name = 'NeuML/bert-small-cord19-squad2'
-        # deepset/roberta-base-squad2-covid
         model_name = 'NeuML/bert-small-cord19qa'
 
         # loader
-        # loader = QASGOTDataLoaderVariant(url, dir_path)
-        loader = QASCORD19DataLoaderVariant(dir_path)
+        loader_variant = QASCORD19DataLoaderVariant(dir_path)
 
         # database
         document_store = ElasticsearchDocumentStore(host='localhost', username='', password='', index='med_docs')
         database_variant = QASHaystackDatabaseAdapter(document_store=document_store)
-        database = QASDatabase(variant=database_variant, loader=loader)
-        # database.load_data()
 
         # retriever
         haystack_retriever = ElasticsearchRetriever(None)
         retriever_variant = QASHaystackRetrieverAdapter(retriever=haystack_retriever)
-        retriever = QASRetriever(variant=retriever_variant)
-        retrieved_docs = retriever.retrieve(question, database, QASDocType.TEXT, load_doc_meta=True)
 
         # reader
         haystack_reader = FARMReader(model_name_or_path=model_name, use_gpu=False, context_window_size=512)
         reader_variant = QASHaystackReaderAdapter(reader=haystack_reader)
-        reader = QASReader(variant=reader_variant)
-        answers = reader.read(question, retrieved_docs)
 
-        # return unique answers
-        unique_answers = {}
+        config = QASPipelineConfiguration(loader_variant,
+                                          database_variant,
+                                          retriever_variant,
+                                          reader_variant)
+
+        QASPipeline.set_configuration(config)
+        answers = QASPipeline.ask_question(question)
+
+        # return serialized answers
+        serialized_answers = {}
         for answer in answers:
-            unique_answers[answer.answer_id] = answer.serialize()
+            serialized_answers[answer.answer_id] = answer.serialize()
 
-        return JsonResponse(list(unique_answers.values()), safe=False)
+        return JsonResponse(list(serialized_answers.values()), safe=False)
 
         '''
         dump_path = '/Users/Gino/Belegarbeit/django_backend/backend_app/resource/json/result_dump.json'
