@@ -215,7 +215,7 @@ def qas(request):
         retrieved_docs = retriever.retrieve(question, database, QASDocType.TEXT, load_doc_meta=True)
 
         # reader
-        haystack_reader = FARMReader(model_name_or_path=model_name, use_gpu=False, context_window_size=300)
+        haystack_reader = FARMReader(model_name_or_path=model_name, use_gpu=False, context_window_size=512)
         reader_variant = QASHaystackReaderAdapter(reader=haystack_reader)
         reader = QASReader(variant=reader_variant)
         answers = reader.read(question, retrieved_docs)

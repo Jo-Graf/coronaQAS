@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from backend_app import views
+from django.conf.urls import include, url
 
 urlpatterns = [
     # path('backend_app/', include('urls')),
@@ -27,5 +28,6 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('logout/', views.logout, name='logout'),
     path('user_specific_doc_meta/', views.user_specific_doc_meta, name='user_specific_doc_meta'),
-    path('update_user_specific_doc_meta/', views.update_user_specific_doc_meta, name='update_user_specific_doc_meta')
+    path('update_user_specific_doc_meta/', views.update_user_specific_doc_meta, name='update_user_specific_doc_meta'),
+    url('', include('django_prometheus.urls'))
 ]
