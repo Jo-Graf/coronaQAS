@@ -26,7 +26,7 @@ class QASHaystackReaderAdapter(QASReaderVariant):
         for raw_answer in docs['answers']:
             answer = QASAnswer(
                 answer=raw_answer['answer'],
-                question=docs['question'],
+                # question=docs['question'],
                 query_score=raw_answer['score'],
                 probability=raw_answer['probability'],
                 context=raw_answer['context'],

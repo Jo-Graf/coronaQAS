@@ -25,8 +25,8 @@ SECRET_KEY = 'q3%dmie*8nfxsup7ve9u=*)7cnwh!q@3w+as=i)xj)8%58qbo@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'docker.for.mac.localhost'] # ['192.168.2.104']
-
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0']
+# 'docker.for.mac.localhost'
 
 # Application definition
 
@@ -38,11 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'backend_app.apps.BackendAppConfig',
-    'django_prometheus'
+    # 'django_prometheus'
 ]
 
 MIDDLEWARE = [
-    'django_prometheus.middleware.PrometheusBeforeMiddleware',
+    # 'django_prometheus.middleware.PrometheusBeforeMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django_prometheus.middleware.PrometheusAfterMiddleware'
+    # 'django_prometheus.middleware.PrometheusAfterMiddleware'
 ]
 
 ROOT_URLCONF = 'django_backend.urls'

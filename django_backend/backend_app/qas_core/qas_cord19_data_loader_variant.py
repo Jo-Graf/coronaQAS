@@ -1,4 +1,6 @@
 import json
+import os
+from os import listdir
 from pathlib import Path
 from typing import List, Optional
 
@@ -11,6 +13,9 @@ from backend_app.qas_core.qas_document import QASDocument
 
 # TODO: add class to uml
 # TODO: implement language detector
+from config import MAX_DOCS_LOAD
+
+
 class QASCORD19DataLoaderVariant(QASDataLoaderVariant):
 
     doc_separator = "-$-$-"
@@ -19,7 +24,7 @@ class QASCORD19DataLoaderVariant(QASDataLoaderVariant):
 
         clean_func = None
 
-        file_paths = [p for p in Path(self._source_path).glob("**/*")][:10000]
+        file_paths = [p for p in Path(self._source_path).glob("**/*")][:MAX_DOCS_LOAD]
 
         documents = []
 

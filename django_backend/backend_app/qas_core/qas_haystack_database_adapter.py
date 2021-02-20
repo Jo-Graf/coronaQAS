@@ -37,7 +37,7 @@ class QASHaystackDatabaseAdapter(QASDatabaseVariant):
 
             index = self.__document_store.index
             results = self.__document_store.client.search(index=index, body=query)['hits']['hits']
-            docs = [self.__document_store._convert_es_hit_to_document(hit) for hit in results]
+            docs = [self.__document_store._convert_es_hit_to_document(hit, True) for hit in results]
         elif identifiers is not None:
 
             if type(identifiers) is not list:

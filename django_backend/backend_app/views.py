@@ -11,7 +11,6 @@ import django.contrib
 from backend_app.controller.question_selection_controller import get_question_selection
 from backend_app.forms import NameForm
 import json
-import hashlib
 
 from backend_app.models import Doc
 from backend_app.qas_core.qas_pipeline import QASPipeline, QASPipelineConfiguration
@@ -19,18 +18,16 @@ from backend_app.qas_core.qas_cord19_data_loader_variant import QASCORD19DataLoa
 from backend_app.qas_core.qas_data_loader import QASDataLoader
 from backend_app.qas_core.qas_database import QASDatabase
 from backend_app.qas_core.qas_doc_key_gen import QASDocKeyGen
-from backend_app.qas_core.qas_doc_type_enum import QASDocType
-from backend_app.qas_core.qas_got_data_loader import QASGOTDataLoaderVariant
 from backend_app.qas_core.qas_haystack_database_adapter import QASHaystackDatabaseAdapter
 from backend_app.qas_core.qas_haystack_reader_adapter import QASHaystackReaderAdapter
 from backend_app.qas_core.qas_haystack_retriever_adapter import QASHaystackRetrieverAdapter
 from backend_app.qas_core.qas_lda import QASLDA
-from backend_app.qas_core.qas_reader import QASReader
-from backend_app.qas_core.qas_retriever import QASRetriever
-from django.contrib.auth.decorators import permission_required
 
 # TODO: https://medium.com/better-programming/6-ways-to-speed-up-your-vue-js-application-2673a6f1cde4
 # TODO: speed up application
+from config import DATA_PATH, MODEL_NAME, DB_INDEX_NAME, DB_HOST
+
+
 def index(request):
 	# if this is a POST request we need to process the form data
     if request.method == 'POST':
@@ -158,7 +155,7 @@ def user_specific_doc_meta(request):
         loader = QASDataLoader(variant=loader_variant)
 
         # database
-        document_store = ElasticsearchDocumentStore(host='localhost', username='', password='', index='med_docs')
+        document_store = ElasticsearchDocumentStore(host=DB_HOST, username='', password='', index=DB_INDEX_NAME)
         database_variant = QASHaystackDatabaseAdapter(document_store=document_store)
         database = QASDatabase(variant=database_variant, loader=loader)
 
@@ -191,14 +188,14 @@ def qas(request):
         return HttpResponseRedirect('/index/')
     else:
         question = json.loads(request.body)['question']
-        dir_path = '/Volumes/glpstorage/Users/Gino/Belegarbeit/archive/document_parses/pdf_json_test/'
-        model_name = 'NeuML/bert-small-cord19qa'
+        dir_path = DATA_PATH
+        model_name = MODEL_NAME
 
         # loader
         loader_variant = QASCORD19DataLoaderVariant(dir_path)
 
         # database
-        document_store = ElasticsearchDocumentStore(host='localhost', username='', password='', index='med_docs')
+        document_store = ElasticsearchDocumentStore(host=DB_HOST, username='', password='', index=DB_INDEX_NAME)
         database_variant = QASHaystackDatabaseAdapter(document_store=document_store)
 
         # retriever
@@ -247,7 +244,7 @@ def lda(request):
         loader = QASDataLoader(variant=loader_variant)
 
         # database
-        document_store = ElasticsearchDocumentStore(host='localhost', username='', password='', index='med_docs')
+        document_store = ElasticsearchDocumentStore(host=DB_HOST, username='', password='', index=DB_INDEX_NAME)
         database_variant = QASHaystackDatabaseAdapter(document_store=document_store)
         database = QASDatabase(variant=database_variant, loader=loader)
 

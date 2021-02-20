@@ -29,5 +29,5 @@ urlpatterns = [
     path('logout/', views.logout, name='logout'),
     path('user_specific_doc_meta/', views.user_specific_doc_meta, name='user_specific_doc_meta'),
     path('update_user_specific_doc_meta/', views.update_user_specific_doc_meta, name='update_user_specific_doc_meta'),
-    url('', include('django_prometheus.urls'))
+    # url('', include('django_prometheus.urls'))
 ]

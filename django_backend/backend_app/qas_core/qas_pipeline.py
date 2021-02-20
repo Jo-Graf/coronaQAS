@@ -76,7 +76,7 @@ class QASPipeline:
     def load_data():
         if not QASPipeline.is_initialized:
             QASPipeline.initialize()
-
+        QASPipeline.database.load_data()
 
     @staticmethod
     def add_observer(observer):

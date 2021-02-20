@@ -14,6 +14,7 @@ from sklearn.preprocessing import FunctionTransformer
 from sklearn.feature_extraction.text import CountVectorizer
 
 from spacy.lang.en import English
+from spacy.tokenizer import Tokenizer
 
 import numpy as np
 
@@ -79,12 +80,12 @@ class QASLDA:
 
         spacy_estimators = [('tokenizer', self.pipelinize(self.spacy_tokenizer)),
                             ('preprocessor', self.pipelinize(self.punctation_removal)),
-                            ('string_converter', self.pipelinize(self.string_converter))]
+                            ('string_converter', self.pipelinize(self.string_converter))
+                            ]
 
         spacy_pipe = Pipeline(spacy_estimators)
 
         preprocessed_train_docs = [spacy_pipe.transform([x])[0] for x in all_docs_text]
-
         # TODO: check min_df, max_df
         # cv = CountVectorizer(max_df=self.max_df, min_df=self.min_df, stop_words=self.stop_words)
         cv = CountVectorizer(strip_accents='unicode', token_pattern=r'\b[a-zA-Z]{3,}\b')
