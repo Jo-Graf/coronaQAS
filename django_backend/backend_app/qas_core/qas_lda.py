@@ -19,7 +19,6 @@ from spacy.tokenizer import Tokenizer
 import numpy as np
 
 
-
 # TODO: add to uml
 class QASLDA:
 
@@ -137,6 +136,7 @@ class QASLDA:
 
     # TODO: add to uml diagram
     def pipelinize(self, function, active=True):
+        # from: https://towardsdatascience.com/setting-up-text-preprocessing-pipeline-using-scikit-learn-and-spacy-e09b9b76758f
         def list_comprehend_a_function(list_or_series, active=True):
             if active:
                 return [function(i) for i in list_or_series]
