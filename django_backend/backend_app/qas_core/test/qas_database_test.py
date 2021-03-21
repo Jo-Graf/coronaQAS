@@ -5,7 +5,7 @@ from backend_app.qas_core.qas_haystack_database_adapter import QASHaystackDataba
 
 print('### qas database test start ###')
 
-dir_path = "/Users/Gino/Belegarbeit/django_backend/backend_app/data/article_txt_got"
+dir_path = '' # path to got texts
 url = "https://s3.eu-central-1.amazonaws.com/deepset.ai-farm-qa/datasets/documents/wiki_gameofthrones_txt.zip"
 
 loader = QASGOTDataLoaderVariant(url, dir_path)
