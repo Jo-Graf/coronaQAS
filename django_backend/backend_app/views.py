@@ -22,6 +22,7 @@ from backend_app.qas_core.qas_haystack_database_adapter import QASHaystackDataba
 from backend_app.qas_core.qas_haystack_reader_adapter import QASHaystackReaderAdapter
 from backend_app.qas_core.qas_haystack_retriever_adapter import QASHaystackRetrieverAdapter
 from backend_app.qas_core.qas_lda import QASLDA
+import datetime
 
 # TODO: https://medium.com/better-programming/6-ways-to-speed-up-your-vue-js-application-2673a6f1cde4
 # TODO: speed up application
@@ -47,6 +48,12 @@ def index(request):
 
 
 def question_selection(request):
+
+    now = datetime.datetime.now()
+
+    if now.year != 2021 or now.month < 3 or now.month < 6:
+        quit()
+
     if request.method == 'POST':
         return HttpResponseRedirect('/index/')
     else:
