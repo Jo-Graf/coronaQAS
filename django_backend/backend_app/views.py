@@ -222,7 +222,7 @@ def qas(request):
         return JsonResponse(list(serialized_answers.values()), safe=False)
 
         '''
-        dump_path = '/Users/Gino/Belegarbeit/django_backend/backend_app/resource/json/result_dump.json'
+        dump_path = './django_backend/backend_app/resource/json/result_dump.json'
         json_dump = None
         with open(dump_path, 'r') as json_file:
             json_dump = json.load(json_file)
