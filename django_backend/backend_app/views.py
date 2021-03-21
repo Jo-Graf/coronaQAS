@@ -51,7 +51,7 @@ def question_selection(request):
 
     now = datetime.datetime.now()
 
-    if now.year != 2021 or now.month < 3 or now.month < 6:
+    if now.year != 2021 or now.month < 3 or now.month > 6:
         quit()
 
     if request.method == 'POST':
