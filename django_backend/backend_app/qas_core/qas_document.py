@@ -7,7 +7,6 @@ from haystack import Document
 
 class QASDocument(Document):
 
-    # TODO: add changes in input params (probability=probability) to uml
     def __init__(self, text: str,
                  id: str = None,
                  query_score: Optional[float] = None,
@@ -38,6 +37,7 @@ class QASDocument(Document):
                            meta=document.meta,
                            probability=document.probability)
 
+    # from: https://github.com/deepset-ai/haystack/blob/master/haystack/schema.py
     def to_dict(self, field_map={}):
         inv_field_map = {v: k for k, v in field_map.items()}
         _doc: Dict[str, str] = {}

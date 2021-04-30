@@ -5,7 +5,7 @@ from backend_app.qas_core.qas_document import QASDocument
 
 
 class QASDataLoader:
-    # TODO: remove source_path and output_path params
+
     def __init__(self, source_path: str = '', output_path: str = '', variant: Optional[QASDataLoaderVariant] = None):
         self.__variant = variant
         self.__data = None

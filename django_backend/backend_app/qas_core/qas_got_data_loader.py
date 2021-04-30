@@ -1,3 +1,5 @@
+# based on: https://haystack.deepset.ai/docs/latest/tutorial1md
+
 from typing import Optional, List
 from uuid import uuid4
 from haystack.preprocessor.cleaning import clean_wiki_text

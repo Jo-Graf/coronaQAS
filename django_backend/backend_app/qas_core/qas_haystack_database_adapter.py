@@ -1,3 +1,5 @@
+# based on: https://github.com/deepset-ai/haystack/blob/master/haystack/document_store/elasticsearch.py
+
 from typing import List, Optional, Union, Dict
 from haystack.document_store.base import BaseDocumentStore
 from backend_app.qas_core.qas_database_variant import QASDatabaseVariant
@@ -19,7 +21,6 @@ class QASHaystackDatabaseAdapter(QASDatabaseVariant):
             dict_list.append(doc_as_dict)
         self.__document_store.write_documents(dict_list)
 
-    # TODO: add params to uml
     def get_data(self,
                  identifiers: Optional[Union[str, List[str]]] = None,
                  query: Optional[Union[str, Dict]] = None
@@ -59,4 +60,6 @@ class QASHaystackDatabaseAdapter(QASDatabaseVariant):
             qas_docs.append(qas_doc)
 
         return qas_docs
+
+    
 

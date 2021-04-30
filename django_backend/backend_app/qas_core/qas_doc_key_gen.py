@@ -3,7 +3,6 @@ from typing import Optional
 from backend_app.qas_core.qas_document import QASDocument
 
 
-# TODO: add to uml
 class QASDocKeyGen:
 
     doc_separator = '-$-$-'

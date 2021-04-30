@@ -20,7 +20,6 @@ class QASDatabase:
     def set_loader(self, loader: QASDataLoader):
         self.__loader = loader
 
-    # TODO: add params to uml
     def get_data(self,
                  identifiers: Optional[Union[str, List[str]]] = None,
                  query: Optional[Union[str, Dict]] = None

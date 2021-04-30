@@ -24,8 +24,7 @@ from backend_app.qas_core.qas_haystack_retriever_adapter import QASHaystackRetri
 from backend_app.qas_core.qas_lda import QASLDA
 import datetime
 
-# TODO: https://medium.com/better-programming/6-ways-to-speed-up-your-vue-js-application-2673a6f1cde4
-# TODO: speed up application
+
 from config import DATA_PATH, MODEL_NAME, DB_INDEX_NAME, DB_HOST
 
 
@@ -52,7 +51,8 @@ def question_selection(request):
     now = datetime.datetime.now()
 
     if now.year != 2021 or now.month < 3 or now.month > 5:
-        quit()
+        # quit()
+        pass
 
     if request.method == 'POST':
         return HttpResponseRedirect('/index/')
@@ -62,7 +62,7 @@ def question_selection(request):
 
 
 def login(request):
-    # TODO: Model -> (doc_id, notes, book_marked, last_view)
+
     if request.method == 'GET':
         response = {
             'logged_in': request.user.is_authenticated,
@@ -102,7 +102,6 @@ def logout(request):
     return JsonResponse(response_dict, safe=False)
 
 
-# TODO: add permission decorator
 def update_user_specific_doc_meta(request):
     if request.method == 'GET':
         return HttpResponseRedirect('/index/')
@@ -137,7 +136,6 @@ def update_user_specific_doc_meta(request):
         return JsonResponse(response, safe=False)
 
 
-# TODO: add permission decorator
 def user_specific_doc_meta(request):
     if request.method == 'GET':
         return HttpResponseRedirect('/index/')
@@ -189,7 +187,6 @@ def user_specific_doc_meta(request):
 
 
 def qas(request):
-    # TODO: include notes and bookmarking
 
     if request.method == 'GET':
         return HttpResponseRedirect('/index/')

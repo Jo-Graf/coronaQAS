@@ -1,3 +1,5 @@
+# based on: https://haystack.deepset.ai/docs/latest/tutorial1md
+
 from haystack.document_store.elasticsearch import ElasticsearchDocumentStore
 from haystack.reader.farm import FARMReader
 from haystack.retriever.sparse import ElasticsearchRetriever
@@ -7,6 +9,7 @@ from backend_app.qas_core.qas_got_data_loader import QASGOTDataLoaderVariant
 from backend_app.qas_core.qas_haystack_database_adapter import QASHaystackDatabaseAdapter
 from backend_app.qas_core.qas_haystack_reader_adapter import QASHaystackReaderAdapter
 from backend_app.qas_core.qas_haystack_retriever_adapter import QASHaystackRetrieverAdapter
+
 from backend_app.qas_core.qas_reader import QASReader
 from backend_app.qas_core.qas_retriever import QASRetriever
 

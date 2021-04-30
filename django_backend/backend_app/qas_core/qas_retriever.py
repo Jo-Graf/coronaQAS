@@ -16,7 +16,6 @@ class QASRetriever:
     def initialize(self):
         pass
 
-    # TODO: add param and return type to uml
     def retrieve(self,
                  query: str,
                  database: QASDatabase,

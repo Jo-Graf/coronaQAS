@@ -1,3 +1,5 @@
+# based on: https://haystack.deepset.ai/docs/latest/tutorial1md
+
 from haystack.database.elasticsearch import ElasticsearchDocumentStore
 from haystack.retriever.sparse import ElasticsearchRetriever
 

@@ -1,7 +1,5 @@
 from enum import Enum
 
-# TODO: add enums to uml
-
 
 class QASDocType(Enum):
     META = 0

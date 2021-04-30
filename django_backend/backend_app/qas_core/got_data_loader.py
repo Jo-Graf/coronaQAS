@@ -1,3 +1,5 @@
+# based on: https://haystack.deepset.ai/docs/latest/tutorial1md
+
 from farm.file_utils import fetch_archive_from_http
 from haystack.preprocessor.cleaning import clean_wiki_text
 from haystack.preprocessor.utils import convert_files_to_dicts

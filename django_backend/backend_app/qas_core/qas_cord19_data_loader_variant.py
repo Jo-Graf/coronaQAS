@@ -9,10 +9,6 @@ from haystack import Document
 from backend_app.qas_core.qas_data_loader_variant import QASDataLoaderVariant
 from backend_app.qas_core.qas_doc_key_gen import QASDocKeyGen
 from backend_app.qas_core.qas_document import QASDocument
-
-
-# TODO: add class to uml
-# TODO: implement language detector
 from config import MAX_DOCS_LOAD
 
 
@@ -39,7 +35,6 @@ class QASCORD19DataLoaderVariant(QASDataLoaderVariant):
 
         return (len(documents) > 0), documents
 
-    # TODO: add to uml
     @staticmethod
     def docs_from_path(path: str) -> List[QASDocument]:
         clean_func = None
@@ -152,7 +147,6 @@ class QASCORD19DataLoaderVariant(QASDataLoaderVariant):
 
         return cite_spans
 
-    # TODO: add to uml
     def get_doc_base_key(self, doc: Optional[QASDocument] = None, key: Optional[str] = None) -> str:
 
         return QASDocKeyGen.get_doc_base_key(doc=doc, key=key)

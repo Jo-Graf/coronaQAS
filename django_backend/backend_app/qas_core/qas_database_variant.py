@@ -8,7 +8,6 @@ class QASDatabaseVariant(ABC):
     def __init__(self):
         pass
 
-    # TODO: add params to uml
     @abstractmethod
     def get_data(self,
                  identifiers: Optional[Union[str, List[str]]] = None,

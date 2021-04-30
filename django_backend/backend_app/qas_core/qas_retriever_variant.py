@@ -9,7 +9,6 @@ class QASRetrieverVariant(ABC):
     def __init__(self):
         pass
 
-    # TODO: add param to uml
     @abstractmethod
     def retrieve(self,
                  query: str,

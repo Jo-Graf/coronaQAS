@@ -5,7 +5,8 @@
        {% csrf_token %}
 
       <title>Covid19: QAS</title>
-      <!-- Add Bootstrap and Bootstrap-Vue CSS to the <head> section -->
+       <!-- Most design elements are from or based on: https://bootstrap-vue.org/ -->
+       <!-- Add Bootstrap and Bootstrap-Vue CSS to the <head> section -->
       <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
       <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css"/>
       <style>
@@ -617,15 +618,6 @@
           function page_changing(old_page, new_page){
               vm.selected_paper = null;
               scroll_to_top();
-
-              /*
-              for(let i = 0; i<vm.user_specific_doc_meta.length; i++){
-                  let elm = vm.user_specific_doc_meta[i];
-                  console.log(i);
-                  console.log(elm);
-                  console.log(elm.fields.meta);
-              }
-              */
           }
 
           function update_logged_in(logged_in){
@@ -764,8 +756,6 @@
                       question: question
                   }).then((response) => {
                   vm.answer_is_loading = false;
-                  // vm.papers = response.data['answers']
-                  // vm.best_answer = response.data['answers'][0]
                   vm.papers = response.data
                   vm.best_answer = response.data[0]
 
@@ -800,12 +790,11 @@
                       results.topic_probabilities.push(prob);
                   }
               }
-              // results.topics = sorted_topics;
-              // results.topic_probabilities = sorted_probabilities;
 
               return results;
           }
 
+          // from: https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
           function scroll_to_top() {
               document.body.scrollTop = 0; // For Safari
               document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera

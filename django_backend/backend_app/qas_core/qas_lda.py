@@ -64,6 +64,7 @@ class QASLDA:
         return pd.DataFrame(columns=QASLDA.DF_COLUMNS, data=[[doc_id, title, full_text]])
 
     def load(self) -> List[List[str]]:
+        # based on: https://towardsdatascience.com/setting-up-text-preprocessing-pipeline-using-scikit-learn-and-spacy-e09b9b76758f
 
         doc_parts = self.database.get_data(query=self.doc_query)
         self.doc = self._docs_to_string(doc_parts)
@@ -132,7 +133,7 @@ class QASLDA:
 
         return result
 
-    # TODO: add to uml diagram
+
     def pipelinize(self, function, active=True):
         # from: https://towardsdatascience.com/setting-up-text-preprocessing-pipeline-using-scikit-learn-and-spacy-e09b9b76758f
         def list_comprehend_a_function(list_or_series, active=True):
@@ -144,6 +145,7 @@ class QASLDA:
         return FunctionTransformer(list_comprehend_a_function, validate=False, kw_args={'active': active})
 
     def punctation_removal(self, text):
+        # based on: https://towardsdatascience.com/setting-up-text-preprocessing-pipeline-using-scikit-learn-and-spacy-e09b9b76758f
         if isinstance((text), (str)):
             # text = re.sub('<[^>]*>', '', text)
             text = re.sub('[\W]+', '', text.lower())
@@ -161,6 +163,7 @@ class QASLDA:
             pass
 
     def spacy_tokenizer(self, text):
+        # from: https://towardsdatascience.com/setting-up-text-preprocessing-pipeline-using-scikit-learn-and-spacy-e09b9b76758f
         tokens = self.tokenizer(text)
 
         lemma_list = []

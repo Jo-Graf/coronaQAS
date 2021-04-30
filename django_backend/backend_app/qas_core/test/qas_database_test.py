@@ -1,3 +1,5 @@
+# based on: https://haystack.deepset.ai/docs/latest/tutorial1md
+
 from haystack.database.elasticsearch import ElasticsearchDocumentStore
 from backend_app.qas_core.qas_database import QASDatabase
 from backend_app.qas_core.qas_got_data_loader import QASGOTDataLoaderVariant

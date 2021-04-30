@@ -7,7 +7,6 @@ from backend_app.qas_core.qas_document import QASDocument
 
 class QASAnswer(QASDocument):
 
-    # TODO: add attributes to uml
     def __init__(self,
                  answer: str,
                  offset_start_in_doc: Optional[int] = None,
@@ -57,7 +56,6 @@ class QASAnswer(QASDocument):
                          embedding=embedding,
                          probability=probability)
 
-    # TODO: add to uml
     @staticmethod
     def _generate_id(**kwargs) -> str:
         unique_key_components = ['answer', 'offset_start_in_doc', 'offset_end_in_doc', 'context', 'probability', 'query_score']
@@ -65,6 +63,5 @@ class QASAnswer(QASDocument):
         unique_hashed_key = hashlib.md5(unique_key).hexdigest()
         return unique_hashed_key
 
-    # TODO: add to uml
     def serialize(self):
         return self.__dict__
