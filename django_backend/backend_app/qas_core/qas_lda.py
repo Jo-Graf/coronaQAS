@@ -27,7 +27,7 @@ class QASLDA:
                  database: Optional[QASDatabase] = None,
                  doc_query: Optional[str] = None,
                  docs_queries: Optional[str] = None,
-                 num_topics: Optional[int] = 100,#6,
+                 num_topics: Optional[int] = 6,
                  doc_topic_prior: Optional[float] = 0.20473924934073703,
                  topic_word_prior: Optional[float] = 2.175756258808697,
                  num_words: Optional[int] = 20,
@@ -117,8 +117,8 @@ class QASLDA:
 
         relevant_probabilities = doc_topic_probabilities[0]/doc_topic_probabilities[0].sum()
 
-        # TODO: exchangeable algorithm / define number of neighbours
-        nbrs = NearestNeighbors(n_neighbors=4, algorithm='auto').fit(doc_topic_probabilities)
+        # based on: https://scikit-learn.org/stable/modules/neighbors.html
+        nbrs = NearestNeighbors(n_neighbors=5, algorithm='auto').fit(doc_topic_probabilities)
         distances, indices = nbrs.kneighbors(doc_topic_probabilities)
 
         nearest_indices = indices[0][1:]

@@ -257,9 +257,9 @@ def lda(request):
 
         # query
         query = {"query": {"script": {"script": "doc['_id'][0].indexOf('" + base_key + "') > -1"}}}
+        doc_ids_set = set([loader.get_doc_base_key(key=x) for x in doc_ids])
         queries = [{"query": {"script": {"script": "doc['_id'][0].indexOf('" + x + "') > -1"}}}
-                   for x in doc_ids]
-
+                   for x in doc_ids_set if x != base_key]
         # lda
         lda_instance = QASLDA(database=database, doc_query=query, docs_queries=queries)
         topics = lda_instance.load()
