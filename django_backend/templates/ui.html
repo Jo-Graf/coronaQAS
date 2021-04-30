@@ -228,17 +228,17 @@
                                                            img-width="400"
                                                            img-height="200">
                                                        <b-carousel-slide
-                                                               v-for="(paper, index) in related_papers"
-                                                               :key="paper.answer_id + 'search_page_related_papers'"
+                                                               v-for="(rel_paper, index) in related_papers"
+                                                               :key="rel_paper.answer_id + 'search_page_related_papers'"
                                                                caption=""
                                                                img-blank>
                                                            <!--b-list-group-item style="border: none;">
                                                                </b-list-group-item-->
                                                                <b-card
-                                                                       v-bind:title="paper.meta.title"
-                                                                       v-bind:sub-title="paper.meta.subtitle"
+                                                                       v-bind:title="rel_paper.meta.title"
+                                                                       v-bind:sub-title="rel_paper.meta.subtitle"
                                                                        style="top: 50%; color: #000; transform: translate(0%, -50%);">
-                                                                   <b-card-text>[[paper.abstract]]</b-card-text>
+                                                                   <b-card-text>[[rel_paper.abstract]]</b-card-text>
                                                                </b-card>
 
                                                        </b-carousel-slide>
@@ -729,14 +729,38 @@
 
                     let nearest_neighbours = response.data["nearest_neighbours"];
 
+                    let hashed_papers = []
+
                     for (let i = 0; i < vm.papers.length; i++) {
                       let curr_id = vm.papers[i].doc_id;
                       if (new RegExp(nearest_neighbours.join("|")).test(curr_id)){
-                          vm.related_papers.push(vm.papers[i]);
+
+                          let curr_hash = hash_code_for_paper(vm.papers[i]);
+
+                          if(hashed_papers.length === 0 || !(new RegExp(hashed_papers.join("|")).test(curr_hash))) {
+                              vm.related_papers.push(vm.papers[i]);
+
+                              //add hash
+                              hashed_papers.push(curr_hash);
+                          }
                       }
                     }
                     vm.lda_is_loading = false;
                   });
+          }
+
+          function hash_code(s){
+              // based on: https://stackoverflow.com/questions/7616461/generate-a-hash-from-string-in-javascript
+              return String(s.split("").reduce(function(a,b){a=((a<<5)-a)+b.charCodeAt(0);return a&a},0));
+          }
+
+          function hash_code_for_paper(paper){
+              let title = paper.meta.title;
+              let subtitle = paper.meta.subtitle;
+              let abstract = paper.meta.abstract;
+              let concatenated = title + subtitle + abstract;
+
+              return hash_code(concatenated);
           }
 
           function load_question_selection() {
@@ -766,6 +790,7 @@
                   });
           }
 
+          // based on: https://stackoverflow.com/questions/46622486/what-is-the-javascript-equivalent-of-numpy-argsort
           function un_decorate_sort(arr1, arr2){
               return arr1
                   .map((item, index) => [arr2[index], item])
