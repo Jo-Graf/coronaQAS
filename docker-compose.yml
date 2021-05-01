@@ -2,8 +2,10 @@ version: "3.9"
    
 services:
   db:
+    container_name: qas_database
     build: 
       context: ./docker_container/elasticsearch/
+    image: qas_database_image
     ports:
       - "9200:9200"
     environment:
@@ -11,11 +13,14 @@ services:
     networks: 
       - qas_net
   python_core:
+    container_name: qas_python_core
     build: ./docker_container/python_core/
     image: python_core
   web:
+    container_name: qas_web_app
     build: 
       context: .
+    image: qas_web_app_image
     command: > 
       bash -c "./wait-for-it.sh -t 25 db:9200 -- python initial_data_load.py
       && python manage.py makemigrations backend_app
