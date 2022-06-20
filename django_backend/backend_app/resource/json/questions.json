@@ -1,9 +1,114 @@
 [
-  {"value": null, "text":"Please select a question"},
-  {"value": "Who is the father of Arya Stark?", "text":"Who is the father of Arya Stark?"},
-  {"value": "Who is the mother of Sansa Stark?", "text":"Who is the mother of Sansa Stark?"},
-  {"value": "Who is the mother of dragons?", "text":"Who is the mother of dragons?"},
-  {"value": "Who is the red witch?", "text":"Who is the red witch?"},
-  {"value": "Who is the queen of king's landing?", "text":"Who is the queen of king's landing?"},
-  {"value": "Who is the faceless man?", "text":"Who is the faceless man?"}
+  {
+    "value": null,
+    "text": "Please select a question"
+  },
+  {
+    "value": "What is the incubation period of SARS-CoV-2?",
+    "text": "What is the incubation period of SARS-CoV-2?"
+  },
+  {
+    "value": "What is the range of the incubation period of SARS-CoV-2?",
+    "text": "What is the range of the incubation period of SARS-CoV-2?"
+  },
+  {
+    "value": "How long are humans contagious?",
+    "text": "How long are humans contagious?"
+  },
+  {
+    "value": "What is the prevalence of asymptomatic transmission of SARS-CoV-2?",
+    "text": "What is the prevalence of asymptomatic transmission of SARS-CoV-2?"
+  },
+  {
+    "value": "Is the transmission of SARS-CoV-2 seasonal?",
+    "text": "Is the transmission of SARS-CoV-2 seasonal?"
+  },
+  {
+    "value": "Is the transmission of SARS-CoV-2 influenced by humidity?",
+    "text": "Is the transmission of SARS-CoV-2 influenced by humidity?"
+  },
+  {
+    "value": "How are the electrostatics on surfaces of coronavirus?",
+    "text": "How are the electrostatics on surfaces of coronavirus?"
+  },
+  {
+    "value": "How does coronavirus adhere to hydrophobic or hydrophilic surfaces?",
+    "text": "How does coronavirus adhere to hydrophobic or hydrophilic surfaces?"
+  },
+  {
+    "value": "What factors influence survival of coronavirus in the environment?",
+    "text": "What factors influence survival of coronavirus in the environment?"
+  },
+  {
+    "value": "Which materials does the virus persist on?",
+    "text": "Which materials does the virus persist on?"
+  },
+  {
+    "value": "Does the virus persist on blood?",
+    "text": "Does the virus persist on blood?"
+  },
+  {
+    "value": "Does the virus persist on nasal discharge?",
+    "text": "Does the virus persist on nasal discharge?"
+  },
+  {
+    "value": "Does the virus persist on urine?",
+    "text": "Does the virus persist on urine?"
+  },
+  {
+    "value": "Does the virus persist on fecal matter?",
+    "text": "Does the virus persist on fecal matter?"
+  },
+  {
+    "value": "Does the virus persist on sputum?",
+    "text": "Does the virus persist on sputum?"
+  },
+  {
+    "value": "How do people get infected with SARS-CoV-2?",
+    "text": "How do people get infected with SARS-CoV-2?"
+  },
+  {
+    "value": "How do infected people transmit SARS-CoV-2?",
+    "text": "How do infected people transmit SARS-CoV-2?"
+  },
+  {
+    "value": "What diagnostics have been implemented for SARS-CoV-2?",
+    "text": "What diagnostics have been implemented for SARS-CoV-2?"
+  },
+  {
+    "value": "What models for infection exist for SARS-CoV-2?",
+    "text": "What models for infection exist for SARS-CoV-2?"
+  },
+  {
+    "value": "What models for transmission exist for SARS-CoV-2?",
+    "text": "What models for transmission exist for SARS-CoV-2?"
+  },
+  {
+    "value": "What tools and studies studies exist about monitoring phenotypic change in SARS-CoV-2?",
+    "text": "What tools and studies studies exist about monitoring phenotypic change in SARS-CoV-2"
+  },
+  {
+    "value": "What tools and studies studies exist about monitoring adaptation of SARS-CoV-2?",
+    "text": "What tools and studies studies exist about monitoring adaptation of SARS-CoV-2?"
+  },
+  {
+    "value": "What is the immune response to SARS-CoV-2?",
+    "text": "What is the immune response to SARS-CoV-2"
+  },
+  {
+    "value": "How is the immune response to SARS-CoV-2 dveloped?",
+    "text": "How is the immune response to SARS-CoV-2 developed"
+  },
+  {
+    "value": "Are movement control strategies effective to prevent secondary transmission of SARS-CoV-2?",
+    "text": "Are movement control strategies effective to prevent secondary transmission of SARS-CoV-2"
+  },
+  {
+    "value": "Is personal protective equipment effective at reducing risk of transmission of SARS-CoV-2?",
+    "text": "Is personal protective equipment effective at reducing risk of transmission of SARS-CoV-2?"
+  },
+  {
+    "value": "Is transmission of SARS-CoV-2 dependent on environmental factors?",
+    "text": "Is transmission of SARS-CoV-2 dependent on environmental factors?"
+  }
 ]

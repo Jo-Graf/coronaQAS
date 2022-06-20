@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      {{ graph | safe | json_script:"graph_var" }}
+       {% csrf_token %}
+
+      <title>Covid19: QAS</title>
+       <!-- Most design elements are from or based on: https://bootstrap-vue.org/ -->
+       <!-- Add Bootstrap and Bootstrap-Vue CSS to the <head> section -->
+      <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
+      <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css"/>
+      <!-- style partly based on: https://stackoverflow.com/questions/48373119/change-bootstrap-4-checkbox-background-color -->
+       <style>
+          .carousel-control-next,
+          .carousel-control-prev {
+              filter: invert(100%);
+          }
+          .topic-tag-group > .row {
+              display: block;
+              overflow-x: auto;
+              white-space: nowrap;
+          }
+          .topic-tag-group > .row > .mt-1{
+              display: inline-block;
+
+          }
+          a {
+            color: var(--info);
+          }
+          .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+              background-color: var(--info)!important;
+              border-color: var(--info)!important;
+          }
+      </style>
+   </head>
+   <body>
+
+   <div id="qas-ui">
+       <div>
+           <b-navbar toggleable="lg" type="dark" variant="info" fixed="top">
+               <b-navbar-brand href="#">Covid19 - QAS</b-navbar-brand>
+               <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+               <b-collapse id="nav-collapse" is-nav>
+                   <b-navbar-nav>
+                       <b-nav-item :active="selected_page==0"
+                                   v-on:click="select_page(0)">Search</b-nav-item>
+                       <b-nav-item v-if="logged_in"
+                                   :active="selected_page==1"
+                                   v-on:click="select_page(1)">Bookmarked</b-nav-item>
+                       <b-nav-item v-if="logged_in"
+                                   :active="selected_page==2"
+                                   v-on:click="select_page(2)">Notes</b-nav-item>
+                   </b-navbar-nav>
+                   <b-navbar-nav class="ml-auto" key="login_window">
+                      <b-nav-item-dropdown
+                              class="ml-2"
+                              right>
+                          <template #button-content>
+                              <em>[[display_username]]</em>
+                          </template>
+                          <b-dropdown-item
+                                  v-if="logged_in"
+                                  v-on:click="logout()">Sign Out</b-dropdown-item>
+                          <div class="m-2">
+                              <b-form-input
+                                      v-if="!logged_in"
+                                      v-model="username"
+                                      placeholder="Username"
+                                      class="mt-2"
+                                      :state="username_field_state"
+                                      aria-describedby="username-input-live-feedback"
+                                      trim
+                                      :debounce="login_field_debounce"></b-form-input>
+                              <b-form-invalid-feedback id="username-input-live-feedback">
+                                  Enter at least 5 letters
+                              </b-form-invalid-feedback>
+
+                              <b-form-input
+                                      v-if="!logged_in"
+                                      v-model="password"
+                                      type="password"
+                                      placeholder="Password"
+                                      class="mt-2"
+                                      :state="password_field_state"
+                                      aria-describedby="password-input-live-feedback"
+                                      trim
+                                      :debounce="login_field_debounce"></b-form-input>
+                              <b-form-invalid-feedback id="password-input-live-feedback">
+                                      Enter at least 8 letters
+                              </b-form-invalid-feedback>
+
+                              <b-dropdown-item
+                                      v-if="!logged_in"
+                                      v-on:click="login()">Sign In</b-dropdown-item>
+                          </div>
+                      </b-nav-item-dropdown>
+                  </b-navbar-nav>
+               </b-collapse>
+           </b-navbar>
+       </div>
+       <div>
+           <b-container fluid
+                        v-if="selected_page===0"
+                        key="search_page">
+               <b-row align-h="center" class="mt-3">
+                   <b-col :cols="search_page_width">
+                      <h2>Search</h2>
+                   </b-col>
+                </b-row>
+
+               <b-row align-h="center" class="mt-3">
+                   <b-col :cols="search_page_width">
+                      <h3>Question</h3>
+                      <b-row align-h="center" class="mt-3">
+                          <b-col cols="10">
+                              <b-form-input placeholder="Enter your COVID-19 related question"
+                                            v-model="selected_question"></b-form-input>
+                          </b-col>
+                          <b-col cols="2">
+                              <b-button block
+                                        variant="info"
+                                        v-on:click="ask_question()">Search</b-button>
+                          </b-col>
+                      </b-row>
+                       <b-form-checkbox v-model="search_page_show_detailed_results"
+                                            size="lg">
+                           Expert Mode (Show detailed Results)
+                       </b-form-checkbox>
+
+                      <!--b-form-group id="input-group-3" label="" label-for="input-3">
+                         <b-form-select id="input-3" v-model="selected_question" v-bind:options="questions"></b-form-select>
+                      </--b-form-group-->
+                       <h3 class="mt-3">Suggested Questions</h3>
+                       <b-form-select v-model="selected_question" :options="questions" :select-size="5"></b-form-select>
+
+                   </b-col>
+                </b-row>
+
+               <b-row align-h="center" class="mt-3">
+                   <b-col cols="1" v-for="n in 3">
+                       <b-spinner type="grow" label="Spinning" v-if="answer_is_loading" :style="'color:' + hex_primary_color"></b-spinner>
+                   </b-col>
+                </b-row>
+
+               <b-row align-h="center" v-if="show_answer_and_results">
+                   <b-col :cols="search_page_width" v-if="best_answer != null">
+                       <h3>Most likely Answer</h3>
+                       <b-card>
+                           <b-card-text>[[best_answer.answer]]</b-card-text>
+                       </b-card>
+                   </b-col>
+                </b-row>
+
+               <b-row align-h="center" class="mt-3" v-if="show_answer_and_results && search_page_show_detailed_results">
+                   <b-col :cols="search_page_width">
+                       <h3>Results</h3>
+                       <div>
+                           <b-list-group>
+                               <b-list-group-item
+                                    v-for="(paper, index) in papers"
+                                    style="border: none;"
+                                    :key="paper.answer_id + 'search_page_results'">
+                                   <b-card v-bind:title="paper.meta.title"
+                                           v-bind:sub-title="paper.meta.subtitle"
+                                           header=" "
+                                           header-bg-variant="info">
+                                       <h5 class="mt-4">Score: [[Math.round(paper.probability*100)]]%</h5>
+                                       <h5 class="mt-4">Answer</h5>
+                                       <b-card-text class="mt-2">[[paper.answer]]</b-card-text>
+                                       <h5 class="mt-4">Context</h5>
+                                       <b-card-text class="mt-2">
+                                           <span v-html="highlight(paper.context,paper.answer)"></span>
+                                       </b-card-text>
+
+                                       <a class="card-link"
+                                          v-on:click="search_page_show_paper_detail([[index]])">
+                                           <b :style="'color:' + hex_primary_color">[[more_less_display_title(index)]]</b>
+                                       </a>
+
+                                       <b-tabs
+                                               v-if="index == selected_paper"
+                                               class="mt-4"
+                                               variant="info">
+                                           <b-tab active
+                                                  title="Details">
+                                               <div v-if="!lda_is_loading">
+                                                   <h5 class="mt-4">
+                                                       Topics in this Paper
+                                                       <b-button pill
+                                                                 variant="outline-info"
+                                                                 size="sm"
+                                                                 @click="search_page_show_lda_help_alert=true">?</b-button>
+                                                   </h5>
+                                                    <b-alert v-model="search_page_show_lda_help_alert" variant="info" dismissible>
+                                                       Topics in a paper consist of a group of semantically related words, these groups are created for the corpus of all papers of the answers.
+                                                        <b>The most likely topics for the paper of this answer are shown below.</b>
+                                                   </b-alert>
+                                                   <div class="container topic-tag-group"
+                                                        v-for="(topic, topic_index) in lda_results.topics"
+                                                        :key="topic.words.join('') + 'search_page_topics'">
+                                                       <div class="mt-3">
+                                                           Topic [[topic_index+1]]:
+                                                       </div>
+                                                           <b-progress max=100 height="2rem" class="mt-2" variant="info">
+                                                               <b-progress-bar :value="lda_results.topic_probabilities[topic_index]*100">
+                                                                   <span>
+                                                                       <strong>[[(lda_results.topic_probabilities[topic_index]*100).toFixed(2)]]%</strong>
+                                                                   </span>
+                                                               </b-progress-bar>
+                                                           </b-progress>
+                                                       <div class="row text-center">
+                                                           <b-form-tag v-for="tag in topic.words"
+                                                                       tagRemoveLabel=" "
+                                                                       :title="tag"
+                                                                       :key="tag + topic.words.join('') + 'search_page_topics'"
+                                                                       class="mt-1">[[tag]]
+                                                           </b-form-tag>
+                                                           <div class="mb-3"></div>
+                                                       </div>
+                                                   </div>
+                                                   <h5>Papers with related Topics</h5>
+                                                   <b-carousel
+                                                           id="carousel"
+                                                           controls
+                                                           indicators
+                                                           width="400"
+                                                           height="200"
+                                                           img-width="400"
+                                                           img-height="200">
+                                                       <b-carousel-slide
+                                                               v-for="(rel_paper, index) in related_papers"
+                                                               :key="rel_paper.answer_id + 'search_page_related_papers'"
+                                                               caption=""
+                                                               img-blank>
+                                                           <!--b-list-group-item style="border: none;">
+                                                               </b-list-group-item-->
+                                                               <b-card
+                                                                       v-bind:title="rel_paper.meta.title"
+                                                                       v-bind:sub-title="rel_paper.meta.subtitle"
+                                                                       style="top: 50%; color: #000; transform: translate(0%, -50%);">
+                                                                   <b-card-text>[[rel_paper.abstract]]</b-card-text>
+                                                               </b-card>
+
+                                                       </b-carousel-slide>
+                                                   </b-carousel>
+                                               </div>
+                                               <div v-if="lda_is_loading">
+                                                       <b-row align-h="center" class="mt-3">
+                                                           <b-col cols="1" v-for="n in 3">
+                                                               <b-spinner small type="grow" label="Spinning" :style="'color:' + hex_primary_color"></b-spinner>
+                                                           </b-col>
+                                                       </b-row>
+                                                   <b-skeleton animation width="85%"
+                                                               class="mt-3"></b-skeleton>
+                                                   <b-skeleton animation width="55%"></b-skeleton>
+                                                   <b-skeleton animation width="70%"></b-skeleton>
+                                               </div>
+                                           </b-tab>
+
+                                           <b-tab v-if="(index == selected_paper) && (logged_in)"
+                                                  title="Remarks">
+                                               <h5 class="mt-4">Notes</h5>
+                                               <b-form-textarea
+                                                                placeholder="Enter your notes..."
+                                                                rows="4"
+                                                                class="mt-2"
+                                                                autocomplete="off"
+                                                                autocorrect="off"
+                                                                autocapitalize="off"
+                                                                spellcheck="false"
+                                                                v-model="selected_user_specific_doc_meta.fields.note"
+                                                                :debounce="textarea_debounce"
+                                               ></b-form-textarea>
+                                                <!--v-model="selected_user_specific_doc_meta.fields.note"-->
+                                               <b-form-checkbox v-model="selected_user_specific_doc_meta.fields.bookmarked"
+                                                                    size="lg"
+                                                                    class="mt-4">
+                                                   <h5>Bookmarked</h5>
+                                               </b-form-checkbox>
+
+                                               <b-button variant="info"
+                                                         class="mt-4"
+                                                         v-on:click="search_page_update_user_specific_doc_meta()">
+                                                       save
+                                               </b-button>
+                                           </b-tab>
+
+                                       </b-tabs>
+
+                                   </b-card>
+                               </b-list-group-item>
+                           </b-list-group>
+                       </div>
+                   </b-col>
+                </b-row>
+             </b-container>
+           <b-container fluid
+                        v-if="(selected_page===1) && logged_in"
+                        key="bookmarked_page">
+               <b-row align-h="center" class="mt-3">
+                   <b-col :cols="bookmarked_page_width">
+                      <h2>Bookmarked</h2>
+                   </b-col>
+               </b-row>
+               <b-row align-h="center" class="mt-3">
+                   <b-col :cols="bookmarked_page_width">
+                       <b-list-group>
+                           <b-list-group-item
+                                   v-for="(paper, index) in bookmarked_user_specific_doc_meta"
+                                   style="border: none;"
+                                   :key="paper.pk + 'bookmarked_page_results'">
+                               <b-card v-bind:title="paper.fields.meta.title" v-bind:sub-title="'Last update: ' + paper.fields.last_updated">
+                                   <a class="card-link"
+                                      v-on:click="bookmarked_page_show_paper_detail(index, paper)">
+                                       <b :style="'color:' + hex_primary_color">[[more_less_display_title(index)]]</b>
+                                   </a>
+                                   <div v-if="selected_paper === index">
+                                       <h5 class="mt-4">Notes</h5>
+                                       <b-form-textarea v-model="selected_user_specific_doc_meta.fields.note"
+                                                        placeholder="Enter your notes..."
+                                                        rows="4"
+                                                        class="mt-2"
+                                                        :debounce="textarea_debounce">
+                                       </b-form-textarea>
+                                       <b-form-checkbox v-model="selected_user_specific_doc_meta.fields.bookmarked"
+                                                        size="lg"
+                                                        class="mt-4">
+                                           <h5>Bookmarked</h5>
+                                       </b-form-checkbox>
+                                       <b-button variant="info"
+                                                 class="mt-4"
+                                                 v-on:click="bookmarked_page_update_user_specific_doc_meta(selected_user_specific_doc_meta)">
+                                           save
+                                       </b-button>
+                                   </div>
+                               </b-card>
+                           </b-list-group-item>
+                       </b-list-group>
+                   </b-col>
+               </b-row>
+           </b-container>
+           <b-container fluid
+                        v-if="(selected_page===2) && logged_in"
+                        key="history_page">
+               <b-row align-h="center" class="mt-3">
+                   <b-col cols="6">
+                       <h2>Notes</h2>
+                   </b-col>
+               </b-row>
+               <b-row align-h="center" class="mt-3">
+                   <b-col :cols="bookmarked_page_width">
+                       <b-list-group>
+                           <b-list-group-item
+                                   v-for="(paper, index) in user_specific_doc_meta"
+                                   style="border: none;"
+                                   :key="paper.pk + 'history_page_results'">
+                               <b-card v-bind:title="paper.fields.meta.title" v-bind:sub-title="'Last update: ' + paper.fields.last_updated">
+                                   <a class="card-link"
+                                      v-on:click="history_page_show_paper_detail(index, paper)">
+                                       <b :style="'color:' + hex_primary_color">[[more_less_display_title(index)]]</b>
+                                   </a>
+                                   <div v-if="selected_paper === index">
+                                       <h5 class="mt-4">Notes</h5>
+                                       <b-form-textarea v-model="selected_user_specific_doc_meta.fields.note"
+                                                        placeholder="Enter your notes..."
+                                                        rows="4"
+                                                        class="mt-2"
+                                                        :debounce="textarea_debounce">
+                                       </b-form-textarea>
+                                       <b-form-checkbox v-model="selected_user_specific_doc_meta.fields.bookmarked"
+                                                        size="lg"
+                                                        class="mt-4">
+                                           <h5>Bookmarked</h5>
+                                       </b-form-checkbox>
+                                       <b-button variant="info"
+                                                 class="mt-4"
+                                                 v-on:click="history_page_update_user_specific_doc_meta(selected_user_specific_doc_meta)">
+                                           save
+                                       </b-button>
+                                   </div>
+                               </b-card>
+                           </b-list-group-item>
+                       </b-list-group>
+                   </b-col>
+               </b-row>
+           </b-container>
+       </div>
+   </div>
+
+      <!-- class="demo" Add Vue and BootstrapVue scripts just before the closing </body> tag -->
+      <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.min.js"></script>
+      <!--script src="https://unpkg.com/vue/dist/vue.min.js"></script-->
+      <script src="https://unpkg.com/vue/dist/vue.js"></script>
+      <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+      <script src="https://unpkg.com/vue-text-highlight@2.0.10/dist/vue-text-highlight.umd.js"></script>
+      <script>
+          // Vue.component('text-highlight', VueTextHighlight);
+          Vue.use(BootstrapVue);
+          // Vue.use(VueTextHighlight);
+          // Vue.component('text-highlight', TextHighlight);
+
+          Vue.filter('highlight', function(word, query){
+              var check = new RegExp(query, "ig");
+              return word.toString().replace(check, function(matchedText,a,b){
+                  return ('<strong>' + matchedText + '</strong>');
+              });
+          });
+
+          let graph_var = JSON.parse(document.getElementById('graph_var').textContent);
+
+          axios.defaults.xsrfCookieName = 'csrftoken'
+          axios.defaults.xsrfHeaderName = "X-CSRFTOKEN"
+
+          let host_url = 'http://127.0.0.1:8000/'
+
+          let vm = new Vue({
+              delimiters: ["[[", "]]"],
+              el: "#qas-ui",
+              components: {
+              },
+              data: {
+                  logged_in: false,
+                  username: "",
+                  textarea_debounce:500,
+                  login_field_debounce: 500,
+                  search_page_show_detailed_results: true,
+                  search_page_show_lda_help_alert: false,
+                  search_page_width: 8,
+                  bookmarked_page_width: 8,
+                  history_page_width: 8,
+                  selected_page: 0,
+                  hex_primary_color: "#17a2b8",
+                  selected_paper: null,
+                  password: "",
+                  papers: null,
+                  lda_results: [],
+                  related_papers: [],
+                  user_specific_doc_meta: [],
+                  selected_user_specific_doc_meta: null,
+                  selected_question: null,
+                  best_answer: null,
+                  questions: [
+                      {
+                          value: null,
+                          text: 'Please select a question'
+                      }
+                  ],
+                  search_started: false,
+                  answer_is_loading: false,
+                  lda_is_loading: false
+              },
+              computed: {
+                  show_answer_and_results: function() {
+                      return this.selected_question != null && !this.answer_is_loading && this.search_started;
+                  },
+                  username_field_state() {
+                      return this.username.length > 4 ? true : false
+                  },
+                  password_field_state() {
+                      return this.password.length > 7 ? true : false
+                  },
+
+                  display_username() {
+                      return (vm.logged_in && vm.username.length > 0)? vm.username : "User"
+                  },
+
+                  bookmarked_user_specific_doc_meta() {
+                      return vm.user_specific_doc_meta.filter(word => word.fields.bookmarked === true);
+                  }
+              },
+              methods: {
+                  bookmarked_page_show_paper_detail: function(index, paper) {
+                      bookmark_history_page_show_paper_detail(index, paper);
+                  },
+                 history_page_show_paper_detail: function(index, paper) {
+                      bookmark_history_page_show_paper_detail(index, paper);
+                  },
+                  search_page_show_paper_detail: function(index) {
+
+                      if(parseInt(vm.selected_paper,10) === parseInt(index,10)) {
+                          vm.selected_paper = null;
+                          vm.lda_results = [];
+                          vm.related_papers = [];
+                      }else{
+                          vm.selected_paper = null;
+                          vm.lda_results = [];
+                          vm.related_papers = [];
+                          let paper = vm.papers[index]
+                          vm.selected_paper = index;
+                          vm.selected_user_specific_doc_meta = user_specific_doc_meta(paper.doc_id);
+                          load_lda(paper);
+                      }
+                  },
+                  login: function(){
+                      axios.post(host_url + 'login/',
+                          {
+                              username: vm.username,
+                              password: vm.password
+                          }).then((response) => {
+                              vm.logged_in = response.data['success'];
+                              let variant = vm.logged_in? 'success' : 'danger';
+                              this.$bvToast.toast(response.data['message'], {
+                                  title: 'Login information',
+                                  autoHideDelay: 5000,
+                                  appendToast: true,
+                                  variant: variant
+                              });
+                          }
+                      );
+
+                  },
+                  logout: function(){
+                      axios.get(host_url + 'logout/')
+                          .then((response) => {
+                              vm.logged_in = !response.data['success'];
+                              let variant = !vm.logged_in? 'success' : 'danger';
+                              this.$bvToast.toast(response.data['message'], {
+                                  title: 'Login information',
+                                  autoHideDelay: 5000,
+                                  appendToast: true,
+                                  variant: variant
+                              });
+                          }
+                      );
+                  },
+                  search_page_update_user_specific_doc_meta: function(){
+                      let paper = vm.papers[vm.selected_paper]
+                      let doc_id = paper.doc_id;
+                      let meta = paper.meta;
+                      let bookmarked = vm.selected_user_specific_doc_meta.fields.bookmarked;
+                      let note = vm.selected_user_specific_doc_meta.fields.note;
+
+                      update_user_specific_doc_meta(doc_id, note, bookmarked, meta)
+                  },
+                  bookmarked_page_update_user_specific_doc_meta: function(paper){
+                      let doc_id = paper.fields.doc_id;
+                      let meta = paper.fields.meta;
+                      let bookmarked = paper.fields.bookmarked;
+                      let note = paper.fields.note;
+
+                      update_user_specific_doc_meta(doc_id, note, bookmarked, meta);
+                      vm.selected_paper = null;
+
+                      if(bookmarked){
+                          vm.selected_paper = 0;
+                      }
+
+                      scroll_to_top();
+                  },
+                  history_page_update_user_specific_doc_meta: function(paper){
+                      let doc_id = paper.fields.doc_id;
+                      let meta = paper.fields.meta;
+                      let bookmarked = paper.fields.bookmarked;
+                      let note = paper.fields.note;
+
+                      update_user_specific_doc_meta(doc_id, note, bookmarked, meta);
+                      vm.selected_paper = null;
+                      vm.selected_paper = 0;
+                      scroll_to_top();
+                  },
+                  more_less_display_title: function(index){
+                      return (parseInt(vm.selected_paper,10) === parseInt(index,10)) ? "- less" : "+ more";
+                  },
+                  ask_question: function(){
+                      vm.selected_paper = null;
+                      ask_question(vm.selected_question)
+                  },
+                  select_page: function(index){
+                      page_changing(vm.selected_page, index)
+                      vm.selected_page = index
+                  },
+                  highlight: function(text, query){
+                      return text.replace(query, '<strong>' + query + '</strong>')
+                  }
+            },
+            watch: {
+                  selected_question: function (val) {
+                      // vm.selected_paper = null;
+                      // ask_question(val);
+                  },
+                  logged_in: function (val) {
+                    update_logged_in(val);
+                  }
+            },
+            mounted(){
+                  load_question_selection();
+                  check_login();
+            },
+          });
+
+          function download_text(text, file_name){
+              let data = new Blob([text], {type: 'text/plain'});
+              let url = window.URL.createObjectURL(data);
+              let a = document.createElement('a');
+              a.download = file_name;
+              a.href = url;
+              a.dataset.downloadurl = ['text/plain', a.download, a.href].join(':');
+              a.style.display = "none";
+              document.body.appendChild(a);
+              a.click();
+              document.body.removeChild(a);
+          }
+
+          function bookmark_history_page_show_paper_detail(index, paper){
+              console.log(paper.fields.meta)
+
+              if(parseInt(vm.selected_paper,10) === parseInt(index,10)) {
+                  vm.selected_paper = null;
+                  vm.selected_user_specific_doc_meta= null;
+              }else{
+                  vm.selected_paper = index;
+                  vm.selected_user_specific_doc_meta = JSON.parse(JSON.stringify(paper)); // deep copy
+              }
+          }
+
+          function page_changing(old_page, new_page){
+              vm.selected_paper = null;
+              scroll_to_top();
+          }
+
+          function update_logged_in(logged_in){
+              vm.password = ""
+              if(logged_in === true){
+                  load_user_specific_doc_meta();
+              }else{
+                  vm.username = ""
+                  vm.user_specific_doc_meta = [];
+                  vm.selected_user_specific_doc_meta = null;
+              }
+          }
+
+          function user_specific_doc_meta(doc_id){
+              let empty_doc_meta = {
+                  fields: {
+                      note: "",
+                      bookmarked: false
+                  }
+              }
+
+              if(!doc_id ||!vm.user_specific_doc_meta||vm.user_specific_doc_meta.length<1){
+                  return empty_doc_meta;
+              }
+
+              for (let i = 0; i < vm.user_specific_doc_meta.length; i++) {
+                  let doc = vm.user_specific_doc_meta[i];
+
+                  if(doc_id.includes(doc.fields.doc_id)){
+                      return doc;
+                  }
+              }
+
+              return empty_doc_meta;
+          }
+
+          function update_user_specific_doc_meta(doc_id, note, bookmarked, doc_meta){
+              let change_dic = {'doc_id': doc_id};
+
+              if(note != null)
+                  change_dic['doc_note'] = note
+              if(bookmarked != null)
+                  change_dic['doc_bookmarked'] = bookmarked
+
+              axios.post(host_url + 'update_user_specific_doc_meta/', change_dic).then((response) => {
+
+                  let success = response.data['success'];
+                  let message = response.data['message'];
+                  let user_specific_doc_meta = response.data['user_specific_doc_meta']
+
+                  if(success){
+                      user_specific_doc_meta.fields.meta = doc_meta
+
+                      let removeIndex = vm.user_specific_doc_meta.map(function(item){
+                          return item.fields.doc_id;
+                      }).indexOf(user_specific_doc_meta.fields.doc_id);
+
+                      if(removeIndex >= 0) {
+                          vm.user_specific_doc_meta.splice(removeIndex, 1);
+                      }
+
+                      vm.user_specific_doc_meta.splice(0, 0, user_specific_doc_meta);
+                  }
+
+
+                  let variant = success? 'success' : 'danger';
+
+                  vm.$bvToast.toast(message, {
+                      title: 'Update information',
+                      autoHideDelay: 5000,
+                      appendToast: true,
+                      variant: variant
+                  });
+              });
+          }
+
+          function check_login(){
+              axios.get(host_url + 'login/').then((response) => {
+                  vm.logged_in = response.data['logged_in'];
+                  vm.username = response.data['username'];
+                  update_logged_in(vm.logged_in);
+              });
+          }
+
+          function load_user_specific_doc_meta(){
+              axios.post(host_url + 'user_specific_doc_meta/',{
+              }).then((response) => {
+                  vm.user_specific_doc_meta = response.data.reverse()
+              });
+          }
+
+          function load_lda(paper, index) {
+              vm.lda_is_loading = true;
+
+              let ids = []
+
+              for (let i = 0; i < vm.papers.length; i++) {
+                  ids.push(vm.papers[i].doc_id);
+              }
+
+              axios.post(host_url + 'lda/',
+                  {
+                      doc_id: paper.doc_id,
+                      doc_ids: ids
+                  }).then((response) => {
+                    vm.lda_results = response.data;
+                    vm.lda_results = filter_lda_results(vm.lda_results, 3, 0.05);
+
+                    let nearest_neighbours = response.data["nearest_neighbours"];
+
+                    let hashed_papers = []
+
+                    for (let i = 0; i < vm.papers.length; i++) {
+                      let curr_id = vm.papers[i].doc_id;
+                      if (new RegExp(nearest_neighbours.join("|")).test(curr_id)){
+
+                          let curr_hash = hash_code_for_paper(vm.papers[i]);
+
+                          if(hashed_papers.length === 0 || !(new RegExp(hashed_papers.join("|")).test(curr_hash))) {
+                              vm.related_papers.push(vm.papers[i]);
+
+                              //add hash
+                              hashed_papers.push(curr_hash);
+                          }
+                      }
+                    }
+                    vm.lda_is_loading = false;
+                  });
+          }
+
+          function hash_code(s){
+              // based on: https://stackoverflow.com/questions/7616461/generate-a-hash-from-string-in-javascript
+              return String(s.split("").reduce(function(a,b){a=((a<<5)-a)+b.charCodeAt(0);return a&a},0));
+          }
+
+          function hash_code_for_paper(paper){
+              let title = paper.meta.title;
+              let subtitle = paper.meta.subtitle;
+              let abstract = paper.meta.abstract;
+              let concatenated = title + subtitle + abstract;
+
+              return hash_code(concatenated);
+          }
+
+          function load_question_selection() {
+              axios.get(host_url + 'question_selection/')
+                  .then(response => (
+                      vm.questions = response.data
+                      )
+                  );
+          }
+
+          function ask_question(question){
+
+              vm.answer_is_loading = true;
+              vm.search_started = true;
+
+              axios.post(host_url + 'qas/',
+                  {
+                      question: question
+                  }).then((response) => {
+                  vm.answer_is_loading = false;
+                  vm.papers = response.data
+                  vm.best_answer = response.data[0]
+
+                  },(error) => {
+                      vm.answer_is_loading = false;
+                      console.log(error);
+                  });
+          }
+
+          // based on: https://stackoverflow.com/questions/46622486/what-is-the-javascript-equivalent-of-numpy-argsort
+          function un_decorate_sort(arr1, arr2){
+              return arr1
+                  .map((item, index) => [arr2[index], item])
+                  .sort(([arg1], [arg2]) => arg2 - arg1)
+                  .map(([, item]) => item)
+          }
+
+          function filter_lda_results(results, top_k, threshold){
+              let n_topics = Math.min(top_k, results.topics.length);
+              let topics = results.topics;
+              let probabilities = results.topic_probabilities;
+
+              let sorted_topics = un_decorate_sort(topics, probabilities).slice(0, n_topics);
+              let sorted_probabilities = un_decorate_sort(probabilities, probabilities).slice(0, n_topics);
+
+              results.topics = [];
+              results.topic_probabilities = [];
+
+              for(let i = 0; i < sorted_probabilities.length; i++){
+                  let prob = sorted_probabilities[i];
+                  if(prob > threshold) {
+                      results.topics.push(sorted_topics[i]);
+                      results.topic_probabilities.push(prob);
+                  }
+              }
+
+              return results;
+          }
+
+          // from: https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
+          function scroll_to_top() {
+              document.body.scrollTop = 0; // For Safari
+              document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+          }
+      </script>
+   </body>
+</html>
+

@@ -1,6 +1,13 @@
+# based on: https://haystack.deepset.ai/docs/latest/tutorial1md
+
+from farm.file_utils import fetch_archive_from_http
+from haystack.preprocessor.cleaning import clean_wiki_text
+from haystack.preprocessor.utils import convert_files_to_dicts
+
 from backend_app.qas_core.data_loader import DataLoader
-from haystack.indexing.cleaning import clean_wiki_text
-from haystack.indexing.utils import convert_files_to_dicts, fetch_archive_from_http
+# from haystack.indexing.cleaning import clean_wiki_text
+# from haystack.indexing.utils import convert_files_to_dicts, fetch_archive_from_http
+import sys
 
 
 class GOTDataLoader(DataLoader):
@@ -20,9 +27,6 @@ class GOTDataLoader(DataLoader):
         s3_url = "https://s3.eu-central-1.amazonaws.com/deepset.ai-farm-qa/datasets/documents/wiki_gameofthrones_txt.zip"
         fetch_archive_from_http(url=s3_url, output_dir=doc_dir)
 
-        # Convert files to dicts
-        # You can optionally supply a cleaning function that is applied to each doc (e.g. to remove footers)
-        # It must take a str as input, and return a str.
         dicts = convert_files_to_dicts(dir_path=doc_dir, clean_func=clean_wiki_text, split_paragraphs=True)
 
         GOTDataLoader.data_is_loaded = True

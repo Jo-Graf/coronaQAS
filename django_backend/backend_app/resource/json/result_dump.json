@@ -1,146 +1,5866 @@
-{
-  "question": "Who is the red witch?",
-  "no_ans_gap": -9.534895420074463,
-  "answers": [
-    {
-      "answer": "Melisandre",
-      "score": 0.795346736907959,
-      "probability": 0.5248341338350121,
-      "context": "er Jon Snow would remain dead or return to life. Fans speculated that Melisandre would be the one to bring back Snow to life, after and before the tit",
-      "offset_start": 70,
-      "offset_end": 80,
-      "offset_start_in_doc": 1053,
-      "offset_end_in_doc": 1063,
-      "document_id": "-ixA4nMBreXvbNGuGruj",
-      "meta": {
-        "name": "69_The_Red_Woman.txt"
-      }
-    },
-    {
-      "answer": "Melisandre",
-      "score": 0.795346736907959,
-      "probability": 0.5248341338350121,
-      "context": "er Jon Snow would remain dead or return to life. Fans speculated that Melisandre would be the one to bring back Snow to life, after and before the tit",
-      "offset_start": 70,
-      "offset_end": 80,
-      "offset_start_in_doc": 1053,
-      "offset_end_in_doc": 1063,
-      "document_id": "9Sxw4nMBreXvbNGulcZY",
-      "meta": {
-        "name": "69_The_Red_Woman.txt"
-      }
-    },
-    {
-      "answer": "Melisandre",
-      "score": 0.795346736907959,
-      "probability": 0.5248341338350121,
-      "context": "er Jon Snow would remain dead or return to life. Fans speculated that Melisandre would be the one to bring back Snow to life, after and before the tit",
-      "offset_start": 70,
-      "offset_end": 80,
-      "offset_start_in_doc": 1053,
-      "offset_end_in_doc": 1063,
-      "document_id": "EywL4nMBreXvbNGu6YWD",
-      "meta": {
-        "name": "69_The_Red_Woman.txt"
-      }
-    },
-    {
-      "answer": "Melisandre",
-      "score": 0.795346736907959,
-      "probability": 0.5248341338350121,
-      "context": "er Jon Snow would remain dead or return to life. Fans speculated that Melisandre would be the one to bring back Snow to life, after and before the tit",
-      "offset_start": 70,
-      "offset_end": 80,
-      "offset_start_in_doc": 1053,
-      "offset_end_in_doc": 1063,
-      "document_id": "Diwb4nMBreXvbNGu85DF",
-      "meta": {
-        "name": "69_The_Red_Woman.txt"
-      }
-    },
-    {
-      "answer": "Melisandre",
-      "score": 0.795346736907959,
-      "probability": 0.5248341338350121,
-      "context": "er Jon Snow would remain dead or return to life. Fans speculated that Melisandre would be the one to bring back Snow to life, after and before the tit",
-      "offset_start": 70,
-      "offset_end": 80,
-      "offset_start_in_doc": 1053,
-      "offset_end_in_doc": 1063,
-      "document_id": "8Cx54nMBreXvbNGuw9Es",
-      "meta": {
-        "name": "69_The_Red_Woman.txt"
-      }
-    },
-    {
-      "answer": "Melisandre",
-      "score": 0.795346736907959,
-      "probability": 0.5248341338350121,
-      "context": "er Jon Snow would remain dead or return to life. Fans speculated that Melisandre would be the one to bring back Snow to life, after and before the tit",
-      "offset_start": 70,
-      "offset_end": 80,
-      "offset_start_in_doc": 1053,
-      "offset_end_in_doc": 1063,
-      "document_id": "_yw_4nMBreXvbNGuNrAN",
-      "meta": {
-        "name": "69_The_Red_Woman.txt"
-      }
-    },
-    {
-      "answer": "Melisandre",
-      "score": 0.795346736907959,
-      "probability": 0.5248341338350121,
-      "context": "er Jon Snow would remain dead or return to life. Fans speculated that Melisandre would be the one to bring back Snow to life, after and before the tit",
-      "offset_start": 70,
-      "offset_end": 80,
-      "offset_start_in_doc": 1053,
-      "offset_end_in_doc": 1063,
-      "document_id": "BCw04nMBreXvbNGuCaZQ",
-      "meta": {
-        "name": "69_The_Red_Woman.txt"
-      }
-    },
-    {
-      "answer": "Melisandre",
-      "score": 0.795346736907959,
-      "probability": 0.5248341338350121,
-      "context": "er Jon Snow would remain dead or return to life. Fans speculated that Melisandre would be the one to bring back Snow to life, after and before the tit",
-      "offset_start": 70,
-      "offset_end": 80,
-      "offset_start_in_doc": 1053,
-      "offset_end_in_doc": 1063,
-      "document_id": "CSww4nMBreXvbNGuhJsa",
-      "meta": {
-        "name": "69_The_Red_Woman.txt"
-      }
-    },
-    {
-      "answer": "Melisandre",
-      "score": 0.795346736907959,
-      "probability": 0.5248341338350121,
-      "context": "er Jon Snow would remain dead or return to life. Fans speculated that Melisandre would be the one to bring back Snow to life, after and before the tit",
-      "offset_start": 70,
-      "offset_end": 80,
-      "offset_start_in_doc": 1053,
-      "offset_end_in_doc": 1063,
-      "document_id": "9GIOG3QB7VlRhbqQXQDW",
-      "meta": {
-        "name": "69_The_Red_Woman.txt"
-      }
-    },
-    {
-      "answer": "Melisandre",
-      "score": 0.795346736907959,
-      "probability": 0.5248341338350121,
-      "context": "er Jon Snow would remain dead or return to life. Fans speculated that Melisandre would be the one to bring back Snow to life, after and before the tit",
-      "offset_start": 70,
-      "offset_end": 80,
-      "offset_start_in_doc": 1053,
-      "offset_end_in_doc": 1063,
-      "document_id": "6ywy53MBreXvbNGuwtyZ",
-      "meta": {
-        "name": "69_The_Red_Woman.txt"
-      }
-    }
-  ]
-}
+[
+	{
+		"answer": "2 to 7 days",
+		"offset_start_in_doc": 220,
+		"offset_end_in_doc": 231,
+		"offset_start": 70,
+		"offset_end": 81,
+		"context": "rmation about diagnosis and cause. The incubation period is generally 2 to 7 days, although some isolated reports suggests that incubation may require",
+		"answer_id": "0d649f2c71c553c937a8b0e743a72f21",
+		"doc_id": "1e09024fbc431541e4e53983027bcbeca51c82d3-$-$-10",
+		"no_ans_gap": 18.80069637298584,
+		"text": "",
+		"id": "524c0663-acdc-4819-8133-46397d1181c6",
+		"score": 12.418968200683594,
+		"probability": 0.8252559177456016,
+		"question": "What is the definition of incubation period?",
+		"meta": {
+			"title": "Emerging Pathogens: What Are the Sources and How Can They Be Spotted Quickly? According to the National Institutes of Health's National Institute of Allergy and Infectious Diseases (NIHNIAID), more than 30 newly recognized infectious diseases and syndromes have been identified in the last 20 years. feature Emerging Pathogens: What Are the Sources and How Can They Be Spotted Quickly?",
+			"authors": [],
+			"bib_entries": {
+				"BIBREF0": {
+					"ref_id": "b0",
+					"title": "Guarding against the most dangerous emerging pathogens: Insights from evolutionary biology",
+					"year": 1996,
+					"pages": ""
+				},
+				"BIBREF1": {
+					"ref_id": "b1",
+					"title": "More haemophilus and mycoplasma genes",
+					"year": 1996,
+					"pages": "1302--1304"
+				},
+				"BIBREF2": {
+					"ref_id": "b2",
+					"title": "Multi-drug resistant Shigella dysenteriae type 1, forerunners of a new epidemic strain in Eastern India? Emerg Infect Dis",
+					"year": 2003,
+					"pages": ""
+				},
+				"BIBREF3": {
+					"ref_id": "b3",
+					"title": "An international outbreak of Salmonella infections caused by alfalfa sprouts grown from contaminated seeds",
+					"year": 1997,
+					"pages": "876--882"
+				},
+				"BIBREF4": {
+					"ref_id": "b4",
+					"title": "Multinational outbreak of Salmonella enterica serotype Newport infections due to contaminated alfalfa sprouts",
+					"year": 1999,
+					"pages": "158--162"
+				},
+				"BIBREF5": {
+					"ref_id": "b5",
+					"title": "Clinical experiences in Sakai City Hospital during the massive outbreak of enterohemorrhagic Escherichia coli O157 infections in Sakai City",
+					"year": 1996,
+					"pages": "213--217"
+				},
+				"BIBREF6": {
+					"ref_id": "b6",
+					"title": "Available at",
+					"year": 2003,
+					"pages": ""
+				}
+			},
+			"is_doc_meta": false,
+			"is_doc_abstract": false,
+			"section_count": 9,
+			"subtitle": "Most Recent Outbreak",
+			"cite_spans": []
+		},
+		"embedding": null
+	},
+	{
+		"answer": "28 days",
+		"offset_start_in_doc": 360,
+		"offset_end_in_doc": 367,
+		"offset_start": 72,
+		"offset_end": 79,
+		"context": "From our definition of incubation period, his incubation period will be 28 days, which is surprisingly high. We note that, our definition of estimated",
+		"answer_id": "bd00fff62da2026d0edf8eca403d3765",
+		"doc_id": "091a8e9a61e19e88caeb039f0e3888d111b20439-$-$-16",
+		"no_ans_gap": 18.80069637298584,
+		"text": "",
+		"id": "214ebb90-9429-4fde-aa22-532a4d749834",
+		"score": 12.327810287475586,
+		"probability": 0.823606603649524,
+		"question": "What is the definition of incubation period?",
+		"meta": {
+			"section_count": 14,
+			"title": "Epidemiological characteristics of 1212 COVID-19 patients in Henan, China. medRxiv",
+			"subtitle": "Definition of incubation period and statistical results",
+			"cite_spans": [],
+			"is_doc_meta": false,
+			"is_doc_abstract": false
+		},
+		"embedding": null
+	},
+	{
+		"answer": "the period between the infection of an individual by a pathogen and the manifestation of the illness or disease it causes",
+		"offset_start_in_doc": 47,
+		"offset_end_in_doc": 168,
+		"offset_start": 15,
+		"offset_end": 136,
+		"context": " is defined as the period between the infection of an individual by a pathogen and the manifestation of the illness or disease it causes [32, 33] . Di",
+		"answer_id": "47ebe10f477c2dd1e434e538e7110b64",
+		"doc_id": "091a8e9a61e19e88caeb039f0e3888d111b20439-$-$-12",
+		"no_ans_gap": 18.80069637298584,
+		"text": "",
+		"id": "62cf6e16-605c-4c81-a125-16835f3afe15",
+		"score": 9.617227554321289,
+		"probability": 0.7689076477260748,
+		"question": "What is the definition of incubation period?",
+		"meta": {
+			"section_count": 10,
+			"title": "Epidemiological characteristics of 1212 COVID-19 patients in Henan, China. medRxiv",
+			"subtitle": "Definition of incubation period and statistical results",
+			"cite_spans": [
+				{
+					"start": 169,
+					"end": 173,
+					"text": "[32,",
+					"ref_id": null
+				},
+				{
+					"start": 174,
+					"end": 177,
+					"text": "33]",
+					"ref_id": "BIBREF31"
+				},
+				{
+					"start": 622,
+					"end": 626,
+					"text": "[16,",
+					"ref_id": "BIBREF13"
+				},
+				{
+					"start": 627,
+					"end": 630,
+					"text": "33]",
+					"ref_id": "BIBREF31"
+				},
+				{
+					"start": 735,
+					"end": 739,
+					"text": "[33]",
+					"ref_id": "BIBREF31"
+				}
+			],
+			"is_doc_meta": false,
+			"is_doc_abstract": false
+		},
+		"embedding": null
+	},
+	{
+		"answer": "epidemiological case definitions",
+		"offset_start_in_doc": 394,
+		"offset_end_in_doc": 426,
+		"offset_start": 59,
+		"offset_end": 91,
+		"context": "ge of the values for the incubation period is essential to epidemiological case definitions, and is required to determine the appropriate duration of ",
+		"answer_id": "bedbde40295337cc2c634c9c9a1980ff",
+		"doc_id": "12fac9aedb1a09a3922a3c084ce4723708e463d6-$-$-3",
+		"no_ans_gap": 18.80069637298584,
+		"text": "",
+		"id": "dca512ae-50d6-4930-b988-b0f9b8ef67ab",
+		"score": 8.377981185913086,
+		"probability": 0.7402460219461269,
+		"question": "What is the definition of incubation period?",
+		"meta": {
+			"section_count": 1,
+			"title": "Title: The incubation period of 2019-nCoV infections among travellers from Wuhan, China",
+			"subtitle": "2",
+			"cite_spans": [
+				{
+					"start": 110,
+					"end": 113,
+					"text": "[2]",
+					"ref_id": "BIBREF1"
+				},
+				{
+					"start": 710,
+					"end": 716,
+					"text": "[3 -5]",
+					"ref_id": null
+				},
+				{
+					"start": 748,
+					"end": 751,
+					"text": "[6,",
+					"ref_id": "BIBREF7"
+				},
+				{
+					"start": 752,
+					"end": 754,
+					"text": "7]",
+					"ref_id": "BIBREF8"
+				}
+			],
+			"is_doc_meta": false,
+			"is_doc_abstract": false
+		},
+		"embedding": null
+	},
+	{
+		"answer": "short -around 3-6 days (maximum 10 days)",
+		"offset_start_in_doc": 25,
+		"offset_end_in_doc": 65,
+		"offset_start": 25,
+		"offset_end": 65,
+		"context": "The incubation period is short -around 3-6 days (maximum 10 days), and despite the media frenzy surrounding the initial outbreak, SARS is less infecti",
+		"answer_id": "ac446cf0d0aab1d713b08a92cad5b408",
+		"doc_id": "031a727d260cd553094f58e4d18763f7d0b48889-$-$-176",
+		"no_ans_gap": 18.80069637298584,
+		"text": "",
+		"id": "1f6c8e91-d6d6-4f8f-af9f-1ea2f6e1f483",
+		"score": 8.106167793273926,
+		"probability": 0.7336597960372996,
+		"question": "What is the definition of incubation period?",
+		"meta": {
+			"title": "Formulation of Guidelines",
+			"authors": [],
+			"bib_entries": {
+				"BIBREF0": {
+					"ref_id": "b0",
+					"title": "Recommendations of the Healthcare Infection Control Practices Advisory Committee and the HICPAC/SHEA/APIC/IDSA Hand Hygiene Task Force (2002) Guidelines for hand hygiene in health care settings",
+					"year": 1998,
+					"pages": "1--44"
+				},
+				"BIBREF1": {
+					"ref_id": "b1",
+					"title": "National model regulations for the control of workplace hazardous substances",
+					"year": 1994,
+					"pages": ""
+				},
+				"BIBREF2": {
+					"ref_id": "b2",
+					"title": "Infectious diseases and an at risk exposure (Chapter 4)",
+					"year": 2009,
+					"pages": ""
+				},
+				"BIBREF3": {
+					"ref_id": "b3",
+					"title": "Deitchman SD; and the Hospital Infection Control Practices Advisory Committee (1998) Guideline for infection control in health care personnel",
+					"year": null,
+					"pages": "289--354"
+				},
+				"BIBREF4": {
+					"ref_id": "b4",
+					"title": "A strategy for infectious diseases -progress report. Blood-borne and sexually transmitted viruses: hepatitis. Department of Health",
+					"year": 2000,
+					"pages": ""
+				},
+				"BIBREF5": {
+					"ref_id": "b5",
+					"title": "Universal precautions for prevention of transmission of human immunodeficiency virus, hepatitis B virus and other bloodborne pathogens in health-care settings",
+					"year": 1988,
+					"pages": "377--388"
+				},
+				"BIBREF6": {
+					"ref_id": "b6",
+					"title": "Risk factors for horizontal transmission of hepatitis B in a rural district in Ghana",
+					"year": 1998,
+					"pages": "478--487"
+				},
+				"BIBREF7": {
+					"ref_id": "b7",
+					"title": "Familial clustering of hepatitis B infection: study of a family",
+					"year": 2003,
+					"pages": "22--23"
+				},
+				"BIBREF8": {
+					"ref_id": "b8",
+					"title": "Intrafamilial transmission of hepatitis B in the Eastern Anatolian region of Turkey",
+					"year": 2003,
+					"pages": "345--349"
+				},
+				"BIBREF9": {
+					"ref_id": "b9",
+					"title": "Hepatitis B outbreak at Glenochil prison during",
+					"year": 1993,
+					"pages": "185--191"
+				},
+				"BIBREF10": {
+					"ref_id": "b10",
+					"title": "European network for HIV/AIDS and hepatitis prevention in prisons. Second annual report. The Network",
+					"year": 1998,
+					"pages": ""
+				},
+				"BIBREF11": {
+					"ref_id": "b11",
+					"title": "Prevalence of HIV, hepatitis B and hepatitis C antibodies in prisoners in England and Wales; a national survey",
+					"year": 2000,
+					"pages": "121--126"
+				},
+				"BIBREF12": {
+					"ref_id": "b12",
+					"title": "The epidemiology of acute and chronic hepatitis C",
+					"year": 1997,
+					"pages": "559--562"
+				},
+				"BIBREF13": {
+					"ref_id": "b13",
+					"title": "The role of the parenteral antischistosomal therapy in the spread of hepatitis C virus in Egypt",
+					"year": 2000,
+					"pages": "887--891"
+				},
+				"BIBREF14": {
+					"ref_id": "b14",
+					"title": "Sir Liam Donaldson (2002) Hepatitis C strategy for England. Department of Health",
+					"year": null,
+					"pages": ""
+				},
+				"BIBREF15": {
+					"ref_id": "b15",
+					"title": "Hepatitis C virus: eight years old",
+					"year": 1997,
+					"pages": "17--37"
+				},
+				"BIBREF16": {
+					"ref_id": "b16",
+					"title": "Laboratory surveillance of hepatitis C virus in England and Wales: 1992-1996",
+					"year": 1998,
+					"pages": "89--94"
+				},
+				"BIBREF17": {
+					"ref_id": "b17",
+					"title": "Interferon alfa (pegylated and non pegylated) and ribavirin for the treatment of chronic hepatitis C",
+					"year": 2004,
+					"pages": ""
+				},
+				"BIBREF18": {
+					"ref_id": "b18",
+					"title": "Peginterferon alfa and ribavirin for the treatment of mild chronic hepatitis C. NICE technology appraisal guidance",
+					"year": 2006,
+					"pages": ""
+				},
+				"BIBREF19": {
+					"ref_id": "b19",
+					"title": "AIDS/HIV quarterly surveillance tables provided by the PHLS AIDS centre (CDSC) and the Scottish centre for Infection and Environmental Health",
+					"year": 2002,
+					"pages": ""
+				},
+				"BIBREF20": {
+					"ref_id": "b20",
+					"title": "Testing Times. HIV and other sexually transmitted infections in the United Kingdom",
+					"year": 2007,
+					"pages": ""
+				},
+				"BIBREF21": {
+					"ref_id": "b21",
+					"title": "Mode of vertical transmission of HIV-1: a metanalysis of fifteen prospective cohort studies",
+					"year": 1999,
+					"pages": "977--987"
+				},
+				"BIBREF22": {
+					"ref_id": "b22",
+					"title": "Vertical transmission rate for HIV in the British Isles estimated on Surveillance data",
+					"year": 1999,
+					"pages": "1227--1229"
+				},
+				"BIBREF23": {
+					"ref_id": "b23",
+					"title": "HIV post-exposure prophylaxis after sexual assault: the experience of a sexual assault service in London",
+					"year": 2002,
+					"pages": "602--605"
+				},
+				"BIBREF24": {
+					"ref_id": "b24",
+					"title": ") HIV post-exposure prophylaxis: guidance from the UK Chief Medical Officer's Expert Advisory Group on",
+					"year": 2000,
+					"pages": ""
+				},
+				"BIBREF25": {
+					"ref_id": "b25",
+					"title": "Failures of zidovudine post exposure prophylaxis",
+					"year": 1997,
+					"pages": "52--55"
+				},
+				"BIBREF26": {
+					"ref_id": "b26",
+					"title": "Seroconversion to HIV-1 following a needlestick injury despite combination post-exposure prophylaxis",
+					"year": 2001,
+					"pages": "12--15"
+				},
+				"BIBREF27": {
+					"ref_id": "b27",
+					"title": "Immunisation against infectious disease. Her Majesty's Stationery Office",
+					"year": 1996,
+					"pages": ""
+				},
+				"BIBREF28": {
+					"ref_id": "b28",
+					"title": "Chickenpox -disease predominantly affecting adults in rural West Bengal",
+					"year": 1996,
+					"pages": "367--374"
+				},
+				"BIBREF29": {
+					"ref_id": "b29",
+					"title": "Prevention of varicella: recommendations of the Advisory Committee on Immunization Practices",
+					"year": 1996,
+					"pages": "1--36"
+				},
+				"BIBREF30": {
+					"ref_id": "b30",
+					"title": "Varicella-zoster virus epidemiology. A changing scene?",
+					"year": 1996,
+					"pages": "314--319"
+				},
+				"BIBREF31": {
+					"ref_id": "b31",
+					"title": "Use of Acyclovir for varicella pneumonia during pregnancy",
+					"year": 1991,
+					"pages": "1112--1116"
+				},
+				"BIBREF32": {
+					"ref_id": "b32",
+					"title": "Outcome after maternal varicella infection in the first 20 weeks of pregnancy",
+					"year": 1994,
+					"pages": "901--905"
+				},
+				"BIBREF33": {
+					"ref_id": "b33",
+					"title": "Outcome in newborn babies given antivaricella zoster immunoglobulin after perinatal maternal infection with varicella zoster virus",
+					"year": 1989,
+					"pages": "371--373"
+				},
+				"BIBREF34": {
+					"ref_id": "b34",
+					"title": "Varicella-zoster virus DNA in human sensory ganglia",
+					"year": 1983,
+					"pages": "478--480"
+				},
+				"BIBREF35": {
+					"ref_id": "b35",
+					"title": "Epidemiology and natural history of herpes zoster and post herpetic neuralgia",
+					"year": 2001,
+					"pages": "39--64"
+				},
+				"BIBREF36": {
+					"ref_id": "b36",
+					"title": "Clinical applications for change-point analysis of herpes zoster pain",
+					"year": 2002,
+					"pages": "510--516"
+				},
+				"BIBREF37": {
+					"ref_id": "b37",
+					"title": "Herpes zoster",
+					"year": 2002,
+					"pages": "340--346"
+				},
+				"BIBREF38": {
+					"ref_id": "b38",
+					"title": "Treatment of scabies with permethrin versus lindane and benzoyl benzoate",
+					"year": 1989,
+					"pages": "348--351"
+				},
+				"BIBREF39": {
+					"ref_id": "b39",
+					"title": "Treatment of ectoparasitic infections; review of the English-language literature 1982-1992",
+					"year": 1995,
+					"pages": "104--109"
+				},
+				"BIBREF40": {
+					"ref_id": "b40",
+					"title": "Nasal carriage of Staphylococcus aureus: epidemiology and control measures",
+					"year": 1989,
+					"pages": "901--913"
+				},
+				"BIBREF41": {
+					"ref_id": "b41",
+					"title": "Staphylococcus aureus infections",
+					"year": 1998,
+					"pages": "520--532"
+				},
+				"BIBREF42": {
+					"ref_id": "b42",
+					"title": "Community-acquired methicillin-resistant Staphylococcus aureus infections -Michigan",
+					"year": 1981,
+					"pages": "185--187"
+				},
+				"BIBREF43": {
+					"ref_id": "b43",
+					"title": "Methicillin-resistant Staphylococcus aureus, epidemiologic observations during a community acquired outbreak",
+					"year": 1982,
+					"pages": "11--16"
+				},
+				"BIBREF44": {
+					"ref_id": "b44",
+					"title": "Emergence of PVL-producing strains of Staphylococcus aureus",
+					"year": 2003,
+					"pages": ""
+				},
+				"BIBREF45": {
+					"ref_id": "b45",
+					"title": "Infections among injecting drug users in the United Kingdom",
+					"year": 2008,
+					"pages": ""
+				},
+				"BIBREF46": {
+					"ref_id": "b46",
+					"title": "Bacteriology of skin and soft tissue infections: comparison of infections in intravenous drug users and individuals with no history of intravenous drug use",
+					"year": 1995,
+					"pages": "279--282"
+				},
+				"BIBREF47": {
+					"ref_id": "b47",
+					"title": "Outbreak among drug users caused by a clonal strain of group a Streptococcus. Dispatches -emerging infectious diseases",
+					"year": 2000,
+					"pages": "175--179"
+				},
+				"BIBREF48": {
+					"ref_id": "b48",
+					"title": "Bacteriological skin and subcutaneous infections space in injecting drug users -relevance for custody",
+					"year": 2002,
+					"pages": "65--69"
+				},
+				"BIBREF49": {
+					"ref_id": "b49",
+					"title": "Wound botulism associated with black tar heroin among injecting drug users",
+					"year": 1998,
+					"pages": "859--863"
+				},
+				"BIBREF50": {
+					"ref_id": "b50",
+					"title": "Isolation and identification of Clostridium spp from infections associated with injection of drugs: experiences of a microbiological investigation team",
+					"year": 2002,
+					"pages": "985--989"
+				},
+				"BIBREF51": {
+					"ref_id": "b51",
+					"title": "Greater Glasgow Health Board, SCIFH (2001) Unexplained illness among drug injectors in Glasgow",
+					"year": null,
+					"pages": ""
+				},
+				"BIBREF52": {
+					"ref_id": "b52",
+					"title": "Embolization of illicit needle fragments",
+					"year": 1993,
+					"pages": "403--408"
+				},
+				"BIBREF53": {
+					"ref_id": "b53",
+					"title": "Right ventricular needle embolus in an injecting drug user: the need for early removal",
+					"year": 2001,
+					"pages": "500--501"
+				},
+				"BIBREF54": {
+					"ref_id": "b54",
+					"title": "Departments of Emergency Medicine and Pediatrics, Lutheran General Hospital of Oak Brook, Advocate Health System. eMedicine-Human Bites",
+					"year": 2004,
+					"pages": ""
+				},
+				"BIBREF55": {
+					"ref_id": "b55",
+					"title": "Prevention and treatment of dog bites",
+					"year": 2001,
+					"pages": "1567--1572"
+				},
+				"BIBREF56": {
+					"ref_id": "b56",
+					"title": "Human bites",
+					"year": 2003,
+					"pages": ""
+				},
+				"BIBREF57": {
+					"ref_id": "b57",
+					"title": "Guidelines for public health management of meningococcal diseases in the UK",
+					"year": 2002,
+					"pages": "187--204"
+				},
+				"BIBREF58": {
+					"ref_id": "b58",
+					"title": "Planning, registration and implementation of an immunisation campaign against meningococcal serogroup C disease in the UK: a success story",
+					"year": 2001,
+					"pages": "58--67"
+				},
+				"BIBREF59": {
+					"ref_id": "b59",
+					"title": "Efficacy of meningococcal serogroup C conjugate vaccine in teenagers and toddlers in England",
+					"year": 2001,
+					"pages": "195--196"
+				},
+				"BIBREF60": {
+					"ref_id": "b60",
+					"title": "Quadrivalent meningoimmunisation required for pilgrims to Saudi Arabia",
+					"year": 2001,
+					"pages": ""
+				},
+				"BIBREF61": {
+					"ref_id": "b61",
+					"title": "Risk of laboratoryacquired meningococcal disease",
+					"year": 2001,
+					"pages": "282--284"
+				},
+				"BIBREF62": {
+					"ref_id": "b62",
+					"title": "Cluster of meningococcal disease in rugby match spectators",
+					"year": 2001,
+					"pages": "316--317"
+				},
+				"BIBREF63": {
+					"ref_id": "b63",
+					"title": "Ciprofloxacin as a chemoprophylactic agent for meningococcal disease -low risk of anaphylactoid reactions",
+					"year": 2001,
+					"pages": ""
+				},
+				"BIBREF64": {
+					"ref_id": "b64",
+					"title": "Joint Formulary Committee",
+					"year": 2002,
+					"pages": ""
+				},
+				"BIBREF65": {
+					"ref_id": "b65",
+					"title": "Notification of tuberculosis an updated code of practice for England and Wales",
+					"year": 1997,
+					"pages": "299--303"
+				},
+				"BIBREF66": {
+					"ref_id": "b66",
+					"title": "Preliminary annual report on tuberculosis cases",
+					"year": 2002,
+					"pages": ""
+				},
+				"BIBREF67": {
+					"ref_id": "b67",
+					"title": "The prevention and control of tuberculosis in the United Kingdom: UK guidance on the prevention and control of transmission of 1. HIV-related tuberculosis 2. Drug-resistant, including multiple drug-resistant, tuberculosis",
+					"year": 1998,
+					"pages": ""
+				},
+				"BIBREF68": {
+					"ref_id": "b68",
+					"title": "Control and prevention of tuberculosis in the United Kingdom: code of practice",
+					"year": 2000,
+					"pages": "887--901"
+				},
+				"BIBREF69": {
+					"ref_id": "b69",
+					"title": "Epidemiology of tuberculosis in the United States",
+					"year": 1985,
+					"pages": "535--539"
+				},
+				"BIBREF70": {
+					"ref_id": "b70",
+					"title": "Nosocomial transmission of multi-drug resistant tuberculosis among HIV-infected persons -Florida",
+					"year": 1988,
+					"pages": "585--591"
+				},
+				"BIBREF71": {
+					"ref_id": "b71",
+					"title": "The continued threat of tuberculosis",
+					"year": 2002,
+					"pages": ""
+				},
+				"BIBREF72": {
+					"ref_id": "b72",
+					"title": "In: Lutwick LI (ed) Tuberculosis -a clinical handbook",
+					"year": 1995,
+					"pages": ""
+				},
+				"BIBREF73": {
+					"ref_id": "b73",
+					"title": "The White Plague: down and out, or up and coming?",
+					"year": 1989,
+					"pages": "1788--1795"
+				},
+				"BIBREF74": {
+					"ref_id": "b74",
+					"title": "A prospective study of the risk of tuberculosis among intravenous drug users with human immunodeficiency virus infection",
+					"year": 1989,
+					"pages": "545--550"
+				},
+				"BIBREF75": {
+					"ref_id": "b75",
+					"title": "Influence of tuberculosis on human immunodeficiency virus (HIV-1): enhanced cytokine expression and elevated B 2 -microglobulin in HIV-1 associated tuberculosis",
+					"year": 1993,
+					"pages": "43--48"
+				},
+				"BIBREF76": {
+					"ref_id": "b76",
+					"title": "The chest roenterogram in pulmonary tuberculosis patients seropositive for human immunodeficiency virus type 1",
+					"year": 1991,
+					"pages": "123--127"
+				},
+				"BIBREF77": {
+					"ref_id": "b77",
+					"title": "Coronavirus as a possible cause of severe acute respiratory syndrome",
+					"year": 2003,
+					"pages": "1319--1325"
+				},
+				"BIBREF78": {
+					"ref_id": "b78",
+					"title": "Epidemiological determinants of spread of causal agents of severe acute respiratory syndrome in Hong Kong",
+					"year": 2003,
+					"pages": "761--766"
+				},
+				"BIBREF79": {
+					"ref_id": "b79",
+					"title": "World Health Organization. Alert, verification and public health management of SARS in post-outbreak period",
+					"year": 2003,
+					"pages": ""
+				},
+				"BIBREF80": {
+					"ref_id": "b80",
+					"title": "Age-specific antibody prevalence to hepatitis A in England: implications for disease control",
+					"year": 1994,
+					"pages": "113--120"
+				},
+				"BIBREF81": {
+					"ref_id": "b81",
+					"title": "Gungabissoon U; PHLS Advisory Committee on Vaccination and Immunisation (2001) Guidelines for the control of hepatitis A infection",
+					"year": null,
+					"pages": "213--227"
+				},
+				"BIBREF82": {
+					"ref_id": "b82",
+					"title": "Control of a community hepatitis A outbreak using hepatitis A vaccine",
+					"year": 1999,
+					"pages": "184--187"
+				},
+				"BIBREF83": {
+					"ref_id": "b83",
+					"title": "Seroprevalence of and risk factors for hepatitis A infection among young homosexual and bisexual men",
+					"year": 1997,
+					"pages": "1225--1229"
+				},
+				"BIBREF84": {
+					"ref_id": "b84",
+					"title": "Outbreaks of hepatitis A among illicit drug users",
+					"year": 1984,
+					"pages": "463--466"
+				},
+				"BIBREF85": {
+					"ref_id": "b85",
+					"title": "Identifying target groups for a potential vaccination program during a hepatitis A community outbreak",
+					"year": 1999,
+					"pages": "918--919"
+				},
+				"BIBREF86": {
+					"ref_id": "b86",
+					"title": "Multiple modes of hepatitis A transmission among metamphetamine users",
+					"year": 2000,
+					"pages": "186--192"
+				},
+				"BIBREF87": {
+					"ref_id": "b87",
+					"title": "Past infection with hepatitis A among Vancouver Street youth, injection drug users and men who have sex with men; implications for vaccination programmes",
+					"year": 2001,
+					"pages": "293--297"
+				}
+			},
+			"is_doc_meta": false,
+			"is_doc_abstract": false,
+			"section_count": 175,
+			"subtitle": "Incubation Period and Symptoms",
+			"cite_spans": [
+				{
+					"start": 263,
+					"end": 267,
+					"text": "[85]",
+					"ref_id": "BIBREF79"
+				}
+			]
+		},
+		"embedding": null
+	},
+	{
+		"answer": "estimated incubation period as the period from the date of exposure to the date of appearing clinical symptoms or making a definite diagnosis",
+		"offset_start_in_doc": 767,
+		"offset_end_in_doc": 908,
+		"offset_start": 5,
+		"offset_end": 146,
+		"context": "fine estimated incubation period as the period from the date of exposure to the date of appearing clinical symptoms or making a definite diagnosis. Ap",
+		"answer_id": "0d242c92f66be5c2c4e9df447b2c2126",
+		"doc_id": "091a8e9a61e19e88caeb039f0e3888d111b20439-$-$-13",
+		"no_ans_gap": 18.80069637298584,
+		"text": "",
+		"id": "f1d4b342-33f3-4f2f-87f3-2d3be7c5c7de",
+		"score": 7.896755695343018,
+		"probability": 0.728513642324904,
+		"question": "What is the definition of incubation period?",
+		"meta": {
+			"section_count": 11,
+			"title": "Epidemiological characteristics of 1212 COVID-19 patients in Henan, China. medRxiv",
+			"subtitle": "Definition of incubation period and statistical results",
+			"cite_spans": [
+				{
+					"start": 274,
+					"end": 277,
+					"text": "[4]",
+					"ref_id": "BIBREF3"
+				}
+			],
+			"is_doc_meta": false,
+			"is_doc_abstract": false
+		},
+		"embedding": null
+	},
+	{
+		"answer": "5.2 days",
+		"offset_start_in_doc": 54,
+		"offset_end_in_doc": 62,
+		"offset_start": 54,
+		"offset_end": 62,
+		"context": "The mean incubation period in a study of 47 cases was 5.2 days, with 95% of cases having shown symptoms within 12.4 days (Assiri et al., 2013a) . In a",
+		"answer_id": "182225c6b2b57ce11ef1a8d9a4683455",
+		"doc_id": "00a0ab182dc01b6c2e737dfae585f050dcf9a7a5-$-$-4",
+		"no_ans_gap": 18.80069637298584,
+		"text": "",
+		"id": "81491b7e-2d74-4ceb-bcf2-ceead02bba7b",
+		"score": 7.046086311340332,
+		"probability": 0.7069798504387264,
+		"question": "What is the definition of incubation period?",
+		"meta": {
+			"title": "Middle East respiratory syndrome: An emerging coronavirus infection tracked by the crowd",
+			"authors": [
+				{
+					"first": "Ian",
+					"middle": [
+						"M"
+					],
+					"last": "Mackay",
+					"suffix": "",
+					"affiliation": {
+						"laboratory": "Queensland Paediatric Infectious Diseases Laboratory",
+						"institution": "The University of Queensland",
+						"location": {
+							"settlement": "Brisbane",
+							"country": "Australia"
+						}
+					},
+					"email": ""
+				},
+				{
+					"first": "Katherine",
+					"middle": [
+						"E"
+					],
+					"last": "Arden",
+					"suffix": "",
+					"affiliation": {
+						"laboratory": "Queensland Paediatric Infectious Diseases Laboratory",
+						"institution": "The University of Queensland",
+						"location": {
+							"settlement": "Brisbane",
+							"country": "Australia"
+						}
+					},
+					"email": ""
+				}
+			],
+			"bib_entries": {
+				"BIBREF0": {
+					"ref_id": "b0",
+					"title": "Effective Against MERS (Middle East Respiratory Syndrome) Virus In-Vitro",
+					"year": null,
+					"pages": ""
+				},
+				"BIBREF1": {
+					"ref_id": "b1",
+					"title": "Middle East respiratory syndrome coronavirus (MERS-CoV): evidence and speculations",
+					"year": 2014,
+					"pages": "1575--1584"
+				},
+				"BIBREF2": {
+					"ref_id": "b2",
+					"title": "Investigation of anti-middle East respiratory syndrome antibodies in blood donors and slaughterhouse workers in Jeddah and Makkah, Saudi Arabia, fall 2012",
+					"year": 2014,
+					"pages": "243--246"
+				},
+				"BIBREF3": {
+					"ref_id": "b3",
+					"title": "Replication and shedding of MERS-CoV in upper respiratory tract of inoculated dromedary camels",
+					"year": 1999,
+					"pages": ""
+				},
+				"BIBREF4": {
+					"ref_id": "b4",
+					"title": "A mouse model for Betacoronavirus subgroup 2c using a bat coronavirus strain HKU5 variant",
+					"year": 2014,
+					"pages": "47--61"
+				},
+				"BIBREF5": {
+					"ref_id": "b5",
+					"title": "Generation of transgenic mouse model of middle east respiratory syndrome-coronavirus infection and disease",
+					"year": 2015,
+					"pages": ""
+				},
+				"BIBREF6": {
+					"ref_id": "b6",
+					"title": "Beneficial effect of camel milk in diabetic nephropathy",
+					"year": 2009,
+					"pages": "131--134"
+				},
+				"BIBREF7": {
+					"ref_id": "b7",
+					"title": "Hospital-associated outbreak of Middle East respiratory syndrome coronavirus: a serologic, epidemiologic, and clinical description",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF8": {
+					"ref_id": "b8",
+					"title": "A case of long-term excretion and subclinical infection with Middle East respiratory syndrome coronavirus in a healthcare worker",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF9": {
+					"ref_id": "b9",
+					"title": "Middle East respiratory syndrome coronavirus: transmission and phylogenetic evolution",
+					"year": 2014,
+					"pages": "573--579"
+				},
+				"BIBREF10": {
+					"ref_id": "b10",
+					"title": "Ribavirin and interferon therapy in patients infected with the Middle East respiratory syndrome coronavirus: an observational study",
+					"year": 2014,
+					"pages": "42--46"
+				},
+				"BIBREF11": {
+					"ref_id": "b11",
+					"title": "Camel urine components display anti-cancer properties in vitro",
+					"year": 2012,
+					"pages": "819--825"
+				},
+				"BIBREF12": {
+					"ref_id": "b12",
+					"title": "Middle East respiratory syndrome coronavirus infection in dromedary camels in Saudi Arabia",
+					"year": 2014,
+					"pages": "884--914"
+				},
+				"BIBREF13": {
+					"ref_id": "b13",
+					"title": "Recovery from severe novel coronavirus infection",
+					"year": 2012,
+					"pages": "1265--1269"
+				},
+				"BIBREF14": {
+					"ref_id": "b14",
+					"title": "Middle East respiratory syndrome coronavirus antibody reactors among camels in Dubai",
+					"year": 2005,
+					"pages": "105--108"
+				},
+				"BIBREF15": {
+					"ref_id": "b15",
+					"title": "The antiplatelet activity of camel urine",
+					"year": 2011,
+					"pages": "803--808"
+				},
+				"BIBREF16": {
+					"ref_id": "b16",
+					"title": "Engineering a replication-competent, propagation-defective Middle East respiratory syndrome coronavirus as a vaccine candidate",
+					"year": 2013,
+					"pages": "650--00713"
+				},
+				"BIBREF17": {
+					"ref_id": "b17",
+					"title": "Clinical course and outcomes of critically ill patients with Middle East respiratory syndrome coronavirus infection",
+					"year": 2014,
+					"pages": "389--397"
+				},
+				"BIBREF18": {
+					"ref_id": "b18",
+					"title": "Epidemiological, demographic, and clinical characteristics of 47 cases of Middle East respiratory syndrome coronavirus disease from Saudi Arabia: a descriptive study",
+					"year": 2013,
+					"pages": "752--761"
+				},
+				"BIBREF19": {
+					"ref_id": "b19",
+					"title": "Hospital outbreak of Middle East respiratory syndrome coronavirus",
+					"year": 2013,
+					"pages": "407--416"
+				},
+				"BIBREF20": {
+					"ref_id": "b20",
+					"title": "Evidence for camel-to-human transmission of MERS coronavirus",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF21": {
+					"ref_id": "b21",
+					"title": "Detection of the Middle East respiratory syndrome coronavirus genome in an air sample originating from a camel barn owned by an infected patient",
+					"year": 2014,
+					"pages": "1450--1514"
+				},
+				"BIBREF22": {
+					"ref_id": "b22",
+					"title": "Viral respiratory infections among Hajj pilgrims in 2013",
+					"year": 2014,
+					"pages": "364--371"
+				},
+				"BIBREF23": {
+					"ref_id": "b23",
+					"title": "Receptor variation and susceptibility to Middle East respiratoy syndrome coronavirus infection",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF24": {
+					"ref_id": "b24",
+					"title": "Assessing the pandemic potential of MERS-CoV",
+					"year": 2013,
+					"pages": "662--664"
+				},
+				"BIBREF25": {
+					"ref_id": "b25",
+					"title": "Severe respiratory illness caused by a novel coronavirus",
+					"year": 2012,
+					"pages": ""
+				},
+				"BIBREF26": {
+					"ref_id": "b26",
+					"title": "First confirmed cases of Middle East respiratory syndrome coronavirus (MERS-CoV) infection in the United States, updated information on the epidemiology of MERS-CoV infection",
+					"year": 2014,
+					"pages": "431--436"
+				},
+				"BIBREF27": {
+					"ref_id": "b27",
+					"title": "The multifunctional or moonlighting protein CD26/DPPIV",
+					"year": 2003,
+					"pages": "53--73"
+				},
+				"BIBREF28": {
+					"ref_id": "b28",
+					"title": "Interhuman transmissibility of Middle East respiratory syndrome coronavirus: estimation of pandemic risk",
+					"year": 2013,
+					"pages": "694--699"
+				},
+				"BIBREF29": {
+					"ref_id": "b29",
+					"title": "Call for infection control to stem MERS",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF30": {
+					"ref_id": "b30",
+					"title": "Middle East respiratory syndrome coronavirus: quantification of the extent of the epidemic, surveillance biases, and transmissibility",
+					"year": 2014,
+					"pages": "50--56"
+				},
+				"BIBREF31": {
+					"ref_id": "b31",
+					"title": "CDC Concludes Indiana MERS Patient did not Spread Virus to Illinois Business Associate",
+					"year": 2014,
+					"pages": "28--33"
+				},
+				"BIBREF32": {
+					"ref_id": "b32",
+					"title": "Differential cell line susceptibility to the emerging novel human betacoronavirus 2c EMC/2012: implications for disease pathogenesis and clinical manifestation",
+					"year": 2013,
+					"pages": "1743--1752"
+				},
+				"BIBREF33": {
+					"ref_id": "b33",
+					"title": "Cross-reactive antibodies in convalescent SARS patients' sera against the emerging novel human coronavirus EMC (2012) by both immunofluorescent and neutralizing antibody tests",
+					"year": 2013,
+					"pages": "130--140"
+				},
+				"BIBREF34": {
+					"ref_id": "b34",
+					"title": "The effects of temperature and relative humidity on the viability of the SARS coronavirus",
+					"year": 2011,
+					"pages": ""
+				},
+				"BIBREF35": {
+					"ref_id": "b35",
+					"title": "Tropism of and innate immune responses to the novel human betacoronavirus lineage C virus in human ex vivo respiratory organ cultures",
+					"year": 2013,
+					"pages": "6604--6614"
+				},
+				"BIBREF36": {
+					"ref_id": "b36",
+					"title": "Crystal structure of the receptor-binding domain from newly emerged Middle East respiratory syndrome coronavirus",
+					"year": 2013,
+					"pages": "10777--10783"
+				},
+				"BIBREF37": {
+					"ref_id": "b37",
+					"title": "Synthesizing data and models for the spread of MERS-CoV, 2013: key role of index cases and hospital transmission",
+					"year": 2014,
+					"pages": "40--51"
+				},
+				"BIBREF38": {
+					"ref_id": "b38",
+					"title": "MERS coronaviruses in dromedary camels",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF39": {
+					"ref_id": "b39",
+					"title": "Acute renal impairment in coronavirus-associated severe acute respiratory syndrome",
+					"year": 2005,
+					"pages": "698--705"
+				},
+				"BIBREF40": {
+					"ref_id": "b40",
+					"title": "Purified coronavirus spike protein nanoparticles induce coronavirus neutralizing antibodies in mice",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF41": {
+					"ref_id": "b41",
+					"title": "Wild-type and innate immune-deficient mice are not susceptible to the Middle East respiratory syndrome coronavirus",
+					"year": 2014,
+					"pages": "408--412"
+				},
+				"BIBREF42": {
+					"ref_id": "b42",
+					"title": "Detection of a novel human coronavirus by real-time reverse-transcription polymerase chain reaction",
+					"year": 2012,
+					"pages": ""
+				},
+				"BIBREF43": {
+					"ref_id": "b43",
+					"title": "Rooting the phylogenetic tree of Middle East respiratory syndrome coronavirus by characterization of a conspecific virus from an African bat",
+					"year": 2014,
+					"pages": "11297--11303"
+				},
+				"BIBREF44": {
+					"ref_id": "b44",
+					"title": "Antibodies against MERS Coronavirus in Dromedary Camels",
+					"year": 1992,
+					"pages": ""
+				},
+				"BIBREF45": {
+					"ref_id": "b45",
+					"title": "Assays for laboratory confirmation of novel human coronavirus (hCoV-EMC) infections",
+					"year": 2012,
+					"pages": ""
+				},
+				"BIBREF46": {
+					"ref_id": "b46",
+					"title": "Avian Flu Diary: Michael Coston's Blog on Emerging Infectious Diseases",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF47": {
+					"ref_id": "b47",
+					"title": "Full-genome deep sequencing and phylogenetic analysis of novel human betacoronavirus",
+					"year": 2013,
+					"pages": "736--778"
+				},
+				"BIBREF48": {
+					"ref_id": "b48",
+					"title": "Transmission and evolution of the Middle East respiratory syndrome coronavirus in Saudi Arabia: a descriptive genomic study",
+					"year": 1993,
+					"pages": ""
+				},
+				"BIBREF49": {
+					"ref_id": "b49",
+					"title": "Spread, circulation, and evolution of the Middle East respiratory syndrome coronavirus",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF50": {
+					"ref_id": "b50",
+					"title": "Middle East respiratory syndrome coronavirus (MERS-CoV): announcement of the Coronavirus Study Group",
+					"year": 2013,
+					"pages": "7790--7792"
+				},
+				"BIBREF51": {
+					"ref_id": "b51",
+					"title": "Screening of an FDA-approved compound library identifies four small-molecule inhibitors of Middle East respiratory syndrome coronavirus replication in cell culture",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF52": {
+					"ref_id": "b52",
+					"title": "Laboratory-confirmed case of Middle East respiratory syndrome coronavirus (MERS-CoV) infection in Malaysia: preparedness and response",
+					"year": 2013,
+					"pages": "16598--16603"
+				},
+				"BIBREF53": {
+					"ref_id": "b53",
+					"title": "Is MERS another SARS?",
+					"year": 2013,
+					"pages": "727--728"
+				},
+				"BIBREF54": {
+					"ref_id": "b54",
+					"title": "Evidence for camel-to-human transmission of MERS coronavirus",
+					"year": 2014,
+					"pages": "1359--1360"
+				},
+				"BIBREF55": {
+					"ref_id": "b55",
+					"title": "Transmission of MERS-coronavirus in household contacts",
+					"year": 2014,
+					"pages": "828--835"
+				},
+				"BIBREF56": {
+					"ref_id": "b56",
+					"title": "An observational, laboratory-based study of outbreaks of MERS-coronavirus in Jeddah and Riyadh, Kingdom of Saudi Arabia",
+					"year": 2014,
+					"pages": "369--377"
+				},
+				"BIBREF57": {
+					"ref_id": "b57",
+					"title": "Clinical features and virological analysis of a case of Middle East respiratory syndrome coronavirus infection",
+					"year": 2013,
+					"pages": "745--751"
+				},
+				"BIBREF58": {
+					"ref_id": "b58",
+					"title": "A truncated receptor-binding domain of MERS-CoV spike protein potently inhibits MERS-CoV infection and induces strong neutralizing antibody responses: implication for developing therapeutics and vaccines",
+					"year": 2013,
+					"pages": ""
+				},
+				"BIBREF59": {
+					"ref_id": "b59",
+					"title": "Identification of a receptor-binding domain in the S protein of the novel human coronavirus Middle East respiratory syndrome coronavirus as an essential target for vaccine development",
+					"year": 2013,
+					"pages": "9939--9942"
+				},
+				"BIBREF60": {
+					"ref_id": "b60",
+					"title": "Age-specific and sex-specific morbidity and mortality from avian influenza A(H7N9)",
+					"year": 2013,
+					"pages": "568--570"
+				},
+				"BIBREF61": {
+					"ref_id": "b61",
+					"title": "Repurposing of clinically developed drugs for treatment of Middle East Respiratory Coronavirus Infection",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF62": {
+					"ref_id": "b62",
+					"title": "Replicative capacity of MERS coronavirus in livestock cell lines",
+					"year": 2014,
+					"pages": "276--279"
+				},
+				"BIBREF63": {
+					"ref_id": "b63",
+					"title": "In-vitro renal epithelial cell infection reveals a viral kidney tropism as a potential mechanism for acute renal failure during Middle East Respiratory Syndrome (MERS) Coronavirus infection",
+					"year": 2013,
+					"pages": ""
+				},
+				"BIBREF64": {
+					"ref_id": "b64",
+					"title": "Treatment with interferon-alpha2b and ribavirin improves outcome in MERS-CoV-infected rhesus macaques",
+					"year": 2013,
+					"pages": "1313--1317"
+				},
+				"BIBREF65": {
+					"ref_id": "b65",
+					"title": "Distinct immune response in two MERS-CoV-infected patients: can we go from bench to bedside?",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF66": {
+					"ref_id": "b66",
+					"title": "Full-genome sequence of human betacoronavirus 2c jordan-n3/2012 after serial passage in Mammalian cells",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF67": {
+					"ref_id": "b67",
+					"title": "Lack of nasal carriage of novel corona virus (HCoV-EMC) in French Hajj pilgrims returning from the Hajj 2012, despite a high rate of respiratory symptoms",
+					"year": 2013,
+					"pages": "315--317"
+				},
+				"BIBREF68": {
+					"ref_id": "b68",
+					"title": "Lack of MERS coronavirus neutralizing antibodies in humans, eastern province, Saudi Arabia",
+					"year": 2013,
+					"pages": "2034--2036"
+				},
+				"BIBREF69": {
+					"ref_id": "b69",
+					"title": "Human-Dromedary camel interactions and the risk of acquiring zoonotic Middle East respiratory syndrome coronavirus infection",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF70": {
+					"ref_id": "b70",
+					"title": "Loss of dipeptidylpeptidase IV activity in chronic rhinosinusitis contributes to the neurogenic inflammation induced by substance P in the nasal mucosa",
+					"year": 2002,
+					"pages": "1132--1134"
+				},
+				"BIBREF71": {
+					"ref_id": "b71",
+					"title": "Survival of coronaviruses in water and wastewater",
+					"year": 2009,
+					"pages": "10--14"
+				},
+				"BIBREF72": {
+					"ref_id": "b72",
+					"title": "Middle East respiratory syndrome coronavirus in dromedary camels: an outbreak investigation",
+					"year": 2014,
+					"pages": "140--145"
+				},
+				"BIBREF73": {
+					"ref_id": "b73",
+					"title": "Novel coronavirus: the challenge of communicating about a virus which one knows little about",
+					"year": 2013,
+					"pages": "26--30"
+				},
+				"BIBREF74": {
+					"ref_id": "b74",
+					"title": "Evidence of person-to-person transmission within a family cluster of novel coronavirus infections",
+					"year": 2013,
+					"pages": ""
+				},
+				"BIBREF75": {
+					"ref_id": "b75",
+					"title": "Lack of Middle East respiratory syndrome coronavirus transmission from infected camels",
+					"year": 2015,
+					"pages": ""
+				},
+				"BIBREF76": {
+					"ref_id": "b76",
+					"title": "MERS coronavirus in dromedary camel herd, Saudi Arabia",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF77": {
+					"ref_id": "b77",
+					"title": "Seroepidemiology of Middle East respiratory syndrome (MERS) coronavirus in Saudi Arabia (1993) and Australia (2014) and characterisation of assay specificity",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF78": {
+					"ref_id": "b78",
+					"title": "Middle East respiratory syndrome (MERS) coronavirus seroprevalence in domestic livestock in Saudi Arabia",
+					"year": 2010,
+					"pages": ""
+				},
+				"BIBREF79": {
+					"ref_id": "b79",
+					"title": "epidemiological findings from a retrospective investigation",
+					"year": 2012,
+					"pages": "12--18"
+				},
+				"BIBREF80": {
+					"ref_id": "b80",
+					"title": "MERS-CoV enigma deepens as reported cases surge",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF81": {
+					"ref_id": "b81",
+					"title": "Potent neutralization of MERS-CoV by human neutralizing monoclonal antibodies to the viral spike glycoprotein",
+					"year": 2014,
+					"pages": "234--59"
+				},
+				"BIBREF82": {
+					"ref_id": "b82",
+					"title": "Cell host response to infection with novel human coronavirus EMC predicts potential antivirals and important differences with SARS coronavirus",
+					"year": 2013,
+					"pages": "165--213"
+				},
+				"BIBREF83": {
+					"ref_id": "b83",
+					"title": "The safety of dipeptidyl peptidase-4 (DPP-4) inhibitors or sodium-glucose cotransporter 2 (SGLT-2) inhibitors added to metformin background therapy in patients with type 2 diabetes mellitus: a systematic review and meta-analysis",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF84": {
+					"ref_id": "b84",
+					"title": "Ribavirin and interferon (IFN)-alpha-2b as primary and preventive treatment for Middle East respiratory syndrome coronavirus (MERS-CoV): a preliminary report of two cases",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF85": {
+					"ref_id": "b85",
+					"title": "Middle East respiratory syndrome coronavirus not detected in children hospitalized with acute respiratory illness in",
+					"year": 2010,
+					"pages": ""
+				},
+				"BIBREF86": {
+					"ref_id": "b86",
+					"title": "H5N1: Crawford Kilian's Infectious Disease Blog",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF87": {
+					"ref_id": "b87",
+					"title": "Assessing activity and inhibition of Middle East respiratory syndrome coronavirus papain-like and 3C-like proteases using luciferase-based biosensors",
+					"year": 2013,
+					"pages": "11955--11962"
+				},
+				"BIBREF88": {
+					"ref_id": "b88",
+					"title": "Efficient replication of the novel human betacoronavirus EMC on primary human epithelium highlights its zoonotic potential",
+					"year": 2013,
+					"pages": "611--00612"
+				},
+				"BIBREF89": {
+					"ref_id": "b89",
+					"title": "Viability of Pseudomonas aeruginosa in cough aerosols generated by persons with cystic fibrosis",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF90": {
+					"ref_id": "b90",
+					"title": "Middle East respiratory syndrome coronavirus (MERS-CoV) infections in two returning travellers in the Netherlands",
+					"year": 2014,
+					"pages": "1422--1425"
+				},
+				"BIBREF91": {
+					"ref_id": "b91",
+					"title": "Accuracy of epidemiological inferences based on publicly available information: retrospective comparative analysis of line lists of hman cases infected with inflenza A(H7N9) in China",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF92": {
+					"ref_id": "b92",
+					"title": "Delayed induction of proinflammatory cytokines and suppression of innate antiviral response by the novel Middle East respiratory syndrome coronavirus: implications for pathogenesis and treatment",
+					"year": 2013,
+					"pages": "2679--2690"
+				},
+				"BIBREF93": {
+					"ref_id": "b93",
+					"title": "Structural and functional characterization of MERS coronavirus papain-like protease",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF94": {
+					"ref_id": "b94",
+					"title": "Molecular basis of binding between novel human coronavirus MERS-CoV and its receptor CD26",
+					"year": 2013,
+					"pages": "227--231"
+				},
+				"BIBREF95": {
+					"ref_id": "b95",
+					"title": "Increased expression of plasma and CD4+ T lymphocyte costimulatory molecule CD26 in adult patients with allergic asthma",
+					"year": 2007,
+					"pages": "430--437"
+				},
+				"BIBREF96": {
+					"ref_id": "b96",
+					"title": "Targeting Membrane-Bound Viral RNA Synthesis Reveals Potent Inhibition of Diverse Coronaviruses Including the Middle East Respiratory Syndrome Virus",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF97": {
+					"ref_id": "b97",
+					"title": "Middle East Respiratory Syndrome Coronavirus (MERS-CoV) -Update 15",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF98": {
+					"ref_id": "b98",
+					"title": "MERS-CoV Daily, Monthly and Cumulative Numbers Over Time",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF99": {
+					"ref_id": "b99",
+					"title": "Virology Down Under. 21-6-2014a",
+					"year": 1997,
+					"pages": ""
+				},
+				"BIBREF100": {
+					"ref_id": "b100",
+					"title": "Co-circulation of four human coronaviruses (HCoVs) in Queensland children with acute respiratory tract illnesses in 2004",
+					"year": 2012,
+					"pages": "637--653"
+				},
+				"BIBREF101": {
+					"ref_id": "b101",
+					"title": "First cases of Middle East Respiratory Syndrome Coronavirus (MERS-CoV) infections in France, investigations and implications for the prevention of human-tohuman transmission",
+					"year": 2013,
+					"pages": ""
+				},
+				"BIBREF102": {
+					"ref_id": "b102",
+					"title": "Mens et Manus: Maia Majumder's Blog. 8-6-2014",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF103": {
+					"ref_id": "b103",
+					"title": "Middle East respiratory syndrome coronavirus: Implications for health care facilities",
+					"year": 2014,
+					"pages": "1261--1265"
+				},
+				"BIBREF104": {
+					"ref_id": "b104",
+					"title": "Middle East Respiratory Syndrome Coronavirus Disease in Children",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF105": {
+					"ref_id": "b105",
+					"title": "Screening for Middle East respiratory syndrome coronavirus infection in hospital patients and their healthcare worker and family contacts: a prospective descriptive study",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF106": {
+					"ref_id": "b106",
+					"title": "Respiratory Tract Samples, Viral Load and Genome Fraction Yield in patients with Middle East Respiratory Syndrome",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF107": {
+					"ref_id": "b107",
+					"title": "Prevalence of MERS-CoV Nasal Carriage and Compliance With the Saudi Health Recommendations Among Pilgrims Attending the",
+					"year": 2013,
+					"pages": ""
+				},
+				"BIBREF108": {
+					"ref_id": "b108",
+					"title": "Middle East respiratory syndrome coronavirus (MERS-CoV) viral shedding in the respiratory tract: an observational analysis with infection control implications",
+					"year": 2014,
+					"pages": "307--308"
+				},
+				"BIBREF109": {
+					"ref_id": "b109",
+					"title": "Human Infection with MERS Coronavirus after Exposure to Infected Camels",
+					"year": 2013,
+					"pages": ""
+				},
+				"BIBREF110": {
+					"ref_id": "b110",
+					"title": "Community Case Clusters of Middle East Respiratory Syndrome Coronavirus in Hafr Al-Batin, Kingdom of Saudi Arabia: A Descriptive Genomic study",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF111": {
+					"ref_id": "b111",
+					"title": "Middle East respiratory syndrome coronavirus in bats, Saudi Arabia",
+					"year": 2013,
+					"pages": "1819--1823"
+				},
+				"BIBREF112": {
+					"ref_id": "b112",
+					"title": "Family cluster of Middle East respiratory syndrome coronavirus infections",
+					"year": 2013,
+					"pages": "2487--2494"
+				},
+				"BIBREF113": {
+					"ref_id": "b113",
+					"title": "Serological assays for emerging coronaviruses: challenges and pitfalls",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF114": {
+					"ref_id": "b114",
+					"title": "Serologic Assessment of Possibility for MERS-CoV Infection in Equids",
+					"year": 2015,
+					"pages": "181--182"
+				},
+				"BIBREF115": {
+					"ref_id": "b115",
+					"title": "Antibodies against MERS coronavirus in dromedary camels",
+					"year": 2003,
+					"pages": "552--559"
+				},
+				"BIBREF116": {
+					"ref_id": "b116",
+					"title": "Case List of MoH/WHO Novel Coronavirus MERS nCoV Announced Cases",
+					"year": 2012,
+					"pages": ""
+				},
+				"BIBREF117": {
+					"ref_id": "b117",
+					"title": "Camel milk as an adjuvant therapy for the treatment of type 1 diabetes: verification of a traditional ethnomedical practice",
+					"year": 2009,
+					"pages": "461--465"
+				},
+				"BIBREF118": {
+					"ref_id": "b118",
+					"title": "The receptor binding domain of the new Middle East respiratory syndrome coronavirus maps to a 231-residue region in the spike protein that efficiently elicits neutralizing antibodies",
+					"year": 2013,
+					"pages": "9379--9383"
+				},
+				"BIBREF119": {
+					"ref_id": "b119",
+					"title": "Human coronavirus EMC does not require the SARS-coronavirus receptor and maintains broad replicative capability in mammalian cell lines",
+					"year": 2012,
+					"pages": ""
+				},
+				"BIBREF120": {
+					"ref_id": "b120",
+					"title": "Pneumonia from human coronavirus in a macaque model",
+					"year": 2013,
+					"pages": "1560--1562"
+				},
+				"BIBREF121": {
+					"ref_id": "b121",
+					"title": "Missing information in animal surveillance of MERS-CoV",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF122": {
+					"ref_id": "b122",
+					"title": "Middle East respiratory syndrome coronavirus (MERS-CoV) in dromedary camels",
+					"year": 2013,
+					"pages": ""
+				},
+				"BIBREF123": {
+					"ref_id": "b123",
+					"title": "A family cluster of Middle East Respiratory Syndrome Coronavirus infections related to a likely unrecognized asymptomatic or mild case",
+					"year": 2013,
+					"pages": "668--672"
+				},
+				"BIBREF125": {
+					"ref_id": "b125",
+					"title": "Stillbirth During Infection With Middle East Respiratory Syndrome Coronavirus",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF126": {
+					"ref_id": "b126",
+					"title": "Taking stock of the first 133 MERS coronavirus cases globally -Is the epidemic changing?",
+					"year": 2013,
+					"pages": ""
+				},
+				"BIBREF127": {
+					"ref_id": "b127",
+					"title": "Seroepidemiology for MERS coronavirus using microneutralisation and pseudoparticle virus neutralisation assays reveal a high prevalence of antibody in dromedary camels in Egypt",
+					"year": 2013,
+					"pages": ""
+				},
+				"BIBREF128": {
+					"ref_id": "b128",
+					"title": "Assessment of the MERS-CoV Epidemic Situation in the Middle East Region. Program for Monitoring Emerging Diseases",
+					"year": 2013,
+					"pages": ""
+				},
+				"BIBREF129": {
+					"ref_id": "b129",
+					"title": "Novel Coronavirus -Saudi Arabia: Human Isolate",
+					"year": 2012,
+					"pages": ""
+				},
+				"BIBREF130": {
+					"ref_id": "b130",
+					"title": "Novel Coronavirus -Saudi Arabia: Human Isolate",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF131": {
+					"ref_id": "b131",
+					"title": "Investigation of an imported case of Middle East Respiratory Syndrome Coronavirus (MERS-CoV",
+					"year": 2013,
+					"pages": ""
+				},
+				"BIBREF132": {
+					"ref_id": "b132",
+					"title": "Isolation of MERS Coronavirus from a Dromedary Camel",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF133": {
+					"ref_id": "b133",
+					"title": "Dipeptidyl peptidase 4 is a functional receptor for the emerging human coronavirus-EMC",
+					"year": 2013,
+					"pages": "251--254"
+				},
+				"BIBREF134": {
+					"ref_id": "b134",
+					"title": "MERS: emergence of a novel human coronavirus",
+					"year": 2014,
+					"pages": "58--62"
+				},
+				"BIBREF135": {
+					"ref_id": "b135",
+					"title": "Specific serology for emerging human coronaviruses by protein microarray",
+					"year": 2013,
+					"pages": ""
+				},
+				"BIBREF136": {
+					"ref_id": "b136",
+					"title": "Middle East Respiratory Syndrome coronavirus (MERS-CoV) serology in major livestock species in an affected region in Jordan",
+					"year": 2013,
+					"pages": ""
+				},
+				"BIBREF137": {
+					"ref_id": "b137",
+					"title": "Middle East respiratory syndrome coronavirus (MERS-CoV) RNA and neutralising antibodies in milk collected according to local customs from dromedary camels",
+					"year": 2013,
+					"pages": "859--866"
+				},
+				"BIBREF138": {
+					"ref_id": "b138",
+					"title": "Geographic distribution of MERS Coronavirus among dromedary camels",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF139": {
+					"ref_id": "b139",
+					"title": "Contact investigation for imported case of Middle East respiratory syndrome",
+					"year": 2014,
+					"pages": "620--625"
+				},
+				"BIBREF140": {
+					"ref_id": "b140",
+					"title": "Saudi Arabia Replaces Health Minister Amid MERS Virus Fears",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF141": {
+					"ref_id": "b141",
+					"title": "IL-10 family of cytokines",
+					"year": 2010,
+					"pages": "315--324"
+				},
+				"BIBREF142": {
+					"ref_id": "b142",
+					"title": "Influenza A (H7N9) and the importance of digital epidemiology",
+					"year": 2013,
+					"pages": "401--404"
+				},
+				"BIBREF143": {
+					"ref_id": "b143",
+					"title": "Middle East respiratory syndrome: what clinicians need to know",
+					"year": 2014,
+					"pages": "1153--1158"
+				},
+				"BIBREF144": {
+					"ref_id": "b144",
+					"title": "As Outbreak Continues, Confusion Reigns Over Virus Patents",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF145": {
+					"ref_id": "b145",
+					"title": "A highly conserved WDYPKCDRA epitope in the RNA directed RNA polymerase of human coronaviruses can be used as epitope-based universal vaccine design",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF146": {
+					"ref_id": "b146",
+					"title": "Emerging infectious diseases associated with bat viruses",
+					"year": 2013,
+					"pages": "678--682"
+				},
+				"BIBREF147": {
+					"ref_id": "b147",
+					"title": "Bats and their virome: an important source of emerging viruses capable of infecting humans",
+					"year": 2013,
+					"pages": "84--91"
+				},
+				"BIBREF148": {
+					"ref_id": "b148",
+					"title": "Reliable typing of MERS-CoV variants with a small genome fragment",
+					"year": 2015,
+					"pages": ""
+				},
+				"BIBREF149": {
+					"ref_id": "b149",
+					"title": "Virological and serological analysis of a recent Middle East respiratory syndrome coronavirus infection case on a triple combination antiviral regimen",
+					"year": 2014,
+					"pages": "528--532"
+				},
+				"BIBREF150": {
+					"ref_id": "b150",
+					"title": "Identification of human neutralizing antibodies against MERS-CoV and their role in virus adaptive evolution",
+					"year": 2013,
+					"pages": ""
+				},
+				"BIBREF151": {
+					"ref_id": "b151",
+					"title": "Genomic characterization of a newly discovered coronavirus associated with acute respiratory distress syndrome in humans",
+					"year": 2012,
+					"pages": ""
+				},
+				"BIBREF152": {
+					"ref_id": "b152",
+					"title": "Structure of MERS-CoV spike receptor-binding domain complexed with human receptor DPP4",
+					"year": 2013,
+					"pages": "986--993"
+				},
+				"BIBREF153": {
+					"ref_id": "b153",
+					"title": "Coronavirus diversity, phylogeny and interspecies jumping",
+					"year": 2009,
+					"pages": "1117--1127"
+				},
+				"BIBREF154": {
+					"ref_id": "b154",
+					"title": "Infection Prevention and Control During Health Care for Probable or Confirmed Cases of Novel Coronavirus (nCoV) infection. 5-6-2013a",
+					"year": 2013,
+					"pages": "16--25"
+				},
+				"BIBREF155": {
+					"ref_id": "b155",
+					"title": "Case Definition for Case Finding Severe Respiratory Disease Associated with Novel Coronavirus: Interim Case Definition as of 25",
+					"year": 2012,
+					"pages": ""
+				},
+				"BIBREF156": {
+					"ref_id": "b156",
+					"title": "Revised Interim Case Definition for Reporting to WHO -Middle East Respiratory Syndrome Coronavirus (MERS-CoV): Interim Case Definition as of",
+					"year": 2013,
+					"pages": "24--28"
+				},
+				"BIBREF157": {
+					"ref_id": "b157",
+					"title": "World Health Organization, 2014f. WHO Statement on the Fifth Meeting of the IHR Emergency Committee Concerning MERS-CoV: WHO Statement",
+					"year": null,
+					"pages": ""
+				},
+				"BIBREF158": {
+					"ref_id": "b158",
+					"title": "An animal model of MERS produced by infection of rhesus macaques with MERS coronavirus",
+					"year": 2014,
+					"pages": "236--242"
+				},
+				"BIBREF159": {
+					"ref_id": "b159",
+					"title": "Isolation of a novel coronavirus from a man with pneumonia in Saudi Arabia",
+					"year": 2012,
+					"pages": "1814--1820"
+				},
+				"BIBREF160": {
+					"ref_id": "b160",
+					"title": "A safe and convenient pseudovirus-based inhibition assay to detect neutralizing antibodies and screen for viral entry inhibitors against the novel human coronavirus MERS-CoV",
+					"year": 2013,
+					"pages": ""
+				},
+				"BIBREF161": {
+					"ref_id": "b161",
+					"title": "Rapid generation of a mouse model for Middle East respiratory syndrome",
+					"year": 2014,
+					"pages": "4970--4975"
+				},
+				"BIBREF162": {
+					"ref_id": "b162",
+					"title": "Active replication of middle East respiratory syndrome coronavirus and aberrant induction of inflammatory cytokines and chemokines in human macrophages: implications for pathogenesis",
+					"year": 2014,
+					"pages": "1331--1342"
+				},
+				"BIBREF163": {
+					"ref_id": "b163",
+					"title": "Human cell tropism and innate immune system interactions of human respiratory coronavirus EMC compared to those of severe acute respiratory syndrome coronavirus",
+					"year": 2013,
+					"pages": "5300--5304"
+				},
+				"BIBREF164": {
+					"ref_id": "b164",
+					"title": "Infection control and MERS-CoV in health workers",
+					"year": 2014,
+					"pages": "1869--1871"
+				},
+				"BIBREF165": {
+					"ref_id": "b165",
+					"title": "Middle East respiratory syndrome coronavirus: epidemic potential or a storm in a teacup?",
+					"year": 2014,
+					"pages": "1243--1248"
+				}
+			},
+			"is_doc_meta": false,
+			"is_doc_abstract": false,
+			"section_count": 3,
+			"subtitle": "Middle East respiratory syndrome (MERS)",
+			"cite_spans": [
+				{
+					"start": 121,
+					"end": 143,
+					"text": "(Assiri et al., 2013a)",
+					"ref_id": "BIBREF18"
+				},
+				{
+					"start": 858,
+					"end": 880,
+					"text": "(Assiri et al., 2013a)",
+					"ref_id": "BIBREF18"
+				},
+				{
+					"start": 1019,
+					"end": 1053,
+					"text": "(World Health Organization, 2014d)",
+					"ref_id": null
+				},
+				{
+					"start": 1227,
+					"end": 1248,
+					"text": "Memish et al., 2014b)",
+					"ref_id": "BIBREF105"
+				},
+				{
+					"start": 1324,
+					"end": 1349,
+					"text": "(Al-Gethamy et al., 2014)",
+					"ref_id": "BIBREF8"
+				}
+			]
+		},
+		"embedding": null
+	},
+	{
+		"answer": "serial interval distribution",
+		"offset_start_in_doc": 244,
+		"offset_end_in_doc": 272,
+		"offset_start": 61,
+		"offset_end": 89,
+		"context": " that the incubation period distribution is identical to the serial interval distribution as shown above, which is a bit funny conclusion. Maximizing ",
+		"answer_id": "d8d45a2a289e6ce313f5d2dd806c5b46",
+		"doc_id": "037fa0356fa70e796d34d6df6e4f5281cda1be6e-$-$-124",
+		"no_ans_gap": 18.80069637298584,
+		"text": "",
+		"id": "eddc8cbe-238e-424f-899b-77d3c64c2ff9",
+		"score": 6.8823370933532715,
+		"probability": 0.7027216864535002,
+		"question": "What is the definition of incubation period?",
+		"meta": {
+			"title": "Quantifying the transmission potential of pandemic influenza",
+			"authors": [
+				{
+					"first": "Gerardo",
+					"middle": [],
+					"last": "Chowell",
+					"suffix": "",
+					"affiliation": {
+						"laboratory": "",
+						"institution": "Arizona State University",
+						"location": {
+							"postCode": "85282",
+							"settlement": "Tempe",
+							"region": "AZ",
+							"country": "USA"
+						}
+					},
+					"email": ""
+				},
+				{
+					"first": "Hiroshi",
+					"middle": [],
+					"last": "Nishiura",
+					"suffix": "",
+					"affiliation": {
+						"laboratory": "",
+						"institution": "University of Utrecht",
+						"location": {
+							"addrLine": "Yalelaan 7",
+							"postCode": "3584 CL",
+							"settlement": "Utrecht",
+							"country": "The Netherlands"
+						}
+					},
+					"email": ""
+				}
+			],
+			"bib_entries": {
+				"BIBREF0": {
+					"ref_id": "b0",
+					"title": "On the definition of the transmission potential",
+					"year": null,
+					"pages": ""
+				},
+				"BIBREF1": {
+					"ref_id": "b1",
+					"title": "Estimating R 0 using a structured epidemic model",
+					"year": null,
+					"pages": ""
+				},
+				"BIBREF2": {
+					"ref_id": "b2",
+					"title": "Estimation of R 0 using the intrinsic growth rate",
+					"year": null,
+					"pages": ""
+				},
+				"BIBREF3": {
+					"ref_id": "b3",
+					"title": "Epidemics with two levels of mixing",
+					"year": null,
+					"pages": ""
+				},
+				"BIBREF4": {
+					"ref_id": "b4",
+					"title": "68 6.2. What to be learnt from the reported data?",
+					"year": null,
+					"pages": ""
+				},
+				"BIBREF5": {
+					"ref_id": "b5",
+					"title": "New theory to replace mass action principle",
+					"year": null,
+					"pages": ""
+				},
+				"BIBREF7": {
+					"ref_id": "b7",
+					"title": "The global impact of influenza on morbidity and mortality",
+					"year": 1999,
+					"pages": "3--10"
+				},
+				"BIBREF8": {
+					"ref_id": "b8",
+					"title": "Dynamic patterns of avian and human influenza in east and southeast Asia",
+					"year": 2007,
+					"pages": "543--551"
+				},
+				"BIBREF9": {
+					"ref_id": "b9",
+					"title": "Evolution and ecology of influenza A viruses",
+					"year": 1992,
+					"pages": "152--79"
+				},
+				"BIBREF10": {
+					"ref_id": "b10",
+					"title": "Strategies for containing an emerging influenza pandemic in Southeast Asia",
+					"year": 2005,
+					"pages": "209--223"
+				},
+				"BIBREF11": {
+					"ref_id": "b11",
+					"title": "Strategies for mitigating an influenza pandemic",
+					"year": 2006,
+					"pages": "448--52"
+				},
+				"BIBREF12": {
+					"ref_id": "b12",
+					"title": "How generation intervals shape the relationship between growth rates and reproductive numbers",
+					"year": 2007,
+					"pages": "599--604"
+				},
+				"BIBREF13": {
+					"ref_id": "b13",
+					"title": "Containing pandemic influenza with antiviral agents",
+					"year": 2004,
+					"pages": "623--656"
+				},
+				"BIBREF14": {
+					"ref_id": "b14",
+					"title": "Transmissibility of 1918 pandemic influenza",
+					"year": 2004,
+					"pages": "904--910"
+				},
+				"BIBREF15": {
+					"ref_id": "b15",
+					"title": "Textbook of influenza",
+					"year": 1998,
+					"pages": ""
+				},
+				"BIBREF16": {
+					"ref_id": "b16",
+					"title": "Influenza: historical aspects of epidemics and pandemics",
+					"year": 2004,
+					"pages": "141--55"
+				},
+				"BIBREF17": {
+					"ref_id": "b17",
+					"title": "Estimation of potential global pandemic influenza mortality on the basis of vital registry data from the 1918-20 pandemic: a quantitative analysis",
+					"year": 2006,
+					"pages": "2211--2219"
+				},
+				"BIBREF18": {
+					"ref_id": "b18",
+					"title": "Variations in case fatality during the influenza epidemic of 1918",
+					"year": 1921,
+					"pages": "2201--2212"
+				},
+				"BIBREF19": {
+					"ref_id": "b19",
+					"title": "Nonpharmaceutical interventions implemented by US cities during the 1918-1919 influenza pandemic",
+					"year": 2007,
+					"pages": "644--54"
+				},
+				"BIBREF20": {
+					"ref_id": "b20",
+					"title": "The geography and mortality of the 1918 influenza pandemic",
+					"year": 1991,
+					"pages": "4--21"
+				},
+				"BIBREF21": {
+					"ref_id": "b21",
+					"title": "Updating the accounts: global mortality of the 1918-1920 \"Spanish\" influenza pandemic",
+					"year": 2002,
+					"pages": "105--120"
+				},
+				"BIBREF22": {
+					"ref_id": "b22",
+					"title": "Pandemic influenza: a review",
+					"year": 2007,
+					"pages": "429--51"
+				},
+				"BIBREF23": {
+					"ref_id": "b23",
+					"title": "Mathematical epidemiology of infectious diseases: model building, analysis and interpretation",
+					"year": 2000,
+					"pages": ""
+				},
+				"BIBREF24": {
+					"ref_id": "b24",
+					"title": "Infectious diseases of humans: dynamics and control",
+					"year": 1991,
+					"pages": ""
+				},
+				"BIBREF25": {
+					"ref_id": "b25",
+					"title": "Directly transmitted infectious diseases: control by vaccination",
+					"year": 1982,
+					"pages": "1053--60"
+				},
+				"BIBREF26": {
+					"ref_id": "b26",
+					"title": "Factors in the transmission of virus infections from animal to man. The Scientific Basis of",
+					"year": 1964,
+					"pages": "125--50"
+				},
+				"BIBREF27": {
+					"ref_id": "b27",
+					"title": "Direct and indirect effects in vaccine efficacy and effectiveness",
+					"year": 1991,
+					"pages": "323--354"
+				},
+				"BIBREF28": {
+					"ref_id": "b28",
+					"title": "Herd immunity: history, theory, practice",
+					"year": 1993,
+					"pages": "265--302"
+				},
+				"BIBREF29": {
+					"ref_id": "b29",
+					"title": "The earliest notes on the reproduction number in relation to herd immunity: Theophil Lotz and smallpox vaccination",
+					"year": 2006,
+					"pages": "964--971"
+				},
+				"BIBREF30": {
+					"ref_id": "b30",
+					"title": "A brief history of R 0 and a recipe for its calculation",
+					"year": 2002,
+					"pages": "189--204"
+				},
+				"BIBREF31": {
+					"ref_id": "b31",
+					"title": "Discussion: Emergence of the concept of the basic reproduction number from mathematical demography",
+					"year": 2007,
+					"pages": "357--64"
+				},
+				"BIBREF32": {
+					"ref_id": "b32",
+					"title": "On the definition and the computation of the basic reproductive ratio R 0 in models for infectious diseases",
+					"year": 1990,
+					"pages": "503--525"
+				},
+				"BIBREF33": {
+					"ref_id": "b33",
+					"title": "Reproduction numbers and sub-threshold endemic equilibria for compartmental models of disease transmission",
+					"year": 2002,
+					"pages": "29--48"
+				},
+				"BIBREF34": {
+					"ref_id": "b34",
+					"title": "On the computation of R 0 and its role on global stability",
+					"year": 2002,
+					"pages": "229--50"
+				},
+				"BIBREF35": {
+					"ref_id": "b35",
+					"title": "An intuitive formulation for the reproductive number for the spread of diseases in heterogeneous populations",
+					"year": 2000,
+					"pages": "65--86"
+				},
+				"BIBREF36": {
+					"ref_id": "b36",
+					"title": "Perspectives on the basic reproductive ratio",
+					"year": 2005,
+					"pages": "281--93"
+				},
+				"BIBREF37": {
+					"ref_id": "b37",
+					"title": "Improving estimates of the basic reproductive ratio: using both the mean and the dispersal of transition times",
+					"year": 2006,
+					"pages": "135--180"
+				},
+				"BIBREF38": {
+					"ref_id": "b38",
+					"title": "Mathematical and statistical analyses of the spread of dengue",
+					"year": 2006,
+					"pages": "51--67"
+				},
+				"BIBREF39": {
+					"ref_id": "b39",
+					"title": "Individual-based perspectives on R(0)",
+					"year": 2000,
+					"pages": "51--61"
+				},
+				"BIBREF40": {
+					"ref_id": "b40",
+					"title": "Deterministic and stochastic epidemics in closed populations",
+					"year": 1956,
+					"pages": "149--65"
+				},
+				"BIBREF41": {
+					"ref_id": "b41",
+					"title": "The estimation of the basic reproduction number for infectious diseases",
+					"year": 1993,
+					"pages": "23--41"
+				},
+				"BIBREF42": {
+					"ref_id": "b42",
+					"title": "The computation of R 0 for discrete-time epidemic models with dynamic heterogeneity",
+					"year": 1994,
+					"pages": "97--114"
+				},
+				"BIBREF43": {
+					"ref_id": "b43",
+					"title": "Transmission dynamics and control of severe acute respiratory syndrome",
+					"year": 2003,
+					"pages": "1966--70"
+				},
+				"BIBREF44": {
+					"ref_id": "b44",
+					"title": "Transmission dynamics of the great influenza pandemic of 1918 in Geneva, Switzerland: assessing the effects of hypothetical interventions",
+					"year": 2006,
+					"pages": "193--204"
+				},
+				"BIBREF45": {
+					"ref_id": "b45",
+					"title": "Comparative estimation of the reproduction number for pandemic influenza from daily case notification data",
+					"year": 2007,
+					"pages": "155--66"
+				},
+				"BIBREF46": {
+					"ref_id": "b46",
+					"title": "Estimating the reproduction number from the initial phase of the Spanish flu pandemic waves in",
+					"year": 2007,
+					"pages": "457--70"
+				},
+				"BIBREF47": {
+					"ref_id": "b47",
+					"title": "Different epidemic curves for severe acute respiratory syndrome reveal similar impacts of control measures",
+					"year": 2004,
+					"pages": "509--525"
+				},
+				"BIBREF48": {
+					"ref_id": "b48",
+					"title": "Estimating in real time the efficacy of measures to control emerging communicable diseases",
+					"year": 2006,
+					"pages": "591--598"
+				},
+				"BIBREF49": {
+					"ref_id": "b49",
+					"title": "Towards real time epidemiology: data assimilation, modeling and anomaly detection of health surveillance data streams",
+					"year": 2007,
+					"pages": "79--90"
+				},
+				"BIBREF50": {
+					"ref_id": "b50",
+					"title": "Transmission potential of primary pneumonic plague: time inhomogeneous evaluation based on historical documents of the transmission network",
+					"year": 2006,
+					"pages": "640--645"
+				},
+				"BIBREF51": {
+					"ref_id": "b51",
+					"title": "Catalytic models in epidemiology",
+					"year": 1959,
+					"pages": ""
+				},
+				"BIBREF52": {
+					"ref_id": "b52",
+					"title": "Antibody against hepatitis A in seven European countries. II. Statistical analysis of cross-sectional surveys",
+					"year": 1979,
+					"pages": "70--76"
+				},
+				"BIBREF53": {
+					"ref_id": "b53",
+					"title": "Modelling forces of infection for measles, mumps and rubella",
+					"year": 1990,
+					"pages": "953--67"
+				},
+				"BIBREF54": {
+					"ref_id": "b54",
+					"title": "Age-specific incidence and prevalence: a statistical perspective",
+					"year": 1991,
+					"pages": "371--412"
+				},
+				"BIBREF55": {
+					"ref_id": "b55",
+					"title": "Modeling age-and time-specific incidence from seroprevalence: toxoplasmosis",
+					"year": 1993,
+					"pages": "1022--1056"
+				},
+				"BIBREF56": {
+					"ref_id": "b56",
+					"title": "Estimation of infectious disease parameters from serological survey data: the impact of regular epidemics",
+					"year": 2004,
+					"pages": "2429--2472"
+				},
+				"BIBREF57": {
+					"ref_id": "b57",
+					"title": "Estimation of the basic reproduction number for infectious diseases from age-stratified serological survey data",
+					"year": 2001,
+					"pages": "251--83"
+				},
+				"BIBREF58": {
+					"ref_id": "b58",
+					"title": "Transmission dynamics of hepatitis E among swine: potential impact upon human infection",
+					"year": 2007,
+					"pages": ""
+				},
+				"BIBREF59": {
+					"ref_id": "b59",
+					"title": "Seasonal influenza in the United States, France, and Australia: transmission and prospects for control. Epidemiology and Infection",
+					"year": 2007,
+					"pages": ""
+				},
+				"BIBREF60": {
+					"ref_id": "b60",
+					"title": "Modelling the 1985 influenza epidemic in France",
+					"year": 1988,
+					"pages": "1147--55"
+				},
+				"BIBREF61": {
+					"ref_id": "b61",
+					"title": "The mathematical modelling of influenza epidemics",
+					"year": 1979,
+					"pages": "23--31"
+				},
+				"BIBREF62": {
+					"ref_id": "b62",
+					"title": "Epidemic influenza in Greater London",
+					"year": 1984,
+					"pages": "105--117"
+				},
+				"BIBREF63": {
+					"ref_id": "b63",
+					"title": "Transmissibility and mortality impact of epidemic and pandemic influenza, with emphasis on the unusually deadly 1951 epidemic",
+					"year": 2006,
+					"pages": "6701--6708"
+				},
+				"BIBREF64": {
+					"ref_id": "b64",
+					"title": "Potential impact of antiviral drug use during influenza pandemic",
+					"year": 2005,
+					"pages": "1355--62"
+				},
+				"BIBREF65": {
+					"ref_id": "b65",
+					"title": "The 1918 influenza A epidemic in the city of Sao Paulo",
+					"year": 2007,
+					"pages": "442--447"
+				},
+				"BIBREF66": {
+					"ref_id": "b66",
+					"title": "Time variations in the transmissibility of pandemic influenza in Prussia",
+					"year": 1918,
+					"pages": ""
+				},
+				"BIBREF67": {
+					"ref_id": "b67",
+					"title": "Key transmission parameters of an institutional outbreak during the 1918 influenza pandemic estimated by mathematical modelling",
+					"year": 2006,
+					"pages": ""
+				},
+				"BIBREF68": {
+					"ref_id": "b68",
+					"title": "Epidemiologic characterization of the summer wave of the 1918 influenza pandemic in Copenhagen: Implications for pandemic control strategies",
+					"year": 2008,
+					"pages": ""
+				},
+				"BIBREF69": {
+					"ref_id": "b69",
+					"title": "Estimates of the reproduction numbers of Spanish influenza using morbidity data",
+					"year": 2007,
+					"pages": "881--890"
+				},
+				"BIBREF70": {
+					"ref_id": "b70",
+					"title": "A biological model for influenza transmission: pandemic planning implications of asymptomatic infection and immunity",
+					"year": 2007,
+					"pages": ""
+				},
+				"BIBREF71": {
+					"ref_id": "b71",
+					"title": "The 1918-1919 influenza pandemic in England and Wales: Spatial patterns in transmissibility and mortality impact",
+					"year": 2008,
+					"pages": ""
+				},
+				"BIBREF72": {
+					"ref_id": "b72",
+					"title": "Structured epidemic models and the spread of influenza in the central Canadian subarctic",
+					"year": 1998,
+					"pages": "91--115"
+				},
+				"BIBREF73": {
+					"ref_id": "b73",
+					"title": "Simulating the effect of quarantine on the spread of the 1918-19 flu in central Canada",
+					"year": 2003,
+					"pages": "1--26"
+				},
+				"BIBREF74": {
+					"ref_id": "b74",
+					"title": "Mathematical models in population biology and epidemiology",
+					"year": 2000,
+					"pages": ""
+				},
+				"BIBREF75": {
+					"ref_id": "b75",
+					"title": "The mathematics of infectious diseases",
+					"year": 2000,
+					"pages": "599--653"
+				},
+				"BIBREF76": {
+					"ref_id": "b76",
+					"title": "The prevention of malaria",
+					"year": 1911,
+					"pages": ""
+				},
+				"BIBREF77": {
+					"ref_id": "b77",
+					"title": "Mathematical models for transmission and control of malaria",
+					"year": 1988,
+					"pages": "1091--133"
+				},
+				"BIBREF78": {
+					"ref_id": "b78",
+					"title": "Contributions to the mathematical theory of epidemics",
+					"year": 1927,
+					"pages": "33--55"
+				},
+				"BIBREF79": {
+					"ref_id": "b79",
+					"title": "Generality of the final size formula for an epidemic of a newly invading infectious disease",
+					"year": 2006,
+					"pages": "679--702"
+				},
+				"BIBREF80": {
+					"ref_id": "b80",
+					"title": "Analysis of infectious disease data",
+					"year": 1989,
+					"pages": ""
+				},
+				"BIBREF81": {
+					"ref_id": "b81",
+					"title": "The influenza epidemic of 1918-1919 in San Francisco",
+					"year": 1941,
+					"pages": "805--816"
+				},
+				"BIBREF82": {
+					"ref_id": "b82",
+					"title": "The analysis of hospital infection data using hidden Markov models",
+					"year": 2004,
+					"pages": "223--260"
+				},
+				"BIBREF83": {
+					"ref_id": "b83",
+					"title": "Rapid awareness and transmission of severe acute respiratory syndrome in Hanoi French Hospital",
+					"year": 2005,
+					"pages": "17--25"
+				},
+				"BIBREF84": {
+					"ref_id": "b84",
+					"title": "Nonlinear models for repeated measurement data",
+					"year": 1995,
+					"pages": ""
+				},
+				"BIBREF85": {
+					"ref_id": "b85",
+					"title": "Mathematical statistics",
+					"year": 1977,
+					"pages": ""
+				},
+				"BIBREF86": {
+					"ref_id": "b86",
+					"title": "Bootstrap methods for standard errors, confidence intervals, and other measures of statistical accuracy",
+					"year": 1986,
+					"pages": "54--75"
+				},
+				"BIBREF87": {
+					"ref_id": "b87",
+					"title": "The construction and analysis of epidemic trees with reference to the 2001 UK foot-and-mouth outbreak",
+					"year": 2003,
+					"pages": "121--128"
+				},
+				"BIBREF88": {
+					"ref_id": "b88",
+					"title": "Real-time estimates in early detection of SARS",
+					"year": 2006,
+					"pages": "110--113"
+				},
+				"BIBREF89": {
+					"ref_id": "b89",
+					"title": "Limiting behaviour in an epidemic model",
+					"year": 1977,
+					"pages": "459--70"
+				},
+				"BIBREF90": {
+					"ref_id": "b90",
+					"title": "The epidemic in a closed population with all susceptibles equally vulnerable; some results for large susceptible populations and small initial infections",
+					"year": 1978,
+					"pages": "75--123"
+				},
+				"BIBREF91": {
+					"ref_id": "b91",
+					"title": "A note on generation times in epidemic models",
+					"year": 2007,
+					"pages": "300--311"
+				},
+				"BIBREF92": {
+					"ref_id": "b92",
+					"title": "Appropriate models for the management of infectious diseases",
+					"year": 2005,
+					"pages": ""
+				},
+				"BIBREF93": {
+					"ref_id": "b93",
+					"title": "Destabilization of epidemic models with the inclusion of realistic distributions of infectious periods",
+					"year": 2001,
+					"pages": "985--93"
+				},
+				"BIBREF94": {
+					"ref_id": "b94",
+					"title": "Realistic distributions of infectious periods in epidemic models: Changing patterns of persistence and dynamics",
+					"year": 2001,
+					"pages": "59--71"
+				},
+				"BIBREF95": {
+					"ref_id": "b95",
+					"title": "Model-consistent estimation of the basic reproduction number from the incidence of an emerging infection",
+					"year": 2007,
+					"pages": "803--819"
+				},
+				"BIBREF96": {
+					"ref_id": "b96",
+					"title": "Separate roles of the latent and infectious periods in shaping the relation between the basic reproduction number and the intrinsic growth rate of infectious disease outbreaks",
+					"year": 2008,
+					"pages": ""
+				},
+				"BIBREF97": {
+					"ref_id": "b97",
+					"title": "Epidemiologische Beobachtungen ueber die Grippe-Epidemie 1918 im Oberwallis. Inaugural-Dissertation zur Erlangung der Doktorwuerde der Medizinischen Fakultaet der",
+					"year": 2000,
+					"pages": ""
+				},
+				"BIBREF98": {
+					"ref_id": "b98",
+					"title": "Estimating individual and household reproduction numbers in an emerging epidemic",
+					"year": 2007,
+					"pages": ""
+				},
+				"BIBREF99": {
+					"ref_id": "b99",
+					"title": "Transmission intensity and impact of control policies on the foot and mouth epidemic in Great Britain",
+					"year": 2001,
+					"pages": "542--550"
+				},
+				"BIBREF100": {
+					"ref_id": "b100",
+					"title": "The interval between successive cases of an infectious disease",
+					"year": 2003,
+					"pages": "1039--1086"
+				},
+				"BIBREF101": {
+					"ref_id": "b101",
+					"title": "Epidemiology of a primary pneumonic plague in Kantoshu, Manchuria, from 1910 to 1911: statistical analysis of individual records collected by the Japanese Empire",
+					"year": 2006,
+					"pages": "1059--65"
+				},
+				"BIBREF102": {
+					"ref_id": "b102",
+					"title": "Effectiveness of control measures during the SARS epidemic in Beijing: a comparison of the Rt curve and the epidemic curve",
+					"year": 2007,
+					"pages": ""
+				},
+				"BIBREF103": {
+					"ref_id": "b103",
+					"title": "The basic reproduction number for dengue fever in Sao Paulo state, Brazil: 1990-1991 epidemic",
+					"year": 1994,
+					"pages": "58--67"
+				},
+				"BIBREF104": {
+					"ref_id": "b104",
+					"title": "Severe acute respiratory syndrome: temporal stability and geographic variation in case-fatality rates and doubling times",
+					"year": 2003,
+					"pages": "991--995"
+				},
+				"BIBREF105": {
+					"ref_id": "b105",
+					"title": "Transmissibility of swine flu at Fort Dix",
+					"year": 1976,
+					"pages": "755--62"
+				},
+				"BIBREF106": {
+					"ref_id": "b106",
+					"title": "Branching processes: variation, growth and extinction of populations",
+					"year": 2005,
+					"pages": ""
+				},
+				"BIBREF107": {
+					"ref_id": "b107",
+					"title": "Branching process in biology",
+					"year": 2002,
+					"pages": ""
+				},
+				"BIBREF108": {
+					"ref_id": "b108",
+					"title": "On a general stochastic epidemic model",
+					"year": 1977,
+					"pages": "23--36"
+				},
+				"BIBREF109": {
+					"ref_id": "b109",
+					"title": "Estimation for discrete time branching processes with application to epidemics",
+					"year": 1977,
+					"pages": "515--537"
+				},
+				"BIBREF110": {
+					"ref_id": "b110",
+					"title": "Branching process models for surveillance of infectious diseases controlled by mass vaccination",
+					"year": 2003,
+					"pages": "279--95"
+				},
+				"BIBREF111": {
+					"ref_id": "b111",
+					"title": "Public health. Public health risk from the avian H5N1 influenza epidemic",
+					"year": 2004,
+					"pages": "968--977"
+				},
+				"BIBREF112": {
+					"ref_id": "b112",
+					"title": "Predicting case numbers during infectious disease outbreaks when some cases are undiagnosed",
+					"year": 2007,
+					"pages": "171--83"
+				},
+				"BIBREF113": {
+					"ref_id": "b113",
+					"title": "Superspreading and the effect of individual variation on disease emergence",
+					"year": 2005,
+					"pages": "355--364"
+				},
+				"BIBREF114": {
+					"ref_id": "b114",
+					"title": "Maximum likelihood estimation of the negative binomial dispersion parameter for highly overdispersed data, with applications to infectious diseases",
+					"year": 2007,
+					"pages": ""
+				},
+				"BIBREF115": {
+					"ref_id": "b115",
+					"title": "How does transmission of infection depend on population size",
+					"year": 1995,
+					"pages": "84--94"
+				},
+				"BIBREF116": {
+					"ref_id": "b116",
+					"title": "Martingale methods for the analysis of epidemic data",
+					"year": 1993,
+					"pages": "93--112"
+				},
+				"BIBREF117": {
+					"ref_id": "b117",
+					"title": "Martingale limit theory and its application",
+					"year": 1980,
+					"pages": ""
+				},
+				"BIBREF118": {
+					"ref_id": "b118",
+					"title": "Asymptotic properties of some estimators for the infection rate in the general stochastic epidemic model",
+					"year": 1991,
+					"pages": "269--83"
+				},
+				"BIBREF119": {
+					"ref_id": "b119",
+					"title": "Statistical studies of infectious disease incidence",
+					"year": 1999,
+					"pages": "287--307"
+				},
+				"BIBREF120": {
+					"ref_id": "b120",
+					"title": "Stochastic epidemic models and their statistical analysis",
+					"year": 2000,
+					"pages": ""
+				},
+				"BIBREF121": {
+					"ref_id": "b121",
+					"title": "Basic reproduction number for equine-2 influenza virus A (H3N8) epidemic in racehorse facilities in Japan",
+					"year": 1971,
+					"pages": "310--316"
+				},
+				"BIBREF122": {
+					"ref_id": "b122",
+					"title": "The role of health care workers and antiviral drugs in the control of pandemic influenza",
+					"year": 2007,
+					"pages": "403--419"
+				},
+				"BIBREF123": {
+					"ref_id": "b123",
+					"title": "Household and community transmission parameters from final distributions of infections in households",
+					"year": 1982,
+					"pages": "115--141"
+				},
+				"BIBREF124": {
+					"ref_id": "b124",
+					"title": "Estimating household and community transmission parameters for influenza",
+					"year": 1982,
+					"pages": "736--51"
+				},
+				"BIBREF125": {
+					"ref_id": "b125",
+					"title": "Household and community transmission of the Asian influenza A (H2N2) and influenza B viruses in 1957 and 1961",
+					"year": 2007,
+					"pages": "1075--83"
+				},
+				"BIBREF126": {
+					"ref_id": "b126",
+					"title": "Epidemics with two levels of mixing",
+					"year": 1997,
+					"pages": "46--89"
+				},
+				"BIBREF127": {
+					"ref_id": "b127",
+					"title": "A general model for stochastic SIR epidemics with two levels of mixing",
+					"year": 2002,
+					"pages": "73--102"
+				},
+				"BIBREF128": {
+					"ref_id": "b128",
+					"title": "The effect of household distribution on transmission and control of highly infectious diseases",
+					"year": 1995,
+					"pages": "207--226"
+				},
+				"BIBREF129": {
+					"ref_id": "b129",
+					"title": "A Bayesian MCMC approach to study transmission of influenza: application to household longitudinal data",
+					"year": 2004,
+					"pages": "3469--87"
+				},
+				"BIBREF130": {
+					"ref_id": "b130",
+					"title": "New York: Plenum Medical",
+					"year": 1987,
+					"pages": ""
+				},
+				"BIBREF131": {
+					"ref_id": "b131",
+					"title": "The influenza viruses and influenza",
+					"year": 1975,
+					"pages": ""
+				},
+				"BIBREF132": {
+					"ref_id": "b132",
+					"title": "The transmission of epidemic influenza",
+					"year": 1992,
+					"pages": ""
+				},
+				"BIBREF133": {
+					"ref_id": "b133",
+					"title": "Influenza models",
+					"year": 1982,
+					"pages": ""
+				},
+				"BIBREF134": {
+					"ref_id": "b134",
+					"title": "Spatial aspects of influenza epidemics. London: Pion Limited",
+					"year": 1986,
+					"pages": ""
+				},
+				"BIBREF135": {
+					"ref_id": "b135",
+					"title": "Ecological and immunological determinants of influenza evolution",
+					"year": 2003,
+					"pages": "428--461"
+				},
+				"BIBREF136": {
+					"ref_id": "b136",
+					"title": "The impact of cross-immunity, mutation and stochastic extinction on pathogen diversity",
+					"year": 2004,
+					"pages": "2431--2439"
+				},
+				"BIBREF137": {
+					"ref_id": "b137",
+					"title": "Stochastic processes are key determinants of short-term evolution in influenza a virus",
+					"year": 2006,
+					"pages": ""
+				},
+				"BIBREF138": {
+					"ref_id": "b138",
+					"title": "Epochal evolution shapes the phylodynamics of interpandemic influenza A (H3N2) in humans",
+					"year": 2006,
+					"pages": "1898--903"
+				},
+				"BIBREF139": {
+					"ref_id": "b139",
+					"title": "Analyses of the 1957 (Asian) influenza pandemic in the United Kingdom and the impact of school closures",
+					"year": 2008,
+					"pages": "166--79"
+				},
+				"BIBREF140": {
+					"ref_id": "b140",
+					"title": "Pre-epidemic antibody against 1957 strain of Asiatic influenza in serum of older people living in the Netherlands",
+					"year": 1958,
+					"pages": "810--814"
+				},
+				"BIBREF141": {
+					"ref_id": "b141",
+					"title": "Factors that make an infectious disease outbreak controllable",
+					"year": 2004,
+					"pages": "6146--51"
+				},
+				"BIBREF142": {
+					"ref_id": "b142",
+					"title": "Error sources in the evaluation of secondary attack rates",
+					"year": 1980,
+					"pages": "457--64"
+				},
+				"BIBREF143": {
+					"ref_id": "b143",
+					"title": "Early efforts in modeling the incubation period of infectious diseases with an acute course of illness",
+					"year": 2007,
+					"pages": ""
+				},
+				"BIBREF144": {
+					"ref_id": "b144",
+					"title": "When is quarantine a useful control strategy for emerging infectious diseases?",
+					"year": 2006,
+					"pages": "479--85"
+				},
+				"BIBREF145": {
+					"ref_id": "b145",
+					"title": "AIDS epidemiology: a quantitative approach",
+					"year": 1994,
+					"pages": ""
+				},
+				"BIBREF146": {
+					"ref_id": "b146",
+					"title": "AIDS epidemiology: methodological issues",
+					"year": 1992,
+					"pages": ""
+				},
+				"BIBREF147": {
+					"ref_id": "b147",
+					"title": "Proceedings of the conference on quantitative methods for studying AIDS",
+					"year": 1993,
+					"pages": "1899--2188"
+				},
+				"BIBREF148": {
+					"ref_id": "b148",
+					"title": "Lessons from previous predictions of HIV/AIDS in the United States and Japan: epidemiologic models and policy formulation",
+					"year": 2007,
+					"pages": ""
+				},
+				"BIBREF149": {
+					"ref_id": "b149",
+					"title": "Infectiousness of smallpox relative to disease age: estimates based on transmission network and incubation period",
+					"year": 2007,
+					"pages": "1145--50"
+				},
+				"BIBREF150": {
+					"ref_id": "b150",
+					"title": "The type-reproduction number T in models for infectious disease control",
+					"year": 2007,
+					"pages": "3--10"
+				},
+				"BIBREF151": {
+					"ref_id": "b151",
+					"title": "A new method for estimating the effort required to control an infectious disease",
+					"year": 2003,
+					"pages": "1359--64"
+				},
+				"BIBREF152": {
+					"ref_id": "b152",
+					"title": "On the dynamical system formulation of the type reproduction number for infectious diseases and its application to the asymptomatic transmission model",
+					"year": 2007,
+					"pages": ""
+				},
+				"BIBREF153": {
+					"ref_id": "b153",
+					"title": "Gonorrhea transmission dynamics and control",
+					"year": 1980,
+					"pages": ""
+				},
+				"BIBREF154": {
+					"ref_id": "b154",
+					"title": "Heterogeneities in the transmission of infectious agents: implications for the design of control programs",
+					"year": 1997,
+					"pages": "338--380"
+				},
+				"BIBREF155": {
+					"ref_id": "b155",
+					"title": "Mixing ecology and epidemiology",
+					"year": 1991,
+					"pages": "187--92"
+				},
+				"BIBREF156": {
+					"ref_id": "b156",
+					"title": "Spread of epidemic disease on networks",
+					"year": 2002,
+					"pages": ""
+				},
+				"BIBREF157": {
+					"ref_id": "b157",
+					"title": "Infection dynamics on scale-free networks",
+					"year": 2001,
+					"pages": ""
+				},
+				"BIBREF158": {
+					"ref_id": "b158",
+					"title": "Epidemic size and probability in populations with heterogeneous infectivity and susceptibility",
+					"year": 2007,
+					"pages": ""
+				},
+				"BIBREF159": {
+					"ref_id": "b159",
+					"title": "Epidemic size and probability in populations with heterogeneous infectivity and susceptibility",
+					"year": 2007,
+					"pages": "1124--1156"
+				},
+				"BIBREF160": {
+					"ref_id": "b160",
+					"title": "Statistical mechanics of complex networks",
+					"year": 2002,
+					"pages": "47--97"
+				},
+				"BIBREF161": {
+					"ref_id": "b161",
+					"title": "Disease contact tracing in random and clustered networks",
+					"year": 2005,
+					"pages": "1407--1421"
+				},
+				"BIBREF162": {
+					"ref_id": "b162",
+					"title": "Infectious disease control using contact tracing in random and scale-free networks",
+					"year": 2006,
+					"pages": "55--62"
+				},
+				"BIBREF163": {
+					"ref_id": "b163",
+					"title": "The web of human sexual contacts",
+					"year": 2001,
+					"pages": "907--915"
+				},
+				"BIBREF164": {
+					"ref_id": "b164",
+					"title": "Transmission of severe acute respiratory syndrome in dynamical small-world networks",
+					"year": 2004,
+					"pages": ""
+				},
+				"BIBREF165": {
+					"ref_id": "b165",
+					"title": "Networks and epidemic models",
+					"year": 2005,
+					"pages": "295--307"
+				},
+				"BIBREF166": {
+					"ref_id": "b166",
+					"title": "Ecological paradigms lost. Routes of theory change",
+					"year": 2005,
+					"pages": "107--149"
+				},
+				"BIBREF167": {
+					"ref_id": "b167",
+					"title": "Dynamics of measles epidemics: Estimating scaling of transmission rates using a time series SIR model",
+					"year": 2002,
+					"pages": "169--84"
+				},
+				"BIBREF168": {
+					"ref_id": "b168",
+					"title": "The effects of local spatial structure on epidemiological invasions",
+					"year": 1999,
+					"pages": "859--69"
+				},
+				"BIBREF169": {
+					"ref_id": "b169",
+					"title": "Large-scale spatial transmission models of infectious disease",
+					"year": 2007,
+					"pages": "1298--301"
+				},
+				"BIBREF170": {
+					"ref_id": "b170",
+					"title": "Using conservation of pattern to estimate spatial parameters from a single snapshot",
+					"year": 2004,
+					"pages": "9155--60"
+				},
+				"BIBREF171": {
+					"ref_id": "b171",
+					"title": "Synchrony, waves, and spatial hierarchies in the spread of influenza",
+					"year": 2006,
+					"pages": "447--51"
+				},
+				"BIBREF172": {
+					"ref_id": "b172",
+					"title": "Smallpox during pregnancy and maternal outcomes",
+					"year": 2006,
+					"pages": "1119--1140"
+				},
+				"BIBREF173": {
+					"ref_id": "b173",
+					"title": "Influenza pandemic intervention planning using InfluSim: pharmaceutical and non-pharmaceutical interventions",
+					"year": 2007,
+					"pages": ""
+				},
+				"BIBREF174": {
+					"ref_id": "b174",
+					"title": "The influenza pandemic preparedness planning tool InfluSim",
+					"year": 2007,
+					"pages": ""
+				}
+			},
+			"is_doc_meta": false,
+			"is_doc_abstract": false,
+			"section_count": 121,
+			"subtitle": "What to be learnt from the reported data?",
+			"cite_spans": [
+				{
+					"start": 61,
+					"end": 65,
+					"text": "(73)",
+					"ref_id": "BIBREF79"
+				}
+			]
+		},
+		"embedding": null
+	},
+	{
+		"answer": "inverse of mean incubation period d i",
+		"offset_start_in_doc": 63,
+		"offset_end_in_doc": 100,
+		"offset_start": 57,
+		"offset_end": 94,
+		"context": "bation rate (\u03c3): Incubation rate is calculated by taking inverse of mean incubation period d i . WHO data and other studies [29] indicate the infectio",
+		"answer_id": "2fad3b897d66a8f425d72f3a847c8c29",
+		"doc_id": "16e5239eb40bb2ea32118e49f6c1412767d3a697-$-$-24",
+		"no_ans_gap": 18.80069637298584,
+		"text": "",
+		"id": "c4bcbdee-bf01-4041-ac6b-5685e80f3a3e",
+		"score": 6.274412155151367,
+		"probability": 0.686606448554251,
+		"question": "What is the definition of incubation period?",
+		"meta": {
+			"section_count": 22,
+			"title": "Analyses and Forecast for COVID-19 epidemic in India",
+			"subtitle": "(which was not certified by peer review)",
+			"cite_spans": [
+				{
+					"start": 130,
+					"end": 134,
+					"text": "[29]",
+					"ref_id": null
+				}
+			],
+			"is_doc_meta": false,
+			"is_doc_abstract": false
+		},
+		"embedding": null
+	},
+	{
+		"answer": "tine period",
+		"offset_start_in_doc": 1279,
+		"offset_end_in_doc": 1290,
+		"offset_start": 70,
+		"offset_end": 81,
+		"context": "ividual has to be monitored and have their movement restricted (quarantine period) [3] . Correctly estimating the incubation period will also help us ",
+		"answer_id": "aac0741d4fef7c9963c0af992643fe63",
+		"doc_id": "09ff6011e4e95bff0b9221c89ffdb91d958e4ef1-$-$-2",
+		"no_ans_gap": 18.80069637298584,
+		"text": "",
+		"id": "0645b4a3-839e-4fae-b113-520a357f55a8",
+		"score": 5.685742378234863,
+		"probability": 0.6705597473641312,
+		"question": "What is the definition of incubation period?",
+		"meta": {
+			"section_count": 0,
+			"title": "The estimations of the COVID-19 incubation period: a systematic review of the literature",
+			"subtitle": "Introduction",
+			"cite_spans": [
+				{
+					"start": 790,
+					"end": 793,
+					"text": "[1]",
+					"ref_id": null
+				},
+				{
+					"start": 1100,
+					"end": 1103,
+					"text": "[2]",
+					"ref_id": null
+				},
+				{
+					"start": 1292,
+					"end": 1295,
+					"text": "[3]",
+					"ref_id": "BIBREF0"
+				},
+				{
+					"start": 1487,
+					"end": 1490,
+					"text": "[4,",
+					"ref_id": "BIBREF1"
+				},
+				{
+					"start": 1491,
+					"end": 1493,
+					"text": "5,",
+					"ref_id": "BIBREF2"
+				},
+				{
+					"start": 1494,
+					"end": 1496,
+					"text": "6,",
+					"ref_id": "BIBREF3"
+				},
+				{
+					"start": 1497,
+					"end": 1499,
+					"text": "7]",
+					"ref_id": "BIBREF4"
+				},
+				{
+					"start": 1914,
+					"end": 1917,
+					"text": "[1]",
+					"ref_id": null
+				}
+			],
+			"is_doc_meta": false,
+			"is_doc_abstract": false
+		},
+		"embedding": null
+	},
+	{
+		"answer": "the estimated values are unavoidably higher than the actual cases",
+		"offset_start_in_doc": 182,
+		"offset_end_in_doc": 247,
+		"offset_start": 43,
+		"offset_end": 108,
+		"context": "print our definition of incubation period, the estimated values are unavoidably higher than the actual cases, however, the distribution and statistics",
+		"answer_id": "6882973fd041803964de70a91fcf3120",
+		"doc_id": "091a8e9a61e19e88caeb039f0e3888d111b20439-$-$-39",
+		"no_ans_gap": 18.80069637298584,
+		"text": "",
+		"id": "3ab81921-d6c9-448b-97d4-a5f71478cc0b",
+		"score": 5.506958961486816,
+		"probability": 0.6656041982028534,
+		"question": "What is the definition of incubation period?",
+		"meta": {
+			"section_count": 37,
+			"title": "Epidemiological characteristics of 1212 COVID-19 patients in Henan, China. medRxiv",
+			"subtitle": "Discussions and conclusions",
+			"cite_spans": [
+				{
+					"start": 111,
+					"end": 122,
+					"text": "21.20026112",
+					"ref_id": null
+				}
+			],
+			"is_doc_meta": false,
+			"is_doc_abstract": false
+		},
+		"embedding": null
+	},
+	{
+		"answer": "Assessment of travel history",
+		"offset_start_in_doc": 158,
+		"offset_end_in_doc": 186,
+		"offset_start": 61,
+		"offset_end": 89,
+		"context": "fections that someone can bring home from a given region? 2. Assessment of travel history, with emphasis on exposure, incubation period, and vaccinati",
+		"answer_id": "637d393062d7409cac35b61737528b3d",
+		"doc_id": "0df458e721d5da7ac7cecf688be5f172a348c192-$-$-4",
+		"no_ans_gap": 18.80069637298584,
+		"text": "",
+		"id": "97bad56d-1925-4190-9165-68f7f59827d7",
+		"score": 5.277379989624023,
+		"probability": 0.6591868159911599,
+		"question": "What is the definition of incubation period?",
+		"meta": {
+			"section_count": 3,
+			"title": "Fever in the Retur ning Traveler",
+			"subtitle": "INTRODUCTION",
+			"cite_spans": [],
+			"is_doc_meta": false,
+			"is_doc_abstract": false
+		},
+		"embedding": null
+	},
+	{
+		"answer": "central epidemiological parameters",
+		"offset_start_in_doc": 622,
+		"offset_end_in_doc": 656,
+		"offset_start": 58,
+		"offset_end": 92,
+		"context": "virus, but it is unique in its own right. This means that central epidemiological parameters, which includes the incubation period, are being urgently",
+		"answer_id": "afedb13e0a8726af68279ecfffbc86aa",
+		"doc_id": "09ff6011e4e95bff0b9221c89ffdb91d958e4ef1-$-$-2",
+		"no_ans_gap": 18.80069637298584,
+		"text": "",
+		"id": "d307dc46-1a63-42de-ab44-1a8f8c240afb",
+		"score": 3.955322265625,
+		"probability": 0.621146007253291,
+		"question": "What is the definition of incubation period?",
+		"meta": {
+			"section_count": 0,
+			"title": "The estimations of the COVID-19 incubation period: a systematic review of the literature",
+			"subtitle": "Introduction",
+			"cite_spans": [
+				{
+					"start": 790,
+					"end": 793,
+					"text": "[1]",
+					"ref_id": null
+				},
+				{
+					"start": 1100,
+					"end": 1103,
+					"text": "[2]",
+					"ref_id": null
+				},
+				{
+					"start": 1292,
+					"end": 1295,
+					"text": "[3]",
+					"ref_id": "BIBREF0"
+				},
+				{
+					"start": 1487,
+					"end": 1490,
+					"text": "[4,",
+					"ref_id": "BIBREF1"
+				},
+				{
+					"start": 1491,
+					"end": 1493,
+					"text": "5,",
+					"ref_id": "BIBREF2"
+				},
+				{
+					"start": 1494,
+					"end": 1496,
+					"text": "6,",
+					"ref_id": "BIBREF3"
+				},
+				{
+					"start": 1497,
+					"end": 1499,
+					"text": "7]",
+					"ref_id": "BIBREF4"
+				},
+				{
+					"start": 1914,
+					"end": 1917,
+					"text": "[1]",
+					"ref_id": null
+				}
+			],
+			"is_doc_meta": false,
+			"is_doc_abstract": false
+		},
+		"embedding": null
+	},
+	{
+		"answer": "4 to 7 days",
+		"offset_start_in_doc": 159,
+		"offset_end_in_doc": 170,
+		"offset_start": 70,
+		"offset_end": 81,
+		"context": "the incubation period. It was reported that the incubation period was 4 to 7 days. [22] Based on the SARS experience, the maximum incubation period is",
+		"answer_id": "bbb15daf739d30bfaf07ea9e87259397",
+		"doc_id": "066609e653c8ef2377b49ac35b0fe734cef94436-$-$-26",
+		"no_ans_gap": 18.80069637298584,
+		"text": "",
+		"id": "5f9b4f11-3c06-4e3f-9307-2195d08c647b",
+		"score": 3.2706875801086426,
+		"probability": 0.6008087280822828,
+		"question": "What is the definition of incubation period?",
+		"meta": {
+			"title": "Observational Study Medicine \u00ae OPEN",
+			"authors": [
+				{
+					"first": "Qijun",
+					"middle": [],
+					"last": "Gao",
+					"suffix": "",
+					"affiliation": {},
+					"email": ""
+				},
+				{
+					"first": "Yingfu",
+					"middle": [],
+					"last": "Hu",
+					"suffix": "",
+					"affiliation": {},
+					"email": ""
+				},
+				{
+					"first": "Zhiguo",
+					"middle": [],
+					"last": "Dai",
+					"suffix": "",
+					"affiliation": {},
+					"email": ""
+				},
+				{
+					"first": "Feng",
+					"middle": [],
+					"last": "Xiao",
+					"suffix": "",
+					"affiliation": {},
+					"email": ""
+				},
+				{
+					"first": "Jing",
+					"middle": [],
+					"last": "Wang",
+					"suffix": "",
+					"affiliation": {},
+					"email": ""
+				},
+				{
+					"first": "Jing",
+					"middle": [],
+					"last": "Wu",
+					"suffix": "",
+					"affiliation": {},
+					"email": ""
+				},
+				{
+					"first": "Gao",
+					"middle": [
+						"Q"
+					],
+					"last": "",
+					"suffix": "",
+					"affiliation": {},
+					"email": ""
+				},
+				{
+					"first": "Hu",
+					"middle": [
+						"Y"
+					],
+					"last": "",
+					"suffix": "",
+					"affiliation": {},
+					"email": ""
+				},
+				{
+					"first": "Dai",
+					"middle": [
+						"Z"
+					],
+					"last": "",
+					"suffix": "",
+					"affiliation": {},
+					"email": ""
+				},
+				{
+					"first": "Xiao",
+					"middle": [
+						"F"
+					],
+					"last": "",
+					"suffix": "",
+					"affiliation": {},
+					"email": ""
+				},
+				{
+					"first": "Wang",
+					"middle": [
+						"J"
+					],
+					"last": "",
+					"suffix": "",
+					"affiliation": {},
+					"email": ""
+				},
+				{
+					"first": "Wu",
+					"middle": [
+						"J"
+					],
+					"last": "",
+					"suffix": "",
+					"affiliation": {},
+					"email": ""
+				}
+			],
+			"bib_entries": {
+				"BIBREF0": {
+					"ref_id": "b0",
+					"title": "Outbreak of pneumonia of unknown etiology in Wuhan China: the mystery and the miracle",
+					"year": 2020,
+					"pages": "401--403"
+				},
+				"BIBREF1": {
+					"ref_id": "b1",
+					"title": "The continuing 2019-nCoV epidemic threat of novel coronaviruses to global health: the latest 2019 novel coronavirus outbreak in Wuhan, China",
+					"year": 2020,
+					"pages": "264--270"
+				},
+				"BIBREF2": {
+					"ref_id": "b2",
+					"title": "A novel coronavirus from patients with pneumonia in China",
+					"year": 2019,
+					"pages": "727--760"
+				},
+				"BIBREF3": {
+					"ref_id": "b3",
+					"title": "Coronavirus Infections-More Than Just the Common Cold",
+					"year": 2020,
+					"pages": ""
+				},
+				"BIBREF5": {
+					"ref_id": "b5",
+					"title": "World Health Organization. WHO Director-General's remarks at the media briefing on 2019-nCoV on 11",
+					"year": 2020,
+					"pages": ""
+				},
+				"BIBREF6": {
+					"ref_id": "b6",
+					"title": "First case of 2019 novel coronavirus in the United States",
+					"year": 2020,
+					"pages": "929--965"
+				},
+				"BIBREF7": {
+					"ref_id": "b7",
+					"title": "The first two cases of 2019-nCoV in Italy: where they come from",
+					"year": 2020,
+					"pages": "518--539"
+				},
+				"BIBREF8": {
+					"ref_id": "b8",
+					"title": "WHO Coronavirus disease 2019 (COVID-19) Situation Report-61 on 20",
+					"year": 2020,
+					"pages": ""
+				},
+				"BIBREF9": {
+					"ref_id": "b9",
+					"title": "World Health Organization",
+					"year": 2020,
+					"pages": ""
+				},
+				"BIBREF10": {
+					"ref_id": "b10",
+					"title": "Epidemiological and clinical characteristics of 99 cases of 2019 novel coronavirus pneumonia in Wuhan, China: a descriptive study",
+					"year": 2020,
+					"pages": "507--513"
+				},
+				"BIBREF11": {
+					"ref_id": "b11",
+					"title": "Clinical characteristics of 2019 novel coronavirus infection in China",
+					"year": null,
+					"pages": ""
+				},
+				"BIBREF12": {
+					"ref_id": "b12",
+					"title": "Figure 3. Major prevention and control measures implemented by the goverment of Jingmen",
+					"year": null,
+					"pages": ""
+				},
+				"BIBREF14": {
+					"ref_id": "b14",
+					"title": "Clinical characteristics of 138 hospitalized patients with 2019 Novel Coronavirus-infected pneumonia in Wuhan, China",
+					"year": 2020,
+					"pages": "1061--1070"
+				},
+				"BIBREF15": {
+					"ref_id": "b15",
+					"title": "Clinical features of patients infected with 2019 novel coronavirus in Wuhan, China",
+					"year": 2020,
+					"pages": "497--506"
+				},
+				"BIBREF16": {
+					"ref_id": "b16",
+					"title": "Evolution of the novel coronavirus from the ongoing Wuhan outbreak and modeling of its spike protein for the risk of human transmission",
+					"year": 2020,
+					"pages": "457--60"
+				},
+				"BIBREF17": {
+					"ref_id": "b17",
+					"title": "Discovery of a rich gene pool of bat SARS-related coronaviruses provides new insights into the origin of SARS coronavirus",
+					"year": 2017,
+					"pages": ""
+				},
+				"BIBREF18": {
+					"ref_id": "b18",
+					"title": "Cross-host evolution of severe acute respiratory syndrome coronavirus in palm civet and human",
+					"year": 2005,
+					"pages": "2430--2435"
+				},
+				"BIBREF19": {
+					"ref_id": "b19",
+					"title": "Middle East respiratory syndrome coronavirus in dromedary camels: an outbreak investigation",
+					"year": 2014,
+					"pages": "140--145"
+				},
+				"BIBREF20": {
+					"ref_id": "b20",
+					"title": "Evidence for camel-to human transmission of MERS coronavirus",
+					"year": 2014,
+					"pages": "2499--505"
+				},
+				"BIBREF21": {
+					"ref_id": "b21",
+					"title": "20200121A0M08X00?tbkt=F&strategy=&openid=o04IBALMr LyGDxbWNOPoDM1IfG-s&uid=&refer=wx_hot [access date",
+					"year": 2020,
+					"pages": ""
+				},
+				"BIBREF22": {
+					"ref_id": "b22",
+					"title": "Novel Coronavirus Pneumonia Emergency Response Epidemiology Team",
+					"year": null,
+					"pages": ""
+				},
+				"BIBREF24": {
+					"ref_id": "b24",
+					"title": "The epidemic of 2019-novel-coronavirus (2019-nCoV) pneumonia and insights for emerging infectious diseases in the future",
+					"year": null,
+					"pages": ""
+				},
+				"BIBREF25": {
+					"ref_id": "b25",
+					"title": "Incubation period of 2019 novel coronavirus (2019-nCoV) infections among travellers from Wuhan, China",
+					"year": 2020,
+					"pages": "20--28"
+				},
+				"BIBREF26": {
+					"ref_id": "b26",
+					"title": "Medicine (2020) 99:23 www.md-journal",
+					"year": null,
+					"pages": ""
+				}
+			},
+			"is_doc_meta": false,
+			"is_doc_abstract": false,
+			"section_count": 19,
+			"subtitle": "Discussion",
+			"cite_spans": [
+				{
+					"start": 172,
+					"end": 176,
+					"text": "[22]",
+					"ref_id": "BIBREF25"
+				},
+				{
+					"start": 421,
+					"end": 425,
+					"text": "[11]",
+					"ref_id": "BIBREF11"
+				}
+			]
+		},
+		"embedding": null
+	},
+	{
+		"answer": "The definition of the percent inhibition of CPE",
+		"offset_start_in_doc": 539,
+		"offset_end_in_doc": 586,
+		"offset_start": 84,
+		"offset_end": 131,
+		"context": " to custom spreadsheets that calculated the percent inhibition of CPE in each well. The definition of the percent inhibition of CPE was calculated as:",
+		"answer_id": "47ec205c2838d65868911f734dcd3bd6",
+		"doc_id": "0abbc904e7a1b2e1c3ea7be75ee2a61931e0a941-$-$-16",
+		"no_ans_gap": 18.80069637298584,
+		"text": "",
+		"id": "09776a2f-3758-479e-af9e-ac0ff52e65c2",
+		"score": 2.456974983215332,
+		"probability": 0.5761825879487235,
+		"question": "What is the definition of incubation period?",
+		"meta": {
+			"section_count": 11,
+			"title": "Automated cell-based luminescence assay for profiling antiviral compound activity against enteroviruses",
+			"subtitle": "Methods",
+			"cite_spans": [],
+			"is_doc_meta": false,
+			"is_doc_abstract": false
+		},
+		"embedding": null
+	},
+	{
+		"answer": "4.84 days with standard deviation 2.79",
+		"offset_start_in_doc": 331,
+		"offset_end_in_doc": 369,
+		"offset_start": 56,
+		"offset_end": 94,
+		"context": "ribe the incubation period, we get a mean incubation of 4.84 days with standard deviation 2.79. The data for the incubation period is also included as",
+		"answer_id": "b4cd4c6da0bf20b99b2bd6431783155a",
+		"doc_id": "16f7c659cd73992378cff884358b75594bc66a0d-$-$-44",
+		"no_ans_gap": 18.80069637298584,
+		"text": "",
+		"id": "8eb7b5e1-ef19-4e37-b6ae-8643aa0530bb",
+		"score": 2.3003973960876465,
+		"probability": 0.5713961471364742,
+		"question": "What is the definition of incubation period?",
+		"meta": {
+			"section_count": 42,
+			"title": "Challenges in control of Covid-19: short doubling time and long delay to effect of interventions \u2020",
+			"subtitle": "Estimating delay distributions",
+			"cite_spans": [],
+			"is_doc_meta": false,
+			"is_doc_abstract": false
+		},
+		"embedding": null
+	},
+	{
+		"answer": "independent and identically distributed",
+		"offset_start_in_doc": 318,
+		"offset_end_in_doc": 357,
+		"offset_start": 56,
+		"offset_end": 95,
+		"context": "ll individual cases in the newly infected population is independent and identically distributed. Then h s (\u03c4 ; \u03c4 1 )d\u03c4 is the proportion of patients w",
+		"answer_id": "f46dce273243b9c09e1aaaba964e6f7c",
+		"doc_id": "07bb2be25f332680da2afe909df998ed232c20bc-$-$-31",
+		"no_ans_gap": 18.80069637298584,
+		"text": "",
+		"id": "01b405b3-afa6-43f3-b199-e5513cd0a0b3",
+		"score": 2.1048121452331543,
+		"probability": 0.5653985602397851,
+		"question": "What is the definition of incubation period?",
+		"meta": {
+			"title": "The dynamical model for COVID-19 with asymptotic analysis and numerical implementations Journal Pre-proof The dynamical model for COVID-19 with asymptotic analysis and numerical implementations The dynamical model for COVID-19 with asymptotic analysis and numerical implementations",
+			"authors": [
+				{
+					"first": "Jijun",
+					"middle": [],
+					"last": "Liu",
+					"suffix": "",
+					"affiliation": {
+						"laboratory": "",
+						"institution": "Southeast University Nanjing",
+						"location": {
+							"postCode": "210096",
+							"country": "P.R.China"
+						}
+					},
+					"email": ""
+				},
+				{
+					"first": "Liyan",
+					"middle": [],
+					"last": "Wang",
+					"suffix": "",
+					"affiliation": {
+						"laboratory": "",
+						"institution": "Southeast University Nanjing",
+						"location": {
+							"postCode": "210096",
+							"country": "P.R.China"
+						}
+					},
+					"email": ""
+				},
+				{
+					"first": "Qiang",
+					"middle": [],
+					"last": "Zhang",
+					"suffix": "",
+					"affiliation": {
+						"laboratory": "",
+						"institution": "Southeast University Nanjing",
+						"location": {
+							"postCode": "210096",
+							"country": "P.R.China"
+						}
+					},
+					"email": ""
+				},
+				{
+					"first": "Shing",
+					"middle": [
+						"Tung"
+					],
+					"last": "Yau",
+					"suffix": "",
+					"affiliation": {
+						"laboratory": "",
+						"institution": "Harvard University Boston",
+						"location": {
+							"postCode": "02138",
+							"country": "USA"
+						}
+					},
+					"email": ""
+				}
+			],
+			"bib_entries": {
+				"BIBREF0": {
+					"ref_id": "b0",
+					"title": "our model in generally can reflect the number of confirmed cases j(t) (right), especially the cumulative data J(t) = t 0 j(s)ds (left)",
+					"year": null,
+					"pages": ""
+				},
+				"BIBREF1": {
+					"ref_id": "b1",
+					"title": "A time delay dynamic system with external source for the local outbreak of 2019-nCoV",
+					"year": 2020,
+					"pages": ""
+				},
+				"BIBREF2": {
+					"ref_id": "b2",
+					"title": "Modeling and prediction for the trend of outbreak of NCP based on a time-delay dynamic system",
+					"year": 2020,
+					"pages": "385--392"
+				},
+				"BIBREF3": {
+					"ref_id": "b3",
+					"title": "When will be the resumption of work in Wuhan and its surrounding areas during COVID-19 epidemic? A data-driven network modeling analysis (in Chinese)",
+					"year": 2020,
+					"pages": "1--10"
+				},
+				"BIBREF4": {
+					"ref_id": "b4",
+					"title": "Modified SEIR and AI prediction of the epidemics trend of COVID-19 in China under public health interventions",
+					"year": 2020,
+					"pages": ""
+				},
+				"BIBREF5": {
+					"ref_id": "b5",
+					"title": "Updated understanding of the outbreak of 2019 novel coronavirus (2019-nCoV) in Wuhan",
+					"year": 2020,
+					"pages": "441--447"
+				},
+				"BIBREF6": {
+					"ref_id": "b6",
+					"title": "Permanence of a discrete SIRS epidemic model with time delays",
+					"year": 2010,
+					"pages": "1280--1285"
+				},
+				"BIBREF8": {
+					"ref_id": "b8",
+					"title": "Global behavior and permanence of SIRS epidemic model with time delay",
+					"year": 2008,
+					"pages": "1409--1424"
+				},
+				"BIBREF9": {
+					"ref_id": "b9",
+					"title": "Global asymptotic stability of an SIR epidemic model with distribured time delay",
+					"year": 2001,
+					"pages": "4107--4115"
+				}
+			},
+			"is_doc_meta": false,
+			"is_doc_abstract": false,
+			"section_count": 25,
+			"subtitle": "Transmission model of COVID-19",
+			"cite_spans": []
+		},
+		"embedding": null
+	},
+	{
+		"answer": "overestimation",
+		"offset_start_in_doc": 1336,
+		"offset_end_in_doc": 1350,
+		"offset_start": 68,
+		"offset_end": 82,
+		"context": "ay of calculating the incubation period may well be responsible for overestimation. This paper represents a systematic review of the literature in ord",
+		"answer_id": "26c62d1fdef57aba718c744925af5f2d",
+		"doc_id": "09ff6011e4e95bff0b9221c89ffdb91d958e4ef1-$-$-3",
+		"no_ans_gap": 18.80069637298584,
+		"text": "",
+		"id": "4f6ddc54-d605-422c-86b5-8034d48bfe90",
+		"score": 1.8678324222564697,
+		"probability": 0.558106044045991,
+		"question": "What is the definition of incubation period?",
+		"meta": {
+			"section_count": 1,
+			"title": "The estimations of the COVID-19 incubation period: a systematic review of the literature",
+			"subtitle": "Introduction",
+			"cite_spans": [
+				{
+					"start": 419,
+					"end": 422,
+					"text": "[8]",
+					"ref_id": "BIBREF5"
+				}
+			],
+			"is_doc_meta": false,
+			"is_doc_abstract": false
+		},
+		"embedding": null
+	},
+	{
+		"answer": "average incubation period of the virus",
+		"offset_start_in_doc": 131,
+		"offset_end_in_doc": 169,
+		"offset_start": 111,
+		"offset_end": 149,
+		"context": "nder control, 0.5 after closing Wuhan city and 0.1 after closing of Wuhan community (Fig. 3) . 4). What is the average incubation period of the virus?",
+		"answer_id": "a216b9911962753b784fc925c676e570",
+		"doc_id": "068de5519940d1dc599515fd36df148713fab541-$-$-10",
+		"no_ans_gap": 18.80069637298584,
+		"text": "",
+		"id": "d2fa2ecb-313d-4f72-b931-6ff7bad194d8",
+		"score": 1.756758451461792,
+		"probability": 0.5546791503857776,
+		"question": "What is the definition of incubation period?",
+		"meta": {
+			"title": "Propagation analysis and prediction of the COVID-19-NC-ND license (http://creativecommons.org/licenses/by-nc-nd/4.0/)",
+			"authors": [
+				{
+					"first": "Lixiang",
+					"middle": [],
+					"last": "Li",
+					"suffix": "",
+					"affiliation": {
+						"laboratory": "State Key Laboratory of Networking and Switching Technology",
+						"institution": "Beijing University of Posts and Telecommunications",
+						"location": {
+							"postCode": "100876",
+							"settlement": "Beijing",
+							"country": "China"
+						}
+					},
+					"email": ""
+				},
+				{
+					"first": "Zihang",
+					"middle": [],
+					"last": "Yang",
+					"suffix": "",
+					"affiliation": {
+						"laboratory": "State Key Laboratory of Networking and Switching Technology",
+						"institution": "Beijing University of Posts and Telecommunications",
+						"location": {
+							"postCode": "100876",
+							"settlement": "Beijing",
+							"country": "China"
+						}
+					},
+					"email": ""
+				},
+				{
+					"first": "Zhongkai",
+					"middle": [],
+					"last": "Dang",
+					"suffix": "",
+					"affiliation": {
+						"laboratory": "State Key Laboratory of Networking and Switching Technology",
+						"institution": "Beijing University of Posts and Telecommunications",
+						"location": {
+							"postCode": "100876",
+							"settlement": "Beijing",
+							"country": "China"
+						}
+					},
+					"email": ""
+				},
+				{
+					"first": "Cui",
+					"middle": [],
+					"last": "Meng",
+					"suffix": "",
+					"affiliation": {
+						"laboratory": "State Key Laboratory of Networking and Switching Technology",
+						"institution": "Beijing University of Posts and Telecommunications",
+						"location": {
+							"postCode": "100876",
+							"settlement": "Beijing",
+							"country": "China"
+						}
+					},
+					"email": ""
+				},
+				{
+					"first": "Jingze",
+					"middle": [],
+					"last": "Huang",
+					"suffix": "",
+					"affiliation": {
+						"laboratory": "State Key Laboratory of Networking and Switching Technology",
+						"institution": "Beijing University of Posts and Telecommunications",
+						"location": {
+							"postCode": "100876",
+							"settlement": "Beijing",
+							"country": "China"
+						}
+					},
+					"email": ""
+				},
+				{
+					"first": "Haotian",
+					"middle": [],
+					"last": "Meng",
+					"suffix": "",
+					"affiliation": {},
+					"email": ""
+				},
+				{
+					"first": "Deyu",
+					"middle": [],
+					"last": "Wang",
+					"suffix": "",
+					"affiliation": {
+						"laboratory": "State Key Laboratory of Networking and Switching Technology",
+						"institution": "Beijing University of Posts and Telecommunications",
+						"location": {
+							"postCode": "100876",
+							"settlement": "Beijing",
+							"country": "China"
+						}
+					},
+					"email": ""
+				},
+				{
+					"first": "Guanhua",
+					"middle": [],
+					"last": "Chen",
+					"suffix": "",
+					"affiliation": {
+						"laboratory": "State Key Laboratory of Networking and Switching Technology",
+						"institution": "Beijing University of Posts and Telecommunications",
+						"location": {
+							"postCode": "100876",
+							"settlement": "Beijing",
+							"country": "China"
+						}
+					},
+					"email": ""
+				},
+				{
+					"first": "Jiaxuan",
+					"middle": [],
+					"last": "Zhang",
+					"suffix": "",
+					"affiliation": {
+						"laboratory": "State Key Laboratory of Networking and Switching Technology",
+						"institution": "Beijing University of Posts and Telecommunications",
+						"location": {
+							"postCode": "100876",
+							"settlement": "Beijing",
+							"country": "China"
+						}
+					},
+					"email": ""
+				},
+				{
+					"first": "Haipeng",
+					"middle": [],
+					"last": "Peng",
+					"suffix": "",
+					"affiliation": {
+						"laboratory": "State Key Laboratory of Networking and Switching Technology",
+						"institution": "Beijing University of Posts and Telecommunications",
+						"location": {
+							"postCode": "100876",
+							"settlement": "Beijing",
+							"country": "China"
+						}
+					},
+					"email": ""
+				},
+				{
+					"first": "Yiming",
+					"middle": [],
+					"last": "Shao",
+					"suffix": "",
+					"affiliation": {
+						"laboratory": "State Key Laboratory of Networking and Switching Technology",
+						"institution": "Beijing University of Posts and Telecommunications",
+						"location": {
+							"postCode": "100876",
+							"settlement": "Beijing",
+							"country": "China"
+						}
+					},
+					"email": ""
+				}
+			],
+			"bib_entries": {
+				"BIBREF0": {
+					"ref_id": "b0",
+					"title": "Detection of 2019 novel coronavirus (2019-nCoV) by real-time RT-PCR",
+					"year": 2020,
+					"pages": ""
+				},
+				"BIBREF1": {
+					"ref_id": "b1",
+					"title": "2020-02-15). Data sharing and outbreaks: Best practice exemplified. The Lancet",
+					"year": null,
+					"pages": "469--470"
+				},
+				"BIBREF2": {
+					"ref_id": "b2",
+					"title": "The continuing 2019-nCoV epidemic threat of novel coronaviruses to global healthdthe latest 2019 novel coronavirus outbreak in Wuhan",
+					"year": 2020,
+					"pages": "264--266"
+				},
+				"BIBREF3": {
+					"ref_id": "b3",
+					"title": "Transmission potential of the novel coronavirus (COVID-19) onboard the diamond Princess Cruises Ship",
+					"year": 2020,
+					"pages": "264--270"
+				},
+				"BIBREF4": {
+					"ref_id": "b4",
+					"title": "Novel coronavirus 2019-nCoV: Early estimation of epidemiological parameters and epidemic predictions",
+					"year": 2020,
+					"pages": ""
+				},
+				"BIBREF5": {
+					"ref_id": "b5",
+					"title": "Pattern of early human-to-human transmission of Wuhan",
+					"year": 2019,
+					"pages": ""
+				},
+				"BIBREF6": {
+					"ref_id": "b6",
+					"title": "Transmission of 2019-nCoV infection from an asymptomatic contact in Germany",
+					"year": 2020,
+					"pages": ""
+				},
+				"BIBREF8": {
+					"ref_id": "b8",
+					"title": "Transmission of corona virus disease 2019 during the incubation period may lead to a quarantine loophole",
+					"year": 2018,
+					"pages": ""
+				}
+			},
+			"is_doc_meta": false,
+			"is_doc_abstract": false,
+			"section_count": 8,
+			"subtitle": "Introduction",
+			"cite_spans": []
+		},
+		"embedding": null
+	},
+	{
+		"answer": "the infectious period",
+		"offset_start_in_doc": 265,
+		"offset_end_in_doc": 286,
+		"offset_start": 65,
+		"offset_end": 86,
+		"context": "cubatory carriers exist when the incubation period overlaps with the infectious period, as can occur in some cases of chicken pox (Figure 3(b) ). Conv",
+		"answer_id": "df742eee599b2505ee8438da157ba540",
+		"doc_id": "14b24dc7d10775b387fa305a07bb5728f58eb687-$-$-18",
+		"no_ans_gap": 18.80069637298584,
+		"text": "",
+		"id": "3bcf5698-7c12-4472-8734-ebe8de90b93d",
+		"score": 0.9427425265312195,
+		"probability": 0.5294266580067555,
+		"question": "What is the definition of incubation period?",
+		"meta": {
+			"section_count": 17,
+			"title": "International Encyclopedia of Public Health",
+			"subtitle": "Transmission Basics",
+			"cite_spans": [],
+			"is_doc_meta": false,
+			"is_doc_abstract": false
+		},
+		"embedding": null
+	},
+	{
+		"answer": "estimated incubation periods in this paper may be longer than the real cases",
+		"offset_start_in_doc": 27,
+		"offset_end_in_doc": 103,
+		"offset_start": 27,
+		"offset_end": 103,
+		"context": "Due to the definition, the estimated incubation periods in this paper may be longer than the real cases. However, the distribution has some implicatio",
+		"answer_id": "d5f98be931e4be156facaaf46bb4bfcd",
+		"doc_id": "091a8e9a61e19e88caeb039f0e3888d111b20439-$-$-18",
+		"no_ans_gap": 18.80069637298584,
+		"text": "",
+		"id": "9579f8d2-456e-44c4-83c3-1c722bcc14ee",
+		"score": 0.7440120577812195,
+		"probability": 0.523233633035409,
+		"question": "What is the definition of incubation period?",
+		"meta": {
+			"section_count": 16,
+			"title": "Epidemiological characteristics of 1212 COVID-19 patients in Henan, China. medRxiv",
+			"subtitle": "Definition of incubation period and statistical results",
+			"cite_spans": [],
+			"is_doc_meta": false,
+			"is_doc_abstract": false
+		},
+		"embedding": null
+	},
+	{
+		"answer": "The incubation period of a virus represents the time span from the probable earliest contact with a source of transmission and the earliest recognition of the first symptoms",
+		"offset_start_in_doc": 796,
+		"offset_end_in_doc": 969,
+		"offset_start": 1,
+		"offset_end": 174,
+		"context": " The incubation period of a virus represents the time span from the probable earliest contact with a source of transmission and the earliest recognition of the first symptoms",
+		"answer_id": "d4ac594255f81221bbbfad7a2ad9b77d",
+		"doc_id": "09ff6011e4e95bff0b9221c89ffdb91d958e4ef1-$-$-2",
+		"no_ans_gap": 18.80069637298584,
+		"text": "",
+		"id": "e35b122e-c7a8-4971-9eaa-3743237c4bd3",
+		"score": 0.6189923882484436,
+		"probability": 0.5193338675197614,
+		"question": "What is the definition of incubation period?",
+		"meta": {
+			"section_count": 0,
+			"title": "The estimations of the COVID-19 incubation period: a systematic review of the literature",
+			"subtitle": "Introduction",
+			"cite_spans": [
+				{
+					"start": 790,
+					"end": 793,
+					"text": "[1]",
+					"ref_id": null
+				},
+				{
+					"start": 1100,
+					"end": 1103,
+					"text": "[2]",
+					"ref_id": null
+				},
+				{
+					"start": 1292,
+					"end": 1295,
+					"text": "[3]",
+					"ref_id": "BIBREF0"
+				},
+				{
+					"start": 1487,
+					"end": 1490,
+					"text": "[4,",
+					"ref_id": "BIBREF1"
+				},
+				{
+					"start": 1491,
+					"end": 1493,
+					"text": "5,",
+					"ref_id": "BIBREF2"
+				},
+				{
+					"start": 1494,
+					"end": 1496,
+					"text": "6,",
+					"ref_id": "BIBREF3"
+				},
+				{
+					"start": 1497,
+					"end": 1499,
+					"text": "7]",
+					"ref_id": "BIBREF4"
+				},
+				{
+					"start": 1914,
+					"end": 1917,
+					"text": "[1]",
+					"ref_id": null
+				}
+			],
+			"is_doc_meta": false,
+			"is_doc_abstract": false
+		},
+		"embedding": null
+	},
+	{
+		"answer": "Accurately determining the incubation period will significantly influence controls to prevent transmission of the disease and official policy regarding it. Nevertheless, determining the incubation period for COVID-19 is no simple matter",
+		"offset_start_in_doc": 663,
+		"offset_end_in_doc": 899,
+		"offset_start": 0,
+		"offset_end": 236,
+		"context": "Accurately determining the incubation period will significantly influence controls to prevent transmission of the disease and official policy regarding it. Nevertheless, determining the incubation period for COVID-19 is no simple matter",
+		"answer_id": "94513d104ba4da7f843d8f0eb44671b2",
+		"doc_id": "09ff6011e4e95bff0b9221c89ffdb91d958e4ef1-$-$-3",
+		"no_ans_gap": 18.80069637298584,
+		"text": "",
+		"id": "e73fd550-5cff-4de9-b8e5-a41367d6777f",
+		"score": -0.1137007474899292,
+		"probability": 0.4964469114504144,
+		"question": "What is the definition of incubation period?",
+		"meta": {
+			"section_count": 1,
+			"title": "The estimations of the COVID-19 incubation period: a systematic review of the literature",
+			"subtitle": "Introduction",
+			"cite_spans": [
+				{
+					"start": 419,
+					"end": 422,
+					"text": "[8]",
+					"ref_id": "BIBREF5"
+				}
+			],
+			"is_doc_meta": false,
+			"is_doc_abstract": false
+		},
+		"embedding": null
+	},
+	{
+		"answer": "second generation",
+		"offset_start_in_doc": 134,
+		"offset_end_in_doc": 151,
+		"offset_start": 67,
+		"offset_end": 84,
+		"context": "eration cases from a point source, but at the time it seems that a second generation, and perhaps a third generation, of cases was already reported in",
+		"answer_id": "accdafe4cff8f0d47a3321176c872ae7",
+		"doc_id": "0600766ed9853749cfca4d2ac0b3fb1c0e03c82f-$-$-2",
+		"no_ans_gap": 18.80069637298584,
+		"text": "",
+		"id": "090b0e52-0e10-4638-98df-6c604c8a0dcc",
+		"score": -0.3402133285999298,
+		"probability": 0.48936993548762037,
+		"question": "What is the definition of incubation period?",
+		"meta": {
+			"title": "Comment 470 www",
+			"authors": [],
+			"bib_entries": {
+				"BIBREF0": {
+					"ref_id": "b0",
+					"title": "Geneva: World Health Organization",
+					"year": 2020,
+					"pages": ""
+				},
+				"BIBREF1": {
+					"ref_id": "b1",
+					"title": "Geneva: World Health Organization",
+					"year": 2020,
+					"pages": ""
+				},
+				"BIBREF2": {
+					"ref_id": "b2",
+					"title": "Beijing: China National Health Commission",
+					"year": 2020,
+					"pages": ""
+				},
+				"BIBREF3": {
+					"ref_id": "b3",
+					"title": "Geneva: World Health Organization",
+					"year": 2020,
+					"pages": ""
+				},
+				"BIBREF4": {
+					"ref_id": "b4",
+					"title": "First travel-related case of 2019 novel coronavirus detected in United States",
+					"year": 2020,
+					"pages": ""
+				},
+				"BIBREF5": {
+					"ref_id": "b5",
+					"title": "A familial cluster of pneumonia associated with the 2019 novel coronavirus indicating person-to-person transmission: a study of a family cluster",
+					"year": 2020,
+					"pages": "30154--30163"
+				},
+				"BIBREF6": {
+					"ref_id": "b6",
+					"title": "Clinical features of patients infected with 2019 novel coronavirus in Wuhan, China",
+					"year": 2020,
+					"pages": ""
+				},
+				"BIBREF7": {
+					"ref_id": "b7",
+					"title": "The epidemiology of severe acute respiratory syndrome in the 2003 Hong Kong epidemic: an analysis of all 1755 patients",
+					"year": 2004,
+					"pages": "662--73"
+				},
+				"BIBREF8": {
+					"ref_id": "b8",
+					"title": "Geneva: World Health Organization",
+					"year": 2020,
+					"pages": ""
+				},
+				"BIBREF9": {
+					"ref_id": "b9",
+					"title": "Middle East respiratory syndrome coronavirus (MERS-CoV). Geneva: World Health Organization",
+					"year": 2020,
+					"pages": ""
+				},
+				"BIBREF10": {
+					"ref_id": "b10",
+					"title": "Epidemiological, demographic, and clinical characteristics of 47 cases of Middle East respiratory syndrome coronavirus disease from Saudi Arabia: a descriptive study",
+					"year": 2013,
+					"pages": "752--61"
+				},
+				"BIBREF11": {
+					"ref_id": "b11",
+					"title": "WHO. Summary of probable SARS cases with onset of illness from 1",
+					"year": 2002,
+					"pages": ""
+				},
+				"BIBREF12": {
+					"ref_id": "b12",
+					"title": "Age-and sex-specific mortality associated with the 1918-1919 influenza pandemic in Kentucky",
+					"year": 2013,
+					"pages": "721--750"
+				},
+				"BIBREF13": {
+					"ref_id": "b13",
+					"title": "Epidemiology and cause of severe acute respiratory syndrome (SARS) in Guangdong, People's Republic of China",
+					"year": 2003,
+					"pages": "1353--58"
+				},
+				"BIBREF14": {
+					"ref_id": "b14",
+					"title": "Emergency Committee regarding the outbreak of novel coronavirus (2019-nCoV). Geneva, World Health Organization",
+					"year": 2005,
+					"pages": ""
+				},
+				"BIBREF15": {
+					"ref_id": "b15",
+					"title": "Beijing: China National Health Commission",
+					"year": 2020,
+					"pages": ""
+				},
+				"BIBREF16": {
+					"ref_id": "b16",
+					"title": "Clinical management of severe acute respiratory infection when novel coronavirus (nCoV) infection is suspected. Geneva, World Health Organization",
+					"year": 2020,
+					"pages": ""
+				}
+			},
+			"is_doc_meta": false,
+			"is_doc_abstract": false,
+			"section_count": 1,
+			"subtitle": "",
+			"cite_spans": []
+		},
+		"embedding": null
+	},
+	{
+		"answer": "13",
+		"offset_start_in_doc": 514,
+		"offset_end_in_doc": 516,
+		"offset_start": 82,
+		"offset_end": 84,
+		"context": "n is rare, but has been reported in a child with sickle cell disease in Colombia. 13 The incubation period for Zika virus after a person is bitten by ",
+		"answer_id": "d62dde5b2f2ceb54d9156048fc3696ca",
+		"doc_id": "1f4d59790ebb50fad78486e25156bcbb6b1edb40-$-$-6",
+		"no_ans_gap": 18.80069637298584,
+		"text": "",
+		"id": "cf354df6-2b93-4a8e-8119-2b34803d338e",
+		"score": -1.4500072002410889,
+		"probability": 0.4548109195294752,
+		"question": "What is the definition of incubation period?",
+		"meta": {
+			"title": "Identify-Isolate-Inform: A Tool for Initial Detection and Management of Zika Virus Patients in the Emergency Department",
+			"authors": [
+				{
+					"first": "Kristi",
+					"middle": [
+						"L"
+					],
+					"last": "Koenig",
+					"suffix": "",
+					"affiliation": {},
+					"email": ""
+				},
+				{
+					"first": "Abdulmajeed",
+					"middle": [],
+					"last": "Almadhyan",
+					"suffix": "",
+					"affiliation": {},
+					"email": ""
+				},
+				{
+					"first": "Michael",
+					"middle": [
+						"J"
+					],
+					"last": "Burns",
+					"suffix": "",
+					"affiliation": {},
+					"email": ""
+				}
+			],
+			"bib_entries": {
+				"BIBREF0": {
+					"ref_id": "b0",
+					"title": "IHR 2005) Emergency Committee on Zika virus and observed increase in neurological disorders and neonatal malformations",
+					"year": 2005,
+					"pages": ""
+				},
+				"BIBREF1": {
+					"ref_id": "b1",
+					"title": "WHO Vector-borne diseases",
+					"year": 2016,
+					"pages": ""
+				},
+				"BIBREF2": {
+					"ref_id": "b2",
+					"title": "Zika virus in the Americas -Yet another arbovirus threat",
+					"year": 2016,
+					"pages": "601--605"
+				},
+				"BIBREF3": {
+					"ref_id": "b3",
+					"title": "Guillain-Barre syndrome outbreak associated with Zika virus infection in French Polynesia: a case-control study",
+					"year": 2016,
+					"pages": ""
+				},
+				"BIBREF4": {
+					"ref_id": "b4",
+					"title": "Association between Zika virus and microcephaly in French Polynesia, 2013-15: a retrospective study",
+					"year": 2016,
+					"pages": ""
+				},
+				"BIBREF5": {
+					"ref_id": "b5",
+					"title": "Centers for Disease Control and Prevention: Webinar-Update on interim Zika virus clinical guidance and recommendations",
+					"year": 2016,
+					"pages": ""
+				},
+				"BIBREF6": {
+					"ref_id": "b6",
+					"title": "The 2014 Ebola Virus Outbreak and Other Emerging Infectious Diseases",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF8": {
+					"ref_id": "b8",
+					"title": "Inform: A 3-pronged Approach to Management of Public Health Emergencies",
+					"year": 2016,
+					"pages": ""
+				},
+				"BIBREF9": {
+					"ref_id": "b9",
+					"title": "Ebola Virus Disease: Essential Identify-Isolate-Inform: Zika Virus Detection and Management",
+					"year": null,
+					"pages": ""
+				},
+				"BIBREF10": {
+					"ref_id": "b10",
+					"title": "Public Health Principles for Clinicians",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF12": {
+					"ref_id": "b12",
+					"title": "Identify-Isolate-Inform: A Tool for Initial Detection and Management of Measles Patients in the Emergency Department",
+					"year": 2015,
+					"pages": ""
+				},
+				"BIBREF13": {
+					"ref_id": "b13",
+					"title": "Identify-Isolate-Inform: A modified tool for initial detection and management of Middle East Respiratory Syndrome patients in the emergency department",
+					"year": 2015,
+					"pages": ""
+				},
+				"BIBREF14": {
+					"ref_id": "b14",
+					"title": "WHO Emergency Preparedness and Response. Zika virus disease. Interim case definition",
+					"year": 2015,
+					"pages": ""
+				},
+				"BIBREF15": {
+					"ref_id": "b15",
+					"title": "Fatal Zika virus infection in girl with sickle cell disease, Colombia",
+					"year": null,
+					"pages": ""
+				},
+				"BIBREF16": {
+					"ref_id": "b16",
+					"title": "Emerg Infect Dis",
+					"year": 2016,
+					"pages": ""
+				},
+				"BIBREF18": {
+					"ref_id": "b18",
+					"title": "Potential sexual transmission of Zika virus",
+					"year": 2015,
+					"pages": "359--361"
+				},
+				"BIBREF19": {
+					"ref_id": "b19",
+					"title": "Available at",
+					"year": 2016,
+					"pages": ""
+				},
+				"BIBREF20": {
+					"ref_id": "b20",
+					"title": "FDA issues recommendations to reduce the risk for Zika virus blood transmission in the United States",
+					"year": 2016,
+					"pages": ""
+				},
+				"BIBREF22": {
+					"ref_id": "b22",
+					"title": "Update: Interim guidelines for health care providers caring for pregnant women and women of reproductive age with possible Zika virus exposure -United States",
+					"year": 2016,
+					"pages": "122--129"
+				},
+				"BIBREF23": {
+					"ref_id": "b23",
+					"title": "Division of Vector-Borne Diseases Memorandum on Revised diagnostic testing for Zika, chikungunya, and dengue viruses in US Public Health Laboratories",
+					"year": 2016,
+					"pages": ""
+				},
+				"BIBREF24": {
+					"ref_id": "b24",
+					"title": "The Emerging Zika Pandemic: Enhancing Preparedness",
+					"year": 2016,
+					"pages": ""
+				},
+				"BIBREF25": {
+					"ref_id": "b25",
+					"title": "Available at: http:// journals.cambridge.org/action/displayAbstract?fromPage=online&aid =9587810&fulltextType=AC&fileId=S1935789314001207&specialArti cle=Y",
+					"year": 2016,
+					"pages": ""
+				},
+				"BIBREF26": {
+					"ref_id": "b26",
+					"title": "Potential Zika virus risk estimated for 50 U.S. Cities. National Center for Atmospheric Research public release",
+					"year": 2016,
+					"pages": ""
+				},
+				"BIBREF28": {
+					"ref_id": "b28",
+					"title": "CDC issues interim travel guidance related to Zika virus for 14 Countries and Territories in Central and South America and the Caribbean",
+					"year": 2016,
+					"pages": ""
+				},
+				"BIBREF29": {
+					"ref_id": "b29",
+					"title": "Brazil warns against pregnancy due to spreading virus",
+					"year": 2016,
+					"pages": ""
+				},
+				"BIBREF30": {
+					"ref_id": "b30",
+					"title": "Is There a Case for Quarantine? Perspectives from SARS to Ebola. Disaster Medicine and Public Health Preparedness",
+					"year": 2015,
+					"pages": ""
+				},
+				"BIBREF32": {
+					"ref_id": "b32",
+					"title": "Health Care Worker Quarantine for Ebola: To Eradicate the Virus or Alleviate Fear?",
+					"year": 2014,
+					"pages": "1571--1577"
+				},
+				"BIBREF33": {
+					"ref_id": "b33",
+					"title": "Why we shouldn't quarantine travelers because of Zika",
+					"year": null,
+					"pages": ""
+				},
+				"BIBREF36": {
+					"ref_id": "b36",
+					"title": "Quarantine for Zika virus: Where's the science",
+					"year": 2016,
+					"pages": ""
+				},
+				"BIBREF38": {
+					"ref_id": "b38",
+					"title": "IFRC Battling fear and stigma over Ebola in West Africa. Available at",
+					"year": 2016,
+					"pages": ""
+				},
+				"BIBREF39": {
+					"ref_id": "b39",
+					"title": "WHO Zika Strategic Response Framework & Joint Operations Plan",
+					"year": 2016,
+					"pages": ""
+				},
+				"BIBREF40": {
+					"ref_id": "b40",
+					"title": "Obama asks for $1.8 billion in emergency Zika funding. USA TODAY",
+					"year": 2016,
+					"pages": ""
+				}
+			},
+			"is_doc_meta": false,
+			"is_doc_abstract": false,
+			"section_count": 5,
+			"subtitle": "Signs and Symptoms",
+			"cite_spans": [
+				{
+					"start": 375,
+					"end": 377,
+					"text": "12",
+					"ref_id": "BIBREF14"
+				},
+				{
+					"start": 514,
+					"end": 516,
+					"text": "13",
+					"ref_id": "BIBREF15"
+				}
+			]
+		},
+		"embedding": null
+	},
+	{
+		"answer": "If strictly adhered to, only the severe syndrome would meet the case definition and be subject to laboratory testing",
+		"offset_start_in_doc": 708,
+		"offset_end_in_doc": 824,
+		"offset_start": 17,
+		"offset_end": 133,
+		"context": "abian peninsula. If strictly adhered to, only the severe syndrome would meet the case definition and be subject to laboratory testing, which was the p",
+		"answer_id": "fac6c2107507bbace4b75e0a62768147",
+		"doc_id": "00a0ab182dc01b6c2e737dfae585f050dcf9a7a5-$-$-4",
+		"no_ans_gap": 18.80069637298584,
+		"text": "",
+		"id": "e2f64ad5-1049-4b71-be5d-57455c087991",
+		"score": -1.9301486015319824,
+		"probability": 0.4399737540402616,
+		"question": "What is the definition of incubation period?",
+		"meta": {
+			"title": "Middle East respiratory syndrome: An emerging coronavirus infection tracked by the crowd",
+			"authors": [
+				{
+					"first": "Ian",
+					"middle": [
+						"M"
+					],
+					"last": "Mackay",
+					"suffix": "",
+					"affiliation": {
+						"laboratory": "Queensland Paediatric Infectious Diseases Laboratory",
+						"institution": "The University of Queensland",
+						"location": {
+							"settlement": "Brisbane",
+							"country": "Australia"
+						}
+					},
+					"email": ""
+				},
+				{
+					"first": "Katherine",
+					"middle": [
+						"E"
+					],
+					"last": "Arden",
+					"suffix": "",
+					"affiliation": {
+						"laboratory": "Queensland Paediatric Infectious Diseases Laboratory",
+						"institution": "The University of Queensland",
+						"location": {
+							"settlement": "Brisbane",
+							"country": "Australia"
+						}
+					},
+					"email": ""
+				}
+			],
+			"bib_entries": {
+				"BIBREF0": {
+					"ref_id": "b0",
+					"title": "Effective Against MERS (Middle East Respiratory Syndrome) Virus In-Vitro",
+					"year": null,
+					"pages": ""
+				},
+				"BIBREF1": {
+					"ref_id": "b1",
+					"title": "Middle East respiratory syndrome coronavirus (MERS-CoV): evidence and speculations",
+					"year": 2014,
+					"pages": "1575--1584"
+				},
+				"BIBREF2": {
+					"ref_id": "b2",
+					"title": "Investigation of anti-middle East respiratory syndrome antibodies in blood donors and slaughterhouse workers in Jeddah and Makkah, Saudi Arabia, fall 2012",
+					"year": 2014,
+					"pages": "243--246"
+				},
+				"BIBREF3": {
+					"ref_id": "b3",
+					"title": "Replication and shedding of MERS-CoV in upper respiratory tract of inoculated dromedary camels",
+					"year": 1999,
+					"pages": ""
+				},
+				"BIBREF4": {
+					"ref_id": "b4",
+					"title": "A mouse model for Betacoronavirus subgroup 2c using a bat coronavirus strain HKU5 variant",
+					"year": 2014,
+					"pages": "47--61"
+				},
+				"BIBREF5": {
+					"ref_id": "b5",
+					"title": "Generation of transgenic mouse model of middle east respiratory syndrome-coronavirus infection and disease",
+					"year": 2015,
+					"pages": ""
+				},
+				"BIBREF6": {
+					"ref_id": "b6",
+					"title": "Beneficial effect of camel milk in diabetic nephropathy",
+					"year": 2009,
+					"pages": "131--134"
+				},
+				"BIBREF7": {
+					"ref_id": "b7",
+					"title": "Hospital-associated outbreak of Middle East respiratory syndrome coronavirus: a serologic, epidemiologic, and clinical description",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF8": {
+					"ref_id": "b8",
+					"title": "A case of long-term excretion and subclinical infection with Middle East respiratory syndrome coronavirus in a healthcare worker",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF9": {
+					"ref_id": "b9",
+					"title": "Middle East respiratory syndrome coronavirus: transmission and phylogenetic evolution",
+					"year": 2014,
+					"pages": "573--579"
+				},
+				"BIBREF10": {
+					"ref_id": "b10",
+					"title": "Ribavirin and interferon therapy in patients infected with the Middle East respiratory syndrome coronavirus: an observational study",
+					"year": 2014,
+					"pages": "42--46"
+				},
+				"BIBREF11": {
+					"ref_id": "b11",
+					"title": "Camel urine components display anti-cancer properties in vitro",
+					"year": 2012,
+					"pages": "819--825"
+				},
+				"BIBREF12": {
+					"ref_id": "b12",
+					"title": "Middle East respiratory syndrome coronavirus infection in dromedary camels in Saudi Arabia",
+					"year": 2014,
+					"pages": "884--914"
+				},
+				"BIBREF13": {
+					"ref_id": "b13",
+					"title": "Recovery from severe novel coronavirus infection",
+					"year": 2012,
+					"pages": "1265--1269"
+				},
+				"BIBREF14": {
+					"ref_id": "b14",
+					"title": "Middle East respiratory syndrome coronavirus antibody reactors among camels in Dubai",
+					"year": 2005,
+					"pages": "105--108"
+				},
+				"BIBREF15": {
+					"ref_id": "b15",
+					"title": "The antiplatelet activity of camel urine",
+					"year": 2011,
+					"pages": "803--808"
+				},
+				"BIBREF16": {
+					"ref_id": "b16",
+					"title": "Engineering a replication-competent, propagation-defective Middle East respiratory syndrome coronavirus as a vaccine candidate",
+					"year": 2013,
+					"pages": "650--00713"
+				},
+				"BIBREF17": {
+					"ref_id": "b17",
+					"title": "Clinical course and outcomes of critically ill patients with Middle East respiratory syndrome coronavirus infection",
+					"year": 2014,
+					"pages": "389--397"
+				},
+				"BIBREF18": {
+					"ref_id": "b18",
+					"title": "Epidemiological, demographic, and clinical characteristics of 47 cases of Middle East respiratory syndrome coronavirus disease from Saudi Arabia: a descriptive study",
+					"year": 2013,
+					"pages": "752--761"
+				},
+				"BIBREF19": {
+					"ref_id": "b19",
+					"title": "Hospital outbreak of Middle East respiratory syndrome coronavirus",
+					"year": 2013,
+					"pages": "407--416"
+				},
+				"BIBREF20": {
+					"ref_id": "b20",
+					"title": "Evidence for camel-to-human transmission of MERS coronavirus",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF21": {
+					"ref_id": "b21",
+					"title": "Detection of the Middle East respiratory syndrome coronavirus genome in an air sample originating from a camel barn owned by an infected patient",
+					"year": 2014,
+					"pages": "1450--1514"
+				},
+				"BIBREF22": {
+					"ref_id": "b22",
+					"title": "Viral respiratory infections among Hajj pilgrims in 2013",
+					"year": 2014,
+					"pages": "364--371"
+				},
+				"BIBREF23": {
+					"ref_id": "b23",
+					"title": "Receptor variation and susceptibility to Middle East respiratoy syndrome coronavirus infection",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF24": {
+					"ref_id": "b24",
+					"title": "Assessing the pandemic potential of MERS-CoV",
+					"year": 2013,
+					"pages": "662--664"
+				},
+				"BIBREF25": {
+					"ref_id": "b25",
+					"title": "Severe respiratory illness caused by a novel coronavirus",
+					"year": 2012,
+					"pages": ""
+				},
+				"BIBREF26": {
+					"ref_id": "b26",
+					"title": "First confirmed cases of Middle East respiratory syndrome coronavirus (MERS-CoV) infection in the United States, updated information on the epidemiology of MERS-CoV infection",
+					"year": 2014,
+					"pages": "431--436"
+				},
+				"BIBREF27": {
+					"ref_id": "b27",
+					"title": "The multifunctional or moonlighting protein CD26/DPPIV",
+					"year": 2003,
+					"pages": "53--73"
+				},
+				"BIBREF28": {
+					"ref_id": "b28",
+					"title": "Interhuman transmissibility of Middle East respiratory syndrome coronavirus: estimation of pandemic risk",
+					"year": 2013,
+					"pages": "694--699"
+				},
+				"BIBREF29": {
+					"ref_id": "b29",
+					"title": "Call for infection control to stem MERS",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF30": {
+					"ref_id": "b30",
+					"title": "Middle East respiratory syndrome coronavirus: quantification of the extent of the epidemic, surveillance biases, and transmissibility",
+					"year": 2014,
+					"pages": "50--56"
+				},
+				"BIBREF31": {
+					"ref_id": "b31",
+					"title": "CDC Concludes Indiana MERS Patient did not Spread Virus to Illinois Business Associate",
+					"year": 2014,
+					"pages": "28--33"
+				},
+				"BIBREF32": {
+					"ref_id": "b32",
+					"title": "Differential cell line susceptibility to the emerging novel human betacoronavirus 2c EMC/2012: implications for disease pathogenesis and clinical manifestation",
+					"year": 2013,
+					"pages": "1743--1752"
+				},
+				"BIBREF33": {
+					"ref_id": "b33",
+					"title": "Cross-reactive antibodies in convalescent SARS patients' sera against the emerging novel human coronavirus EMC (2012) by both immunofluorescent and neutralizing antibody tests",
+					"year": 2013,
+					"pages": "130--140"
+				},
+				"BIBREF34": {
+					"ref_id": "b34",
+					"title": "The effects of temperature and relative humidity on the viability of the SARS coronavirus",
+					"year": 2011,
+					"pages": ""
+				},
+				"BIBREF35": {
+					"ref_id": "b35",
+					"title": "Tropism of and innate immune responses to the novel human betacoronavirus lineage C virus in human ex vivo respiratory organ cultures",
+					"year": 2013,
+					"pages": "6604--6614"
+				},
+				"BIBREF36": {
+					"ref_id": "b36",
+					"title": "Crystal structure of the receptor-binding domain from newly emerged Middle East respiratory syndrome coronavirus",
+					"year": 2013,
+					"pages": "10777--10783"
+				},
+				"BIBREF37": {
+					"ref_id": "b37",
+					"title": "Synthesizing data and models for the spread of MERS-CoV, 2013: key role of index cases and hospital transmission",
+					"year": 2014,
+					"pages": "40--51"
+				},
+				"BIBREF38": {
+					"ref_id": "b38",
+					"title": "MERS coronaviruses in dromedary camels",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF39": {
+					"ref_id": "b39",
+					"title": "Acute renal impairment in coronavirus-associated severe acute respiratory syndrome",
+					"year": 2005,
+					"pages": "698--705"
+				},
+				"BIBREF40": {
+					"ref_id": "b40",
+					"title": "Purified coronavirus spike protein nanoparticles induce coronavirus neutralizing antibodies in mice",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF41": {
+					"ref_id": "b41",
+					"title": "Wild-type and innate immune-deficient mice are not susceptible to the Middle East respiratory syndrome coronavirus",
+					"year": 2014,
+					"pages": "408--412"
+				},
+				"BIBREF42": {
+					"ref_id": "b42",
+					"title": "Detection of a novel human coronavirus by real-time reverse-transcription polymerase chain reaction",
+					"year": 2012,
+					"pages": ""
+				},
+				"BIBREF43": {
+					"ref_id": "b43",
+					"title": "Rooting the phylogenetic tree of Middle East respiratory syndrome coronavirus by characterization of a conspecific virus from an African bat",
+					"year": 2014,
+					"pages": "11297--11303"
+				},
+				"BIBREF44": {
+					"ref_id": "b44",
+					"title": "Antibodies against MERS Coronavirus in Dromedary Camels",
+					"year": 1992,
+					"pages": ""
+				},
+				"BIBREF45": {
+					"ref_id": "b45",
+					"title": "Assays for laboratory confirmation of novel human coronavirus (hCoV-EMC) infections",
+					"year": 2012,
+					"pages": ""
+				},
+				"BIBREF46": {
+					"ref_id": "b46",
+					"title": "Avian Flu Diary: Michael Coston's Blog on Emerging Infectious Diseases",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF47": {
+					"ref_id": "b47",
+					"title": "Full-genome deep sequencing and phylogenetic analysis of novel human betacoronavirus",
+					"year": 2013,
+					"pages": "736--778"
+				},
+				"BIBREF48": {
+					"ref_id": "b48",
+					"title": "Transmission and evolution of the Middle East respiratory syndrome coronavirus in Saudi Arabia: a descriptive genomic study",
+					"year": 1993,
+					"pages": ""
+				},
+				"BIBREF49": {
+					"ref_id": "b49",
+					"title": "Spread, circulation, and evolution of the Middle East respiratory syndrome coronavirus",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF50": {
+					"ref_id": "b50",
+					"title": "Middle East respiratory syndrome coronavirus (MERS-CoV): announcement of the Coronavirus Study Group",
+					"year": 2013,
+					"pages": "7790--7792"
+				},
+				"BIBREF51": {
+					"ref_id": "b51",
+					"title": "Screening of an FDA-approved compound library identifies four small-molecule inhibitors of Middle East respiratory syndrome coronavirus replication in cell culture",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF52": {
+					"ref_id": "b52",
+					"title": "Laboratory-confirmed case of Middle East respiratory syndrome coronavirus (MERS-CoV) infection in Malaysia: preparedness and response",
+					"year": 2013,
+					"pages": "16598--16603"
+				},
+				"BIBREF53": {
+					"ref_id": "b53",
+					"title": "Is MERS another SARS?",
+					"year": 2013,
+					"pages": "727--728"
+				},
+				"BIBREF54": {
+					"ref_id": "b54",
+					"title": "Evidence for camel-to-human transmission of MERS coronavirus",
+					"year": 2014,
+					"pages": "1359--1360"
+				},
+				"BIBREF55": {
+					"ref_id": "b55",
+					"title": "Transmission of MERS-coronavirus in household contacts",
+					"year": 2014,
+					"pages": "828--835"
+				},
+				"BIBREF56": {
+					"ref_id": "b56",
+					"title": "An observational, laboratory-based study of outbreaks of MERS-coronavirus in Jeddah and Riyadh, Kingdom of Saudi Arabia",
+					"year": 2014,
+					"pages": "369--377"
+				},
+				"BIBREF57": {
+					"ref_id": "b57",
+					"title": "Clinical features and virological analysis of a case of Middle East respiratory syndrome coronavirus infection",
+					"year": 2013,
+					"pages": "745--751"
+				},
+				"BIBREF58": {
+					"ref_id": "b58",
+					"title": "A truncated receptor-binding domain of MERS-CoV spike protein potently inhibits MERS-CoV infection and induces strong neutralizing antibody responses: implication for developing therapeutics and vaccines",
+					"year": 2013,
+					"pages": ""
+				},
+				"BIBREF59": {
+					"ref_id": "b59",
+					"title": "Identification of a receptor-binding domain in the S protein of the novel human coronavirus Middle East respiratory syndrome coronavirus as an essential target for vaccine development",
+					"year": 2013,
+					"pages": "9939--9942"
+				},
+				"BIBREF60": {
+					"ref_id": "b60",
+					"title": "Age-specific and sex-specific morbidity and mortality from avian influenza A(H7N9)",
+					"year": 2013,
+					"pages": "568--570"
+				},
+				"BIBREF61": {
+					"ref_id": "b61",
+					"title": "Repurposing of clinically developed drugs for treatment of Middle East Respiratory Coronavirus Infection",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF62": {
+					"ref_id": "b62",
+					"title": "Replicative capacity of MERS coronavirus in livestock cell lines",
+					"year": 2014,
+					"pages": "276--279"
+				},
+				"BIBREF63": {
+					"ref_id": "b63",
+					"title": "In-vitro renal epithelial cell infection reveals a viral kidney tropism as a potential mechanism for acute renal failure during Middle East Respiratory Syndrome (MERS) Coronavirus infection",
+					"year": 2013,
+					"pages": ""
+				},
+				"BIBREF64": {
+					"ref_id": "b64",
+					"title": "Treatment with interferon-alpha2b and ribavirin improves outcome in MERS-CoV-infected rhesus macaques",
+					"year": 2013,
+					"pages": "1313--1317"
+				},
+				"BIBREF65": {
+					"ref_id": "b65",
+					"title": "Distinct immune response in two MERS-CoV-infected patients: can we go from bench to bedside?",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF66": {
+					"ref_id": "b66",
+					"title": "Full-genome sequence of human betacoronavirus 2c jordan-n3/2012 after serial passage in Mammalian cells",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF67": {
+					"ref_id": "b67",
+					"title": "Lack of nasal carriage of novel corona virus (HCoV-EMC) in French Hajj pilgrims returning from the Hajj 2012, despite a high rate of respiratory symptoms",
+					"year": 2013,
+					"pages": "315--317"
+				},
+				"BIBREF68": {
+					"ref_id": "b68",
+					"title": "Lack of MERS coronavirus neutralizing antibodies in humans, eastern province, Saudi Arabia",
+					"year": 2013,
+					"pages": "2034--2036"
+				},
+				"BIBREF69": {
+					"ref_id": "b69",
+					"title": "Human-Dromedary camel interactions and the risk of acquiring zoonotic Middle East respiratory syndrome coronavirus infection",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF70": {
+					"ref_id": "b70",
+					"title": "Loss of dipeptidylpeptidase IV activity in chronic rhinosinusitis contributes to the neurogenic inflammation induced by substance P in the nasal mucosa",
+					"year": 2002,
+					"pages": "1132--1134"
+				},
+				"BIBREF71": {
+					"ref_id": "b71",
+					"title": "Survival of coronaviruses in water and wastewater",
+					"year": 2009,
+					"pages": "10--14"
+				},
+				"BIBREF72": {
+					"ref_id": "b72",
+					"title": "Middle East respiratory syndrome coronavirus in dromedary camels: an outbreak investigation",
+					"year": 2014,
+					"pages": "140--145"
+				},
+				"BIBREF73": {
+					"ref_id": "b73",
+					"title": "Novel coronavirus: the challenge of communicating about a virus which one knows little about",
+					"year": 2013,
+					"pages": "26--30"
+				},
+				"BIBREF74": {
+					"ref_id": "b74",
+					"title": "Evidence of person-to-person transmission within a family cluster of novel coronavirus infections",
+					"year": 2013,
+					"pages": ""
+				},
+				"BIBREF75": {
+					"ref_id": "b75",
+					"title": "Lack of Middle East respiratory syndrome coronavirus transmission from infected camels",
+					"year": 2015,
+					"pages": ""
+				},
+				"BIBREF76": {
+					"ref_id": "b76",
+					"title": "MERS coronavirus in dromedary camel herd, Saudi Arabia",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF77": {
+					"ref_id": "b77",
+					"title": "Seroepidemiology of Middle East respiratory syndrome (MERS) coronavirus in Saudi Arabia (1993) and Australia (2014) and characterisation of assay specificity",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF78": {
+					"ref_id": "b78",
+					"title": "Middle East respiratory syndrome (MERS) coronavirus seroprevalence in domestic livestock in Saudi Arabia",
+					"year": 2010,
+					"pages": ""
+				},
+				"BIBREF79": {
+					"ref_id": "b79",
+					"title": "epidemiological findings from a retrospective investigation",
+					"year": 2012,
+					"pages": "12--18"
+				},
+				"BIBREF80": {
+					"ref_id": "b80",
+					"title": "MERS-CoV enigma deepens as reported cases surge",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF81": {
+					"ref_id": "b81",
+					"title": "Potent neutralization of MERS-CoV by human neutralizing monoclonal antibodies to the viral spike glycoprotein",
+					"year": 2014,
+					"pages": "234--59"
+				},
+				"BIBREF82": {
+					"ref_id": "b82",
+					"title": "Cell host response to infection with novel human coronavirus EMC predicts potential antivirals and important differences with SARS coronavirus",
+					"year": 2013,
+					"pages": "165--213"
+				},
+				"BIBREF83": {
+					"ref_id": "b83",
+					"title": "The safety of dipeptidyl peptidase-4 (DPP-4) inhibitors or sodium-glucose cotransporter 2 (SGLT-2) inhibitors added to metformin background therapy in patients with type 2 diabetes mellitus: a systematic review and meta-analysis",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF84": {
+					"ref_id": "b84",
+					"title": "Ribavirin and interferon (IFN)-alpha-2b as primary and preventive treatment for Middle East respiratory syndrome coronavirus (MERS-CoV): a preliminary report of two cases",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF85": {
+					"ref_id": "b85",
+					"title": "Middle East respiratory syndrome coronavirus not detected in children hospitalized with acute respiratory illness in",
+					"year": 2010,
+					"pages": ""
+				},
+				"BIBREF86": {
+					"ref_id": "b86",
+					"title": "H5N1: Crawford Kilian's Infectious Disease Blog",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF87": {
+					"ref_id": "b87",
+					"title": "Assessing activity and inhibition of Middle East respiratory syndrome coronavirus papain-like and 3C-like proteases using luciferase-based biosensors",
+					"year": 2013,
+					"pages": "11955--11962"
+				},
+				"BIBREF88": {
+					"ref_id": "b88",
+					"title": "Efficient replication of the novel human betacoronavirus EMC on primary human epithelium highlights its zoonotic potential",
+					"year": 2013,
+					"pages": "611--00612"
+				},
+				"BIBREF89": {
+					"ref_id": "b89",
+					"title": "Viability of Pseudomonas aeruginosa in cough aerosols generated by persons with cystic fibrosis",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF90": {
+					"ref_id": "b90",
+					"title": "Middle East respiratory syndrome coronavirus (MERS-CoV) infections in two returning travellers in the Netherlands",
+					"year": 2014,
+					"pages": "1422--1425"
+				},
+				"BIBREF91": {
+					"ref_id": "b91",
+					"title": "Accuracy of epidemiological inferences based on publicly available information: retrospective comparative analysis of line lists of hman cases infected with inflenza A(H7N9) in China",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF92": {
+					"ref_id": "b92",
+					"title": "Delayed induction of proinflammatory cytokines and suppression of innate antiviral response by the novel Middle East respiratory syndrome coronavirus: implications for pathogenesis and treatment",
+					"year": 2013,
+					"pages": "2679--2690"
+				},
+				"BIBREF93": {
+					"ref_id": "b93",
+					"title": "Structural and functional characterization of MERS coronavirus papain-like protease",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF94": {
+					"ref_id": "b94",
+					"title": "Molecular basis of binding between novel human coronavirus MERS-CoV and its receptor CD26",
+					"year": 2013,
+					"pages": "227--231"
+				},
+				"BIBREF95": {
+					"ref_id": "b95",
+					"title": "Increased expression of plasma and CD4+ T lymphocyte costimulatory molecule CD26 in adult patients with allergic asthma",
+					"year": 2007,
+					"pages": "430--437"
+				},
+				"BIBREF96": {
+					"ref_id": "b96",
+					"title": "Targeting Membrane-Bound Viral RNA Synthesis Reveals Potent Inhibition of Diverse Coronaviruses Including the Middle East Respiratory Syndrome Virus",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF97": {
+					"ref_id": "b97",
+					"title": "Middle East Respiratory Syndrome Coronavirus (MERS-CoV) -Update 15",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF98": {
+					"ref_id": "b98",
+					"title": "MERS-CoV Daily, Monthly and Cumulative Numbers Over Time",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF99": {
+					"ref_id": "b99",
+					"title": "Virology Down Under. 21-6-2014a",
+					"year": 1997,
+					"pages": ""
+				},
+				"BIBREF100": {
+					"ref_id": "b100",
+					"title": "Co-circulation of four human coronaviruses (HCoVs) in Queensland children with acute respiratory tract illnesses in 2004",
+					"year": 2012,
+					"pages": "637--653"
+				},
+				"BIBREF101": {
+					"ref_id": "b101",
+					"title": "First cases of Middle East Respiratory Syndrome Coronavirus (MERS-CoV) infections in France, investigations and implications for the prevention of human-tohuman transmission",
+					"year": 2013,
+					"pages": ""
+				},
+				"BIBREF102": {
+					"ref_id": "b102",
+					"title": "Mens et Manus: Maia Majumder's Blog. 8-6-2014",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF103": {
+					"ref_id": "b103",
+					"title": "Middle East respiratory syndrome coronavirus: Implications for health care facilities",
+					"year": 2014,
+					"pages": "1261--1265"
+				},
+				"BIBREF104": {
+					"ref_id": "b104",
+					"title": "Middle East Respiratory Syndrome Coronavirus Disease in Children",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF105": {
+					"ref_id": "b105",
+					"title": "Screening for Middle East respiratory syndrome coronavirus infection in hospital patients and their healthcare worker and family contacts: a prospective descriptive study",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF106": {
+					"ref_id": "b106",
+					"title": "Respiratory Tract Samples, Viral Load and Genome Fraction Yield in patients with Middle East Respiratory Syndrome",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF107": {
+					"ref_id": "b107",
+					"title": "Prevalence of MERS-CoV Nasal Carriage and Compliance With the Saudi Health Recommendations Among Pilgrims Attending the",
+					"year": 2013,
+					"pages": ""
+				},
+				"BIBREF108": {
+					"ref_id": "b108",
+					"title": "Middle East respiratory syndrome coronavirus (MERS-CoV) viral shedding in the respiratory tract: an observational analysis with infection control implications",
+					"year": 2014,
+					"pages": "307--308"
+				},
+				"BIBREF109": {
+					"ref_id": "b109",
+					"title": "Human Infection with MERS Coronavirus after Exposure to Infected Camels",
+					"year": 2013,
+					"pages": ""
+				},
+				"BIBREF110": {
+					"ref_id": "b110",
+					"title": "Community Case Clusters of Middle East Respiratory Syndrome Coronavirus in Hafr Al-Batin, Kingdom of Saudi Arabia: A Descriptive Genomic study",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF111": {
+					"ref_id": "b111",
+					"title": "Middle East respiratory syndrome coronavirus in bats, Saudi Arabia",
+					"year": 2013,
+					"pages": "1819--1823"
+				},
+				"BIBREF112": {
+					"ref_id": "b112",
+					"title": "Family cluster of Middle East respiratory syndrome coronavirus infections",
+					"year": 2013,
+					"pages": "2487--2494"
+				},
+				"BIBREF113": {
+					"ref_id": "b113",
+					"title": "Serological assays for emerging coronaviruses: challenges and pitfalls",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF114": {
+					"ref_id": "b114",
+					"title": "Serologic Assessment of Possibility for MERS-CoV Infection in Equids",
+					"year": 2015,
+					"pages": "181--182"
+				},
+				"BIBREF115": {
+					"ref_id": "b115",
+					"title": "Antibodies against MERS coronavirus in dromedary camels",
+					"year": 2003,
+					"pages": "552--559"
+				},
+				"BIBREF116": {
+					"ref_id": "b116",
+					"title": "Case List of MoH/WHO Novel Coronavirus MERS nCoV Announced Cases",
+					"year": 2012,
+					"pages": ""
+				},
+				"BIBREF117": {
+					"ref_id": "b117",
+					"title": "Camel milk as an adjuvant therapy for the treatment of type 1 diabetes: verification of a traditional ethnomedical practice",
+					"year": 2009,
+					"pages": "461--465"
+				},
+				"BIBREF118": {
+					"ref_id": "b118",
+					"title": "The receptor binding domain of the new Middle East respiratory syndrome coronavirus maps to a 231-residue region in the spike protein that efficiently elicits neutralizing antibodies",
+					"year": 2013,
+					"pages": "9379--9383"
+				},
+				"BIBREF119": {
+					"ref_id": "b119",
+					"title": "Human coronavirus EMC does not require the SARS-coronavirus receptor and maintains broad replicative capability in mammalian cell lines",
+					"year": 2012,
+					"pages": ""
+				},
+				"BIBREF120": {
+					"ref_id": "b120",
+					"title": "Pneumonia from human coronavirus in a macaque model",
+					"year": 2013,
+					"pages": "1560--1562"
+				},
+				"BIBREF121": {
+					"ref_id": "b121",
+					"title": "Missing information in animal surveillance of MERS-CoV",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF122": {
+					"ref_id": "b122",
+					"title": "Middle East respiratory syndrome coronavirus (MERS-CoV) in dromedary camels",
+					"year": 2013,
+					"pages": ""
+				},
+				"BIBREF123": {
+					"ref_id": "b123",
+					"title": "A family cluster of Middle East Respiratory Syndrome Coronavirus infections related to a likely unrecognized asymptomatic or mild case",
+					"year": 2013,
+					"pages": "668--672"
+				},
+				"BIBREF125": {
+					"ref_id": "b125",
+					"title": "Stillbirth During Infection With Middle East Respiratory Syndrome Coronavirus",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF126": {
+					"ref_id": "b126",
+					"title": "Taking stock of the first 133 MERS coronavirus cases globally -Is the epidemic changing?",
+					"year": 2013,
+					"pages": ""
+				},
+				"BIBREF127": {
+					"ref_id": "b127",
+					"title": "Seroepidemiology for MERS coronavirus using microneutralisation and pseudoparticle virus neutralisation assays reveal a high prevalence of antibody in dromedary camels in Egypt",
+					"year": 2013,
+					"pages": ""
+				},
+				"BIBREF128": {
+					"ref_id": "b128",
+					"title": "Assessment of the MERS-CoV Epidemic Situation in the Middle East Region. Program for Monitoring Emerging Diseases",
+					"year": 2013,
+					"pages": ""
+				},
+				"BIBREF129": {
+					"ref_id": "b129",
+					"title": "Novel Coronavirus -Saudi Arabia: Human Isolate",
+					"year": 2012,
+					"pages": ""
+				},
+				"BIBREF130": {
+					"ref_id": "b130",
+					"title": "Novel Coronavirus -Saudi Arabia: Human Isolate",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF131": {
+					"ref_id": "b131",
+					"title": "Investigation of an imported case of Middle East Respiratory Syndrome Coronavirus (MERS-CoV",
+					"year": 2013,
+					"pages": ""
+				},
+				"BIBREF132": {
+					"ref_id": "b132",
+					"title": "Isolation of MERS Coronavirus from a Dromedary Camel",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF133": {
+					"ref_id": "b133",
+					"title": "Dipeptidyl peptidase 4 is a functional receptor for the emerging human coronavirus-EMC",
+					"year": 2013,
+					"pages": "251--254"
+				},
+				"BIBREF134": {
+					"ref_id": "b134",
+					"title": "MERS: emergence of a novel human coronavirus",
+					"year": 2014,
+					"pages": "58--62"
+				},
+				"BIBREF135": {
+					"ref_id": "b135",
+					"title": "Specific serology for emerging human coronaviruses by protein microarray",
+					"year": 2013,
+					"pages": ""
+				},
+				"BIBREF136": {
+					"ref_id": "b136",
+					"title": "Middle East Respiratory Syndrome coronavirus (MERS-CoV) serology in major livestock species in an affected region in Jordan",
+					"year": 2013,
+					"pages": ""
+				},
+				"BIBREF137": {
+					"ref_id": "b137",
+					"title": "Middle East respiratory syndrome coronavirus (MERS-CoV) RNA and neutralising antibodies in milk collected according to local customs from dromedary camels",
+					"year": 2013,
+					"pages": "859--866"
+				},
+				"BIBREF138": {
+					"ref_id": "b138",
+					"title": "Geographic distribution of MERS Coronavirus among dromedary camels",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF139": {
+					"ref_id": "b139",
+					"title": "Contact investigation for imported case of Middle East respiratory syndrome",
+					"year": 2014,
+					"pages": "620--625"
+				},
+				"BIBREF140": {
+					"ref_id": "b140",
+					"title": "Saudi Arabia Replaces Health Minister Amid MERS Virus Fears",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF141": {
+					"ref_id": "b141",
+					"title": "IL-10 family of cytokines",
+					"year": 2010,
+					"pages": "315--324"
+				},
+				"BIBREF142": {
+					"ref_id": "b142",
+					"title": "Influenza A (H7N9) and the importance of digital epidemiology",
+					"year": 2013,
+					"pages": "401--404"
+				},
+				"BIBREF143": {
+					"ref_id": "b143",
+					"title": "Middle East respiratory syndrome: what clinicians need to know",
+					"year": 2014,
+					"pages": "1153--1158"
+				},
+				"BIBREF144": {
+					"ref_id": "b144",
+					"title": "As Outbreak Continues, Confusion Reigns Over Virus Patents",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF145": {
+					"ref_id": "b145",
+					"title": "A highly conserved WDYPKCDRA epitope in the RNA directed RNA polymerase of human coronaviruses can be used as epitope-based universal vaccine design",
+					"year": 2014,
+					"pages": ""
+				},
+				"BIBREF146": {
+					"ref_id": "b146",
+					"title": "Emerging infectious diseases associated with bat viruses",
+					"year": 2013,
+					"pages": "678--682"
+				},
+				"BIBREF147": {
+					"ref_id": "b147",
+					"title": "Bats and their virome: an important source of emerging viruses capable of infecting humans",
+					"year": 2013,
+					"pages": "84--91"
+				},
+				"BIBREF148": {
+					"ref_id": "b148",
+					"title": "Reliable typing of MERS-CoV variants with a small genome fragment",
+					"year": 2015,
+					"pages": ""
+				},
+				"BIBREF149": {
+					"ref_id": "b149",
+					"title": "Virological and serological analysis of a recent Middle East respiratory syndrome coronavirus infection case on a triple combination antiviral regimen",
+					"year": 2014,
+					"pages": "528--532"
+				},
+				"BIBREF150": {
+					"ref_id": "b150",
+					"title": "Identification of human neutralizing antibodies against MERS-CoV and their role in virus adaptive evolution",
+					"year": 2013,
+					"pages": ""
+				},
+				"BIBREF151": {
+					"ref_id": "b151",
+					"title": "Genomic characterization of a newly discovered coronavirus associated with acute respiratory distress syndrome in humans",
+					"year": 2012,
+					"pages": ""
+				},
+				"BIBREF152": {
+					"ref_id": "b152",
+					"title": "Structure of MERS-CoV spike receptor-binding domain complexed with human receptor DPP4",
+					"year": 2013,
+					"pages": "986--993"
+				},
+				"BIBREF153": {
+					"ref_id": "b153",
+					"title": "Coronavirus diversity, phylogeny and interspecies jumping",
+					"year": 2009,
+					"pages": "1117--1127"
+				},
+				"BIBREF154": {
+					"ref_id": "b154",
+					"title": "Infection Prevention and Control During Health Care for Probable or Confirmed Cases of Novel Coronavirus (nCoV) infection. 5-6-2013a",
+					"year": 2013,
+					"pages": "16--25"
+				},
+				"BIBREF155": {
+					"ref_id": "b155",
+					"title": "Case Definition for Case Finding Severe Respiratory Disease Associated with Novel Coronavirus: Interim Case Definition as of 25",
+					"year": 2012,
+					"pages": ""
+				},
+				"BIBREF156": {
+					"ref_id": "b156",
+					"title": "Revised Interim Case Definition for Reporting to WHO -Middle East Respiratory Syndrome Coronavirus (MERS-CoV): Interim Case Definition as of",
+					"year": 2013,
+					"pages": "24--28"
+				},
+				"BIBREF157": {
+					"ref_id": "b157",
+					"title": "World Health Organization, 2014f. WHO Statement on the Fifth Meeting of the IHR Emergency Committee Concerning MERS-CoV: WHO Statement",
+					"year": null,
+					"pages": ""
+				},
+				"BIBREF158": {
+					"ref_id": "b158",
+					"title": "An animal model of MERS produced by infection of rhesus macaques with MERS coronavirus",
+					"year": 2014,
+					"pages": "236--242"
+				},
+				"BIBREF159": {
+					"ref_id": "b159",
+					"title": "Isolation of a novel coronavirus from a man with pneumonia in Saudi Arabia",
+					"year": 2012,
+					"pages": "1814--1820"
+				},
+				"BIBREF160": {
+					"ref_id": "b160",
+					"title": "A safe and convenient pseudovirus-based inhibition assay to detect neutralizing antibodies and screen for viral entry inhibitors against the novel human coronavirus MERS-CoV",
+					"year": 2013,
+					"pages": ""
+				},
+				"BIBREF161": {
+					"ref_id": "b161",
+					"title": "Rapid generation of a mouse model for Middle East respiratory syndrome",
+					"year": 2014,
+					"pages": "4970--4975"
+				},
+				"BIBREF162": {
+					"ref_id": "b162",
+					"title": "Active replication of middle East respiratory syndrome coronavirus and aberrant induction of inflammatory cytokines and chemokines in human macrophages: implications for pathogenesis",
+					"year": 2014,
+					"pages": "1331--1342"
+				},
+				"BIBREF163": {
+					"ref_id": "b163",
+					"title": "Human cell tropism and innate immune system interactions of human respiratory coronavirus EMC compared to those of severe acute respiratory syndrome coronavirus",
+					"year": 2013,
+					"pages": "5300--5304"
+				},
+				"BIBREF164": {
+					"ref_id": "b164",
+					"title": "Infection control and MERS-CoV in health workers",
+					"year": 2014,
+					"pages": "1869--1871"
+				},
+				"BIBREF165": {
+					"ref_id": "b165",
+					"title": "Middle East respiratory syndrome coronavirus: epidemic potential or a storm in a teacup?",
+					"year": 2014,
+					"pages": "1243--1248"
+				}
+			},
+			"is_doc_meta": false,
+			"is_doc_abstract": false,
+			"section_count": 3,
+			"subtitle": "Middle East respiratory syndrome (MERS)",
+			"cite_spans": [
+				{
+					"start": 121,
+					"end": 143,
+					"text": "(Assiri et al., 2013a)",
+					"ref_id": "BIBREF18"
+				},
+				{
+					"start": 858,
+					"end": 880,
+					"text": "(Assiri et al., 2013a)",
+					"ref_id": "BIBREF18"
+				},
+				{
+					"start": 1019,
+					"end": 1053,
+					"text": "(World Health Organization, 2014d)",
+					"ref_id": null
+				},
+				{
+					"start": 1227,
+					"end": 1248,
+					"text": "Memish et al., 2014b)",
+					"ref_id": "BIBREF105"
+				},
+				{
+					"start": 1324,
+					"end": 1349,
+					"text": "(Al-Gethamy et al., 2014)",
+					"ref_id": "BIBREF8"
+				}
+			]
+		},
+		"embedding": null
+	},
+	{
+		"answer": "short incubation period had never even been encountered before? How long would it take public health officials to develop a new diagnostic test and write a case definition",
+		"offset_start_in_doc": 552,
+		"offset_end_in_doc": 723,
+		"offset_start": 1,
+		"offset_end": 172,
+		"context": " short incubation period had never even been encountered before? How long would it take public health officials to develop a new diagnostic test and write a case definition",
+		"answer_id": "1701c81255b0234783bb673fb1b90200",
+		"doc_id": "127f7406694d56170ba96532e59ac976280c98e5-$-$-17",
+		"no_ans_gap": 18.80069637298584,
+		"text": "",
+		"id": "5674c0a2-8891-46ee-ab11-f607af323dcc",
+		"score": -1.9680136442184448,
+		"probability": 0.438807859057235,
+		"question": "What is the definition of incubation period?",
+		"meta": {
+			"section_count": 13,
+			"title": "Future Directions for Biosecurity",
+			"subtitle": "Critical Thinking",
+			"cite_spans": [],
+			"is_doc_meta": false,
+			"is_doc_abstract": false
+		},
+		"embedding": null
+	},
+	{
+		"answer": "that the pre-symptomatic (exposed) individuals cannot transmit Hsieh BMC Infectious Diseases 2010, 10:106 http://www.biomedcentral.com/1471-2334/10/106 the disease in the noninfectious latent period, during which the viral titres gradually increase to detectable and transmissible levels when they became infective for only a short period (0.25 days in [19] ) before the onset of symptoms. To avoid adding an extra compartment to account for the (short) period of infectivity after the end of the latent period and before the end of incubation period (see e.g., [20] ), we assume that the individuals are infective",
+		"offset_start_in_doc": 103,
+		"offset_end_in_doc": 717,
+		"offset_start": 0,
+		"offset_end": 614,
+		"context": "that the pre-symptomatic (exposed) individuals cannot transmit Hsieh BMC Infectious Diseases 2010, 10:106 http://www.biomedcentral.com/1471-2334/10/106 the disease in the noninfectious latent period, during which the viral titres gradually increase to detectable and transmissible levels when they became infective for only a short period (0.25 days in [19] ) before the onset of symptoms. To avoid adding an extra compartment to account for the (short) period of infectivity after the end of the latent period and before the end of incubation period (see e.g., [20] ), we assume that the individuals are infective",
+		"answer_id": "79e4ed78ca04339f7b65761ef3861f08",
+		"doc_id": "0d3e6c56ef64eb7705fbed676eddcfa8af8ef65f-$-$-13",
+		"no_ans_gap": 18.80069637298584,
+		"text": "",
+		"id": "43e302e2-f57b-434f-919c-bf226f864b40",
+		"score": -2.233247995376587,
+		"probability": 0.430660706180751,
+		"question": "What is the definition of incubation period?",
+		"meta": {
+			"section_count": 9,
+			"title": "Age groups and spread of influenza: implications for vaccination strategy",
+			"subtitle": "Model Formulation",
+			"cite_spans": [
+				{
+					"start": 96,
+					"end": 100,
+					"text": "[18]",
+					"ref_id": "BIBREF17"
+				},
+				{
+					"start": 456,
+					"end": 460,
+					"text": "[19]",
+					"ref_id": "BIBREF18"
+				},
+				{
+					"start": 665,
+					"end": 669,
+					"text": "[20]",
+					"ref_id": null
+				},
+				{
+					"start": 935,
+					"end": 939,
+					"text": "[21]",
+					"ref_id": "BIBREF20"
+				}
+			],
+			"is_doc_meta": false,
+			"is_doc_abstract": false
+		},
+		"embedding": null
+	},
+	{
+		"answer": "multiple exposures to the virus",
+		"offset_start_in_doc": 281,
+		"offset_end_in_doc": 312,
+		"offset_start": 60,
+		"offset_end": 91,
+		"context": "nd possibly as long as 17 days. However, the possibility of multiple exposures to the virus makes it difficult to precisely define the incubation peri",
+		"answer_id": "72e5b53f69bfe5b6c6a19fc4fc159f3c",
+		"doc_id": "0704d276c8659ec9a18ca9a8a3d33413250eb680-$-$-15",
+		"no_ans_gap": 18.80069637298584,
+		"text": "",
+		"id": "1ea40937-75dd-446a-aebc-d656afde8899",
+		"score": -2.2765960693359375,
+		"probability": 0.42933263295143487,
+		"question": "What is the definition of incubation period?",
+		"meta": {
+			"title": "Human Avian Influenza: How Ready Are We?",
+			"authors": [
+				{
+					"first": "Barbara",
+					"middle": [
+						"A"
+					],
+					"last": "Goldrick",
+					"suffix": "",
+					"affiliation": {},
+					"email": ""
+				}
+			],
+			"bib_entries": {
+				"BIBREF0": {
+					"ref_id": "b0",
+					"title": "Lessons from the severe acute respiratory syndrome outbreak in Hong Kong. Emerging Infectious Diseases",
+					"year": 2003,
+					"pages": "1042--1045"
+				},
+				"BIBREF1": {
+					"ref_id": "b1",
+					"title": "Ready and willing? Physicians' sense of preparedness for bioterrorism",
+					"year": 2003,
+					"pages": "189--197"
+				},
+				"BIBREF2": {
+					"ref_id": "b2",
+					"title": "The great influenza",
+					"year": 2004,
+					"pages": ""
+				},
+				"BIBREF3": {
+					"ref_id": "b3",
+					"title": "The origins of pandemic influenza: Lessons from the 1918 virus",
+					"year": 2005,
+					"pages": "2209--2211"
+				},
+				"BIBREF4": {
+					"ref_id": "b4",
+					"title": "Interim recommendations for infection control in health-care facilities caring for patients with known or suspected avian influenza",
+					"year": 2003,
+					"pages": ""
+				},
+				"BIBREF5": {
+					"ref_id": "b5",
+					"title": "Microbial threats to health: The threat of pandemic influenza",
+					"year": 2005,
+					"pages": ""
+				},
+				"BIBREF6": {
+					"ref_id": "b6",
+					"title": "On pandemics and the duty to care: Whose duty? Who cares?",
+					"year": 2006,
+					"pages": ""
+				},
+				"BIBREF7": {
+					"ref_id": "b7",
+					"title": "Avian influenza and pandemics-Research needs and opportunities",
+					"year": 2005,
+					"pages": "405--407"
+				},
+				"BIBREF8": {
+					"ref_id": "b8",
+					"title": "Characterization of the 1918 influenza virus polymerase genes",
+					"year": 2005,
+					"pages": "889--893"
+				},
+				"BIBREF9": {
+					"ref_id": "b9",
+					"title": "Influenza revisited",
+					"year": 2006,
+					"pages": "1--2"
+				},
+				"BIBREF10": {
+					"ref_id": "b10",
+					"title": "Safety and immunogenicity of an inactivated subvirion influenza A (H5N1) vaccine",
+					"year": 2006,
+					"pages": "1343--1351"
+				},
+				"BIBREF11": {
+					"ref_id": "b11",
+					"title": "Probable personto-person transmission of avian influenza A (H5N1)",
+					"year": 2005,
+					"pages": "33--40"
+				},
+				"BIBREF12": {
+					"ref_id": "b12",
+					"title": "HHS pandemic influenza plan. HHS strategic plan",
+					"year": 2005,
+					"pages": ""
+				},
+				"BIBREF13": {
+					"ref_id": "b13",
+					"title": "HHS pandemic influenza plan. Public health guidance for state and local partners",
+					"year": 2005,
+					"pages": ""
+				},
+				"BIBREF14": {
+					"ref_id": "b14",
+					"title": "Planning for epidemics-The lessons of SARS",
+					"year": null,
+					"pages": "2332--2334"
+				},
+				"BIBREF15": {
+					"ref_id": "b15",
+					"title": "WHO global influenza preparedness plan",
+					"year": 2005,
+					"pages": ""
+				},
+				"BIBREF16": {
+					"ref_id": "b16",
+					"title": "Epidemiology of WHOconfirmed human cases of avian influenza A (H5N1) infection",
+					"year": 2006,
+					"pages": ""
+				},
+				"BIBREF17": {
+					"ref_id": "b17",
+					"title": "Nonpharmaceutical interventions for pandemic influenza, national and community measures",
+					"year": 2006,
+					"pages": "88--94"
+				}
+			},
+			"is_doc_meta": false,
+			"is_doc_abstract": false,
+			"section_count": 14,
+			"subtitle": "Avian Influenza in Humans",
+			"cite_spans": [
+				{
+					"start": 483,
+					"end": 495,
+					"text": "(WHO, 2006a;",
+					"ref_id": null
+				},
+				{
+					"start": 496,
+					"end": 502,
+					"text": "2006g)",
+					"ref_id": "BIBREF17"
+				}
+			]
+		},
+		"embedding": null
+	}
+]
